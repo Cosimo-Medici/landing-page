@@ -1,3 +1,19 @@
+// ========== THEME TOGGLE ==========
+const themeToggle = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('medici-theme');
+if (savedTheme) {
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  themeToggle.innerHTML = savedTheme === 'light' ? '&#9728;' : '&#9790;';
+}
+
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('medici-theme', next);
+  themeToggle.innerHTML = next === 'light' ? '&#9728;' : '&#9790;';
+});
+
 // ========== LENIS SMOOTH SCROLL ==========
 const lenis = new Lenis({
   duration: 1.2,
@@ -25,84 +41,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// ========== CUSTOM CURSOR ==========
-const cursorDot = document.querySelector('.custom-cursor-dot');
-const cursorRing = document.querySelector('.custom-cursor-ring');
-let mouseX = 0, mouseY = 0;
-let cursorVisible = false;
-
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-
-  if (!cursorVisible) {
-    cursorVisible = true;
-    gsap.to(cursorDot, { opacity: 1, duration: 0.3 });
-    gsap.to(cursorRing, { opacity: 0.5, duration: 0.3 });
-  }
-
-  // Dot follows instantly
-  gsap.set(cursorDot, { x: mouseX, y: mouseY });
-  // Ring follows with lag
-  gsap.to(cursorRing, { x: mouseX, y: mouseY, duration: 0.15, ease: 'power2.out' });
-});
-
-document.addEventListener('mouseleave', () => {
-  cursorVisible = false;
-  gsap.to(cursorDot, { opacity: 0, duration: 0.3 });
-  gsap.to(cursorRing, { opacity: 0, duration: 0.3 });
-});
-
-// Scale ring on interactive hover
-document.querySelectorAll('a, button, .term-tab, .btn-main, .btn-line').forEach(el => {
-  el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
-  el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
-});
-
-// ========== HERO CURSOR EFFECTS ==========
-const heroSection = document.querySelector('.hero');
-const heroGlow = document.querySelector('.hero-glow');
-const heroParticles = document.querySelector('.hero-particles');
-const particleColors = ['#74418F', '#9563AF', '#B084C8', '#5C2D7E'];
-
-heroSection.addEventListener('mousemove', (e) => {
-  const rect = heroSection.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-
-  // Radial glow follows cursor
-  gsap.to(heroGlow, {
-    left: x, top: y,
-    opacity: 1,
-    duration: 0.4,
-    ease: 'power2.out'
-  });
-
-  // Spawn particle
-  if (Math.random() > 0.6) {
-    const particle = document.createElement('div');
-    particle.className = 'hero-particle';
-    particle.style.left = x + (Math.random() - 0.5) * 20 + 'px';
-    particle.style.top = y + (Math.random() - 0.5) * 20 + 'px';
-    particle.style.background = particleColors[Math.floor(Math.random() * particleColors.length)];
-    heroParticles.appendChild(particle);
-
-    gsap.to(particle, {
-      opacity: 0,
-      y: -30 + Math.random() * -20,
-      x: (Math.random() - 0.5) * 30,
-      scale: 0,
-      duration: 0.6 + Math.random() * 0.4,
-      ease: 'power2.out',
-      onComplete: () => particle.remove()
-    });
-  }
-});
-
-heroSection.addEventListener('mouseleave', () => {
-  gsap.to(heroGlow, { opacity: 0, duration: 0.6 });
-});
-
 // ========== HERO TEXT ANIMATION (GSAP) ==========
 const heroTl = gsap.timeline({ delay: 0.3 });
 
@@ -118,15 +56,6 @@ heroTl.to('.h-line:nth-child(2) span', {
   opacity: 1, y: 0, duration: 0.9,
   ease: 'power3.out'
 }, '-=0.6');
-
-// Glitch on "intelligence." after it reveals
-heroTl.add(() => {
-  const italicSpan = document.querySelector('.h-italic');
-  if (italicSpan) {
-    italicSpan.classList.add('glitch-active');
-    setTimeout(() => italicSpan.classList.remove('glitch-active'), 400);
-  }
-}, '-=0.1');
 
 // Subtitle line
 heroTl.to('.h-line:nth-child(3) span', {
@@ -174,6 +103,26 @@ gsap.from('.terminal-stage', {
   scrollTrigger: { trigger: '.terminal-stage', start: 'top 85%', once: true }
 });
 
+// Pain section
+gsap.from('.pain-label', {
+  opacity: 0, y: 20, duration: 0.6,
+  scrollTrigger: { trigger: '.pain-section', start: 'top 80%', once: true }
+});
+gsap.set('.pain-item', { opacity: 0, y: 30 });
+ScrollTrigger.create({
+  trigger: '.pain-grid',
+  start: 'top 85%',
+  once: true,
+  onEnter: () => {
+    gsap.to('.pain-item', {
+      opacity: 1, y: 0,
+      stagger: 0.15,
+      duration: 0.8,
+      ease: 'power3.out'
+    });
+  }
+});
+
 // Architecture cards stagger
 gsap.set('.arch-card', { opacity: 0, y: 40 });
 ScrollTrigger.create({
@@ -206,21 +155,20 @@ ScrollTrigger.create({
   }
 });
 
-// Quote section elements
-gsap.from('.quote-big-mark', {
-  opacity: 0, scale: 0.8, duration: 1,
-  ease: 'power3.out',
-  scrollTrigger: { trigger: '.quote-section', start: 'top 75%', once: true }
-});
-gsap.from('.quote-text', {
-  opacity: 0, y: 30, duration: 1, delay: 0.2,
-  ease: 'power3.out',
-  scrollTrigger: { trigger: '.quote-section', start: 'top 75%', once: true }
-});
-gsap.from('.quote-attr', {
-  opacity: 0, y: 20, duration: 0.8, delay: 0.4,
-  ease: 'power3.out',
-  scrollTrigger: { trigger: '.quote-section', start: 'top 75%', once: true }
+// Quote cards stagger
+gsap.set('.quote-card', { opacity: 0, y: 30 });
+ScrollTrigger.create({
+  trigger: '.quotes-grid',
+  start: 'top 80%',
+  once: true,
+  onEnter: () => {
+    gsap.to('.quote-card', {
+      opacity: 1, y: 0,
+      stagger: 0.15,
+      duration: 0.8,
+      ease: 'power3.out'
+    });
+  }
 });
 
 // CTA section
@@ -329,6 +277,7 @@ function splitWordsAndAnimate(selector) {
 }
 
 splitWordsAndAnimate('.terminal-intro-left h2');
+splitWordsAndAnimate('.pain-headline');
 splitWordsAndAnimate('.arch-header h2');
 splitWordsAndAnimate('.cases-header h2');
 
