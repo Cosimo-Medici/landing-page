@@ -1,0 +1,30 @@
+# Ralph Progress Log
+Started: 2026-03-20
+---
+
+## Codebase Patterns
+- Site is a single HTML page (index.html) + separate CSS (css/styles.css) + separate JS (js/main.js)
+- Light mode is DEFAULT (data-theme="light" on <html>). Dark mode is toggled via JS
+- ALL colors use CSS custom properties defined in :root and [data-theme="light"] blocks in styles.css
+- The chat demo frame must ALWAYS stay dark regardless of theme (same as the old terminal)
+- Sections follow a consistent pattern: border-top: 1px solid var(--border), padding Xrem 2.5rem
+- Labels are: IBM Plex Mono, ~0.6rem, letter-spacing 0.25em+, uppercase, accent-colored
+- GSAP ScrollTriggers all use once: true and power3.out easing
+- There is a word-by-word text reveal function (splitWordsAndAnimate) that targets specific heading selectors
+- Mobile breakpoints: 1024px (tablet), 768px (large mobile), 640px (mobile), 380px (small mobile)
+- The .term-dots and .term-dot CSS classes are SHARED between old terminal and new chat UI — do NOT remove them
+- Lenis smooth scroll is integrated with GSAP via gsap.ticker — do NOT change the Lenis setup
+- The light-mode CSS section starts around line 36 in styles.css and contains overrides for [data-theme="light"]
+- The nav uses mix-blend-mode: difference (but this is turned off in light mode)
+- GSAP hero animation is a timeline with delay 0.3, revealing status -> h-line 1 -> h-line 2 -> h-line 3 -> hero-bottom
+
+---
+
+## 2026-03-20 - US-001
+- Rewrote hero section copy: headline → "The back office your fund deserves", status line → "Processing 50,000+ fund documents per month", h-sub → lists specific deliverables (LP reports, K-1 packages, rent roll extractions, due diligence memos), secondary CTA → "Watch it work ↓"
+- Files changed: index.html (lines 29-43 only)
+- **Learnings for future iterations:**
+  - Hero structure is clean — only text content inside existing spans needs changing
+  - No CSS or JS changes needed for text-only copy rewrites
+  - The word "AI" was in the meta description too (not hero) — will need updating in US-012
+---
