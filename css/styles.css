@@ -1156,6 +1156,16 @@ nav {
   gap: 0;
 }
 
+.case-persona {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  opacity: 0.6;
+}
+
 .case-card {
   padding: 2.5rem 2rem;
   border: 1px solid var(--border);
