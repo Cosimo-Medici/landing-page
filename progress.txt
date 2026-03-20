@@ -130,3 +130,43 @@ Started: 2026-03-20
   - Remember to add new sections to the 640px mobile padding override list
   - Simple text-only sections need minimal CSS — just the container, label, text, and sign styles
 ---
+
+## 2026-03-20 - US-010
+- Added .case-persona div as first child of each .case-card with role-based labels (Investment Partners, Fund CFOs, IR & Fund Accounting, Fund CFOs & Partners)
+- Rewrote card titles: "Regulatory Reporting" → "K-1s & Regulatory Filing", "Investor Relations" → "LP Reporting"
+- Rewrote descriptions with more specificity (1,200-document data room, 4pm LP question scenario, covenant compliance)
+- Updated stats: 90% → "2 hrs" (vs. 2 weeks), 800+ → "30 sec", updated labels
+- CSS added: .case-persona (IBM Plex Mono, 0.5rem, uppercase, accent-colored, opacity 0.6)
+- Files changed: index.html, css/styles.css
+- **Learnings for future iterations:**
+  - Persona labels are minimal CSS — just font, size, color, spacing
+  - No responsive changes needed for inline persona text within existing card layout
+  - No JS changes needed — existing GSAP animations for .case-card still work
+---
+
+## 2026-03-20 - US-011
+- Redesigned CTA section as 3-step pilot timeline (Discovery → Onboarding → Live Pilot)
+- Inevitability section was already positioned correctly (after use cases, before CTA)
+- Replaced .cta-sub and .cta-cred with .pilot-timeline (3-col bordered grid), .pilot-confidence paragraph
+- CTA label → "Start a Pilot", headline → "Four weeks. Your data. You'll know."
+- Buttons: "Schedule a Discovery Call" + mailto link
+- CSS: .pilot-timeline, .pilot-step, .pilot-step-num, .pilot-step-duration, .pilot-step-title, .pilot-step-desc, .pilot-confidence
+- Responsive: steps stack at 768px with border-bottom instead of border-right
+- GSAP: removed .cta-sub animation, added staggered .pilot-step reveal
+- Removed old .cta-sub and .cta-cred CSS rules
+- Files changed: index.html, css/styles.css, js/main.js
+- **Learnings for future iterations:**
+  - Pilot timeline uses same visual language as .arch-grid (bordered grid, no gaps)
+  - The inevitability section was already in the right position — no move needed
+  - When removing CSS rules for deleted elements, also remove their GSAP animations
+---
+
+## 2026-03-20 - US-012
+- Updated meta description to remove "AI" and focus on outcomes: "fund operations infrastructure for private markets. LP reports, K-1 packages, due diligence memos, and rent roll extractions delivered in minutes."
+- Verified all 4 nav anchors (#product, #architecture, #cases, #contact) correctly target their sections
+- Verified .chat-body has data-lenis-prevent attribute (added in US-003)
+- Files changed: index.html (meta description only)
+- **Learnings for future iterations:**
+  - Quick verification stories — grep for IDs and attributes to confirm
+  - Meta description was 147 chars, under the 160 char limit
+---

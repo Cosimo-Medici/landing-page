@@ -232,7 +232,7 @@
         "Verify that .chat-body element has data-lenis-prevent attribute (should have been added in US-003 — add it if missing)"
       ],
       "priority": 12,
-      "passes": false,
+      "passes": true,
       "notes": "Quick housekeeping task. Should be very fast."
     },
     {
