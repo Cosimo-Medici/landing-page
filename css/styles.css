@@ -1095,6 +1095,39 @@ nav {
   text-transform: uppercase;
 }
 
+/* ========== FOUNDER'S NOTE ========== */
+.founder-section {
+  padding: 5rem 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.founder-content {
+  max-width: 640px;
+}
+
+.founder-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
+
+.founder-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--cream);
+  margin-bottom: 2rem;
+}
+
+.founder-sign {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--cream-dim);
+}
+
 /* ========== USE CASES — horizontal scroll-style ========== */
 .cases-section {
   border-top: 1px solid var(--border);
@@ -1426,7 +1459,8 @@ a, button, .btn-main, .btn-line {
   .cta-section,
   .pain-section,
   .quotes-section,
-  .inevitability-section {
+  .inevitability-section,
+  .founder-section {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
@@ -1462,6 +1496,10 @@ a, button, .btn-main, .btn-line {
   .quote-section,
   .quotes-section {
     padding: 4rem 1.25rem;
+  }
+
+  .founder-section {
+    padding: 3rem 1.25rem;
   }
 
   footer {

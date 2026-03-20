@@ -96,3 +96,37 @@ Started: 2026-03-20
   - .pain-step-summary uses border-top as separator, not border-left like regular steps
   - The "Today" column intentionally has more steps (6) than "With Cosimo" (3) for visual weight contrast
 ---
+
+## 2026-03-20 - US-007
+- Rewrote architecture section: header "Three things generic AI..." (was "ChatGPT"), card titles → "Your Data Stays Yours", "It Gets Smarter at Your Work", "The Work, Done"
+- Card text rewritten for buyer trust: data segregation as architecture, compounding knowledge moat narrative, specific deliverables with audit-ready emphasis
+- Files changed: index.html only (text content changes, no structure/CSS/JS changes)
+- **Learnings for future iterations:**
+  - Copy-only stories are the simplest — just text inside existing divs, no structure changes
+  - Card numbers (001/002/003) and icons (◇/⟳/▣) are kept as-is per acceptance criteria
+---
+
+## 2026-03-20 - US-008
+- Added .quotes-framing element above .quotes-grid with text "We don't name our clients. They prefer it that way."
+- Rewrote all 3 quotes with operational specificity: K-1 prep (3 weeks → 2 days), associate retention (midnight → 7pm), implementation (3 months → 2 days)
+- Detailed attributions added: role, fund size, team size, location
+- CSS added: .quotes-framing (IBM Plex Mono, uppercase, accent-colored, centered, opacity 0.7)
+- GSAP fade-in animation added for .quotes-framing triggered on .quotes-section enter
+- Files changed: index.html, css/styles.css, js/main.js
+- **Learnings for future iterations:**
+  - Adding a new element inside an existing section is straightforward — just insert before the grid
+  - The quotes-framing animation triggers on .quotes-section (the parent), while quote-card animation triggers on .quotes-grid — this creates a nice sequential reveal
+---
+
+## 2026-03-20 - US-009
+- Added new founder's note section between quotes and use cases sections
+- Section contains: .founder-label ("From the founders"), .founder-text (personal paragraph about building Medici from finance experience), .founder-sign ("— Eliot & the Medici team")
+- CSS added: .founder-section (padding 5rem 2.5rem, border-top), .founder-content (max-width 640px), .founder-label (IBM Plex Mono, accent, uppercase), .founder-text (Space Grotesk, 1rem, line-height 1.8), .founder-sign (IBM Plex Mono, dimmed)
+- Mobile responsive: padding reduces at 640px, added to section padding-override list
+- GSAP scroll reveal: .founder-text fades in on .founder-section trigger
+- Files changed: index.html, css/styles.css, js/main.js
+- **Learnings for future iterations:**
+  - New sections follow the same border-top pattern as all other sections
+  - Remember to add new sections to the 640px mobile padding override list
+  - Simple text-only sections need minimal CSS — just the container, label, text, and sign styles
+---

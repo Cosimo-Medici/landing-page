@@ -178,6 +178,13 @@ ScrollTrigger.create({
   }
 });
 
+// Founder's note
+gsap.from('.founder-text', {
+  opacity: 0, y: 20, duration: 0.8,
+  ease: 'power3.out',
+  scrollTrigger: { trigger: '.founder-section', start: 'top 80%', once: true }
+});
+
 // CTA section
 gsap.from('.cta-label', {
   opacity: 0, y: 20, duration: 0.6,

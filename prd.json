@@ -141,7 +141,7 @@
         "No CSS changes needed"
       ],
       "priority": 7,
-      "passes": false,
+      "passes": true,
       "notes": "ONLY edit index.html inside the .arch-section. Touch nothing else. Tone: confident, adult, specific. These cards should make a Fund CFO think 'they understand my concerns.'"
     },
     {
@@ -158,7 +158,7 @@
         "GSAP: add a fade-in animation for .quotes-framing triggered when quotes-section enters viewport"
       ],
       "priority": 8,
-      "passes": false,
+      "passes": true,
       "notes": "The quotes should sound like how finance professionals actually talk — direct, slightly dry, operationally specific. NOT marketing copy."
     },
     {
@@ -174,7 +174,7 @@
         "GSAP scroll reveal for .founder-text (fade in, slide up)"
       ],
       "priority": 9,
-      "passes": false,
+      "passes": true,
       "notes": "This section should feel quiet and personal against the more designed sections around it. No cards, no grid — just text."
     },
     {
