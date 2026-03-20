@@ -250,7 +250,7 @@
         "No console errors when scrolling through the full page (verify by reading the JS logic)"
       ],
       "priority": 13,
-      "passes": false,
+      "passes": true,
       "notes": "Read through ALL of main.js carefully. Cross-reference every CSS selector in the JS with the actual HTML. This is the final verification pass."
     }
   ]

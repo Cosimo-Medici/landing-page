@@ -170,3 +170,17 @@ Started: 2026-03-20
   - Quick verification stories — grep for IDs and attributes to confirm
   - Meta description was 147 chars, under the 160 char limit
 ---
+
+## 2026-03-20 - US-013
+- Audited all GSAP animations in main.js against index.html — every selector targets an existing element
+- Confirmed no orphaned animations (.pain-item, .cta-sub already removed in prior stories)
+- Confirmed all new section animations present: .quotes-framing, .founder-text, .pain-col, .pilot-step, .terminal-stage (covers chat-frame)
+- Fixed missing `ease: 'power3.out'` on .pain-label and .cta-label scroll animations
+- Verified all ScrollTriggers use `once: true` (parallax scrub triggers correctly exempt)
+- Verified all 4 splitWordsAndAnimate selectors target existing elements
+- No logic errors found — no potential console errors on full page scroll
+- Files changed: js/main.js (2 ease properties added)
+- **Learnings for future iterations:**
+  - When adding scroll animations, always include ease property explicitly rather than relying on GSAP default
+  - Hero timeline animations intentionally use power2.out (lighter feel for above-the-fold), all scroll-triggered reveals use power3.out
+---

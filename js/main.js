@@ -106,6 +106,7 @@ gsap.from('.terminal-stage', {
 // Pain section
 gsap.from('.pain-label', {
   opacity: 0, y: 20, duration: 0.6,
+  ease: 'power3.out',
   scrollTrigger: { trigger: '.pain-section', start: 'top 80%', once: true }
 });
 gsap.set('.pain-col', { opacity: 0, y: 40 });
@@ -188,6 +189,7 @@ gsap.from('.founder-text', {
 // CTA section
 gsap.from('.cta-label', {
   opacity: 0, y: 20, duration: 0.6,
+  ease: 'power3.out',
   scrollTrigger: { trigger: '.cta-section', start: 'top 80%', once: true }
 });
 gsap.from('.cta-headline', {
