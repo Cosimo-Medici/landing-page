@@ -398,11 +398,11 @@ const chatDemos = [
   }
 ];
 
-let chatRunning = false;
+let currentDemoId = 0;
 
 function runChatDemo(index) {
-  if (chatRunning) return;
-  chatRunning = true;
+  const myId = ++currentDemoId;
+  const cancelled = () => myId !== currentDemoId;
 
   document.querySelectorAll('.chat-tab').forEach((btn, i) => {
     btn.classList.toggle('active', i === index);
@@ -413,21 +413,16 @@ function runChatDemo(index) {
 
   const demo = chatDemos[index];
 
-  // Show context indicator
+  // Show context indicator immediately
   const ctxEl = document.createElement('div');
-  ctxEl.className = 'chat-context';
+  ctxEl.className = 'chat-context visible';
   ctxEl.textContent = demo.context;
   body.appendChild(ctxEl);
-  requestAnimationFrame(() => ctxEl.classList.add('visible'));
 
   let msgIndex = 0;
-  let delay = 600;
 
   function playNext() {
-    if (msgIndex >= demo.messages.length) {
-      chatRunning = false;
-      return;
-    }
+    if (cancelled() || msgIndex >= demo.messages.length) return;
 
     const msg = demo.messages[msgIndex];
     msgIndex++;
@@ -435,37 +430,38 @@ function runChatDemo(index) {
     if (msg.role === 'user') {
       const msgEl = createChatMsg(msg);
       body.appendChild(msgEl);
-      body.scrollTop = body.scrollHeight;
+      body.scrollTo({ top: body.scrollHeight, behavior: 'smooth' });
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           msgEl.classList.add('visible');
         });
       });
-      setTimeout(playNext, 800);
+      setTimeout(() => { if (!cancelled()) playNext(); }, 600);
     } else {
       // Show thinking dots first
       const thinkEl = document.createElement('div');
       thinkEl.className = 'chat-thinking';
       thinkEl.innerHTML = '<div class="chat-thinking-dot"></div><div class="chat-thinking-dot"></div><div class="chat-thinking-dot"></div>';
       body.appendChild(thinkEl);
-      body.scrollTop = body.scrollHeight;
+      body.scrollTo({ top: body.scrollHeight, behavior: 'smooth' });
 
       setTimeout(() => {
+        if (cancelled()) return;
         thinkEl.remove();
         const msgEl = createChatMsg(msg);
         body.appendChild(msgEl);
-        body.scrollTop = body.scrollHeight;
+        body.scrollTo({ top: body.scrollHeight, behavior: 'smooth' });
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             msgEl.classList.add('visible');
           });
         });
-        setTimeout(playNext, 1000);
-      }, 1200);
+        setTimeout(() => { if (!cancelled()) playNext(); }, 700);
+      }, 800);
     }
   }
 
-  setTimeout(playNext, delay);
+  setTimeout(() => { if (!cancelled()) playNext(); }, 600);
 }
 
 function createChatMsg(msg) {

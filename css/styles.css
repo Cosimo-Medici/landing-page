@@ -84,7 +84,8 @@
 /* Light mode: force chat frame to stay dark */
 [data-theme="light"] .chat-frame {
   background: #141413;
-  border-color: rgba(237, 232, 223, 0.1);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 [data-theme="light"] .chat-frame::before {
   background: linear-gradient(90deg, #74418F, #74418F 30%, transparent 100%);
@@ -405,6 +406,7 @@ nav {
 .h-italic {
   font-size: clamp(4.5rem, 10vw, 9rem);
   color: var(--accent);
+  font-style: italic;
 }
 
 .h-sub {
@@ -567,8 +569,10 @@ nav {
 .chat-frame {
   background: #141413;
   border: 1px solid rgba(237, 232, 223, 0.1);
+  border-radius: 8px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* Glowing accent border on top (same as old terminal) */
@@ -579,6 +583,7 @@ nav {
   height: 2px;
   background: linear-gradient(90deg, #74418F, #74418F 30%, transparent 100%);
   opacity: 0.6;
+  border-radius: 8px 8px 0 0;
 }
 
 .chat-chrome {
@@ -587,6 +592,7 @@ nav {
   padding: 1rem 1.5rem;
   border-bottom: 1px solid rgba(237, 232, 223, 0.06);
   background: #1A1A18;
+  border-radius: 8px 8px 0 0;
 }
 
 .chat-tabs {
@@ -816,6 +822,7 @@ nav {
   padding: 1rem 1.5rem;
   border-top: 1px solid rgba(237, 232, 223, 0.06);
   background: #1A1A18;
+  border-radius: 0 0 8px 8px;
 }
 
 .chat-input-placeholder {
@@ -882,6 +889,18 @@ nav {
   padding: 2rem;
 }
 
+.pain-before {
+  background: var(--cream-ghost);
+}
+
+.pain-before .pain-step {
+  line-height: 1.55;
+}
+
+.pain-after {
+  padding: 2.5rem;
+}
+
 .pain-col-label {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.6rem;
@@ -911,6 +930,7 @@ nav {
 .pain-after .pain-step {
   border-left-color: var(--accent-dim);
   color: var(--cream);
+  line-height: 1.85;
 }
 
 .pain-step-summary {
@@ -930,9 +950,9 @@ nav {
 }
 
 .pain-divider {
-  width: 1px;
-  background: var(--accent);
-  opacity: 0.4;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--accent) 20%, var(--accent) 80%, transparent);
+  opacity: 0.3;
 }
 
 /* ========== ARCHITECTURE SECTION ========== */
