@@ -195,9 +195,19 @@ gsap.from('.cta-headline', {
   ease: 'power3.out',
   scrollTrigger: { trigger: '.cta-section', start: 'top 80%', once: true }
 });
-gsap.from('.cta-sub', {
-  opacity: 0, y: 20, duration: 0.8, delay: 0.2,
-  scrollTrigger: { trigger: '.cta-section', start: 'top 80%', once: true }
+gsap.set('.pilot-step', { opacity: 0, y: 40 });
+ScrollTrigger.create({
+  trigger: '.pilot-timeline',
+  start: 'top 80%',
+  once: true,
+  onEnter: () => {
+    gsap.to('.pilot-step', {
+      opacity: 1, y: 0,
+      stagger: 0.15,
+      duration: 0.8,
+      ease: 'power3.out'
+    });
+  }
 });
 gsap.from('.cta-actions', {
   opacity: 0, y: 20, duration: 0.8, delay: 0.3,

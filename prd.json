@@ -192,7 +192,7 @@
         "No changes to existing CSS classes for cards"
       ],
       "priority": 10,
-      "passes": false,
+      "passes": true,
       "notes": "ONLY edit the content inside .cases-section in index.html, plus add the .case-persona CSS rule. Do not change the cases-header or grid structure."
     },
     {
@@ -216,7 +216,7 @@
         "Old CSS for .cta-sub and .cta-cred can be removed"
       ],
       "priority": 11,
-      "passes": false,
+      "passes": true,
       "notes": "The pilot timeline cards should use the same visual language as the .arch-grid — border grid with no gaps, institutional feel. Step content should be left-aligned even though the section header is centered.\n\nGSAP FIX: In main.js, find the CTA section animations (around line 174-191). Remove the gsap.from('.cta-sub'...) animation (that element no longer exists). Add BEFORE the .cta-actions animation: gsap.set('.pilot-step', { opacity: 0, y: 40 }); ScrollTrigger.create({ trigger: '.pilot-timeline', start: 'top 80%', once: true, onEnter: () => { gsap.to('.pilot-step', { opacity: 1, y: 0, stagger: 0.15, duration: 0.8, ease: 'power3.out' }); } });\n\nIMPORTANT: When moving .inevitability-section, ensure it keeps its existing id-less state and its CSS (.inevitability-section, .inevitability-text) continues to work."
     },
     {
