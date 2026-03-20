@@ -1043,6 +1043,17 @@ nav {
   border-bottom: 1px solid var(--border);
 }
 
+.quotes-framing {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 3rem;
+  opacity: 0.7;
+}
+
 .quotes-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
