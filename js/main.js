@@ -300,10 +300,11 @@ gsap.from('.terminal-stage', {
   var tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.pain-section',
-      start: 'top 5%',
+      start: 'top top',
       end: '+=' + totalScroll,
       pin: '.pain-stack-wrapper',
       scrub: true,
+      anticipatePin: 1,
     }
   });
 
@@ -449,7 +450,7 @@ ScrollTrigger.create({
 });
 
 // Founder's note
-gsap.from('.founder-text', {
+gsap.from('.founder-card', {
   opacity: 0, y: 20, duration: 0.8,
   ease: 'power3.out',
   scrollTrigger: { trigger: '.founder-section', start: 'top 80%', once: true }

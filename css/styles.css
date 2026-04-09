@@ -879,7 +879,7 @@ nav {
 .pain-headline-wrap {
   position: relative;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 .pain-headline,
@@ -906,18 +906,20 @@ nav {
 
 .pain-stack-wrapper {
   position: relative;
-  min-height: 75vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 0.5rem;
 }
 
 .pain-stack-viewport {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 40vh;
+  justify-content: flex-start;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .pain-stack-cards {
@@ -989,7 +991,7 @@ nav {
   align-items: flex-start;
   gap: 0;
   margin-top: 1.5rem;
-  padding: 2rem 0;
+  padding: 1.25rem 0;
   border-top: 1px solid var(--border);
 }
 
@@ -1054,7 +1056,7 @@ nav {
   color: var(--cream);
   opacity: 0.7;
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 0.75rem;
 }
 
 /* ========== ARCHITECTURE SECTION ========== */
@@ -1219,12 +1221,15 @@ nav {
 
 /* ========== FOUNDER'S NOTE ========== */
 .founder-section {
-  padding: 5rem 2.5rem;
+  padding: 6rem 2.5rem;
   border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
 }
 
 .founder-content {
-  max-width: 640px;
+  max-width: 680px;
+  width: 100%;
 }
 
 .founder-label {
@@ -1234,19 +1239,61 @@ nav {
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 2rem;
+  text-align: center;
+}
+
+.founder-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-left: 3px solid var(--accent);
+  padding: 3rem 3rem 2.5rem;
+  position: relative;
+}
+
+.founder-mark {
+  font-family: 'EB Garamond', serif;
+  font-size: 5rem;
+  color: var(--accent);
+  line-height: 0.6;
+  margin-bottom: 1rem;
+  opacity: 0.4;
 }
 
 .founder-text {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1rem;
-  line-height: 1.8;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.9;
   color: var(--cream);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.founder-sign-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.founder-rule {
+  width: 2.5rem;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.5;
+  margin-bottom: 0.25rem;
 }
 
 .founder-sign {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--cream);
+  letter-spacing: 0.01em;
+}
+
+.founder-sign-title {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   color: var(--cream-dim);
 }
 
@@ -1588,7 +1635,7 @@ a, button, .btn-main, .btn-line {
     padding: 5rem 1.25rem 0;
   }
   .pain-stack-viewport {
-    min-height: 45vh;
+    min-height: 0;
   }
   .pain-card {
     font-size: 0.9rem;
@@ -1687,6 +1734,15 @@ a, button, .btn-main, .btn-line {
 
   .founder-section {
     padding: 3rem 1.25rem;
+  }
+  .founder-card {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+  .founder-mark {
+    font-size: 3.5rem;
+  }
+  .founder-text {
+    font-size: 1.1rem;
   }
 
   footer {
