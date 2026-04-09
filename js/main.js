@@ -259,12 +259,12 @@ gsap.from('.terminal-stage', {
   // Toll progression: values at each card threshold
   var tollData = [
     { people: '—',  time: '—',        cycle: '—' },
-    { people: '1',  time: '2 days',    cycle: '—' },
-    { people: '1',  time: '4 days',    cycle: '—' },
-    { people: '2',  time: '1 week',    cycle: 'Quarterly' },
-    { people: '2',  time: '2 weeks',   cycle: 'Quarterly' },
-    { people: '3',  time: '2.5 wks',   cycle: 'Quarterly' },
-    { people: '3',  time: '3 weeks',   cycle: 'Quarterly' },
+    { people: '1',  time: '2 days',    cycle: '1' },
+    { people: '1',  time: '4 days',    cycle: '2' },
+    { people: '2',  time: '1 week',    cycle: '3' },
+    { people: '2',  time: '2 weeks',   cycle: '4' },
+    { people: '3',  time: '2.5 wks',   cycle: '5' },
+    { people: '3',  time: '3 weeks',   cycle: '6' },
   ];
 
   var currentTollIndex = -1;

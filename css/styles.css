@@ -950,14 +950,14 @@ nav {
 
 /* Progressive darkening + left border heat map */
 .pain-card[data-card-index="0"] {
-  background: var(--bg);
-  color: var(--cream);
-  border-left-color: var(--border);
-}
-.pain-card[data-card-index="1"] {
   background: var(--bg-elevated);
   color: var(--cream);
   border-left-color: var(--border-strong);
+}
+.pain-card[data-card-index="1"] {
+  background: var(--bg);
+  color: var(--cream);
+  border-left-color: var(--border);
 }
 .pain-card[data-card-index="2"] {
   background: var(--bg-surface);
@@ -1321,32 +1321,20 @@ nav {
 
 .cases-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto auto auto 1fr auto auto;
+  grid-template-columns: 1fr;
   gap: 0;
 }
 
-.case-persona {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-  opacity: 0.6;
-}
-
 .case-card {
-  padding: 2.5rem 2rem;
+  padding: 0;
   border: 1px solid var(--border);
-  margin-right: -1px;
+  margin-bottom: -1px;
   position: relative;
   overflow: hidden;
   transition: all 0.4s;
   cursor: default;
-  display: grid;
-  grid-row: span 6;
-  grid-template-rows: subgrid;
+  display: flex;
+  flex-direction: row;
 }
 
 .case-card::after {
@@ -1361,39 +1349,24 @@ nav {
 .case-card:hover::after { height: 100%; }
 .case-card:hover { background: var(--bg-elevated); }
 
-.case-num {
-  font-family: 'EB Garamond', serif;
-  font-size: 3rem;
-  font-weight: 400;
-  color: var(--cream-ghost);
-  line-height: 1;
-  margin-bottom: 1.5rem;
-  transition: color 0.3s;
-}
-
-.case-card:hover .case-num { color: var(--accent-dim); }
-
-.case-title {
-  font-family: 'EB Garamond', serif;
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: var(--cream);
-  margin-bottom: 0.75rem;
-}
-
-.case-desc {
-  font-size: 0.82rem;
-  line-height: 1.7;
-  color: var(--cream-dim);
-  margin-bottom: 1.5rem;
-  font-weight: 300;
+.case-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
+  width: 300px;
+  padding: 2.5rem;
+  border-left: 1px solid var(--border);
+  order: 1;
 }
 
 .case-stat-val {
   font-family: 'EB Garamond', serif;
-  font-size: 1.8rem;
+  font-size: 3rem;
   color: var(--cream);
-  line-height: 1.2;
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
 }
 
 .case-stat-lbl {
@@ -1402,6 +1375,67 @@ nav {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--cream-dim);
+}
+
+.case-content {
+  flex: 1;
+  padding: 2.5rem;
+}
+
+.case-title {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+}
+
+.case-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.case-before,
+.case-after {
+  padding: 1.25rem 1.5rem;
+}
+
+.case-before {
+  border-right: 1px solid var(--border);
+}
+
+.case-before-label,
+.case-after-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.case-before-label {
+  color: var(--cream-dim);
+}
+
+.case-after-label {
+  color: var(--accent);
+}
+
+.case-before p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  font-weight: 300;
+  margin: 0;
+}
+
+.case-after p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--cream);
+  font-weight: 300;
+  margin: 0;
 }
 
 /* ========== INEVITABILITY ========== */
@@ -1587,13 +1621,6 @@ a, button, .btn-main, .btn-line {
     border-bottom: none;
   }
 
-  .cases-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .case-card {
-    margin-bottom: -1px;
-  }
-
   .terminal-intro {
     flex-direction: column;
     gap: 1rem;
@@ -1623,8 +1650,19 @@ a, button, .btn-main, .btn-line {
 
 /* ========== RESPONSIVE: LARGE MOBILE (max-width: 768px) ========== */
 @media (max-width: 768px) {
-  .cases-grid {
-    grid-template-columns: 1fr;
+  .case-card {
+    flex-direction: column;
+  }
+
+  .case-stat {
+    width: auto;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 1.5rem 2rem;
+    order: 1;
   }
 
   .pilot-timeline {
@@ -1709,6 +1747,15 @@ a, button, .btn-main, .btn-line {
   .inevitability-section {
     padding-top: 8rem;
     padding-bottom: 8rem;
+  }
+
+  .case-split {
+    grid-template-columns: 1fr;
+  }
+
+  .case-before {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
   }
 
   /* Chat demo mobile */
