@@ -456,6 +456,22 @@ gsap.from('.founder-card', {
   scrollTrigger: { trigger: '.founder-section', start: 'top 80%', once: true }
 });
 
+// Inevitability section — staggered two-line reveal
+gsap.set('.inevitability-line-1, .inevitability-line-2', { opacity: 0, y: 30 });
+ScrollTrigger.create({
+  trigger: '.inevitability-section',
+  start: 'top 75%',
+  once: true,
+  onEnter: () => {
+    gsap.to('.inevitability-line-1', {
+      opacity: 1, y: 0, duration: 0.8, ease: 'power3.out'
+    });
+    gsap.to('.inevitability-line-2', {
+      opacity: 1, y: 0, duration: 0.8, delay: 0.4, ease: 'power3.out'
+    });
+  }
+});
+
 // CTA section
 gsap.from('.cta-label', {
   opacity: 0, y: 20, duration: 0.6,
