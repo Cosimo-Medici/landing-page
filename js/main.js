@@ -230,15 +230,23 @@ gsap.to('.hero-glyph', {
 // ========== GSAP SCROLL REVEALS ==========
 
 // Terminal section
-gsap.from('.terminal-intro-right', {
-  opacity: 0, y: 20, duration: 0.8,
-  ease: 'power3.out',
-  scrollTrigger: { trigger: '.terminal-intro', start: 'top 80%', once: true }
+gsap.set('.terminal-intro-right', { opacity: 0, y: 20 });
+gsap.set('.terminal-stage', { opacity: 0, y: 30 });
+ScrollTrigger.create({
+  trigger: '.terminal-intro',
+  start: 'top 80%',
+  once: true,
+  onEnter: () => {
+    gsap.to('.terminal-intro-right', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' });
+  }
 });
-gsap.from('.terminal-stage', {
-  opacity: 0, y: 30, duration: 1,
-  ease: 'power3.out',
-  scrollTrigger: { trigger: '.terminal-stage', start: 'top 85%', once: true }
+ScrollTrigger.create({
+  trigger: '.terminal-stage',
+  start: 'top 80%',
+  once: true,
+  onEnter: () => {
+    gsap.to('.terminal-stage', { opacity: 1, y: 0, duration: 1, ease: 'power3.out' });
+  }
 });
 
 // Pain section: scroll-pinned stack with running toll
@@ -427,10 +435,14 @@ ScrollTrigger.create({
 });
 
 // Quotes framing line
-gsap.from('.quotes-framing', {
-  opacity: 0, y: 20, duration: 0.8,
-  ease: 'power3.out',
-  scrollTrigger: { trigger: '.quotes-section', start: 'top 80%', once: true }
+gsap.set('.quotes-framing', { opacity: 0, y: 20 });
+ScrollTrigger.create({
+  trigger: '.quotes-section',
+  start: 'top 80%',
+  once: true,
+  onEnter: () => {
+    gsap.to('.quotes-framing', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' });
+  }
 });
 
 // Quote cards stagger
@@ -450,10 +462,14 @@ ScrollTrigger.create({
 });
 
 // Founder's note
-gsap.from('.founder-card', {
-  opacity: 0, y: 20, duration: 0.8,
-  ease: 'power3.out',
-  scrollTrigger: { trigger: '.founder-section', start: 'top 80%', once: true }
+gsap.set('.founder-card', { opacity: 0, y: 20 });
+ScrollTrigger.create({
+  trigger: '.founder-section',
+  start: 'top 80%',
+  once: true,
+  onEnter: () => {
+    gsap.to('.founder-card', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' });
+  }
 });
 
 // Inevitability section — staggered two-line reveal
@@ -472,34 +488,22 @@ ScrollTrigger.create({
   }
 });
 
-// CTA section
-gsap.from('.cta-label', {
-  opacity: 0, y: 20, duration: 0.6,
-  ease: 'power3.out',
-  scrollTrigger: { trigger: '.cta-section', start: 'top 80%', once: true }
-});
-gsap.from('.cta-headline', {
-  opacity: 0, y: 30, duration: 0.8, delay: 0.1,
-  ease: 'power3.out',
-  scrollTrigger: { trigger: '.cta-section', start: 'top 80%', once: true }
-});
+// CTA section — single coordinated timeline
+gsap.set('.cta-label', { opacity: 0, y: 20 });
+gsap.set('.cta-headline', { opacity: 0, y: 30 });
 gsap.set('.pilot-step', { opacity: 0, y: 40 });
+gsap.set('.cta-actions', { opacity: 0, y: 20 });
 ScrollTrigger.create({
-  trigger: '.pilot-timeline',
+  trigger: '.cta-section',
   start: 'top 80%',
   once: true,
   onEnter: () => {
-    gsap.to('.pilot-step', {
-      opacity: 1, y: 0,
-      stagger: 0.15,
-      duration: 0.8,
-      ease: 'power3.out'
-    });
+    var ctaTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    ctaTl.to('.cta-label', { opacity: 1, y: 0, duration: 0.6 });
+    ctaTl.to('.cta-headline', { opacity: 1, y: 0, duration: 0.8 }, '-=0.4');
+    ctaTl.to('.pilot-step', { opacity: 1, y: 0, stagger: 0.15, duration: 0.8 }, '-=0.4');
+    ctaTl.to('.cta-actions', { opacity: 1, y: 0, duration: 0.8 }, '-=0.3');
   }
-});
-gsap.from('.cta-actions', {
-  opacity: 0, y: 20, duration: 0.8, delay: 0.3,
-  scrollTrigger: { trigger: '.cta-section', start: 'top 80%', once: true }
 });
 
 // ========== SECTION HEADERS — WORD-BY-WORD REVEAL ==========
@@ -588,10 +592,12 @@ function splitWordsAndAnimate(selector) {
   });
 }
 
-splitWordsAndAnimate('.terminal-intro-left h2');
-splitWordsAndAnimate('.pain-headline');
-splitWordsAndAnimate('.arch-header h2');
-splitWordsAndAnimate('.cases-header h2');
+requestAnimationFrame(() => {
+  splitWordsAndAnimate('.terminal-intro-left h2');
+  splitWordsAndAnimate('.pain-headline');
+  splitWordsAndAnimate('.arch-header h2');
+  splitWordsAndAnimate('.cases-header h2');
+});
 
 // ========== ARCH HEADER NUM PARALLAX ==========
 gsap.to('.arch-header-num', {
@@ -716,7 +722,7 @@ function runChatDemo(index) {
     if (msg.role === 'user') {
       const msgEl = createChatMsg(msg);
       body.appendChild(msgEl);
-      body.scrollTo({ top: body.scrollHeight, behavior: 'smooth' });
+      gsap.to(body, { scrollTop: body.scrollHeight, duration: 0.4, ease: 'power2.out' });
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           msgEl.classList.add('visible');
@@ -729,14 +735,14 @@ function runChatDemo(index) {
       thinkEl.className = 'chat-thinking';
       thinkEl.innerHTML = '<div class="chat-thinking-dot"></div><div class="chat-thinking-dot"></div><div class="chat-thinking-dot"></div>';
       body.appendChild(thinkEl);
-      body.scrollTo({ top: body.scrollHeight, behavior: 'smooth' });
+      gsap.to(body, { scrollTop: body.scrollHeight, duration: 0.4, ease: 'power2.out' });
 
       setTimeout(() => {
         if (cancelled()) return;
         thinkEl.remove();
         const msgEl = createChatMsg(msg);
         body.appendChild(msgEl);
-        body.scrollTo({ top: body.scrollHeight, behavior: 'smooth' });
+        gsap.to(body, { scrollTop: body.scrollHeight, duration: 0.4, ease: 'power2.out' });
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             msgEl.classList.add('visible');

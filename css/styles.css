@@ -196,7 +196,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: border-color 0.3s, transform 0.3s;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -204,6 +204,13 @@
 .theme-toggle:hover {
   border-color: var(--accent);
   transform: scale(1.1);
+}
+
+/* will-change hints for scrub-animated elements */
+.hero-content,
+.hero-glyph,
+.arch-header-num {
+  will-change: transform;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -329,14 +336,17 @@ nav {
   top: 3.25rem;
   left: 2.5rem;
   width: 2px;
-  height: 0;
+  height: calc(100% - 3.25rem);
   background: var(--accent);
+  transform-origin: top;
+  transform: scaleY(0);
   animation: drawLine 1.5s ease-out 0.5s forwards;
   box-shadow: 0 0 20px var(--accent-glow);
+  will-change: transform;
 }
 
 @keyframes drawLine {
-  to { height: calc(100% - 3.25rem); }
+  to { transform: scaleY(1); }
 }
 
 .hero-content {
@@ -414,6 +424,7 @@ nav {
 .h-large {
   font-size: clamp(4.5rem, 10vw, 9rem);
   color: var(--cream);
+  min-height: 1.3em;
 }
 
 .h-italic {
@@ -461,7 +472,7 @@ nav {
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
   position: relative;
 }
 
@@ -480,7 +491,7 @@ nav {
   padding: 1rem 1.5rem;
   border: 1px solid var(--border-strong);
   background: var(--bg);
-  transition: all 0.3s;
+  transition: border-color 0.3s, color 0.3s;
 }
 
 .btn-line:hover {
@@ -1102,7 +1113,7 @@ nav {
   border-right: 1px solid var(--border);
   position: relative;
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .arch-card:last-child { border-right: none; }
@@ -1331,7 +1342,7 @@ nav {
   margin-bottom: -1px;
   position: relative;
   overflow: hidden;
-  transition: all 0.4s;
+  transition: background 0.4s;
   cursor: default;
   display: flex;
   flex-direction: row;
