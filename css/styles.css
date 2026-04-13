@@ -878,7 +878,7 @@ nav {
 
 /* ========== PAIN SECTION ========== */
 .pain-section {
-  padding: 2rem 2.5rem 0;
+  padding: 0.5rem 2.5rem 0;
   border-top: 1px solid var(--border);
 }
 
@@ -947,6 +947,7 @@ nav {
   border: 1px solid var(--border-strong);
   border-left: 3px solid var(--border);
   position: relative;
+  will-change: transform, opacity;
 }
 
 .pain-card-num {
@@ -1047,6 +1048,7 @@ nav {
   line-height: 1;
   position: absolute;
   white-space: nowrap;
+  will-change: transform, opacity;
 }
 
 .pain-toll-before {

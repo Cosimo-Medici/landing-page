@@ -294,11 +294,11 @@ ScrollTrigger.create({
 
   // Scroll budget — generous for longer holds
   var scrollPerCard = 150;
-  var totalScroll = 100 + (cardCount * scrollPerCard) + 500 + 400 + 500 + 600;
+  var totalScroll = (cardCount * scrollPerCard) + 500 + 400 + 500 + 800;
 
   // Timeline positions (in timeline units)
   var cardStagger = 1.2;
-  var cardPhaseStart = 0.5;
+  var cardPhaseStart = 0;
   var cardPhaseEnd = cardPhaseStart + (cardCount - 1) * cardStagger + 1.0;
   var holdBeforeStart = cardPhaseEnd + 0.4;
   var collapseStart = holdBeforeStart + 2.5;   // long hold on "before" state
@@ -307,17 +307,15 @@ ScrollTrigger.create({
 
   var tl = gsap.timeline({
     scrollTrigger: {
-      trigger: '.pain-section',
-      start: 'top top',
+      trigger: '.pain-stack-wrapper',
+      start: 'top 5%',
       end: '+=' + totalScroll,
       pin: '.pain-stack-wrapper',
       scrub: true,
-      anticipatePin: 1,
+      pinSpacing: true,
+      invalidateOnRefresh: true,
     }
   });
-
-  // Beat of stillness
-  tl.to({}, { duration: 0.5 });
 
   // Toll meter fades in with first card
   tl.to(toll, {
@@ -356,12 +354,6 @@ ScrollTrigger.create({
     duration: 1.0, stagger: 0.06,
     ease: 'power2.in',
   }, collapseStart);
-  tl.to(cardsContainer, {
-    height: 0, overflow: 'hidden',
-    duration: 0.8,
-    ease: 'power2.in',
-  }, collapseStart);
-
   // Headline swap: "You already know..." fades out, "But with Cosimo." fades in
   tl.to(headlineBefore, {
     opacity: 0, y: -15,
