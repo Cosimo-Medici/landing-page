@@ -457,7 +457,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0 2.5rem 2rem 4.5rem;
+  padding: 0 2.5rem 2rem 2rem;
   position: relative;
   z-index: 2;
   opacity: 0;
@@ -959,6 +959,7 @@ nav {
   border-left: 3px solid var(--border);
   position: relative;
   will-change: transform, opacity;
+  overflow: hidden;
 }
 
 .pain-card-num {
@@ -1082,6 +1083,18 @@ nav {
   opacity: 0.7;
   text-align: center;
   margin-top: 0.75rem;
+}
+
+/* Pain divider line (compression burst transition) */
+.pain-divider-line {
+  width: 100%;
+  height: 2px;
+  margin: 1rem auto;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: center center;
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
 /* ========== ARCHITECTURE SECTION ========== */
@@ -1412,8 +1425,13 @@ nav {
 
 /* ========== INEVITABILITY ========== */
 .inevitability-section {
-  padding: 12rem 2.5rem;
+  padding: 0 2.5rem;
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .inevitability-text {
@@ -1712,8 +1730,7 @@ a, button, .btn-main, .btn-line {
   }
 
   .inevitability-section {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    min-height: 100vh;
   }
 
   .case-split {
