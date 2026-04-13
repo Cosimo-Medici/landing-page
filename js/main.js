@@ -264,7 +264,7 @@ ScrollTrigger.create({
   var cardsContainer = document.querySelector('.pain-stack-cards');
   var cardCount = cards.length;
 
-  // Toll progression: values at each card threshold
+  // Toll progression: values at each card threshold (build-up phase)
   var tollData = [
     { people: '—',  time: '—',        cycle: '—' },
     { people: '1',  time: '2 days',    cycle: '1' },
@@ -273,6 +273,17 @@ ScrollTrigger.create({
     { people: '2',  time: '2 weeks',   cycle: '4' },
     { people: '3',  time: '2.5 wks',   cycle: '5' },
     { people: '3',  time: '3 weeks',   cycle: '6' },
+  ];
+
+  // Countdown progression: values collapse from peak to Cosimo result
+  var countdownData = [
+    { people: '3',  time: '3 weeks',  cycle: '6' },
+    { people: '3',  time: '2 weeks',  cycle: '5' },
+    { people: '2',  time: '1 week',   cycle: '4' },
+    { people: '2',  time: '3 days',   cycle: '3' },
+    { people: '1',  time: '1 day',    cycle: '2' },
+    { people: '1',  time: '1 hr',     cycle: '1' },
+    { people: '1',  time: '15 min',   cycle: '0' },
   ];
 
   var currentTollIndex = -1;
@@ -285,6 +296,16 @@ ScrollTrigger.create({
     tollCycle.textContent = d.cycle;
   }
 
+  var currentCountdownIndex = -1;
+  function updateCountdown(index) {
+    if (index === currentCountdownIndex) return;
+    currentCountdownIndex = index;
+    var d = countdownData[index];
+    tollPeople.textContent = d.people;
+    tollTime.textContent = d.time;
+    tollCycle.textContent = d.cycle;
+  }
+
   // Initial state
   gsap.set(cards, { opacity: 0, y: 100 });
   gsap.set(toll, { opacity: 0, y: 20 });
@@ -292,18 +313,22 @@ ScrollTrigger.create({
   gsap.set(headlineAfter, { opacity: 0, y: 10 });
   gsap.set(resultSub, { opacity: 0, y: 10 });
 
-  // Scroll budget — generous for longer holds
+  // Scroll budget — increased to accommodate empty stage + countdown
   var scrollPerCard = 150;
-  var totalScroll = (cardCount * scrollPerCard) + 500 + 400 + 500 + 800;
+  var totalScroll = (cardCount * scrollPerCard) + 500 + 400 + 900 + 800;
 
   // Timeline positions (in timeline units)
   var cardStagger = 1.2;
   var cardPhaseStart = 0;
   var cardPhaseEnd = cardPhaseStart + (cardCount - 1) * cardStagger + 1.0;
   var holdBeforeStart = cardPhaseEnd + 0.4;
-  var collapseStart = holdBeforeStart + 2.5;   // long hold on "before" state
-  var transformStart = collapseStart + 0.8;    // tighter gap — get to the punchline faster
-  var holdAfterStart = transformStart + 1.8;
+  var collapseStart = holdBeforeStart + 2.5;       // long hold on "before" state
+  var emptyStageStart = collapseStart + 1.0;       // after cards + headline clear
+  var headlineReveal = emptyStageStart + 1.5;      // "But with Cosimo..." lands first
+  var countdownStart = headlineReveal + 1.0;       // then numbers roll
+  var countdownEnd = countdownStart + 2.5;         // countdown duration
+  var revealStart = countdownEnd + 0.3;            // color shift + scale after numbers land
+  var holdAfterStart = revealStart + 1.8;
 
   var tl = gsap.timeline({
     scrollTrigger: {
@@ -329,12 +354,15 @@ ScrollTrigger.create({
     }, cardPhaseStart + i * cardStagger);
   });
 
-  // Drive toll values from timeline progress
+  // Drive toll values from timeline progress (build-up phase only)
   tl.eventCallback('onUpdate', function() {
     var progress = tl.progress();
     var totalDur = tl.totalDuration();
     var cardStartNorm = cardPhaseStart / totalDur;
     var cardEndNorm = cardPhaseEnd / totalDur;
+    // Only drive toll during card build-up, not during countdown
+    var countdownStartNorm = countdownStart / totalDur;
+    if (progress >= countdownStartNorm) return;
     if (progress < cardStartNorm) {
       updateToll(0);
     } else if (progress >= cardEndNorm) {
@@ -348,47 +376,69 @@ ScrollTrigger.create({
   // ---- LONG HOLD on "before" state ----
   tl.to({}, { duration: 2.5 }, holdBeforeStart);
 
-  // Cards collapse — fast exit, clear the stage for the punchline
+  // Cards collapse + headline fades out simultaneously — clear the stage
   tl.to(cards, {
     opacity: 0, y: 60,
     duration: 0.6, stagger: 0.04,
     ease: 'power2.in',
   }, collapseStart);
-  // Headline swap: "You already know..." fades out, "But with Cosimo." fades in
   tl.to(headlineBefore, {
     opacity: 0, y: -15,
     duration: 0.5,
     ease: 'power2.in',
-  }, transformStart);
+  }, collapseStart);
+
+  // ---- EMPTY STAGE: just toll labels + peak "before" numbers ----
+  // The viewer sits with "3 people, 3 weeks, 6 steps" — nothing else
+  tl.to({}, { duration: 1.5 }, emptyStageStart);
+
+  // ---- HEADLINE: "But with Cosimo..." lands first ----
   tl.to(headlineAfter, {
     opacity: 1, y: 0,
     duration: 0.6,
     ease: 'power3.out',
-  }, transformStart + 0.3);
+  }, headlineReveal);
 
-  // Toll numbers transform: before slides out, after slides in
+  // ---- COUNTDOWN: numbers roll down, scroll-driven ----
+  var countdownProxy = { progress: 0 };
+  tl.to(countdownProxy, {
+    progress: 1,
+    duration: 2.5,
+    ease: 'power1.in',
+    onUpdate: function() {
+      var p = countdownProxy.progress;
+      var idx = Math.min(Math.floor(p * countdownData.length), countdownData.length - 1);
+      updateCountdown(idx);
+    }
+  }, countdownStart);
+
+  // ---- NUMBERS LAND: color shift + scale bump ----
+  // Color transitions to accent purple
   tl.to(tollBefores, {
-    opacity: 0, y: -30,
-    duration: 0.6, stagger: 0.1,
-    ease: 'power2.in',
-  }, transformStart + 0.2);
-  tl.to(tollAfters, {
-    opacity: 1, y: 0,
-    duration: 1.0, stagger: 0.12,
+    color: '#74418F',
+    textShadow: '0 0 60px rgba(116, 65, 143, 0.3), 0 0 120px rgba(116, 65, 143, 0.12)',
+    duration: 0.6,
+    stagger: 0.08,
     ease: 'power3.out',
-  }, transformStart + 0.4);
+  }, revealStart);
+  // Scale bump — numbers grow slightly as complexity shrinks
+  tl.to(tollBefores, {
+    fontSize: 'clamp(2.4rem, 5.5vw, 4.2rem)',
+    duration: 0.8,
+    ease: 'power3.out',
+  }, revealStart);
 
   // Border shifts to accent
   tl.to(toll, {
     borderTopColor: 'rgba(116, 65, 143, 0.12)',
     duration: 0.3,
     ease: 'power2.out',
-  }, transformStart + 0.5);
+  }, revealStart + 0.2);
 
-  // Result sub-line fades in
+  // Result sub-line fades in after numbers confirmed
   tl.to(resultSub, {
     opacity: 1, y: 0, duration: 0.4, ease: 'power3.out',
-  }, transformStart + 0.7);
+  }, revealStart + 0.5);
 
   // ---- LONG HOLD on "after" state ----
   tl.to({}, { duration: 3.0 }, holdAfterStart);

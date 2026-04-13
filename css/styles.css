@@ -1044,7 +1044,7 @@ nav {
 
 .pain-toll-value {
   position: relative;
-  height: clamp(3rem, 6vw, 5rem);
+  height: clamp(3.5rem, 7vw, 5.5rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1065,6 +1065,7 @@ nav {
 
 .pain-toll-before {
   color: var(--cream);
+  will-change: transform, opacity, color, font-size;
 }
 
 .pain-toll-after {
@@ -1667,7 +1668,7 @@ a, button, .btn-main, .btn-line {
     font-size: clamp(1.6rem, 4vw, 2.5rem);
   }
   .pain-toll-value {
-    height: clamp(2.5rem, 5vw, 3.5rem);
+    height: clamp(3rem, 5.5vw, 4rem);
   }
 
   .hero-headline .h-large {
