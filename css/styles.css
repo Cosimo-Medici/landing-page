@@ -1476,8 +1476,12 @@ nav {
 }
 
 .pain-toll-before {
-  color: var(--cream);
-  will-change: transform, opacity, color, font-size;
+  color: #EDE8DF;
+  will-change: transform, opacity, font-size;
+}
+
+[data-theme="light"] .pain-toll-before {
+  color: #1A1A18;
 }
 
 .pain-toll-after {

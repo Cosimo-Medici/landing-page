@@ -12,6 +12,14 @@ themeToggle.addEventListener('click', () => {
   document.documentElement.setAttribute('data-theme', next);
   localStorage.setItem('medici-theme', next);
   themeToggle.innerHTML = next === 'light' ? '&#9728;' : '&#9790;';
+  // Clear GSAP inline styles so CSS theme colors reassert before refresh
+  document.querySelectorAll('.pain-toll-before').forEach(el => {
+    el.style.removeProperty('color');
+    el.style.removeProperty('text-shadow');
+    el.style.removeProperty('font-size');
+  });
+  const tollEl = document.querySelector('.pain-toll');
+  if (tollEl) tollEl.style.removeProperty('border-top-color');
   // Re-read computed colors so scrub timelines pick up new theme values
   if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
 });
@@ -32,21 +40,24 @@ gsap.ticker.add((time) => {
   lenis.raf(time * 1000);
 });
 
-// Chat-body scroll trapping: scroll the chat instead of the page,
-// but release when the chat hits the top/bottom so users scroll past easily.
-const chatBody = document.getElementById('chat-body');
-chatBody.addEventListener('wheel', (e) => {
-  const { scrollTop, scrollHeight, clientHeight } = chatBody;
-  const atTop = scrollTop <= 0 && e.deltaY < 0;
-  const atBottom = scrollTop + clientHeight >= scrollHeight - 1 && e.deltaY > 0;
-  if (!atTop && !atBottom && scrollHeight > clientHeight) {
-    e.preventDefault();
-    chatBody.scrollTop += e.deltaY;
-    lenis.stop();
-    clearTimeout(chatBody._lenisRestart);
-    chatBody._lenisRestart = setTimeout(() => lenis.start(), 100);
-  }
-}, { passive: false });
+// Scroll trapping: scroll the element instead of the page,
+// but release when it hits the top/bottom so users scroll past easily.
+function trapScroll(el) {
+  el.addEventListener('wheel', (e) => {
+    const { scrollTop, scrollHeight, clientHeight } = el;
+    const atTop = scrollTop <= 0 && e.deltaY < 0;
+    const atBottom = scrollTop + clientHeight >= scrollHeight - 1 && e.deltaY > 0;
+    if (!atTop && !atBottom && scrollHeight > clientHeight) {
+      e.preventDefault();
+      el.scrollTop += e.deltaY;
+      lenis.stop();
+      clearTimeout(el._lenisRestart);
+      el._lenisRestart = setTimeout(() => lenis.start(), 100);
+    }
+  }, { passive: false });
+}
+
+trapScroll(document.getElementById('chat-body'));
 
 // Nav smooth scroll via Lenis
 document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -543,40 +554,8 @@ function splitWordsAndAnimate(selector) {
 
     const html = heading.innerHTML;
     // Split by words but preserve HTML tags like <em>, <br>
-    const fragment = document.createDocumentFragment();
     const temp = document.createElement('div');
     temp.innerHTML = html;
-
-    function processNode(node) {
-      if (node.nodeType === 3) { // Text node
-        const words = node.textContent.split(/(\s+)/);
-        words.forEach(word => {
-          if (word.trim() === '') {
-            fragment.appendChild(document.createTextNode(word));
-          } else {
-            const span = document.createElement('span');
-            span.className = 'word-span';
-            span.textContent = word;
-            fragment.appendChild(span);
-          }
-        });
-      } else if (node.nodeName === 'BR') {
-        fragment.appendChild(document.createElement('br'));
-      } else if (node.nodeType === 1) { // Element node
-        const clone = document.createElement(node.nodeName.toLowerCase());
-        Array.from(node.attributes).forEach(attr => clone.setAttribute(attr.name, attr.value));
-        const innerFrag = document.createDocumentFragment();
-        node.childNodes.forEach(child => {
-          const oldFragment = fragment;
-          // Process into a temp fragment
-          const tempFrag = document.createDocumentFragment();
-          processNodeInto(child, tempFrag);
-          // Append to clone
-          clone.appendChild(tempFrag);
-        });
-        fragment.appendChild(clone);
-      }
-    }
 
     function processNodeInto(node, target) {
       if (node.nodeType === 3) {
@@ -937,18 +916,7 @@ document.getElementById('artifact-panel-close').addEventListener('click', closeA
 
 // Scroll trapping for panel body
 const artifactPanelBody = document.getElementById('artifact-panel-body');
-artifactPanelBody.addEventListener('wheel', (e) => {
-  const { scrollTop, scrollHeight, clientHeight } = artifactPanelBody;
-  const atTop = scrollTop <= 0 && e.deltaY < 0;
-  const atBottom = scrollTop + clientHeight >= scrollHeight - 1 && e.deltaY > 0;
-  if (!atTop && !atBottom && scrollHeight > clientHeight) {
-    e.preventDefault();
-    artifactPanelBody.scrollTop += e.deltaY;
-    lenis.stop();
-    clearTimeout(artifactPanelBody._lenisRestart);
-    artifactPanelBody._lenisRestart = setTimeout(() => lenis.start(), 100);
-  }
-}, { passive: false });
+trapScroll(artifactPanelBody);
 
 let currentDemoId = 0;
 
