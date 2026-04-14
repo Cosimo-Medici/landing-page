@@ -492,34 +492,6 @@ ScrollTrigger.create({
   }
 });
 
-// Quotes framing line
-gsap.set('.quotes-framing', { opacity: 0, y: 20 });
-ScrollTrigger.create({
-  trigger: '.quotes-section',
-  start: 'top 80%',
-  once: true,
-  onEnter: () => {
-    gsap.to('.quotes-framing', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' });
-  }
-});
-
-// Quote cards stagger
-gsap.set('.quote-card', { opacity: 0, y: 30 });
-ScrollTrigger.create({
-  trigger: '.quotes-grid',
-  start: 'top 80%',
-  once: true,
-  onEnter: () => {
-    gsap.to('.quote-card', {
-      opacity: 1, y: 0,
-      stagger: 0.15,
-      duration: 0.8,
-      ease: 'power3.out'
-    });
-  }
-});
-
-
 // Inevitability section — pinned scroll-hold
 gsap.set('.inevitability-line-1', { opacity: 0, y: 30 });
 gsap.set('.inevitability-line-2', { opacity: 0, y: 20 });
