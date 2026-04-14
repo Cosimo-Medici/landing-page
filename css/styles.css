@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @font-face {
-  font-family: 'Dream Orphanage';
-  src: url('../dream orphanage rg.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'Chicago';
   src: url('../ChicagoFLF.ttf') format('truetype');
   font-weight: normal;
@@ -114,13 +106,6 @@
 [data-theme="light"] .chat-body {
   color: #EDE8DF;
 }
-[data-theme="light"] .chat-input-bar {
-  background: #1A1A18;
-  border-top-color: rgba(237, 232, 223, 0.06);
-}
-[data-theme="light"] .chat-input-placeholder {
-  color: rgba(237, 232, 223, 0.2);
-}
 [data-theme="light"] .chat-bubble {
   color: #EDE8DF;
 }
@@ -192,9 +177,6 @@
 }
 [data-theme="light"] .chat-thinking-cursor {
   background: #74418F;
-}
-[data-theme="light"] .chat-input-send {
-  color: rgba(237, 232, 223, 0.12);
 }
 [data-theme="light"] .chat-try-cta a {
   color: rgba(237, 232, 223, 0.4);
@@ -639,16 +621,6 @@ nav {
   color: var(--accent);
 }
 
-.terminal-intro-right {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: var(--mono-sm);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--cream-dim);
-  text-align: right;
-  line-height: 2;
-}
-
 /* The terminal — MASSIVE, full width, the centerpiece */
 .terminal-stage {
   position: relative;
@@ -1077,29 +1049,6 @@ nav {
   51%, 100% { opacity: 0; }
 }
 
-.chat-input-bar {
-  display: flex;
-  align-items: center;
-  padding: 1rem 1.5rem;
-  border-top: 1px solid rgba(237, 232, 223, 0.06);
-  background: #1A1A18;
-  border-radius: 0 0 8px 8px;
-}
-
-.chat-input-placeholder {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: var(--mono-md);
-  letter-spacing: 0.05em;
-  color: rgba(237, 232, 223, 0.2);
-}
-
-.chat-input-send {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 1rem;
-  color: rgba(237, 232, 223, 0.12);
-  margin-left: auto;
-}
-
 .chat-try-cta {
   text-align: center;
   margin-top: 2rem;
@@ -1127,10 +1076,6 @@ nav {
 
 .chat-frame.panel-open .chat-chrome {
   border-radius: 8px 0 0 0;
-}
-
-.chat-frame.panel-open .chat-input-bar {
-  border-radius: 0 0 0 8px;
 }
 
 .chat-frame.panel-open .chat-body {
@@ -2054,11 +1999,6 @@ footer {
 .foot-right a:hover { color: var(--cream-dim); }
 
 /* ========== UTILITY ========== */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 
 a, button, .btn-main, .btn-line {
   cursor: pointer;
@@ -2082,10 +2022,6 @@ a, button, .btn-main, .btn-line {
     gap: 1rem;
     align-items: flex-start;
   }
-  .terminal-intro-right {
-    text-align: left;
-  }
-
   .arch-header {
     flex-direction: column;
     gap: 1rem;

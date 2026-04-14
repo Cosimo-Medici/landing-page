@@ -246,16 +246,7 @@ gsap.to('.hero-glyph', {
 // ========== GSAP SCROLL REVEALS ==========
 
 // Terminal section
-gsap.set('.terminal-intro-right', { opacity: 0, y: 20 });
 gsap.set('.terminal-stage', { opacity: 0, y: 30 });
-ScrollTrigger.create({
-  trigger: '.terminal-intro',
-  start: 'top 80%',
-  once: true,
-  onEnter: () => {
-    gsap.to('.terminal-intro-right', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' });
-  }
-});
 ScrollTrigger.create({
   trigger: '.terminal-stage',
   start: 'top 80%',
