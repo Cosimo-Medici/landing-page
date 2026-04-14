@@ -662,6 +662,7 @@ function runChatDemo(index) {
 
   document.querySelectorAll('.chat-tab').forEach((btn, i) => {
     btn.classList.toggle('active', i === index);
+    btn.setAttribute('aria-selected', i === index ? 'true' : 'false');
   });
 
   const body = document.getElementById('chat-body');

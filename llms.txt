@@ -1,0 +1,24 @@
+# Cosimo by Medici & Company
+
+> Fund operations infrastructure for private equity, venture, credit, and real estate funds. LP reports, K-1 packages, due diligence memos, and rent roll extractions — source-cited and audit-ready.
+
+## Product
+- Cosimo processes fund documents and produces deliverables that used to take teams weeks.
+- Every number is traceable. Every deliverable is ready for audit.
+- Each client runs on a fully segregated instance.
+
+## Use Cases
+- Due Diligence: 1,200 documents processed in 2 hours vs. 2 weeks manual
+- K-1 Packages: Days reduced to hours, validated against source documents
+- LP Reporting: 30-second query response with source document citations
+- Portfolio Monitoring: Real-time covenant compliance across all entities
+
+## Pilot Program
+- 30-minute discovery call
+- 1–2 week onboarding on a dedicated instance
+- 4–6 month live pilot with real documents on real deadlines
+- No lock-in
+
+## Contact
+- Email: info@medici.ai
+- Website: https://cosimo.work

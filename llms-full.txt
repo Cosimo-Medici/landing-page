@@ -1,0 +1,124 @@
+# Cosimo by Medici & Company
+
+> Fund operations infrastructure for private equity, venture, credit, and real estate funds.
+
+---
+
+## Quarterly close. Before lunch.
+
+LP reports, K-1 packages, rent roll extractions, and due diligence memos. Source-cited and audit-ready.
+
+Live funds. Thousands of documents indexed.
+
+---
+
+## Ask anything. Get the work delivered.
+
+Cosimo is an interactive platform where fund operations teams ask questions and receive finished deliverables — not summaries, not drafts.
+
+### Demo: Due Diligence
+Upload 847 documents from a data room. Cosimo extracts financials, flags inconsistencies across CIMs and financial statements, and produces a structured due diligence memo with source citations.
+
+### Demo: LP Reporting
+Ask about a specific LP's side letter terms from eighteen months ago. Cosimo returns the exact clause, source document, and a draft response in thirty seconds.
+
+### Demo: Rent Roll
+Upload property-level rent rolls across a portfolio. Cosimo extracts unit-level data, identifies lease expirations, and flags anomalies — structured and ready for review.
+
+---
+
+## You already know how this goes.
+
+The manual process for quarterly reporting:
+
+1. Pull NAV data from the fund admin portal. Reconcile against internal tracking.
+2. Cross-reference capital account statements with waterfall calculations.
+3. Extract performance metrics from portfolio company PDFs — one by one.
+4. Draft the LP letter in Word. Manually insert figures. Format tables.
+5. Route through partner review. Incorporate edits. Re-check every number.
+6. Generate individual LP statements by commitment and share class.
+
+**With Cosimo:** 1 person, 15 minutes, 0 review cycles. Every number traceable. Every deliverable ready for audit.
+
+---
+
+## Three things generic AI will never do for your fund.
+
+### 1. Month twelve, your new analyst works like your best partner.
+Cosimo learns how you report, what you call things, how your waterfalls work. Institutional knowledge stops living in one person's head.
+
+### 2. The actual K-1 package.
+Formatted to your specs, with every figure traced to its source. What used to take your team days gets reviewed and out the door in an afternoon.
+
+### 3. Your LPA terms don't train someone else's model.
+Every client runs on a fully segregated instance. Your data and your fund structures never leave your environment.
+
+---
+
+## The work that runs your quarter.
+
+### Due Diligence
+- **Before:** 1,200 documents. A team of associates. Two weeks of 14-hour days highlighting PDFs and building spreadsheets.
+- **With Cosimo:** Every CIM, financial statement, and legal agreement extracted and cross-referenced. Flags on your desk by Monday. 2 hours vs. 2 weeks manual.
+
+### K-1 Packages
+- **Before:** Three weeks. Two temps. A partner reviewing at midnight. Someone still finds an error in March.
+- **With Cosimo:** Pulled from fund admin data and validated against source documents. Formatted to your specs. Quarter-end becomes a single review step. Days reduced to hours.
+
+### LP Reporting
+- **Before:** An LP asks about a side letter from eighteen months ago. You spend the next hour in the archive room.
+- **With Cosimo:** Exact clause. Source document. Draft response. Thirty seconds.
+
+### Portfolio Monitoring
+- **Before:** Covenant compliance in spreadsheets. Waterfall calcs done by hand. Anomalies found after they've compounded for a quarter.
+- **With Cosimo:** Tracked continuously across all portfolio companies. Anomalies flagged before they compound. Real-time across all entities.
+
+---
+
+## Every fund will work this way. The question is when yours starts.
+
+---
+
+## Frequently Asked Questions
+
+### What fund types does Cosimo support?
+Private equity, venture, credit, and real estate funds. Cosimo adapts to your fund's reporting conventions, waterfall structures, and document formats.
+
+### How does Cosimo ensure audit readiness?
+Every figure in every deliverable traces back to its source document. Cosimo doesn't summarize — it cites. Reviewers can verify any number in the output against the original.
+
+### What happens to my data?
+Every client runs on a fully segregated instance. Your documents, fund structures, and LPA terms never leave your environment and never train a shared model.
+
+### How is Cosimo different from general-purpose AI tools?
+Generic AI produces text. Cosimo produces deliverables — formatted K-1 packages, structured LP reports, rent roll extractions — built on your fund's actual data and conventions.
+
+### What does the pilot cost?
+Nothing upfront. We scope a pilot around your highest-pain use case and run it for two full quarters on real deadlines. If it doesn't change how your fund operates, walk away.
+
+---
+
+## Start a Pilot
+
+### Run it for a quarter. Then decide.
+
+**Step 1 — Discovery (30 minutes)**
+We learn how your fund actually operates — what documents you produce, where the bottlenecks are. We scope the pilot to the use case that hurts most.
+
+**Step 2 — Onboarding (1–2 weeks)**
+Your dedicated instance is configured around your fund's documents and reporting calendar.
+
+**Step 3 — Live Pilot (4–6 months)**
+Most vendors give you a two-week trial. We give you two full quarters with real documents on real deadlines. We know what happens.
+
+No lock-in. No IT project. If it doesn't change how your fund operates, walk away.
+
+---
+
+## Contact
+
+- Email: info@medici.ai
+- General: hello@medici.ai
+- Website: https://cosimo.work
+
+© 2026 Medici & Company

@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+Sitemap: https://cosimo.work/sitemap.xml
+
+# Block training crawlers — content shouldn't be absorbed without attribution
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+# Allow citation/search crawlers — these generate citations and recommendations
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
