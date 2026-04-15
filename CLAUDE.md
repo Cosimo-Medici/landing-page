@@ -9,12 +9,24 @@ The site's job: make a Fund CFO or PE Investment Partner feel the pain of their 
 ## File Structure
 
 ```
-index.html          — Single-page site (all sections)
-css/styles.css      — All styling (CSS custom properties, responsive breakpoints)
-js/main.js          — GSAP scroll animations, Lenis smooth scroll, chat demo
-ChicagoFLF.ttf      — Custom font for nav logo
-dream orphanage rg.otf — Custom display font (loaded but currently unused)
-medici-v3.html      — Legacy reference file (do not modify)
+src/
+  index.html          — Single-page site (all sections)
+  faq.html            — FAQ page
+  privacy.html        — Privacy policy
+  terms.html          — Terms of service
+  css/styles.css      — All styling (CSS custom properties, responsive breakpoints)
+  js/main.js          — GSAP scroll animations, Lenis smooth scroll, chat demo
+  js/demo-data.js     — Chat demo scenario data
+  public/             — Static assets copied as-is to dist/
+    ChicagoFLF.ttf    — Custom font for nav logo
+    dream orphanage rg.otf — Custom display font (loaded but currently unused)
+    favicon.ico, favicon.svg, favicon-96x96.png — Favicons
+    og-image.png, og-image-dk.png — Open Graph images
+    robots.txt, sitemap.xml, llms.txt, llms-full.txt — Meta files
+build.js             — Build script (hashes CSS/JS, copies assets to dist/)
+package.json         — npm scripts (build, serve, start)
+railway.json         — Railway deployment config
+medici-v3.html       — Legacy reference file (do not modify)
 ```
 
 ## Tech Stack & External Dependencies
@@ -25,7 +37,7 @@ CDN-loaded (do NOT add new CDN scripts or npm dependencies):
 - **Lenis** — smooth scroll (integrates with GSAP ticker)
 - **Google Fonts** — EB Garamond, IBM Plex Mono, Space Grotesk
 
-No build step. No bundler. No framework. Plain HTML/CSS/JS served as static files.
+No bundler. No framework. Plain HTML/CSS/JS. Build step (`node build.js`) hashes CSS/JS filenames for cache busting and outputs to `dist/`. Serve with `npm run serve`.
 
 ## Design System
 
