@@ -24,6 +24,40 @@ themeToggle.addEventListener('click', () => {
   if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
 });
 
+// ========== MOBILE NAV TOGGLE ==========
+const navToggle = document.getElementById('nav-toggle');
+const navRight = document.querySelector('.nav-right');
+
+navToggle.addEventListener('click', () => {
+  const isOpen = navRight.classList.toggle('open');
+  navToggle.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', isOpen);
+  navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  document.body.classList.toggle('menu-open', isOpen);
+  if (typeof lenis !== 'undefined') {
+    if (isOpen) lenis.stop(); else { lenis.start(); ScrollTrigger.refresh(); }
+  }
+});
+
+// Close on link click
+navRight.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navRight.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open menu');
+    document.body.classList.remove('menu-open');
+    if (typeof lenis !== 'undefined') { lenis.start(); ScrollTrigger.refresh(); }
+  });
+});
+
+// Close on Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && navRight.classList.contains('open')) {
+    navToggle.click();
+  }
+});
+
 // ========== LENIS SMOOTH SCROLL ==========
 const lenis = new Lenis({
   duration: 1.2,
@@ -38,6 +72,13 @@ gsap.ticker.lagSmoothing(0);
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((time) => {
   lenis.raf(time * 1000);
+});
+
+// Debounced ScrollTrigger refresh on resize (handles mobile address bar changes)
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => ScrollTrigger.refresh(), 250);
 });
 
 // Scroll trapping: when cursor is resting on the demo, scroll the element
@@ -362,8 +403,9 @@ ScrollTrigger.create({
   gsap.set(resultSub, { opacity: 0, y: 10 });
 
   // Scroll budget — increased to accommodate empty stage + countdown
-  var scrollPerCard = 150;
-  var totalScroll = (cardCount * scrollPerCard) + 500 + 400 + 900 + 800;
+  var isMobile = window.innerWidth <= 640;
+  var scrollPerCard = isMobile ? 100 : 150;
+  var totalScroll = (cardCount * scrollPerCard) + (isMobile ? 1200 : 2600);
 
   // Timeline positions (in timeline units)
   var cardStagger = 1.2;
@@ -386,6 +428,7 @@ ScrollTrigger.create({
       pin: '.pain-stack-wrapper',
       scrub: true,
       pinSpacing: true,
+      pinType: 'transform',
       invalidateOnRefresh: true,
     }
   });
@@ -528,11 +571,12 @@ ScrollTrigger.create({
 gsap.set('.inevitability-line-1', { opacity: 0, y: 30 });
 gsap.set('.inevitability-line-2', { opacity: 0, y: 20 });
 
+var inevMobile = window.innerWidth <= 640;
 var inevTl = gsap.timeline({
   scrollTrigger: {
     trigger: '.inevitability-section',
     start: 'top top',
-    end: '+=1200',
+    end: inevMobile ? '+=700' : '+=1200',
     pin: true,
     scrub: true,
     pinSpacing: true,
