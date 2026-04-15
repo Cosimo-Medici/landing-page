@@ -139,6 +139,69 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
+// Mailto — try native client, show Gmail fallback toast if no handler opens
+function buildGmailUrl(mailtoHref) {
+  const url = new URL(mailtoHref);
+  const to = url.pathname;
+  const subject = url.searchParams.get('subject') || '';
+  const body = url.searchParams.get('body') || '';
+  return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+function showMailtoFallback(mailtoHref) {
+  // Remove any existing instances
+  const existingToast = document.getElementById('mailto-toast');
+  const existingOverlay = document.getElementById('mailto-overlay');
+  if (existingToast) existingToast.remove();
+  if (existingOverlay) existingOverlay.remove();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'mailto-overlay';
+
+  const toast = document.createElement('div');
+  toast.id = 'mailto-toast';
+  toast.innerHTML = `
+    <div class="mailto-label">Contact</div>
+    <div class="mailto-msg">No email client was detected on this device. You can reach us directly through Gmail instead.</div>
+    <a href="${buildGmailUrl(mailtoHref)}" target="_blank" rel="noopener">Open in Gmail</a>
+    <button aria-label="Dismiss">&times;</button>
+  `;
+
+  document.body.appendChild(overlay);
+  document.body.appendChild(toast);
+
+  // Animate in
+  requestAnimationFrame(() => {
+    overlay.classList.add('visible');
+    toast.classList.add('visible');
+  });
+
+  function dismiss() {
+    overlay.classList.remove('visible');
+    toast.classList.remove('visible');
+    setTimeout(() => {
+      if (overlay.parentNode) overlay.remove();
+      if (toast.parentNode) toast.remove();
+    }, 300);
+  }
+
+  overlay.addEventListener('click', dismiss);
+  toast.querySelector('button').addEventListener('click', dismiss);
+  toast.querySelector('a').addEventListener('click', () => setTimeout(dismiss, 200));
+}
+
+document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    // Try native mailto
+    location.href = link.getAttribute('href');
+    // If page still has focus after 800ms, no client opened
+    setTimeout(() => {
+      if (document.hasFocus()) showMailtoFallback(link.getAttribute('href'));
+    }, 800);
+  });
+});
+
 // ========== TYPEWRITER ENGINE ==========
 const topLines = [
   'Quarterly close.', 'K-1 packages.', 'Due diligence.',

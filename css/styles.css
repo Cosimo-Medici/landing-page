@@ -1901,6 +1901,94 @@ body.menu-open {
   align-items: center;
 }
 
+/* ========== MAILTO FALLBACK MODAL ========== */
+#mailto-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 12, 11, 0.7);
+  z-index: 10002;
+  opacity: 0;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+#mailto-overlay.visible { opacity: 1; }
+[data-theme="light"] #mailto-overlay {
+  background: rgba(26, 26, 24, 0.4);
+}
+
+#mailto-toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.96);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2.5rem 3rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-left: 3px solid var(--accent);
+  z-index: 10003;
+  transition: opacity 0.3s, transform 0.3s;
+  max-width: 420px;
+  width: 90vw;
+}
+#mailto-toast.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#mailto-toast .mailto-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+#mailto-toast .mailto-msg {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--cream);
+  font-weight: 300;
+}
+#mailto-toast a {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--accent);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: var(--mono-md);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+#mailto-toast a:hover {
+  background: #9563AF;
+  box-shadow: 0 4px 24px var(--accent-glow);
+  transform: translateY(-1px);
+}
+#mailto-toast button {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  background: none;
+  border: none;
+  color: var(--cream-dim);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+  transition: color 0.2s;
+}
+#mailto-toast button:hover { color: var(--cream); }
+
 /* ========== FOOTER ========== */
 footer {
   padding: 1.5rem 2.5rem;
@@ -2191,6 +2279,8 @@ a, button, .btn-main, .btn-line {
 
 /* ========== RESPONSIVE: MOBILE (max-width: 640px) ========== */
 @media (max-width: 640px) {
+  #mailto-toast { padding: 2rem 1.5rem; }
+  #mailto-toast a { padding: 0.85rem 1.5rem; font-size: var(--mono-sm); }
   /* Artifact panel: full overlay on mobile */
   .chat-frame.panel-open .chat-content-area {
     width: 100%;
