@@ -8,6 +8,14 @@
 <meta name="theme-color" content="#0C0C0B">
 <title>FAQ — Cosimo by Medici</title>
 <link rel="canonical" href="https://cosimo.work/faq">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cosimo.work/faq">
+<meta property="og:title" content="FAQ — Cosimo by Medici">
+<meta property="og:description" content="Common questions about Cosimo: fund types supported, data security, K-1 automation, due diligence, audit readiness, and how the pilot works.">
+<meta property="og:site_name" content="Cosimo by Medici">
+
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
@@ -121,6 +129,11 @@
     <a href="faq.html">FAQ</a>
     <a href="mailto:info@medici.ai?subject=Discovery%20Call%20Request&body=Hi%20Medici%20Team%2C%0A%0AWe%20are%20interested%20in%20scheduling%20a%20discovery%20call%20to%20explore%20a%20pilot.%0A%0AThank%20you">Request a Discovery Call</a>
   </div>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
 
 <main>
@@ -179,7 +192,7 @@
 <footer>
   <div class="foot-left">&copy; 2026 MEDICI &amp; COMPANY</div>
   <div class="foot-right">
-    <a href="mailto:hello@medici.ai">hello@medici.ai</a>
+    <a href="mailto:info@medici.ai">info@medici.ai</a>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
   </div>
@@ -201,6 +214,27 @@ themeToggle.addEventListener('click', () => {
   document.documentElement.setAttribute('data-theme', next);
   localStorage.setItem('medici-theme', next);
   themeToggle.innerHTML = next === 'light' ? '&#9728;' : '&#9790;';
+});
+
+const navToggle = document.getElementById('nav-toggle');
+const navRight = document.querySelector('.nav-right');
+navToggle.addEventListener('click', () => {
+  const isOpen = navRight.classList.toggle('open');
+  navToggle.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', isOpen);
+  navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  document.body.classList.toggle('menu-open', isOpen);
+});
+navRight.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navRight.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+  });
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && navRight.classList.contains('open')) navToggle.click();
 });
 </script>
 
