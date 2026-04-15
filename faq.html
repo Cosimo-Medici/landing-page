@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Frequently asked questions about Cosimo — fund operations infrastructure for private equity, venture, credit, and real estate funds.">
+<meta name="description" content="Common questions about Cosimo: fund types supported, data security, K-1 automation, due diligence, audit readiness, and how the pilot works.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0C0C0B">
 <title>FAQ — Cosimo by Medici</title>
@@ -13,6 +13,95 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does Cosimo do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cosimo is fund operations infrastructure for private equity, venture, credit, and real estate funds. It produces LP reports, K-1 packages, due diligence memos, and rent roll extractions — source-cited, formatted to your specs, and audit-ready."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What fund types does Cosimo support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Private equity, venture, credit, and real estate funds. Cosimo adapts to your fund's reporting conventions, waterfall structures, and document formats — regardless of fund admin or accounting platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Cosimo different from general-purpose AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "General-purpose AI produces text. Cosimo produces deliverables — formatted K-1 packages, structured LP reports, rent roll extractions — built on your fund's actual data and conventions. It maps relationships across your documents using graph architecture, not keyword search, and routes each task to the optimal model automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Cosimo handle due diligence?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cosimo processes 1,200+ documents — CIMs, financial statements, and legal agreements — extracted and cross-referenced, with flags delivered in hours instead of the typical two weeks of manual review."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Cosimo handle K-1 packages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "K-1 packages are pulled from fund admin data, validated against source documents, and formatted to your specs. Quarter-end becomes a single review step instead of three weeks with temps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Cosimo ensure audit readiness?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every figure in every deliverable traces back to its source document. Cosimo cites — it does not summarize. Reviewers can verify any number in the output against the original, and the full audit trail is preserved in your environment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my fund data secure with Cosimo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every client runs on a fully segregated instance. Your documents, fund structures, and LPA terms never leave your environment and never train a shared model. This is a structural guarantee, not a policy — your data is architecturally isolated."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why not build fund operations AI in-house?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most firms that try spend 18+ months and $500K+ before producing a single deliverable. Cosimo is live on real funds today, compounds institutional knowledge from day one, and updates continuously. You skip the R&D risk entirely."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Cosimo get better over time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Cosimo builds compounding institutional memory — it learns your reporting conventions, terminology, and fund structures. By month twelve, it works like your most experienced team member. That knowledge compounds inside your instance and cannot be exported to competitors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the pilot work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three steps. (1) A 30-minute discovery call to scope the pilot to your highest-pain use case. (2) 1-2 weeks of onboarding to configure your dedicated instance. (3) Two full quarters on real documents and real deadlines. If it does not change how your fund operates, walk away. No lock-in."
+      }
+    }
+  ]
+}
+</script>
 
 <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -38,24 +127,44 @@
 
   <div class="faq-list">
     <details class="faq-item">
+      <summary class="faq-question">What does Cosimo do?</summary>
+      <p class="faq-answer">Cosimo is fund operations infrastructure for private equity, venture, credit, and real estate funds. It produces LP reports, K-1 packages, due diligence memos, and rent roll extractions — source-cited, formatted to your specs, and audit-ready.</p>
+    </details>
+    <details class="faq-item">
       <summary class="faq-question">What fund types does Cosimo support?</summary>
-      <p class="faq-answer">Private equity, venture, credit, and real estate funds. Cosimo adapts to your fund's reporting conventions, waterfall structures, and document formats.</p>
+      <p class="faq-answer">Private equity, venture, credit, and real estate funds. Cosimo adapts to your fund's reporting conventions, waterfall structures, and document formats — regardless of fund admin or accounting platform.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">How is Cosimo different from general-purpose AI?</summary>
+      <p class="faq-answer">General-purpose AI produces text. Cosimo produces deliverables — formatted K-1 packages, structured LP reports, rent roll extractions — built on your fund's actual data and conventions. It maps relationships across your documents using graph architecture, not keyword search, and routes each task to the optimal model automatically.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">How does Cosimo handle due diligence?</summary>
+      <p class="faq-answer">Cosimo processes 1,200+ documents — CIMs, financial statements, and legal agreements — extracted and cross-referenced, with flags delivered in hours instead of the typical two weeks of manual review.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">How does Cosimo handle K-1 packages?</summary>
+      <p class="faq-answer">K-1 packages are pulled from fund admin data, validated against source documents, and formatted to your specs. Quarter-end becomes a single review step instead of three weeks with temps.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">How does Cosimo ensure audit readiness?</summary>
-      <p class="faq-answer">Every figure in every deliverable traces back to its source document. Cosimo doesn't summarize — it cites. Reviewers can verify any number in the output against the original.</p>
+      <p class="faq-answer">Every figure in every deliverable traces back to its source document. Cosimo cites — it does not summarize. Reviewers can verify any number in the output against the original, and the full audit trail is preserved in your environment.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">What happens to my data?</summary>
-      <p class="faq-answer">Every client runs on a fully segregated instance. Your documents, fund structures, and LPA terms never leave your environment and never train a shared model.</p>
+      <summary class="faq-question">Is my fund data secure with Cosimo?</summary>
+      <p class="faq-answer">Every client runs on a fully segregated instance. Your documents, fund structures, and LPA terms never leave your environment and never train a shared model. This is a structural guarantee, not a policy — your data is architecturally isolated.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">How is Cosimo different from general-purpose AI tools?</summary>
-      <p class="faq-answer">Generic AI produces text. Cosimo produces deliverables — formatted K-1 packages, structured LP reports, rent roll extractions — built on your fund's actual data and conventions.</p>
+      <summary class="faq-question">Why not build fund operations AI in-house?</summary>
+      <p class="faq-answer">Most firms that try spend 18+ months and $500K+ before producing a single deliverable. Cosimo is live on real funds today, compounds institutional knowledge from day one, and updates continuously. You skip the R&D risk entirely.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">What does the pilot cost?</summary>
-      <p class="faq-answer">Nothing upfront. We scope a pilot around your highest-pain use case and run it for two full quarters on real deadlines. If it doesn't change how your fund operates, walk away.</p>
+      <summary class="faq-question">Does Cosimo get better over time?</summary>
+      <p class="faq-answer">Yes. Cosimo builds compounding institutional memory — it learns your reporting conventions, terminology, and fund structures. By month twelve, it works like your most experienced team member. That knowledge compounds inside your instance and cannot be exported to competitors.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">How does the pilot work?</summary>
+      <p class="faq-answer">Three steps. (1) A 30-minute discovery call to scope the pilot to your highest-pain use case. (2) 1-2 weeks of onboarding to configure your dedicated instance. (3) Two full quarters on real documents and real deadlines. If it does not change how your fund operates, walk away. No lock-in.</p>
     </details>
   </div>
 </section>
