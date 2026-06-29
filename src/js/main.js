@@ -634,6 +634,22 @@ ScrollTrigger.create({
   }
 });
 
+// Connect / integration cards stagger
+gsap.set('.connect-card', { opacity: 0, y: 40 });
+ScrollTrigger.create({
+  trigger: '.connect-grid',
+  start: 'top 80%',
+  once: true,
+  onEnter: () => {
+    gsap.to('.connect-card', {
+      opacity: 1, y: 0,
+      stagger: 0.12,
+      duration: 0.8,
+      ease: 'power3.out'
+    });
+  }
+});
+
 // Inevitability section — pinned scroll-hold
 gsap.set('.inevitability-line-1', { opacity: 0, y: 30 });
 gsap.set('.inevitability-line-2', { opacity: 0, y: 20 });

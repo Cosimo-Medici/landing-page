@@ -1632,6 +1632,104 @@ body.menu-open {
   font-weight: 300;
 }
 
+/* ========== CONNECT / INTEGRATIONS ========== */
+.connect-section {
+  border-top: 1px solid var(--border);
+  padding: 6rem 2.5rem;
+}
+
+.connect-header {
+  max-width: 960px;
+  margin-bottom: 3.5rem;
+}
+
+.connect-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: var(--mono-sm);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.75rem;
+}
+
+.connect-header h2 {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.5rem 0;
+}
+
+.connect-lead {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  font-weight: 300;
+  max-width: 720px;
+}
+
+.connect-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.connect-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-left: 3px solid var(--accent);
+  padding: 2.5rem 2rem;
+  transition: background 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.connect-card:hover { background: var(--bg-surface); }
+
+.connect-card-name {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: var(--mono-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.connect-card-detail {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  font-weight: 300;
+}
+
+.connect-foot {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  font-weight: 300;
+  max-width: 760px;
+}
+
+.connect-foot a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.connect-foot a:hover { text-decoration: underline; }
+
+@media (max-width: 1024px) {
+  .connect-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .connect-section { padding: 5rem 2rem; }
+}
+
+@media (max-width: 640px) {
+  .connect-section { padding: 4rem 1.25rem; }
+  .connect-card { padding: 2rem 1.5rem; }
+}
+
 /* ========== USE CASES ========== */
 .cases-section {
   border-top: 1px solid var(--border);
