@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About Cosimo — fund operations software by Medici & Company. What Cosimo does, who it serves, and how it uses the data you connect, including Google Calendar.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0C0C0B">
+<title>About Cosimo — Fund Operations Software by Medici</title>
+<link rel="canonical" href="https://cosimo.work/about">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cosimo.work/about">
+<meta property="og:title" content="About Cosimo — Fund Operations Software by Medici">
+<meta property="og:description" content="What Cosimo does, who it serves, and how it uses the data you connect, including Google Calendar.">
+<meta property="og:site_name" content="Cosimo by Medici">
+
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">COSIMO</a>
+  <div class="nav-right">
+    <a href="/#product">Product</a>
+    <a href="/#architecture">Architecture</a>
+    <a href="/#cases">Cases</a>
+    <a href="faq.html">FAQ</a>
+    <a href="mailto:info@medici.ai?subject=Discovery%20Call%20Request&body=Hi%20Medici%20Team%2C%0A%0AWe%20are%20interested%20in%20scheduling%20a%20discovery%20call%20to%20explore%20a%20pilot.%0A%0AThank%20you">Request a Discovery Call</a>
+  </div>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<main>
+
+<section class="sub-page">
+  <div class="sub-page-label">About</div>
+  <h1 class="sub-page-title">About Cosimo</h1>
+
+  <div class="legal-body">
+    <p><strong>Cosimo</strong> is fund operations software built and operated by Medici &amp; Company for private-markets funds &mdash; private equity, venture, credit, and real estate. Fund teams use Cosimo to produce the deliverables that run their quarter: LP reports, K-1 packages, due diligence memos, rent roll extractions, and covenant monitoring &mdash; with every figure traced to its source document and ready for audit.</p>
+
+    <h2>What Cosimo Does</h2>
+    <p>Each client's team works with Cosimo through a secure, private workspace. You connect the documents and systems your fund already uses; Cosimo reads from them to assemble deliverables, reconcile figures against source material, and answer questions about your funds. Every client runs on a fully segregated instance &mdash; your documents and fund structures never leave your environment and are never shared across clients.</p>
+
+    <h2>Why Cosimo Requests Access to Google User Data</h2>
+    <p>Cosimo offers an optional Google Calendar integration. When you choose to connect Google Calendar, Cosimo asks for <strong>read-only</strong> access to your calendar (the Google Calendar API "calendar.readonly" scope) and uses it for one purpose: reading your calendar events and availability so Cosimo can answer your scheduling questions and plan work around your reporting deadlines &mdash; quarter-end close, LP report dates, filing windows.</p>
+    <p>Cosimo never creates, edits, or deletes anything in your calendar, does not request access to any other Google data, and only requests access when you explicitly connect your Google account. You can disconnect at any time from your account settings or your <a href="https://myaccount.google.com/permissions">Google Account permissions</a>, and Cosimo immediately revokes and deletes its stored credential.</p>
+    <p>Cosimo's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes">Google API Services User Data Policy</a>, including the Limited Use requirements. Our <a href="/privacy">Privacy Policy</a> describes in full how Google user data is accessed, used, stored, and protected.</p>
+
+    <h2>Who We Are</h2>
+    <p>Cosimo is built by Medici &amp; Company, a Delaware C-Corporation. To learn more about the product, visit our <a href="https://cosimo.work/">homepage</a> or read our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Service</a>. For questions, contact us at <a href="mailto:info@medici.ai">info@medici.ai</a>.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-left">&copy; 2026 MEDICI &amp; COMPANY</div>
+  <div class="foot-right">
+    <a href="mailto:info@medici.ai">info@medici.ai</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+  </div>
+</footer>
+
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">&#9790;</button>
+
+<script>
+const themeToggle = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('medici-theme');
+if (savedTheme) {
+  document.documentElement.setAttribute('data-theme', savedTheme);
+}
+themeToggle.textContent = document.documentElement.getAttribute('data-theme') === 'light' ? '☀' : '☾';
+
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('medici-theme', next);
+  themeToggle.textContent = next === 'light' ? '☀' : '☾';
+});
+
+const navToggle = document.getElementById('nav-toggle');
+const navRight = document.querySelector('.nav-right');
+navToggle.addEventListener('click', () => {
+  const isOpen = navRight.classList.toggle('open');
+  navToggle.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', isOpen);
+  navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  document.body.classList.toggle('menu-open', isOpen);
+});
+</script>
+
+</body>
+</html>

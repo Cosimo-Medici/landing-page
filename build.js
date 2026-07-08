@@ -22,7 +22,7 @@ const HASHABLE = [
 ];
 
 // HTML files that reference the hashable assets
-const HTML_FILES = ['index.html', 'faq.html', 'privacy.html', 'terms.html'];
+const HTML_FILES = ['index.html', 'faq.html', 'about.html', 'privacy.html', 'terms.html'];
 
 // Static assets to copy as-is (relative to SRC, stripped of public/ prefix in dist)
 const STATIC = [
