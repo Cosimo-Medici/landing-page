@@ -17,6 +17,8 @@ const DIST = path.join(__dirname, 'dist');
 // Files to hash (source path relative to SRC → directory in dist)
 const HASHABLE = [
   { src: 'css/styles.css', dir: 'css' },
+  { src: 'css/re.css', dir: 'css' },
+  { src: 'js/re.js', dir: 'js' },
   { src: 'js/main.js',     dir: 'js' },
   { src: 'js/demo-data.js', dir: 'js' },
 ];

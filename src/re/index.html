@@ -3,81 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Quarter-end LP reporting, prepared for your team to review. Cosimo helps real estate fund teams assemble investor reports and statements from fund records.">
-  <meta name="robots" content="index, follow">
+  <meta name="description" content="Quarter-end LP reporting, prepared for your team to review. Meet Cosimo, the operations agent from Medici & Company for real-estate fund teams.">
   <meta name="theme-color" content="#F5F3EF">
   <title>Real Estate Fund Operations | Medici &amp; Company</title>
   <link rel="canonical" href="https://medici.ai/re">
-  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <meta property="og:title" content="Your properties. Your investors. Your time back.">
+  <meta property="og:description" content="Quarter-end LP reporting, prepared for your team to review. Cosimo for real-estate fund operations.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://medici.ai/re">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/re.css">
+  <script src="../js/re.js" defer></script>
 </head>
 <body class="re-page">
-  <nav class="re-nav">
-    <a class="nav-logo" href="https://medici.ai/" aria-label="Medici & Company home">MEDICI</a>
+  <a class="re-skip" href="#main">Skip to content</a>
+  <nav class="re-nav" aria-label="Main navigation">
+    <a class="nav-logo" href="../" aria-label="Medici & Company home">MEDICI<span>&amp; COMPANY</span></a>
     <div class="nav-right">
-      <a href="#workflow">How it works</a>
-      <a href="#use-cases">Use cases</a>
-      <a href="mailto:info@medici.ai?subject=Real%20estate%20fund%20operations">Talk through a process</a>
+      <a href="#workbench">The workflow</a>
+      <a href="#workflows">What we work on</a>
+      <a class="re-nav-contact" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
     </div>
+    <button class="re-theme" type="button" aria-label="Switch to dark theme" title="Switch theme"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="7"/><path d="M12 5a7 7 0 0 1 0 14Z" fill="currentColor"/></svg></button>
+    <div class="re-reading-progress" aria-hidden="true"></div>
   </nav>
 
-  <main>
-    <section class="re-hero">
-      <p class="re-eyebrow"><span class="re-dot"></span> MEDICI &amp; COMPANY · REAL ESTATE FUNDS</p>
-      <h1>Quarter-end LP reporting,<br><em>prepared for your team to review.</em></h1>
-      <p class="re-lede">Cosimo helps real-estate fund teams assemble investor reports and statements from fund records, with people reviewing the work before it goes out.</p>
-      <div class="re-actions">
-        <a class="btn-main" href="mailto:info@medici.ai?subject=Sample%20LP%20report">See a sample LP report</a>
-        <a class="btn-line" href="mailto:info@medici.ai?subject=Painful%20recurring%20process">Show us your most painful recurring process</a>
+  <main id="main">
+    <section class="re-hero" aria-labelledby="hero-title">
+      <div class="re-hero-copy">
+        <p class="re-kicker"><span class="re-signal" aria-hidden="true"></span> Cosimo for real estate</p>
+        <h1 id="hero-title">Quarter-end<br>LP reporting.<span>Prepared for<br>your review.</span></h1>
+        <p class="re-lede">The reporting work piles up. Your team shouldn't have to. Cosimo helps assemble investor reports and statements from your fund records, ready for a human review.</p>
+        <div class="re-actions"><a class="re-button" href="#workbench">Explore the workflow <span aria-hidden="true">↓</span></a><a class="re-text-link" href="#contact">Talk through your process <span aria-hidden="true">↗</span></a></div>
+        <p class="re-hero-footnote">An operations agent by Medici &amp; Company.</p>
       </div>
-      <div class="re-hero-note">Built for lean fund teams carrying recurring reporting work across properties, entities, and investors.</div>
-      <div class="re-rule"></div>
-      <p class="re-product-line"><strong>Medici &amp; Company builds Cosimo</strong> — an operations agent for the work around your fund records.</p>
+      <div class="re-hero-art" aria-label="Illustration of fund records coming together into a quarterly investor report">
+        <div class="re-orbit re-orbit-one" aria-hidden="true"></div><div class="re-orbit re-orbit-two" aria-hidden="true"></div>
+        <div class="re-art-coordinate" aria-hidden="true">Property → portfolio → investor</div>
+        <div class="re-source-slip re-slip-back" aria-hidden="true"><span class="re-file-type">XLSX</span><strong>Capital accounts</strong><div class="re-mini-grid"></div></div>
+        <div class="re-source-slip re-slip-front" aria-hidden="true"><span class="re-file-type">PDF</span><strong>Property operations</strong><span class="re-slip-line"></span><span class="re-slip-line"></span><span class="re-slip-line short"></span><small>Reporting inputs / Q3</small></div>
+        <div class="re-hero-report">
+          <div class="re-paper-top"><span class="re-paper-brand">Alder</span><span>Sample fund<br>Q3 / 2026</span></div>
+          <p class="re-paper-label">Investor communication</p>
+          <h2>A quarter.<br>A clearer picture.</h2>
+          <svg class="re-property-drawing" viewBox="0 0 320 160" fill="none" aria-hidden="true"><path d="M12 140 166 76 307 121 156 181Z"/><path d="m63 119 0-74 61-25 0 74m-61-49 62 19 61-25-62-19m1 44v77m61-102v79M125 91l61-25M125 115l61-25M80 39v73m22-82v73M63 69l62 19m-62 5 62 19"/><path d="m187 116 0-57 36-15 0 57m-36-42 43 14 36-15-43-14m7 29v57m36-72v58M230 93l36-15M230 113l36-15M204 52v57m-17-30 43 14m-43 6 43 14"/><path d="M10 150h300" stroke-dasharray="2 4"/></svg>
+          <div class="re-paper-caption"><span>Portfolio overview</span><span>For team review</span></div>
+          <div class="re-report-metrics"><div><small>Properties</small><b>08</b></div><div><small>Occupancy</small><b>94.2<em>%</em></b></div><div><small>Quarter</small><b>Q3</b></div></div>
+          <div class="re-paper-bottom"><span>Alder Real Estate Fund I</span><span>01</span></div>
+        </div>
+        <div class="re-review-tag"><span aria-hidden="true">✓</span><div>Prepared for review<small>Your team has the final word.</small></div></div>
+        <p class="re-art-disclaimer">Illustrative report · fictional sample data</p>
+      </div>
+      <div class="re-hero-baseline"><span>Built around the work behind your portfolio.</span><a href="#workbench">Take a closer look <span aria-hidden="true">↓</span></a></div>
     </section>
 
-    <section class="re-section" id="workflow">
-      <div class="re-section-heading">
-        <p class="re-eyebrow">THE REPORTING CYCLE</p>
-        <h2>Spend review time on the work<br>that needs your judgment.</h2>
-      </div>
-      <div class="re-steps">
-        <article class="re-step"><span>01</span><h3>Bring the records together</h3><p>Work from the fund materials and reporting inputs your team uses to prepare its recurring investor deliverables.</p></article>
-        <article class="re-step"><span>02</span><h3>Assemble a working draft</h3><p>Cosimo helps organize figures and narrative into LP reports and investor statements for your team to check.</p></article>
-        <article class="re-step"><span>03</span><h3>Your team reviews and sends</h3><p>People review the prepared work, make the calls that require context, and approve what goes to investors.</p></article>
-      </div>
-      <p class="re-caveat">Cosimo supports preparation and review. Your team remains responsible for checking and approving investor communications.</p>
+    <section class="re-intro re-container" aria-labelledby="intro-title">
+      <p class="re-kicker">Sound familiar?</p>
+      <h2 id="intro-title">Eight properties.<br>One investor letter.<br><span>Too many moving parts.</span></h2>
+      <div class="re-intro-aside"><p>Property updates in one folder. Capital accounts in another. Last quarter's letter open on the other screen.</p><p>Cosimo helps bring the recurring preparation together, so your team can focus on the questions that deserve its attention.</p><a href="#workbench" class="re-text-link">From scattered inputs to a working draft <span aria-hidden="true">↘</span></a></div>
     </section>
 
-    <section class="re-section re-use" id="use-cases">
-      <div class="re-section-heading">
-        <p class="re-eyebrow">WHERE TO START</p>
-        <h2>Start with a process your team repeats.</h2>
-        <p>We are beginning with real-estate fund operations where recurring work pulls people into spreadsheets, source documents, and manual follow-up.</p>
+    <section class="re-workbench-section" id="workbench" aria-labelledby="workbench-title">
+      <div class="re-bench-heading"><div><p class="re-kicker">Inside the reporting workflow</p><h2 id="workbench-title">The work comes together.</h2></div><p>A little less assembly.<br>A lot more room for judgment.</p></div>
+      <div class="re-workbench" data-step="1">
+        <div class="re-bench-bar"><span class="re-cosimo-mark">C<span>COSIMO / REPORTING DESK</span></span><span class="re-sample-badge">Interactive illustration · sample data</span></div>
+        <div class="re-bench-controls"><div class="re-stage-tabs" role="tablist" aria-label="Reporting workflow stages"><button id="step-0" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="step-description" data-step="0"><span>01</span> Gather</button><button id="step-1" role="tab" type="button" aria-selected="true" aria-controls="step-description" data-step="1"><span>02</span> Prepare</button><button id="step-2" role="tab" type="button" aria-selected="false" aria-controls="step-description" tabindex="-1" data-step="2"><span>03</span> Review</button></div><button class="re-play" id="play-workflow" type="button"><span aria-hidden="true">▷</span> Assemble the report</button></div>
+        <div class="re-bench-layout">
+          <div class="re-records">
+            <div class="re-pane-label"><span>Fund records</span><span>3 inputs</span></div>
+            <button class="re-record is-active" type="button" data-source="0" aria-pressed="true"><span class="re-record-icon">XLS</span><span><strong>Portfolio operating data</strong><small>Property metrics · Q3 2026</small></span><span class="re-record-status" aria-hidden="true">↗</span></button>
+            <button class="re-record" type="button" data-source="1" aria-pressed="false"><span class="re-record-icon">XLS</span><span><strong>Capital account ledger</strong><small>Investor balances · Q3 2026</small></span><span class="re-record-status" aria-hidden="true">↗</span></button>
+            <button class="re-record" type="button" data-source="2" aria-pressed="false"><span class="re-record-icon">DOC</span><span><strong>Asset manager updates</strong><small>Leasing &amp; property commentary</small></span><span class="re-record-status" aria-hidden="true">↗</span></button>
+            <div class="re-source-detail" aria-live="polite"><span>Selected input</span><h3 id="source-title">Portfolio operating data</h3><p id="source-detail">Property-level figures form the starting point for the portfolio overview.</p></div>
+            <div class="re-agent-note"><span class="re-agent-avatar">C</span><p id="agent-note">Start with the records your team already uses. Explore a sample preparation cycle below.</p></div>
+          </div>
+          <div class="re-report-stage">
+            <div class="re-stage-caption"><span id="stage-caption">A working draft takes shape</span><span class="re-draft-status" id="draft-status">Prepared draft</span></div>
+            <article class="re-demo-report" aria-label="Illustrative quarterly investor report">
+              <header><span class="re-paper-brand">Alder</span><span>Real Estate Fund I<br>Quarterly investor report</span></header>
+              <h3>Portfolio overview</h3><p class="re-report-period">Third quarter 2026 <span>Draft for review</span></p>
+              <div class="re-demo-numbers" data-report-section="0"><div><small>Properties</small><b>8</b></div><div><small>Occupancy</small><b>94.2%</b></div><div><small>Reporting period</small><b>Q3</b></div></div>
+              <div class="re-report-chart" data-report-section="0"><div class="re-chart-heading"><span>Occupancy by property</span><span>Sample portfolio</span></div><div class="re-chart-bars" aria-hidden="true"><i style="--bar:85%"></i><i style="--bar:92%"></i><i style="--bar:97%"></i><i style="--bar:89%"></i><i style="--bar:95%"></i><i style="--bar:98%"></i><i style="--bar:91%"></i><i style="--bar:94%"></i></div></div>
+              <div class="re-report-text" data-report-section="2"><h4>Quarter in review</h4><p>Leasing activity supported portfolio occupancy during the quarter. Property updates and the capital account summary are assembled below for the fund team's review.</p></div>
+              <div class="re-capital-summary" data-report-section="1"><span>Investor capital accounts</span><span>Summary prepared <span aria-hidden="true">↗</span></span></div>
+              <div class="re-report-review"><span aria-hidden="true">○</span><p><strong>Team review</strong>Confirm the figures, refine the commentary, and approve the final report.</p></div>
+              <footer><span>Illustrative sample · not a client report</span><span>01 / 03</span></footer>
+            </article>
+            <div class="re-assembly-overlay" aria-hidden="true"><span class="re-assembly-cross">+</span><span>Fund records → working draft</span></div>
+          </div>
+        </div>
+
+        <div class="re-step-description" id="step-description" role="tabpanel" aria-labelledby="step-1" tabindex="0"><strong>Prepare a working draft.</strong> Assemble portfolio figures, investor balances, and narrative in a report for your team to check.</div>
       </div>
-      <div class="re-cases">
-        <article class="re-case"><span>01 / REPORTING</span><h3>Quarterly LP reports</h3><p>Assemble reporting inputs and narrative into a draft your team can review.</p></article>
-        <article class="re-case"><span>02 / INVESTOR RECORDS</span><h3>Per-LP statements</h3><p>Prepare investor-level statements from the fund records and allocations your team provides.</p></article>
-        <article class="re-case"><span>03 / CAPITAL ACTIVITY</span><h3>Calls and distributions</h3><p>Support the recurring preparation of capital call and distribution notices for review.</p></article>
-        <article class="re-case"><span>04 / FUND OPERATIONS</span><h3>Reconciliations and waterfalls</h3><p>Help organize capital-account and distribution calculations into reviewable work.</p></article>
-      </div>
+      <p class="re-bench-note">An illustration of the workflow, using fictional data. Your team reviews and approves investor communications.</p>
     </section>
 
-    <section class="re-invite">
-      <p class="re-eyebrow">A PRACTICAL FIRST STEP</p>
-      <h2>Show us the process<br>you hate repeating.</h2>
-      <p>We will look at the steps, inputs, and handoffs with you, then tell you whether it is a good fit for Cosimo.</p>
-      <a class="btn-main" href="mailto:info@medici.ai?subject=Show%20you%20our%20process">Talk through a process</a>
+    <section class="re-workflows re-container" id="workflows" aria-labelledby="workflows-title">
+      <div class="re-workflows-heading"><p class="re-kicker">Beyond the quarterly letter</p><h2 id="workflows-title">The work repeats.<br>Your effort shouldn't.</h2><p>Start with one recurring process. Build from there.</p></div>
+      <div class="re-workflow-layout"><div class="re-workflow-list">
+        <details open data-workflow="reporting"><summary><span>Investor reporting</span><span class="re-expand" aria-hidden="true">+</span></summary><div><p>Bring property updates, portfolio figures, and narrative together into a quarterly LP report your team can review.</p><span class="re-deliverables">LP letters / quarterly reports</span></div></details>
+        <details data-workflow="capital"><summary><span>Capital accounts &amp; statements</span><span class="re-expand" aria-hidden="true">+</span></summary><div><p>Work through investor balances and prepare per-LP statements from your fund records and allocations.</p><span class="re-deliverables">Reconciliations / per-LP statements</span></div></details>
+        <details data-workflow="notices"><summary><span>Capital calls &amp; distributions</span><span class="re-expand" aria-hidden="true">+</span></summary><div><p>Bring the recurring preparation of capital call and distribution notices into a workflow your team can check.</p><span class="re-deliverables">Call notices / distribution notices</span></div></details>
+        <details data-workflow="waterfall"><summary><span>Distribution waterfalls</span><span class="re-expand" aria-hidden="true">+</span></summary><div><p>Organize distribution calculations and the inputs behind them into reviewable work for your team.</p><span class="re-deliverables">Waterfall calculations / supporting schedules</span></div></details>
+      </div><div class="re-deliverable-stage" aria-live="polite"><div class="re-deliverable-label"><span>The deliverable</span><span aria-hidden="true">↙</span></div><div class="re-deliverable-paper"><span class="re-paper-brand">Alder</span><p id="deliverable-type">Investor communications</p><h3 id="deliverable-title">Quarterly<br>LP report</h3><div class="re-deliverable-graphic" data-kind="reporting" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="re-deliverable-stamp">Prepared for review</span><div class="re-paper-bottom"><span>Illustrative deliverable</span><span>Q3 / 2026</span></div></div></div></div>
     </section>
+
+    <section class="re-human re-container"><span class="re-human-glyph" aria-hidden="true">C</span><div><p class="re-kicker">Cosimo prepares. You decide.</p><h2>Your judgment<br>stays in the picture.</h2><p>Cosimo helps with the assembly. Your team checks the numbers, adds the context, and decides what goes to investors. Start with the process that takes up too much of your week.</p></div></section>
+
+    <section class="re-contact re-container" id="contact"><div><p class="re-kicker">Let's start with your reality.</p><h2>Show us the process<br>you hate repeating.</h2></div><div class="re-contact-action"><p>The spreadsheet. The reporting cycle. The handoff that always gets stuck. We'll look at it with you and tell you where Cosimo could help.</p><a class="re-button" href="mailto:info@medici.ai?subject=Our%20most%20painful%20RE%20fund%20process">Talk through a process <span aria-hidden="true">↗</span></a><a class="re-contact-email" href="mailto:info@medici.ai">info@medici.ai</a></div></section>
   </main>
-
-  <footer class="re-footer">
-    <div class="foot-left">© 2026 MEDICI &amp; COMPANY</div>
-    <div class="foot-right"><a href="https://medici.ai/">Medici &amp; Company</a><a href="mailto:info@medici.ai">info@medici.ai</a></div>
-  </footer>
+  <footer class="re-footer"><div class="foot-left">© 2026 MEDICI &amp; COMPANY</div><div class="foot-right"><a href="../">Meet Cosimo</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="#main">Back to top ↑</a></div></footer>
 </body>
 </html>
