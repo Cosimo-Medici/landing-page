@@ -59,3 +59,12 @@ The first concept risked becoming another editorial page full of borders and lab
 - Added direct selectors, pause/play, and a progress indicator. Manual selection pauses rotation. Mouse inspection, focus on controls, leaving the hero, and background tabs pause it too. Reduced-motion preferences disable autoplay and transitions; manual selection remains available. The accessible heading is stable rather than announcing each rotation.
 - Rewrote the page around identifiable manual work, named outputs, and explicit next steps. See [the copy audit](re-copy-audit.md) for criticism, rationale, and evidence limits.
 - Final browser review: desktop and 390px mobile show no horizontal overflow. Manual selection and autoplay keep the headline and foreground document synchronized; explicit Play resumes after selection, and Pause holds the selected document. The sample CTA reaches the reporting desk, and the distribution accordion updates its preview. The contact section clearly describes the email action. Build, syntax, and whitespace checks passed; original homepage assets remain unchanged.
+
+
+## Independent headline tracks — 2026-09-30
+- Corrected the earlier interpretation: the workflow and ending rotate independently, not as fixed pairs. Every ending works with every workflow. The original homepage's two separate randomized text tracks are the behavioral reference.
+- Workflow choices shuffle on a 6–7.2 second schedule and bring their matching document forward. Endings shuffle independently every 8.3–9.8 seconds: “Before your morning coffee,” “In a jiffy,” “On your desk today,” and “Off your to-do list.” Neither timer resets the other. No immediate repeats.
+- Both tracks retain the existing fade/slide transition. Pause, manual workflow selection, inspection, reduced motion, background tabs, and leaving the hero stop both clocks.
+- Removed the text clipping mask, increased line height and reserved descender space, and scaled the narrow-mobile heading to fit the longest ending. Both tracks retain stable two-line dimensions.
+- Checked the rendered headline in light and dark themes, desktop and mobile dimensions, matching foreground documents, and pause/play. Build, syntax, and whitespace checks pass. The homepage remains unchanged.
+- These endings use the user's requested marketing language; they are not measured turnaround guarantees. Real workflow demo evidence remains outstanding.

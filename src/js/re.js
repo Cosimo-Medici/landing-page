@@ -20,19 +20,21 @@
   });
   updateThemeLabel();
 
-  // Keep the headline and physical document stack on the same six-second beat.
+  // Two independently shuffled headline tracks. Only workflows drive the document stack.
   const hero = document.querySelector('.re-hero');
   const heroArt = document.querySelector('.re-hero-art');
   const heroControls = document.querySelector('.re-hero-controls');
   const headlineSlides = [...document.querySelectorAll('[data-headline]')];
+  const promiseSlides = [...document.querySelectorAll('[data-promise]')];
   const heroDocuments = [...document.querySelectorAll('[data-hero-document]')];
   const heroChoices = [...document.querySelectorAll('[data-hero-select]')];
   const cycleToggle = document.querySelector('.re-cycle-toggle');
   const cycleTrack = document.querySelector('.re-cycle-track > span');
   const positions = ['front', 'back-left', 'lower-left', 'rear'];
-  const cycleDuration = 6500;
   let heroIndex = 0;
   let heroTimer;
+  let promiseTimer;
+  let promiseIndex = 0;
   let departureTimer;
   let cycleAnimation;
   let userPaused = false;
@@ -40,21 +42,70 @@
   let inspecting = false;
   let controlsFocused = false;
 
+  // Shuffle bags show every option before reshuffling, with no immediate repeats.
+  function createPicker(length) {
+    let bag = [];
+    return current => {
+      if (!bag.length) {
+        bag = Array.from({ length }, (_, index) => index);
+        for (let i = bag.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [bag[i], bag[j]] = [bag[j], bag[i]];
+        }
+      }
+      if (bag[bag.length - 1] === current) {
+        if (bag.length === 1) { bag = []; return (current + 1 + Math.floor(Math.random() * (length - 1))) % length; }
+        [bag[0], bag[bag.length - 1]] = [bag[bag.length - 1], bag[0]];
+      }
+      return bag.pop();
+    };
+  }
+  const nextWorkflow = createPicker(headlineSlides.length);
+  const nextPromise = createPicker(promiseSlides.length);
+  function canRotate() {
+    return !(userPaused || reducedMotion.matches || document.hidden || !heroVisible || inspecting || controlsFocused);
+  }
   function clearHeroClock() {
     clearTimeout(heroTimer);
+    clearTimeout(promiseTimer);
+    heroTimer = promiseTimer = undefined;
     if (cycleAnimation) { cycleAnimation.cancel(); cycleAnimation = null; }
   }
-  function queueHero() {
-    clearHeroClock();
-    if (userPaused || reducedMotion.matches || document.hidden || !heroVisible || inspecting || controlsFocused) return;
+  function queueWorkflow() {
+    if (!canRotate() || heroTimer !== undefined) return;
+    const duration = 6000 + Math.random() * 1200;
     cycleAnimation = cycleTrack.animate(
       [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }],
-      { duration: cycleDuration, easing: 'linear', fill: 'forwards' }
+      { duration, easing: 'linear', fill: 'forwards' }
     );
-    heroTimer = setTimeout(() => selectHero((heroIndex + 1) % headlineSlides.length), cycleDuration);
+    heroTimer = setTimeout(() => {
+      heroTimer = undefined;
+      if (cycleAnimation) { cycleAnimation.cancel(); cycleAnimation = null; }
+      selectHero(nextWorkflow(heroIndex));
+      queueWorkflow();
+    }, duration);
+  }
+  function queuePromise() {
+    if (!canRotate() || promiseTimer !== undefined) return;
+    promiseTimer = setTimeout(() => {
+      promiseTimer = undefined;
+      const previous = promiseIndex;
+      promiseIndex = nextPromise(promiseIndex);
+      promiseSlides.forEach((slide, index) => {
+        slide.classList.toggle('is-current', index === promiseIndex);
+        slide.classList.toggle('is-departing', index === previous);
+      });
+      queuePromise();
+    }, 8300 + Math.random() * 1500);
+  }
+  function queueHero() {
+    if (!canRotate()) { clearHeroClock(); return; }
+    // Starting one track never resets the other track's pending deadline.
+    queueWorkflow();
+    queuePromise();
   }
   function updateCycleControl() {
-    cycleToggle.setAttribute('aria-label', userPaused ? 'Play workflow rotation' : 'Pause workflow rotation');
+    cycleToggle.setAttribute('aria-label', userPaused ? 'Play headline rotation' : 'Pause headline rotation');
     cycleToggle.querySelector('[aria-hidden]').textContent = userPaused ? '▷' : 'Ⅱ';
     cycleToggle.querySelector('.re-cycle-label').textContent = userPaused ? 'Play' : 'Pause';
   }
@@ -77,10 +128,10 @@
     heroChoices.forEach((choice, i) => choice.setAttribute('aria-pressed', String(i === index)));
     heroArt.dataset.activeWorkflow = String(index);
     document.querySelector('.re-slide-count').textContent = `0${index + 1} / 04`;
-    queueHero();
   }
   heroChoices.forEach((choice, index) => choice.addEventListener('click', () => {
     userPaused = true;
+    clearHeroClock();
     updateCycleControl();
     selectHero(index);
   }));
