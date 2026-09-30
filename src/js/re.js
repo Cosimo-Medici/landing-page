@@ -20,6 +20,96 @@
   });
   updateThemeLabel();
 
+  // Keep the headline and physical document stack on the same six-second beat.
+  const hero = document.querySelector('.re-hero');
+  const heroArt = document.querySelector('.re-hero-art');
+  const heroControls = document.querySelector('.re-hero-controls');
+  const headlineSlides = [...document.querySelectorAll('[data-headline]')];
+  const heroDocuments = [...document.querySelectorAll('[data-hero-document]')];
+  const heroChoices = [...document.querySelectorAll('[data-hero-select]')];
+  const cycleToggle = document.querySelector('.re-cycle-toggle');
+  const cycleTrack = document.querySelector('.re-cycle-track > span');
+  const positions = ['front', 'back-left', 'lower-left', 'rear'];
+  const cycleDuration = 6500;
+  let heroIndex = 0;
+  let heroTimer;
+  let departureTimer;
+  let cycleAnimation;
+  let userPaused = false;
+  let heroVisible = true;
+  let inspecting = false;
+  let controlsFocused = false;
+
+  function clearHeroClock() {
+    clearTimeout(heroTimer);
+    if (cycleAnimation) { cycleAnimation.cancel(); cycleAnimation = null; }
+  }
+  function queueHero() {
+    clearHeroClock();
+    if (userPaused || reducedMotion.matches || document.hidden || !heroVisible || inspecting || controlsFocused) return;
+    cycleAnimation = cycleTrack.animate(
+      [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }],
+      { duration: cycleDuration, easing: 'linear', fill: 'forwards' }
+    );
+    heroTimer = setTimeout(() => selectHero((heroIndex + 1) % headlineSlides.length), cycleDuration);
+  }
+  function updateCycleControl() {
+    cycleToggle.setAttribute('aria-label', userPaused ? 'Play workflow rotation' : 'Pause workflow rotation');
+    cycleToggle.querySelector('[aria-hidden]').textContent = userPaused ? '▷' : 'Ⅱ';
+    cycleToggle.querySelector('.re-cycle-label').textContent = userPaused ? 'Play' : 'Pause';
+  }
+  function selectHero(index) {
+    const previous = heroIndex;
+    heroIndex = index;
+    clearTimeout(departureTimer);
+    headlineSlides.forEach((slide, i) => {
+      slide.classList.toggle('is-current', i === index);
+      slide.classList.toggle('is-departing', i === previous && previous !== index);
+    });
+    heroDocuments.forEach((documentCard, i) => {
+      documentCard.classList.remove('is-leaving');
+      documentCard.dataset.position = positions[(i - index + positions.length) % positions.length];
+    });
+    if (previous !== index && !reducedMotion.matches) {
+      heroDocuments[previous].classList.add('is-leaving');
+      departureTimer = setTimeout(() => heroDocuments[previous].classList.remove('is-leaving'), 450);
+    }
+    heroChoices.forEach((choice, i) => choice.setAttribute('aria-pressed', String(i === index)));
+    heroArt.dataset.activeWorkflow = String(index);
+    document.querySelector('.re-slide-count').textContent = `0${index + 1} / 04`;
+    queueHero();
+  }
+  heroChoices.forEach((choice, index) => choice.addEventListener('click', () => {
+    userPaused = true;
+    updateCycleControl();
+    selectHero(index);
+  }));
+  cycleToggle.addEventListener('click', () => {
+    userPaused = !userPaused;
+    if (!userPaused) controlsFocused = false;
+    updateCycleControl();
+    queueHero();
+  });
+  heroArt.addEventListener('pointerenter', event => {
+    if (event.pointerType === 'mouse') { inspecting = true; clearHeroClock(); }
+  });
+  heroArt.addEventListener('pointerleave', event => {
+    if (event.pointerType === 'mouse') { inspecting = false; queueHero(); }
+  });
+  heroControls.addEventListener('focusin', () => { controlsFocused = true; clearHeroClock(); });
+  heroControls.addEventListener('focusout', event => {
+    if (!heroControls.contains(event.relatedTarget)) { controlsFocused = false; queueHero(); }
+  });
+  // Pause away from the hero or in a background tab; resume with a full reading interval.
+  const heroObserver = new IntersectionObserver(entries => {
+    heroVisible = entries[0].isIntersecting && entries[0].intersectionRatio >= .2;
+    queueHero();
+  }, { threshold: [0, .2] });
+  heroObserver.observe(hero);
+  document.addEventListener('visibilitychange', queueHero);
+  reducedMotion.addEventListener('change', queueHero);
+  queueHero();
+
   const progress = document.querySelector('.re-reading-progress');
   let framePending = false;
   function updateProgress() {
@@ -42,9 +132,9 @@
   let timers = [];
   let playing = false;
   const stages = [
-    { title: 'Bring the inputs together.', body: 'Work from your fund records, property updates, and reporting conventions.', caption: 'An output to work toward', status: 'Report outline', note: 'Start with the records your team already uses. Explore a sample preparation cycle below.' },
-    { title: 'Prepare a working draft.', body: 'Assemble portfolio figures, investor balances, and narrative in a report for your team to check.', caption: 'A working draft takes shape', status: 'Prepared draft', note: 'The inputs come together into a working report. Select a record above to explore its place in this illustration.' },
-    { title: 'Keep judgment with your team.', body: 'Check the figures, refine the commentary, and approve the final communication before it goes out.', caption: 'The final word stays with you', status: 'Team review', note: 'Your team checks the prepared work and adds the context. Nothing in this illustration is sent to investors.' }
+    { title: 'Start with your fund records.', body: 'Use property operating data, investor balances, and asset manager updates.', caption: 'LP report outline', status: 'Report outline', note: 'Start with property data, investor balances, and asset manager updates.' },
+    { title: 'Cosimo prepares the draft.', body: 'Combine portfolio figures, investor balances, and property commentary in an LP report for review.', caption: 'Draft LP report', status: 'Prepared draft', note: 'Select a source file to see which part of this sample report it informs.' },
+    { title: 'Your team checks and approves.', body: 'Check the figures, edit the commentary, and approve the LP report before sending.', caption: 'Draft ready for team review', status: 'Team review', note: 'Review the draft report and approve the final version before it goes to investors.' }
   ];
   function setPlayLabel(label, icon = '▷') {
     const symbol = document.createElement('span');
@@ -56,7 +146,7 @@
     timers.forEach(clearTimeout);
     timers = [];
     playing = false;
-    setPlayLabel(bench.dataset.step === '0' ? 'Assemble the report' : 'Replay assembly');
+    setPlayLabel(bench.dataset.step === '0' ? 'Play the example' : 'Replay the example');
   }
   function selectStage(index) {
     const stage = stages[index];
@@ -75,7 +165,7 @@
   }
   selectStage(1);
   tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => { stopSequence(); selectStage(index); setPlayLabel('Replay assembly'); });
+    tab.addEventListener('click', () => { stopSequence(); selectStage(index); setPlayLabel('Replay the example'); });
     tab.addEventListener('keydown', event => {
       let next;
       if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
@@ -92,10 +182,10 @@
   play.addEventListener('click', () => {
     if (playing) { stopSequence(); return; }
     stopSequence();
-    if (reducedMotion.matches) { selectStage(2); setPlayLabel('Replay assembly'); return; }
+    if (reducedMotion.matches) { selectStage(2); setPlayLabel('Replay the example'); return; }
     playing = true;
     selectStage(0);
-    setPlayLabel('Pause assembly', 'Ⅱ');
+    setPlayLabel('Pause the example', 'Ⅱ');
     timers.push(setTimeout(() => selectStage(1), 650));
     timers.push(setTimeout(() => { selectStage(2); stopSequence(); }, 2700));
   });
@@ -105,15 +195,15 @@
   document.addEventListener('visibilitychange', () => { if (document.hidden) stopSequence(); });
 
   const sources = [
-    ['Portfolio operating data', 'Property-level figures form the starting point for the portfolio overview.'],
-    ['Capital account ledger', 'Investor balances feed the capital account summary and individual statements.'],
-    ['Asset manager updates', 'Property commentary provides context for the quarterly investor narrative.']
+    ['Portfolio operating data', 'Supplies property counts and occupancy figures for the portfolio overview.'],
+    ['Capital account ledger', 'Supplies investor balances for the capital account summary and individual statements.'],
+    ['Asset manager updates', 'Supplies leasing and property updates for the LP letter.']
   ];
   const records = [...document.querySelectorAll('.re-record')];
   records.forEach((record, index) => record.addEventListener('click', () => {
     stopSequence();
     if (bench.dataset.step === '0') selectStage(1);
-    setPlayLabel('Replay assembly');
+    setPlayLabel('Replay the example');
     records.forEach((item, i) => { item.classList.toggle('is-active', i === index); item.setAttribute('aria-pressed', String(i === index)); });
     document.getElementById('source-title').textContent = sources[index][0];
     document.getElementById('source-detail').textContent = sources[index][1];
@@ -123,8 +213,8 @@
   const deliverables = {
     reporting: { category: 'Investor communications', title: ['Quarterly', 'LP report'] },
     capital: { category: 'Investor capital accounts', title: ['Per-LP', 'statement'] },
-    notices: { category: 'Capital activity', title: ['Distribution', 'notice'] },
-    waterfall: { category: 'Distribution calculations', title: ['Waterfall', 'schedule'] }
+    notices: { category: 'Capital activity', title: ['Capital call', 'notice'] },
+    distributions: { category: 'Investor distributions', title: ['Distribution', 'notice'] }
   };
   const workflows = [...document.querySelectorAll('[data-workflow]')];
   workflows.forEach(item => item.addEventListener('toggle', () => {
