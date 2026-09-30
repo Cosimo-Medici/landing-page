@@ -22,7 +22,7 @@ const HASHABLE = [
 ];
 
 // HTML files that reference the hashable assets
-const HTML_FILES = ['index.html', 'faq.html', 'about.html', 'privacy.html', 'terms.html'];
+const HTML_FILES = ['index.html', 'faq.html', 'about.html', 'privacy.html', 'terms.html', 're/index.html'];
 
 // Static assets to copy as-is (relative to SRC, stripped of public/ prefix in dist)
 const STATIC = [
@@ -102,12 +102,17 @@ for (const htmlFile of HTML_FILES) {
 
   let html = fs.readFileSync(srcPath, 'utf-8');
 
+  const nested = htmlFile.includes('/');
   for (const r of replacements) {
-    // Replace exact references like href="css/styles.css" or src="js/main.js"
-    html = html.split(r.original).join(r.hashed);
+    // Nested campaign routes resolve shared assets from the site root.
+    const sourcePath = nested ? `../${r.original}` : r.original;
+    const outputPath = nested ? `../${r.hashed}` : r.hashed;
+    html = html.split(sourcePath).join(outputPath);
   }
 
-  fs.writeFileSync(path.join(DIST, htmlFile), html);
+  const outputPath = path.join(DIST, htmlFile);
+  ensureDir(path.dirname(outputPath));
+  fs.writeFileSync(outputPath, html);
   console.log(`  ${htmlFile} — references updated`);
 }
 
