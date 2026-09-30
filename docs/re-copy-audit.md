@@ -6,7 +6,7 @@
 
 Lead with investor-document preparation for real estate fund managers. Name the recurring jobs immediately: LP reports, investor statements, capital calls, and distribution notices. Show a concrete sample, then invite the visitor to describe one manual task.
 
-Core message: **Stop rebuilding investor documents by hand. Cosimo prepares draft reports, statements, and notices from your fund records. Your team checks and approves them before sending.**
+Current core message: **Spend less time copying figures and formatting documents. Cosimo turns property updates and investor records into draft LP reports, statements, and notices.**
 
 The intended reader is a fund manager or operations/finance lead with a small team and recurring investor-reporting work. This is a positioning choice, not evidence that every small or midsize fund has identical needs. The copy avoids size thresholds that would exclude larger teams with the same problem.
 
@@ -36,7 +36,7 @@ The approved hero already named LP reporting, so it remains the visual anchor. T
 6. Responsibility: the fund team reviews and approves before sending.
 7. Contact: describe one report or notice and its most time-consuming step. The email action opens a draft with three short prompts; it sends nothing automatically.
 
-Keep the sample action fixed when the hero rotates: there is only one interactive LP-report illustration. Changing its label to match every headline would promise examples the page does not contain. The secondary hero link, “Discuss your reporting,” goes to the contact section where the next step is explicit.
+Keep the sample action fixed when the hero rotates: there is only one interactive LP-report illustration. Changing its label to match every headline would promise examples the page does not contain. The secondary hero link, “Contact our team,” goes to the contact section, where “Email our team” opens a draft email.
 
 ## Target-market evidence and its limits
 
@@ -60,3 +60,18 @@ These are vendor sources describing category problems and terminology. They do n
 Clarity alone is not differentiation. Established vendors also talk about reporting and less manual work. The next material improvement is a real input-to-output demonstration on representative fund records, showing exactly what Cosimo prepares and where the team intervenes. Do not fill that proof gap with stronger adjectives.
 
 For an early comprehension check, show the hero briefly to prospects and ask: who is this for, what does it prepare, what work does it reduce, and what happens when you click? Record their unaided answers. The “two-second” goal is a writing constraint; it has not been user-tested.
+
+
+## Applied follow-up: direct language throughout
+
+The second implementation pass replaces the remaining broad wording in the live page source, including the JavaScript-generated captions:
+
+- Lead with the manual work reduced: copying figures and formatting documents. Follow immediately with the source records and draft outputs.
+- Change the pain headline to “Stop copying figures into investor reports every quarter.” The supporting copy describes the sequence the fund team actually repeats.
+- Replace “Four recurring jobs” with “LP reports, statements, and investor notices.” Visitors can identify the scope from the heading alone.
+- Explain each document's inputs and output in the workflow descriptions. Keep the approval responsibility in its dedicated section instead of repeating it at the end of every description.
+- Explain the interactive action as selecting a file to highlight the figures or commentary it supplies. Keep static and dynamic copy consistent.
+- Ask “What are you still preparing by hand?” and specify the three useful details for an initial conversation. “Email our team” makes the actual contact mechanism explicit; the draft requires only a few sentences.
+- Preserve the approved rotating headline and document motion. The real-demo proof gap remains open; copy edits cannot resolve it.
+
+Validation: static build, JavaScript syntax, and whitespace checks; desktop and mobile inspection of the changed text and contact action. No new product capability claims or numerical savings promises.

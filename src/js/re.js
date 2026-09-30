@@ -133,7 +133,7 @@
   let playing = false;
   const stages = [
     { title: 'Start with your fund records.', body: 'Use property operating data, investor balances, and asset manager updates.', caption: 'LP report outline', status: 'Report outline', note: 'Start with property data, investor balances, and asset manager updates.' },
-    { title: 'Cosimo prepares the draft.', body: 'Combine portfolio figures, investor balances, and property commentary in an LP report for review.', caption: 'Draft LP report', status: 'Prepared draft', note: 'Select a source file to see which part of this sample report it informs.' },
+    { title: 'Cosimo prepares the draft.', body: 'Cosimo combines property figures, investor balances, and asset manager updates into a draft LP report.', caption: 'Draft LP report', status: 'Prepared draft', note: 'Select a source file to see which part of this sample report it informs.' },
     { title: 'Your team checks and approves.', body: 'Check the figures, edit the commentary, and approve the LP report before sending.', caption: 'Draft ready for team review', status: 'Team review', note: 'Review the draft report and approve the final version before it goes to investors.' }
   ];
   function setPlayLabel(label, icon = '▷') {
@@ -195,9 +195,9 @@
   document.addEventListener('visibilitychange', () => { if (document.hidden) stopSequence(); });
 
   const sources = [
-    ['Portfolio operating data', 'Supplies property counts and occupancy figures for the portfolio overview.'],
-    ['Capital account ledger', 'Supplies investor balances for the capital account summary and individual statements.'],
-    ['Asset manager updates', 'Supplies leasing and property updates for the LP letter.']
+    ['Portfolio operating data', 'Property counts and occupancy figures become the portfolio overview.'],
+    ['Capital account ledger', 'Investor balances feed the capital account summary and individual LP statements.'],
+    ['Asset manager updates', 'Leasing and property updates become the commentary in the LP letter.']
   ];
   const records = [...document.querySelectorAll('.re-record')];
   records.forEach((record, index) => record.addEventListener('click', () => {
