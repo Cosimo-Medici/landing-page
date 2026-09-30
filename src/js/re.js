@@ -20,103 +20,157 @@
   });
   updateThemeLabel();
 
-  // Two independently shuffled headline tracks. Only workflows drive the document stack.
+  // Ported from the homepage typewriter engine: same shuffle, per-character
+  // delays, erase/type gap, cycle lengths, cursor and shared reading pause.
   const hero = document.querySelector('.re-hero');
   const heroArt = document.querySelector('.re-hero-art');
-  const heroControls = document.querySelector('.re-hero-controls');
-  const headlineSlides = [...document.querySelectorAll('[data-headline]')];
-  const promiseSlides = [...document.querySelectorAll('[data-promise]')];
+  const workflowText = document.querySelector('[data-headline]');
+  const promiseText = document.querySelector('[data-promise]');
+  const workflowLines = ['Quarter-end\nLP reporting.', 'Capital call\nnotices.', 'Distribution\nnotices.', 'Investor\nstatements.'];
+  const promiseLines = ['Before your\nmorning coffee.', 'In a\njiffy.', 'On your\ndesk today.', 'Off your\nto-do list.'];
   const heroDocuments = [...document.querySelectorAll('[data-hero-document]')];
   const heroChoices = [...document.querySelectorAll('[data-hero-select]')];
   const cycleToggle = document.querySelector('.re-cycle-toggle');
-  const cycleTrack = document.querySelector('.re-cycle-track > span');
   const positions = ['front', 'back-left', 'lower-left', 'rear'];
   let heroIndex = 0;
-  let heroTimer;
-  let promiseTimer;
-  let promiseIndex = 0;
   let departureTimer;
-  let cycleAnimation;
   let userPaused = false;
   let heroVisible = true;
-  let inspecting = false;
-  let controlsFocused = false;
+  let typewriters = [];
+  let entranceComplete = false;
 
-  // Shuffle bags show every option before reshuffling, with no immediate repeats.
-  function createPicker(length) {
-    let bag = [];
-    return current => {
-      if (!bag.length) {
-        bag = Array.from({ length }, (_, index) => index);
-        for (let i = bag.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [bag[i], bag[j]] = [bag[j], bag[i]];
+  function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  function randBetween(min, max) {
+    return min + Math.random() * (max - min);
+  }
+
+  // Shared coordinator — enforces a 3s quiet window where both lines are static
+  const typewriterCoord = {
+    lastAnimEnd: 0,
+    quietWindow: 3000,
+
+    requestStart(callback, schedule = setTimeout) {
+      const now = Date.now();
+      const elapsed = now - this.lastAnimEnd;
+      if (elapsed >= this.quietWindow) {
+        callback();
+      } else {
+        schedule(callback, this.quietWindow - elapsed);
+      }
+    },
+
+    reportLanded() {
+      this.lastAnimEnd = Date.now();
+    }
+  };
+
+  function createTypewriter(element, lines, cycleDuration, coord, onLanded = () => {}) {
+    const timers = new Set();
+    let targetText = element.textContent;
+    function schedule(callback, delay) {
+      const timer = setTimeout(() => { timers.delete(timer); callback(); }, delay);
+      timers.add(timer);
+    }
+    const shuffled = shuffleArray([...lines]);
+    let index = 0;
+
+    // If first shuffled item matches current text, swap with next
+    if (shuffled[0] === element.textContent && shuffled.length > 1) {
+      [shuffled[0], shuffled[1]] = [shuffled[1], shuffled[0]];
+    }
+
+    function getNext() {
+      const text = shuffled[index];
+      index = (index + 1) % shuffled.length;
+      if (index === 0) {
+        const last = shuffled[shuffled.length - 1];
+        shuffleArray(shuffled);
+        if (shuffled[0] === last && shuffled.length > 1) {
+          [shuffled[0], shuffled[1]] = [shuffled[1], shuffled[0]];
         }
       }
-      if (bag[bag.length - 1] === current) {
-        if (bag.length === 1) { bag = []; return (current + 1 + Math.floor(Math.random() * (length - 1))) % length; }
-        [bag[0], bag[bag.length - 1]] = [bag[bag.length - 1], bag[0]];
+      return text;
+    }
+
+    function deleteText(callback) {
+      element.classList.add('typewriter-cursor');
+      const current = element.textContent;
+      let i = current.length;
+
+      function removeChar() {
+        if (i <= 0) {
+          element.textContent = '';
+          schedule(callback, 200);
+          return;
+        }
+        i--;
+        element.textContent = current.slice(0, i);
+        schedule(removeChar, randBetween(20, 40));
       }
-      return bag.pop();
-    };
-  }
-  const nextWorkflow = createPicker(headlineSlides.length);
-  const nextPromise = createPicker(promiseSlides.length);
-  function canRotate() {
-    return !(userPaused || reducedMotion.matches || document.hidden || !heroVisible || inspecting || controlsFocused);
-  }
-  function clearHeroClock() {
-    clearTimeout(heroTimer);
-    clearTimeout(promiseTimer);
-    heroTimer = promiseTimer = undefined;
-    if (cycleAnimation) { cycleAnimation.cancel(); cycleAnimation = null; }
-  }
-  function queueWorkflow() {
-    if (!canRotate() || heroTimer !== undefined) return;
-    const duration = 6000 + Math.random() * 1200;
-    cycleAnimation = cycleTrack.animate(
-      [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }],
-      { duration, easing: 'linear', fill: 'forwards' }
-    );
-    heroTimer = setTimeout(() => {
-      heroTimer = undefined;
-      if (cycleAnimation) { cycleAnimation.cancel(); cycleAnimation = null; }
-      selectHero(nextWorkflow(heroIndex));
-      queueWorkflow();
-    }, duration);
-  }
-  function queuePromise() {
-    if (!canRotate() || promiseTimer !== undefined) return;
-    promiseTimer = setTimeout(() => {
-      promiseTimer = undefined;
-      const previous = promiseIndex;
-      promiseIndex = nextPromise(promiseIndex);
-      promiseSlides.forEach((slide, index) => {
-        slide.classList.toggle('is-current', index === promiseIndex);
-        slide.classList.toggle('is-departing', index === previous);
+      removeChar();
+    }
+
+    function typeText(text, callback) {
+      let i = 0;
+
+      function addChar() {
+        if (i >= text.length) {
+          element.classList.remove('typewriter-cursor');
+          callback();
+          return;
+        }
+        i++;
+        element.textContent = text.slice(0, i);
+        schedule(addChar, randBetween(40, 80));
+      }
+      addChar();
+    }
+
+    function cycle() {
+      const next = getNext();
+      targetText = next;
+      const animStart = Date.now();
+
+      deleteText(() => {
+        typeText(next, () => {
+          onLanded(next);
+          coord.reportLanded();
+          const animTime = Date.now() - animStart;
+          const holdTime = Math.max(1500, cycleDuration - animTime);
+          schedule(() => {
+            coord.requestStart(cycle, schedule);
+          }, holdTime);
+        });
       });
-      queuePromise();
-    }, 8300 + Math.random() * 1500);
+    }
+
+    function start(initialDelay) {
+      schedule(cycle, initialDelay);
+    }
+
+    function stop() {
+      timers.forEach(clearTimeout);
+      timers.clear();
+      element.classList.remove('typewriter-cursor');
+      // Pause on a complete phrase, including when interrupted during deletion.
+      element.textContent = targetText;
+      onLanded(targetText);
+    }
+    return { start, stop };
   }
-  function queueHero() {
-    if (!canRotate()) { clearHeroClock(); return; }
-    // Starting one track never resets the other track's pending deadline.
-    queueWorkflow();
-    queuePromise();
-  }
-  function updateCycleControl() {
-    cycleToggle.setAttribute('aria-label', userPaused ? 'Play headline rotation' : 'Pause headline rotation');
-    cycleToggle.querySelector('[aria-hidden]').textContent = userPaused ? '▷' : 'Ⅱ';
-    cycleToggle.querySelector('.re-cycle-label').textContent = userPaused ? 'Play' : 'Pause';
-  }
-  function selectHero(index) {
+
+
+  function selectDocument(index) {
     const previous = heroIndex;
     heroIndex = index;
     clearTimeout(departureTimer);
-    headlineSlides.forEach((slide, i) => {
-      slide.classList.toggle('is-current', i === index);
-      slide.classList.toggle('is-departing', i === previous && previous !== index);
-    });
     heroDocuments.forEach((documentCard, i) => {
       documentCard.classList.remove('is-leaving');
       documentCard.dataset.position = positions[(i - index + positions.length) % positions.length];
@@ -129,37 +183,51 @@
     heroArt.dataset.activeWorkflow = String(index);
     document.querySelector('.re-slide-count').textContent = `0${index + 1} / 04`;
   }
+  function stopTypewriters() {
+    typewriters.forEach(writer => writer.stop());
+    typewriters = [];
+  }
+  function syncTypewriters() {
+    if (userPaused || reducedMotion.matches || document.hidden || !heroVisible || !entranceComplete) {
+      stopTypewriters();
+      return;
+    }
+    if (typewriters.length) return;
+    typewriterCoord.lastAnimEnd = 0;
+    const top = createTypewriter(workflowText, workflowLines, 8000, typewriterCoord, text => {
+      selectDocument(workflowLines.indexOf(text));
+    });
+    const bottom = createTypewriter(promiseText, promiseLines, 11000, typewriterCoord);
+    typewriters = [top, bottom];
+    top.start(2000);
+    bottom.start(5500);
+  }
+  function updateCycleControl() {
+    cycleToggle.setAttribute('aria-label', userPaused ? 'Play headline rotation' : 'Pause headline rotation');
+    cycleToggle.querySelector('[aria-hidden]').textContent = userPaused ? '▷' : 'Ⅱ';
+    cycleToggle.querySelector('.re-cycle-label').textContent = userPaused ? 'Play' : 'Pause';
+  }
   heroChoices.forEach((choice, index) => choice.addEventListener('click', () => {
     userPaused = true;
-    clearHeroClock();
+    stopTypewriters();
+    workflowText.textContent = workflowLines[index];
+    selectDocument(index);
     updateCycleControl();
-    selectHero(index);
   }));
   cycleToggle.addEventListener('click', () => {
     userPaused = !userPaused;
-    if (!userPaused) controlsFocused = false;
     updateCycleControl();
-    queueHero();
+    syncTypewriters();
   });
-  heroArt.addEventListener('pointerenter', event => {
-    if (event.pointerType === 'mouse') { inspecting = true; clearHeroClock(); }
-  });
-  heroArt.addEventListener('pointerleave', event => {
-    if (event.pointerType === 'mouse') { inspecting = false; queueHero(); }
-  });
-  heroControls.addEventListener('focusin', () => { controlsFocused = true; clearHeroClock(); });
-  heroControls.addEventListener('focusout', event => {
-    if (!heroControls.contains(event.relatedTarget)) { controlsFocused = false; queueHero(); }
-  });
-  // Pause away from the hero or in a background tab; resume with a full reading interval.
   const heroObserver = new IntersectionObserver(entries => {
     heroVisible = entries[0].isIntersecting && entries[0].intersectionRatio >= .2;
-    queueHero();
+    syncTypewriters();
   }, { threshold: [0, .2] });
   heroObserver.observe(hero);
-  document.addEventListener('visibilitychange', queueHero);
-  reducedMotion.addEventListener('change', queueHero);
-  queueHero();
+  document.addEventListener('visibilitychange', syncTypewriters);
+  reducedMotion.addEventListener('change', syncTypewriters);
+  // Homepage reveal timeline finishes at 2.8s, then starts these same holds.
+  setTimeout(() => { entranceComplete = true; syncTypewriters(); }, 2800);
 
   const progress = document.querySelector('.re-reading-progress');
   let framePending = false;

@@ -53,9 +53,7 @@
 /* Leave room for Garamond descenders; neither text track is a clipping mask. */
 .re-headline-workflow, .re-headline-promise { position: relative; height: 2.3em; overflow: visible; }
 .re-hero h1 .re-headline-workflow { color: var(--cream); }
-.re-headline-slide { position: absolute; inset: 0; opacity: 0; transform: translateY(.22em); transition: opacity .35s, transform .65s cubic-bezier(.2,.8,.2,1); white-space: nowrap; }
-.re-headline-slide.is-current { opacity: 1; transform: translateY(0); }
-.re-headline-slide.is-departing { transform: translateY(-.22em); }
+.re-typewriter { white-space: pre; }
 .re-hero-controls { display: flex; align-items: center; gap: 15px; margin-top: 25px; color: var(--re-muted); }
 .re-slide-count { font: 9px 'IBM Plex Mono', monospace; min-width: 44px; }
 .re-workflow-dots { display: flex; gap: 3px; }
@@ -64,8 +62,6 @@
 .re-workflow-dots button[aria-pressed="true"] > span { background: var(--re-accent-strong); opacity: 1; transform: scale(1.6); }
 .re-cycle-toggle { display: flex; align-items: center; gap: 7px; padding: 6px 3px; background: transparent; border: 0; color: var(--re-muted); cursor: pointer; font: 9px 'IBM Plex Mono', monospace !important; }
 .re-cycle-toggle:hover { color: var(--cream); }
-.re-cycle-track { width: 44px; height: 1px; background: var(--border-strong); overflow: hidden; }
-.re-cycle-track > span { display: block; width: 100%; height: 100%; background: var(--re-accent-strong); transform: scaleX(0); transform-origin: left; }
 .re-lede { font-size: 15px; line-height: 1.8; max-width: 455px; color: var(--re-muted); }
 .re-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 30px; }
 .re-button { padding: 18px 23px; display: inline-flex; gap: 34px; justify-content: space-between; align-items: center; background: var(--accent); color: var(--re-white); border: 1px solid var(--accent); text-decoration: none; font: 11px/1.5 'IBM Plex Mono', monospace; transition: background .2s, transform .2s; }
@@ -370,7 +366,7 @@
   .re-stage-caption { font-size: 7px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .re-cycle-toggle, .re-cycle-track { display: none; }
+  .re-cycle-toggle { display: none; }
   .re-page *, .re-page *::before, .re-page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 

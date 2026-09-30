@@ -68,3 +68,14 @@ The first concept risked becoming another editorial page full of borders and lab
 - Removed the text clipping mask, increased line height and reserved descender space, and scaled the narrow-mobile heading to fit the longest ending. Both tracks retain stable two-line dimensions.
 - Checked the rendered headline in light and dark themes, desktop and mobile dimensions, matching foreground documents, and pause/play. Build, syntax, and whitespace checks pass. The homepage remains unchanged.
 - These endings use the user's requested marketing language; they are not measured turnaround guarantees. Real workflow demo evidence remains outstanding.
+
+
+## Exact homepage typewriter correction — 2026-09-30
+The preceding independent-track change was incomplete: it retained whole-phrase fades. The reference is the actual `createTypewriter` implementation and `typewriterCoord` in `src/js/main.js`, not just its randomized phrase selection.
+
+- Ported the homepage engine into the isolated RE script: character deletion every 20–40ms, a 200ms empty pause, typing every 40–80ms, and the existing `.typewriter-cursor` block caret (600ms blink).
+- Preserved shuffled phrase queues, repeat avoidance at queue boundaries, 8-second top / 11-second bottom cycles, the minimum 1.5-second hold, and the original shared 3-second quiet-window coordinator.
+- Matched startup: 2.8-second reveal allowance, then 2-second / 5.5-second initial holds. Removed fade/slide phrase transitions and the unrelated cycle progress bar.
+- RE-specific additions are cancellation for pause/reduced-motion/background/offscreen states and a completed-workflow hook that brings the matching document forward. Hovering the documents no longer changes headline timing. Explicit pause settles both lines to complete phrases; manual selection remains available.
+- Kept the descender clearance and fixed two-line dimensions; newlines are preserved during typing. The original homepage files are unchanged.
+- Verified live DOM samples showing deletion to an empty string and character-by-character typing, cursor removal on completion/pause, document matching, and no horizontal overflow at 320px. Build, JavaScript syntax, and diff checks pass.
