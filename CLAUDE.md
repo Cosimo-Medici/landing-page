@@ -83,7 +83,7 @@ All colors must use `var()` references. These properties swap automatically betw
 
 ## Light/Dark Mode Rules
 
-- **Light mode is the default** (`data-theme="light"` on `<html>`)
+- **Automatic daylight theme is the default**: `src/js/theme.js` runs before CSS on every page, estimates daylight using the browser time-zone location, and respects saved manual choices. The HTML light attribute is the no-JavaScript fallback.
 - Dark mode is `:root` default in CSS; light mode overrides in `[data-theme="light"]` block
 - Every new element must work in both themes — use `var()` custom properties for all colors
 - The **chat demo frame always stays dark** (even in light mode), with explicit `[data-theme="light"] .chat-*` overrides using hardcoded dark values
