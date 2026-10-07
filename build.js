@@ -16,15 +16,21 @@ const DIST = path.join(__dirname, 'dist');
 
 // Files to hash (source path relative to SRC → directory in dist)
 const HASHABLE = [
+  { src: 'js/theme.js', dir: 'js' },
+  { src: 'css/home.css', dir: 'css' },
+  { src: 'js/home.js', dir: 'js' },
+  { src: 'js/page-chrome.js', dir: 'js' },
   { src: 'css/styles.css', dir: 'css' },
   { src: 'css/re.css', dir: 'css' },
   { src: 'js/re.js', dir: 'js' },
+  { src: 'js/re-report.js', dir: 'js' },
+  ...['vc', 'pe', 'credit', 'hedge'].map(sector => ({ src: `js/${sector}-report.js`, dir: 'js' })),
   { src: 'js/main.js',     dir: 'js' },
   { src: 'js/demo-data.js', dir: 'js' },
 ];
 
 // HTML files that reference the hashable assets
-const HTML_FILES = ['index.html', 'faq.html', 'about.html', 'privacy.html', 'terms.html', 're/index.html'];
+const HTML_FILES = ['index.html', 'faq.html', 'about.html', 'privacy.html', 'terms.html', ...['re', 'vc', 'pe', 'credit', 'hedge'].map(sector => `${sector}/index.html`)];
 
 // Static assets to copy as-is (relative to SRC, stripped of public/ prefix in dist)
 const STATIC = [

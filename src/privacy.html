@@ -2,24 +2,25 @@
 <html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
+<script src="js/theme.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Privacy policy for Cosimo by Medici & Company.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0C0C0B">
 <title>Privacy Policy — Cosimo by Medici</title>
-<link rel="canonical" href="https://cosimo.work/privacy">
+<link rel="icon" type="image/png" href="/favicon-96x96.png?v=0c3593c760-2" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=f81404d29b-2">
+<link rel="shortcut icon" href="/favicon.ico?v=4142462ede-2">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=d03e5e41aa-2">
+<link rel="canonical" href="https://medici.ai/privacy.html">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://cosimo.work/privacy">
+<meta property="og:url" content="https://medici.ai/privacy.html">
 <meta property="og:title" content="Privacy Policy — Cosimo by Medici">
 <meta property="og:description" content="Privacy policy for Cosimo by Medici & Company.">
 <meta property="og:site_name" content="Cosimo by Medici">
 
-<link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,11 +35,11 @@
 <nav>
   <a href="/" class="nav-logo">COSIMO</a>
   <div class="nav-right">
-    <a href="/#product">Product</a>
-    <a href="/#architecture">Architecture</a>
-    <a href="/#cases">Cases</a>
+    <a href="/#product">How it works</a>
+    <a href="/#fit">Getting started</a>
+    <a href="/#work">What it does</a>
     <a href="faq.html">FAQ</a>
-    <a href="mailto:info@medici.ai?subject=Discovery%20Call%20Request&body=Hi%20Medici%20Team%2C%0A%0AWe%20are%20interested%20in%20scheduling%20a%20discovery%20call%20to%20explore%20a%20pilot.%0A%0AThank%20you">Request a Discovery Call</a>
+    <a href="/#contact">Talk to us</a>
   </div>
   <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
     <span></span>
@@ -55,7 +56,7 @@
   <p class="sub-page-effective">Effective: July 8, 2026</p>
 
   <div class="legal-body">
-    <p>Medici & Company ("Medici," "we," "us," or "our") is a Delaware C-Corporation. This Privacy Policy describes how we collect, use, and protect information when you use our website at cosimo.work and our Cosimo platform (collectively, the "Services").</p>
+    <p>Medici & Company ("Medici," "we," "us," or "our") is a Delaware C-Corporation. This Privacy Policy describes how we collect, use, and protect information when you use our website at medici.ai and our Cosimo platform (collectively, the "Services").</p>
 
     <h2>1. Information We Collect</h2>
 
@@ -144,43 +145,7 @@
 
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">&#9790;</button>
 
-<script>
-const themeToggle = document.getElementById('theme-toggle');
-const savedTheme = localStorage.getItem('medici-theme');
-if (savedTheme) {
-  document.documentElement.setAttribute('data-theme', savedTheme);
-}
-themeToggle.innerHTML = document.documentElement.getAttribute('data-theme') === 'light' ? '&#9728;' : '&#9790;';
-
-themeToggle.addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('data-theme');
-  const next = current === 'light' ? 'dark' : 'light';
-  document.documentElement.setAttribute('data-theme', next);
-  localStorage.setItem('medici-theme', next);
-  themeToggle.innerHTML = next === 'light' ? '&#9728;' : '&#9790;';
-});
-
-const navToggle = document.getElementById('nav-toggle');
-const navRight = document.querySelector('.nav-right');
-navToggle.addEventListener('click', () => {
-  const isOpen = navRight.classList.toggle('open');
-  navToggle.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', isOpen);
-  navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-  document.body.classList.toggle('menu-open', isOpen);
-});
-navRight.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navRight.classList.remove('open');
-    navToggle.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('menu-open');
-  });
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && navRight.classList.contains('open')) navToggle.click();
-});
-</script>
+<script src="js/page-chrome.js" defer></script>
 
 </body>
 </html>

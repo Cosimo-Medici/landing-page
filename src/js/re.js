@@ -2,31 +2,14 @@
 (() => {
   'use strict';
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const root = document.documentElement;
-  const themeButton = document.querySelector('.re-theme');
-  try {
-    const saved = localStorage.getItem('medici-theme');
-    if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
-  } catch (_) { /* The page also works when storage is unavailable. */ }
-  function updateThemeLabel() {
-    const next = root.dataset.theme === 'light' ? 'dark' : 'light';
-    themeButton.setAttribute('aria-label', `Switch to ${next} theme`);
-    themeButton.title = `Switch to ${next} theme`;
-  }
-  themeButton.addEventListener('click', () => {
-    root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
-    try { localStorage.setItem('medici-theme', root.dataset.theme); } catch (_) { /* Optional preference. */ }
-    updateThemeLabel();
-  });
-  updateThemeLabel();
-
   // Ported from the homepage typewriter engine: same shuffle, per-character
   // delays, erase/type gap, cycle lengths, cursor and shared reading pause.
   const hero = document.querySelector('.re-hero');
   const heroArt = document.querySelector('.re-hero-art');
   const workflowText = document.querySelector('[data-headline]');
   const promiseText = document.querySelector('[data-promise]');
-  const workflowLines = ['Quarter-end\nLP reporting.', 'Capital call\nnotices.', 'Distribution\nnotices.', 'Investor\nstatements.'];
+  const pageConfig = JSON.parse(document.getElementById('fund-page-config')?.textContent || '{}');
+  const workflowLines = pageConfig.workflowLines || ['Quarter-end\nLP reporting.', 'Capital call\nnotices.', 'Distribution\nnotices.', 'Investor\nstatements.'];
   const promiseLines = ['Before your\nmorning coffee.', 'In a\njiffy.', 'On your\ndesk today.', 'Off your\nto-do list.'];
   const heroDocuments = [...document.querySelectorAll('[data-hero-document]')];
   const heroChoices = [...document.querySelectorAll('[data-hero-select]')];
@@ -244,112 +227,7 @@
   window.addEventListener('resize', scheduleProgress, { passive: true });
   updateProgress();
 
-  const bench = document.querySelector('.re-workbench');
-  const tabs = [...document.querySelectorAll('.re-stage-tabs button')];
-  const panel = document.getElementById('step-description');
-  const play = document.getElementById('play-workflow');
-  let timers = [];
-  let playing = false;
-  const stages = [
-    { title: 'Start with your fund records.', body: 'Use property operating data, investor balances, and asset manager updates.', caption: 'LP report outline', status: 'Report outline', note: 'Start with property data, investor balances, and asset manager updates.' },
-    { title: 'Cosimo prepares the draft.', body: 'Cosimo combines property figures, investor balances, and asset manager updates into a draft LP report.', caption: 'Draft LP report', status: 'Prepared draft', note: 'Select a source file to see which part of this sample report it informs.' },
-    { title: 'Your team checks and approves.', body: 'Check the figures, edit the commentary, and approve the LP report before sending.', caption: 'Draft ready for team review', status: 'Team review', note: 'Review the draft report and approve the final version before it goes to investors.' }
-  ];
-  function setPlayLabel(label, icon = '▷') {
-    const symbol = document.createElement('span');
-    symbol.setAttribute('aria-hidden', 'true');
-    symbol.textContent = icon;
-    play.replaceChildren(symbol, document.createTextNode(` ${label}`));
-  }
-  function stopSequence() {
-    timers.forEach(clearTimeout);
-    timers = [];
-    playing = false;
-    setPlayLabel(bench.dataset.step === '0' ? 'Play the example' : 'Replay the example');
-  }
-  function selectStage(index) {
-    const stage = stages[index];
-    bench.dataset.step = String(index);
-    tabs.forEach((tab, i) => {
-      tab.setAttribute('aria-selected', String(i === index));
-      tab.tabIndex = i === index ? 0 : -1;
-    });
-    panel.setAttribute('aria-labelledby', `step-${index}`);
-    const title = document.createElement('strong');
-    title.textContent = stage.title;
-    panel.replaceChildren(title, document.createTextNode(` ${stage.body}`));
-    document.getElementById('stage-caption').textContent = stage.caption;
-    document.getElementById('draft-status').textContent = stage.status;
-    document.getElementById('agent-note').textContent = stage.note;
-  }
-  selectStage(1);
-  tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => { stopSequence(); selectStage(index); setPlayLabel('Replay the example'); });
-    tab.addEventListener('keydown', event => {
-      let next;
-      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
-      if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
-      if (event.key === 'Home') next = 0;
-      if (event.key === 'End') next = tabs.length - 1;
-      if (next === undefined) return;
-      event.preventDefault();
-      stopSequence();
-      selectStage(next);
-      tabs[next].focus();
-    });
+  document.querySelectorAll('[data-workflow]').forEach(item => {
+    item.addEventListener('toggle', scheduleProgress);
   });
-  play.addEventListener('click', () => {
-    if (playing) { stopSequence(); return; }
-    stopSequence();
-    if (reducedMotion.matches) { selectStage(2); setPlayLabel('Replay the example'); return; }
-    playing = true;
-    selectStage(0);
-    setPlayLabel('Pause the example', 'Ⅱ');
-    timers.push(setTimeout(() => selectStage(1), 650));
-    timers.push(setTimeout(() => { selectStage(2); stopSequence(); }, 2700));
-  });
-  reducedMotion.addEventListener('change', () => {
-    if (reducedMotion.matches && playing) { stopSequence(); selectStage(2); }
-  });
-  document.addEventListener('visibilitychange', () => { if (document.hidden) stopSequence(); });
-
-  const sources = [
-    ['Portfolio operating data', 'Property counts and occupancy figures become the portfolio overview.'],
-    ['Capital account ledger', 'Investor balances feed the capital account summary and individual LP statements.'],
-    ['Asset manager updates', 'Leasing and property updates become the commentary in the LP letter.']
-  ];
-  const records = [...document.querySelectorAll('.re-record')];
-  records.forEach((record, index) => record.addEventListener('click', () => {
-    stopSequence();
-    if (bench.dataset.step === '0') selectStage(1);
-    setPlayLabel('Replay the example');
-    records.forEach((item, i) => { item.classList.toggle('is-active', i === index); item.setAttribute('aria-pressed', String(i === index)); });
-    document.getElementById('source-title').textContent = sources[index][0];
-    document.getElementById('source-detail').textContent = sources[index][1];
-    document.querySelectorAll('[data-report-section]').forEach(section => section.classList.toggle('is-highlighted', Number(section.dataset.reportSection) === index));
-  }));
-
-  const deliverables = {
-    reporting: { category: 'Investor communications', title: ['Quarterly', 'LP report'] },
-    capital: { category: 'Investor capital accounts', title: ['Per-LP', 'statement'] },
-    notices: { category: 'Capital activity', title: ['Capital call', 'notice'] },
-    distributions: { category: 'Investor distributions', title: ['Distribution', 'notice'] }
-  };
-  const workflows = [...document.querySelectorAll('[data-workflow]')];
-  workflows.forEach(item => item.addEventListener('toggle', () => {
-    if (!item.open) return;
-    workflows.forEach(other => { if (other !== item) other.open = false; });
-    const selected = deliverables[item.dataset.workflow];
-    document.getElementById('deliverable-type').textContent = selected.category;
-    const title = document.getElementById('deliverable-title');
-    title.replaceChildren(document.createTextNode(selected.title[0]), document.createElement('br'), document.createTextNode(selected.title[1]));
-    document.querySelector('.re-deliverable-graphic').dataset.kind = item.dataset.workflow;
-    if (!reducedMotion.matches) {
-      document.querySelector('.re-deliverable-paper').animate([
-        { transform: 'translateY(8px) rotate(-2deg)', opacity: .65 },
-        { transform: 'translateY(0) rotate(-4deg)', opacity: 1 }
-      ], { duration: 450, easing: 'cubic-bezier(.2,.8,.2,1)' });
-    }
-    scheduleProgress();
-  }));
 })();

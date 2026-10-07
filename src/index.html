@@ -2,23 +2,24 @@
 <html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
+<script src="js/theme.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Cosimo — fund operations infrastructure for private markets. LP reports, K-1 packages, due diligence memos, and rent roll extractions delivered in minutes.">
+<meta name="description" content="Grow your fund. Not your workload. Cosimo helps fund teams prepare investor reports, portfolio updates, and answers to investor questions from their own records.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <meta name="theme-color" content="#0C0C0B">
-<title>Cosimo — Fund Operations Infrastructure | Medici</title>
-<link rel="canonical" href="https://cosimo.work/">
-<link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Cosimo — Grow your fund. Not your workload.</title>
+<link rel="icon" type="image/png" href="/favicon-96x96.png?v=0c3593c760-2" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=f81404d29b-2">
+<link rel="shortcut icon" href="/favicon.ico?v=4142462ede-2">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=d03e5e41aa-2">
+<link rel="canonical" href="https://medici.ai/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://cosimo.work/">
-<meta property="og:title" content="Cosimo — Fund Operations Infrastructure">
-<meta property="og:description" content="LP reports, K-1 packages, due diligence memos, and rent roll extractions. Source-cited and audit-ready.">
-<meta property="og:image" content="https://cosimo.work/og-image.png">
+<meta property="og:url" content="https://medici.ai/">
+<meta property="og:title" content="Cosimo — Fund operations, off your to-do list.">
+<meta property="og:description" content="Investor reports, portfolio updates, and investor requests. See how Cosimo brings the work together.">
+<meta property="og:image" content="https://medici.ai/og-image.png">
 <meta property="og:site_name" content="Cosimo by Medici">
 
 <!-- Fonts -->
@@ -26,126 +27,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
 
-<!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Medici & Company",
-  "url": "https://cosimo.work",
-  "email": "info@medici.ai",
-  "description": "Fund operations infrastructure for private equity, venture, credit, and real estate funds."
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Cosimo",
-  "url": "https://cosimo.work",
-  "publisher": { "@type": "Organization", "name": "Medici & Company" },
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [".h-sub", ".case-after p", ".pilot-confidence"]
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Cosimo",
-  "applicationCategory": "BusinessApplication",
-  "applicationSubcategory": "Fund Operations Software",
-  "operatingSystem": "Web",
-  "url": "https://cosimo.work",
-  "description": "Fund operations infrastructure that produces LP reports, K-1 packages, due diligence memos, and rent roll extractions. Source-cited and audit-ready.",
-  "featureList": [
-    "LP report generation",
-    "K-1 package preparation",
-    "Due diligence memo extraction",
-    "Rent roll extraction",
-    "Portfolio monitoring",
-    "Side letter retrieval"
-  ],
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "description": "Pilot program — run it for a quarter, then decide"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What does Cosimo do?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cosimo is fund operations infrastructure for private equity, venture, credit, and real estate funds. It produces LP reports, K-1 packages, due diligence memos, and rent roll extractions — source-cited, formatted to your specs, and audit-ready."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What fund types does Cosimo support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Private equity, venture, credit, and real estate funds. Cosimo adapts to your fund's reporting conventions, waterfall structures, and document formats — regardless of fund admin or accounting platform."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is Cosimo different from general-purpose AI?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "General-purpose AI produces text. Cosimo produces deliverables — formatted K-1 packages, structured LP reports, rent roll extractions — built on your fund's actual data and conventions. It maps relationships across your documents using graph architecture, not keyword search, and routes each task to the optimal model automatically."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does Cosimo handle due diligence?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cosimo processes 1,200+ documents — CIMs, financial statements, and legal agreements — extracted and cross-referenced, with flags delivered in hours instead of the typical two weeks of manual review."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does Cosimo handle K-1 packages?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "K-1 packages are pulled from fund admin data, validated against source documents, and formatted to your specs. Quarter-end becomes a single review step instead of three weeks with temps."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does Cosimo ensure audit readiness?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Every figure in every deliverable traces back to its source document. Cosimo cites — it does not summarize. Reviewers can verify any number in the output against the original, and the full audit trail is preserved in your environment."
-      }
-    }
-  ]
-}
-</script>
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Medici & Company","url":"https://medici.ai","email":"info@medici.ai","description":"Cosimo helps fund teams prepare investor reports, portfolio updates, and answers to investor questions."}</script>
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/home.css">
 </head>
-<body>
-
-<!-- NAV -->
+<body class="home-page">
+<a class="home-skip" href="#main">Skip to content</a>
 <nav>
-  <a href="#" class="nav-logo">COSIMO</a>
+  <a href="/" class="nav-logo">COSIMO</a>
   <div class="nav-right">
-    <a href="#product">Product</a>
-    <a href="#architecture">Architecture</a>
-    <a href="#cases">Cases</a>
+    <a href="#product">How it works</a>
+    <a href="#fit">Getting started</a>
+    <a href="#work">What it does</a>
     <a href="faq.html">FAQ</a>
-    <a href="mailto:info@medici.ai?subject=Discovery%20Call%20Request&body=Hi%20Medici%20Team%2C%0A%0AWe%20are%20interested%20in%20scheduling%20a%20discovery%20call%20to%20explore%20a%20pilot.%0A%0AThank%20you">Request a Discovery Call</a>
+    <a href="#contact">Talk to us</a>
   </div>
   <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
     <span></span>
@@ -154,314 +49,109 @@
   </button>
 </nav>
 
-<main>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-glyph">C</div>
-  <div class="hero-dots"></div>
-  <div class="hero-accent-line"></div>
+<main id="main">
+<div class="fund-sectors" role="navigation" aria-label="Fund sectors"><a href="/" aria-current="page">All funds</a><a href="/re/">Real estate</a><a href="/vc/">Venture capital</a><a href="/pe/">Private equity</a><a href="/credit/">Private credit</a><a href="/hedge/">Hedge funds</a></div>
+<section class="hero home-hero" aria-label="Cosimo for fund teams">
+  <div class="hero-dots" aria-hidden="true"></div>
+  <div class="home-hero-left">
   <div class="hero-content">
-    <div class="hero-status">
-      <span class="status-dot"></span>
-      Built for PE, venture, credit, and real estate funds · Thousands of documents indexed
-    </div>
-    <div class="hero-headline">
-      <h1>
-        <div class="h-line"><span class="h-large" id="hero-top">Quarterly close.</span></div>
-        <div class="h-line"><span class="h-italic" id="hero-bottom">Before lunch.</span></div>
-      </h1>
-      <div class="h-line"><h2 class="h-sub">Fund operations infrastructure that delivers LP reports, K-1 packages, rent roll extractions, and due diligence memos. Source-cited and audit-ready.</h2></div>
-    </div>
+    <p class="hero-status">Grow your fund. Not your workload.</p>
+    <div class="hero-headline"><h1 aria-label="Investor reports. Off your to-do list."><span class="h-line" aria-hidden="true"><span class="h-large" id="hero-top">Investor reports.</span></span><span class="h-line" aria-hidden="true"><span class="h-italic" id="hero-bottom">Off your to-do list.</span></span></h1></div>
+    <p class="h-sub">Cosimo is fund operations software that drafts investor reports, portfolio updates, and investor replies from your records. Less copying between files. More time for the work that needs you.</p>
   </div>
+  <div class="hero-bottom"><div class="hero-ctas"><a href="#product" class="btn-main">See how it works <span aria-hidden="true">↓</span></a><a href="#contact" class="btn-line">Tell us your worst process</a></div><button class="home-pause" aria-label="Pause headline rotation">Ⅱ <span>Pause</span></button></div>
+  </div>
+  <figure class="home-handoff" aria-label="An example of delegating an investor report to Cosimo">
+    <div class="home-handoff-request">
+      <span>Your request</span>
+      <p>“Draft this quarter’s<br>investor report.”</p>
+    </div>
+    <div class="home-handoff-connection"><span aria-hidden="true">↓</span><p>Cosimo drafts it from your records.</p></div>
+    <div class="home-handoff-report">
+      <div class="home-handoff-report-meta"><span>Quarterly reporting</span><span>Draft</span></div>
+      <h2>Investor report</h2>
+      <p class="home-handoff-period">Renaissance Capital · Q3 2026</p>
+      <ul class="home-handoff-contents"><li>Portfolio overview</li><li>Company performance</li><li>Questions to resolve</li></ul>
+      <a href="#product" class="home-handoff-open">Explore the report example <span aria-hidden="true">↗</span></a>
+    </div>
+    <figcaption>Illustration · Your team reviews before sending.</figcaption>
+  </figure>
 
-  <div class="hero-bottom">
-    <div class="hero-ctas">
-      <a href="mailto:info@medici.ai?subject=Discovery%20Call%20Request&body=Hi%20Medici%20Team%2C%0A%0AWe%20are%20interested%20in%20scheduling%20a%20discovery%20call%20to%20explore%20a%20pilot.%0A%0AThank%20you" class="btn-main">Request a Discovery Call</a>
-      <a href="#product" class="btn-line">Watch it work ↓</a>
+</section>
+
+<section class="home-section home-demo" id="product" aria-labelledby="demo-title">
+  <div class="home-section-heading"><h2 id="demo-title">Your next investor report.<br><em>Without the copy-paste.</em></h2><p>Start with financial records, company updates, and last quarter’s report. See the figures checked and the next draft take shape.</p></div>
+  <div class="home-desk">
+    <div class="home-desk-bar"><span>Renaissance Capital · Quarterly portfolio update</span><span class="home-example">Illustrative example · Prewritten outputs</span></div>
+    <div class="home-demo-steps" role="group" aria-label="Explore the reporting process">
+      <button data-step="0" aria-pressed="true"><span>01</span> Gather the records</button><button data-step="1" aria-pressed="false"><span>02</span> Check the figures</button><button data-step="2" aria-pressed="false"><span>03</span> Prepare the draft</button>
     </div>
-    <div class="hero-scroll-hint">
-      <span class="scroll-line"></span>
-      Scroll
+    <div class="home-desk-body">
+      <div class="home-sources"><h3>What your team starts with</h3>
+        <button data-source="0" class="home-file"><span class="home-file-type">XLS</span><span><strong>Q3 management accounts</strong><small>Three companies · Actuals and budget</small></span><span aria-hidden="true">↗</span></button>
+        <button data-source="1" class="home-file"><span class="home-file-type">EML</span><span><strong>Company updates</strong><small>Management commentary · 4 October</small></span><span aria-hidden="true">↗</span></button>
+        <button data-source="2" class="home-file"><span class="home-file-type">PDF</span><span><strong>Prior report outline</strong><small>Your headings, format, and tone</small></span><span aria-hidden="true">↗</span></button>
+        <p class="home-source-hint">Open a file to see what’s inside.</p>
+        <div class="home-process-note" aria-live="polite"><span id="home-step-count">01 / 03</span><h4 id="home-step-title">Gather the records.</h4><p id="home-step-description">The accounts provide the figures, the company updates explain what happened, and last quarter’s report provides the format.</p></div>
+        <button class="home-replay" id="home-replay">Replay the walkthrough ↻</button>
+      </div>
+      <div class="home-output" id="home-output" data-stage="0">
+        <div class="home-output-heading"><span id="home-output-label">Three records, one place</span><span class="home-draft-stamp">Draft · Internal review</span></div>
+        <article class="home-paper home-gather-panel" data-stage-panel="0">
+          <p class="home-paper-date">From the management accounts</p><h3>The numbers, in one place.</h3>
+          <div class="home-table-scroll" tabindex="0" role="region" aria-label="Quarterly revenue table; scroll sideways for more columns"><table><caption>Q3 revenue · USD millions</caption><thead><tr><th>Company</th><th>Actual</th><th>Budget</th></tr></thead><tbody><tr><th>Arno Systems</th><td>12.4</td><td>12.0</td></tr><tr><th>Pitti Packaging</th><td>8.6</td><td>9.0</td></tr><tr><th>Fiesole Services</th><td>6.0</td><td>6.5</td></tr><tr><th>Total</th><td>27.0</td><td>27.5</td></tr></tbody></table></div><p class="home-scroll-hint">Scroll sideways to see all columns.</p>
+          <div class="home-paper-copy"><h4>From the company updates</h4><p>Arno: two renewals closed early.<br>Pitti: lower September order volumes.<br>Fiesole: two launches moved into October.</p><h4>From the prior report outline</h4><p>Portfolio overview → Company performance → Internal review notes.</p></div>
+          <p class="home-stage-next">Next: check whether the sources agree.</p>
+        </article>
+        <article class="home-paper home-check-panel" data-stage-panel="1" hidden>
+          <p class="home-paper-date">Fiesole Services · Q3 revenue</p><h3>Two sources.<br>Two different figures.</h3>
+          <div class="home-figure-compare"><div><span>Management accounts</span><strong>$6.0m</strong></div><div><span>Company update</span><strong>$6.4m</strong></div></div>
+          <div class="home-review-note"><span>$400,000 difference</span><p>Ask the finance lead to confirm the correct revenue figure. Neither record explains the difference.</p></div>
+          <div class="home-paper-copy"><h4>What happens to the draft?</h4><p>It uses the accounts’ $6.0m provisionally and keeps this question beside the figures. Your reviewer can see what needs resolving.</p><h4>One more thing to follow up</h4><p>Fiesole’s revised customer launch dates are still unconfirmed. The report won’t promise a recovery date.</p></div>
+          <p class="home-stage-next">Next: bring the figures and commentary together.</p>
+        </article>
+        <article class="home-paper" data-stage-panel="2" hidden>
+          <div class="home-paper-brand">RENAISSANCE CAPITAL</div><p class="home-paper-date">Third quarter 2026</p><h3>Portfolio update</h3>
+          <div class="home-paper-metric"><strong>$27.0m</strong><span>Revenue across three companies<br>$27.5m budget · $0.5m below plan</span></div>
+          <div class="home-paper-copy"><h4>What changed this quarter</h4><p>Arno Systems finished ahead of budget. Pitti Packaging and Fiesole Services came in below plan, leaving combined revenue $0.5m short.</p><p>Fiesole’s management team reports that two customer launches moved into October. Their revenue impact and revised launch dates still need confirmation.</p><a href="#" data-source="0">Management accounts, Q3 →</a><a href="#" data-source="1">Company updates, 4 October →</a></div>
+          <div class="home-review-note"><span>Needs your review</span><p>Fiesole’s accounts show <strong>$6.0m</strong> revenue. The management update says <strong>$6.4m</strong>. This draft uses the accounts; confirm the correct figure before sending.</p></div>
+          <button id="home-open-report" class="home-document-link">Open the draft report <span>3 pages ↗</span></button>
+        </article>
+      </div>
     </div>
+    <p class="home-demo-foot">Fictional records and an authored example, not a live product run. Cosimo is configured and tested with your team.</p>
   </div>
 </section>
 
-<!-- TERMINAL -->
-<section class="terminal-section" id="product">
-  <div class="terminal-intro">
-    <div class="terminal-intro-left">
-      <h2>Name the deliverable.<br>Get it back <em>ready to send</em>.</h2>
-    </div>
+<section class="home-section" id="work" aria-labelledby="work-title">
+  <div class="home-section-heading"><h2 id="work-title">Reports, updates,<br><em>and investor replies.</em></h2><p>Start with the recurring job that takes up too much of your team’s week.</p></div>
+  <div class="home-work-grid">
+    <article><h3>Investor reporting</h3><p>Turn financial records and portfolio commentary into the next investor report, using your existing format.</p><div class="home-work-example">“Get the quarterly letter started. Flag anything we still need from the portfolio.”</div></article>
+    <article><h3>Portfolio updates</h3><p>Bring company, property, or borrower submissions together. See what changed, what’s missing, and what needs a closer look.</p><div class="home-work-example">“Which updates are overdue, and which figures don’t agree?”</div></article>
+    <article><h3>Investor requests</h3><p>Find the relevant records and prepare a response your team can check before it goes back to an investor.</p><div class="home-work-example">“Find the supporting documents and draft a reply to this question.”</div></article>
   </div>
+  <div class="home-sector-prompt"><p>See the work that matters to your fund.</p><div><a href="/re/">Real estate ↗</a><a href="/vc/">Venture capital ↗</a><a href="/pe/">Private equity ↗</a><a href="/credit/">Private credit ↗</a><a href="/hedge/">Hedge funds ↗</a></div></div>
+</section>
 
-  <div class="terminal-stage">
-    <div class="chat-frame">
-      <div class="chat-content-area">
-        <div class="chat-chrome">
-          <div class="term-dots">
-            <div class="term-dot"></div>
-            <div class="term-dot"></div>
-            <div class="term-dot"></div>
-          </div>
-          <div class="chat-tabs" role="tablist">
-            <button class="chat-tab active" data-demo="0" role="tab" aria-selected="true">Due Diligence</button>
-            <button class="chat-tab" data-demo="1" role="tab" aria-selected="false">LP Reporting</button>
-            <button class="chat-tab" data-demo="2" role="tab" aria-selected="false">Covenant Monitoring</button>
-            <button class="chat-tab" data-demo="3" role="tab" aria-selected="false">Rent Roll</button>
-          </div>
-          <span class="chat-version">cosimo v2.4.1</span>
-        </div>
-
-        <div class="chat-body" id="chat-body" role="tabpanel"></div>
-
-        </div>
-
-      <div class="artifact-panel" id="artifact-panel">
-        <div class="artifact-panel-chrome">
-          <div class="artifact-panel-title" id="artifact-panel-title"></div>
-          <div class="artifact-panel-actions">
-            <span class="artifact-panel-page" id="artifact-panel-page"></span>
-            <button class="artifact-panel-close" id="artifact-panel-close" aria-label="Close preview">&times;</button>
-          </div>
-        </div>
-        <div class="artifact-panel-body" id="artifact-panel-body"></div>
-      </div>
-    </div>
+<section class="home-section home-fit" id="fit" aria-labelledby="fit-title">
+  <div><h2 id="fit-title">Your fund has a way<br>of doing things.<br><em>Start there.</em></h2><p>Cosimo is fund operations software, configured with your team. Start with one recurring task, your records, and the format you already use.</p></div>
+  <div class="home-fit-list">
+    <article><h3>Build on your team’s existing work.</h3><p>Use the files your administrator, finance team, and portfolio already produce. Cosimo prepares the next report or response; your agreed accounting and approval responsibilities stay with your team.</p></article>
+    <article><h3>Keep the format your investors know.</h3><p>Your existing report gives us the starting point: the headings, tables, terminology, and detail your team expects.</p></article>
+    <article><h3>Make the work easy to check.</h3><p>Review the draft alongside its supporting records. Missing information and conflicting figures need an answer, not a confident guess.</p></article>
+    <article><h3>Your team decides what goes out.</h3><p>Agree who reviews the work and what they approve. Start with a draft, make the necessary changes, then send it through your usual process.</p></article>
   </div>
 </section>
 
-<!-- PAIN -->
-<section class="pain-section">
-  <div class="pain-content">
-    <div class="pain-stack-wrapper">
-      <div class="pain-headline-wrap">
-        <h2 class="pain-headline">You already know how this goes.</h2>
-        <h2 class="pain-headline-after">But with Cosimo…</h2>
-      </div>
-      <!-- Running Toll (directly under headline) -->
-      <div class="pain-toll">
-        <div class="pain-toll-metric">
-          <div class="pain-toll-label">People</div>
-          <div class="pain-toll-value">
-            <span class="pain-toll-before" id="toll-people">—</span>
-            <span class="pain-toll-after">1</span>
-          </div>
-        </div>
-        <div class="pain-toll-divider"></div>
-        <div class="pain-toll-metric">
-          <div class="pain-toll-label">Time</div>
-          <div class="pain-toll-value">
-            <span class="pain-toll-before" id="toll-time">—</span>
-            <span class="pain-toll-after">15 min</span>
-          </div>
-        </div>
-        <div class="pain-toll-divider"></div>
-        <div class="pain-toll-metric">
-          <div class="pain-toll-label">Steps</div>
-          <div class="pain-toll-value">
-            <span class="pain-toll-before" id="toll-cycle">—</span>
-            <span class="pain-toll-after">0</span>
-          </div>
-        </div>
-      </div>
-      <div class="pain-result-sub">Every number traceable. Every deliverable ready for audit.</div>
-      <div class="pain-stack-viewport">
-        <div class="pain-stack-cards">
-          <div class="pain-card" data-card-index="0"><span class="pain-card-num">01</span> Pull NAV data from the fund admin portal. Reconcile against internal tracking.</div>
-          <div class="pain-card" data-card-index="1"><span class="pain-card-num">02</span> Cross-reference capital account statements with waterfall calculations.</div>
-          <div class="pain-card" data-card-index="2"><span class="pain-card-num">03</span> Extract performance metrics from portfolio company PDFs — one by one.</div>
-          <div class="pain-card" data-card-index="3"><span class="pain-card-num">04</span> Draft the LP letter in Word. Manually insert figures. Format tables.</div>
-          <div class="pain-card" data-card-index="4"><span class="pain-card-num">05</span> Route through partner review. Incorporate edits. Re-check every number.</div>
-          <div class="pain-card" data-card-index="5"><span class="pain-card-num">06</span> Generate individual LP statements by commitment and share class.</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="home-section home-contact" id="contact" aria-labelledby="contact-title">
+  <p class="home-contact-intro">Start with one process.</p>
+  <h2 id="contact-title">Which job would you take<br><em>off your team’s plate?</em></h2>
+  <p>What’s the job your team dreads every month? Tell us what makes it so painful. We’ll show you where Cosimo could take the work off your hands.</p>
+  <a href="mailto:info@medici.ai?subject=Our%20worst%20process&amp;body=Hi%20Medici%20team%2C%0A%0AThe%20process%20our%20team%20dreads%20most%20is%3A%0A%0AWhat%20makes%20it%20painful%3A%0A%0AOur%20fund%20type%3A%20%0A" class="btn-main">Email us about your worst process</a>
+  <p class="home-email-note">The button opens an email draft. A few sentences are enough.<br>Or email <a href="mailto:info@medici.ai">info@medici.ai</a> directly.</p>
 </section>
-
-<!-- ARCHITECTURE -->
-<section class="arch-section" id="architecture">
-  <div class="arch-header">
-    <h2>Three things generic AI will never do for your fund operations.</h2>
-    <div class="arch-header-num">III</div>
-  </div>
-
-  <div class="arch-grid">
-    <div class="arch-card">
-      <div class="arch-card-num">001</div>
-      <div class="arch-card-icon">⟳</div>
-      <h3 class="arch-card-title">Month twelve, your new analyst works like your best partner.</h3>
-      <div class="arch-card-text">Cosimo learns how you report, what you call things, how your waterfalls work. Institutional knowledge compounds — the longer you use it, the more valuable it becomes.</div>
-    </div>
-    <div class="arch-card">
-      <div class="arch-card-num">002</div>
-      <div class="arch-card-icon">▣</div>
-      <h3 class="arch-card-title">The actual K-1 package.</h3>
-      <div class="arch-card-text">Formatted to your specs, with every figure traced to its source. What used to take your team days gets reviewed and out the door in an afternoon.</div>
-    </div>
-    <div class="arch-card">
-      <div class="arch-card-num">003</div>
-      <div class="arch-card-icon">◇</div>
-      <h3 class="arch-card-title">Your LPA terms don't train someone else's model.</h3>
-      <div class="arch-card-text">Every client runs on a fully segregated instance. Your data and your fund structures never leave your environment. This is a structural guarantee, not a policy.</div>
-    </div>
-  </div>
-</section>
-
-<!-- INTEGRATIONS / DATA USE -->
-<section class="connect-section" id="connect">
-  <div class="connect-header">
-    <div class="connect-label">Connected, not siloed</div>
-    <h2>Cosimo works inside the systems you already run on.</h2>
-    <p class="connect-lead">Cosimo is fund operations software. You connect the accounts your team already uses, and — with your explicit permission and read-only access — it reads from them to assemble deliverables, reconcile figures, and answer questions against your live data.</p>
-  </div>
-
-  <div class="connect-grid">
-    <div class="connect-card">
-      <div class="connect-card-name">Google Workspace</div>
-      <div class="connect-card-detail">Connect Google Calendar and Google Drive. Cosimo reads your calendar events and availability to work around your reporting deadlines, and reads Drive documents as source material. Read-only — it never edits or deletes anything.</div>
-    </div>
-    <div class="connect-card">
-      <div class="connect-card-name">Microsoft 365</div>
-      <div class="connect-card-detail">Connect Outlook and SharePoint. Cosimo reads Outlook calendar and email and SharePoint documents, so funds standardized on Microsoft work exactly the same way. Read-only access.</div>
-    </div>
-    <div class="connect-card">
-      <div class="connect-card-name">Fund Administration</div>
-      <div class="connect-card-detail">Cosimo works alongside your fund admin and accounting data to reconcile NAV, capital accounts, and waterfalls into LP-ready packages.</div>
-    </div>
-  </div>
-
-  <p class="connect-foot">Cosimo only accesses the data you explicitly connect, and only to provide these features to you. It never modifies your source records, never sells your data, and never shares it across clients — every client runs on a fully segregated instance. <a href="privacy.html">Read the full privacy policy →</a></p>
-</section>
-
-<!-- USE CASES -->
-<section class="cases-section" id="cases">
-  <div class="cases-header">
-    <h2>The fund operations work that runs your quarter.</h2>
-  </div>
-
-  <div class="cases-grid">
-    <div class="case-card">
-      <div class="case-stat">
-        <span class="case-stat-val">2 hrs</span>
-        <span class="case-stat-lbl">vs. 2 weeks manual</span>
-      </div>
-      <div class="case-content">
-        <h3 class="case-title">Due Diligence</h3>
-        <div class="case-split">
-          <div class="case-before">
-            <div class="case-before-label">Before</div>
-            <p>1,200 documents. A team of associates. Two weeks of 14-hour days highlighting PDFs and building spreadsheets.</p>
-          </div>
-          <div class="case-after">
-            <div class="case-after-label">With Cosimo</div>
-            <p>Every CIM, financial statement, and legal agreement extracted and cross-referenced. Flags on your desk by Monday.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="case-card">
-      <div class="case-stat">
-        <span class="case-stat-val">Days→Hrs</span>
-        <span class="case-stat-lbl">quarter-end close</span>
-      </div>
-      <div class="case-content">
-        <h3 class="case-title">K-1 Packages</h3>
-        <div class="case-split">
-          <div class="case-before">
-            <div class="case-before-label">Before</div>
-            <p>Three weeks. Two temps. A partner reviewing at midnight. Someone still finds an error in March.</p>
-          </div>
-          <div class="case-after">
-            <div class="case-after-label">With Cosimo</div>
-            <p>Pulled from fund admin data and validated against source documents. Formatted to your specs. Quarter-end becomes a single review step.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="case-card">
-      <div class="case-stat">
-        <span class="case-stat-val">30 sec</span>
-        <span class="case-stat-lbl">query response</span>
-      </div>
-      <div class="case-content">
-        <h3 class="case-title">LP Reporting</h3>
-        <div class="case-split">
-          <div class="case-before">
-            <div class="case-before-label">Before</div>
-            <p>An LP asks about a side letter from eighteen months ago. You spend the next hour in the archive room.</p>
-          </div>
-          <div class="case-after">
-            <div class="case-after-label">With Cosimo</div>
-            <p>Exact clause. Source document. Draft response. Thirty seconds.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="case-card">
-      <div class="case-stat">
-        <span class="case-stat-val">Real-time</span>
-        <span class="case-stat-lbl">across all entities</span>
-      </div>
-      <div class="case-content">
-        <h3 class="case-title">Portfolio Monitoring</h3>
-        <div class="case-split">
-          <div class="case-before">
-            <div class="case-before-label">Before</div>
-            <p>Covenant compliance in spreadsheets. Waterfall calcs done by hand. Anomalies found after they've compounded for a quarter.</p>
-          </div>
-          <div class="case-after">
-            <div class="case-after-label">With Cosimo</div>
-            <p>Tracked continuously across all portfolio companies. Anomalies flagged before they compound.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- INEVITABILITY -->
-<section class="inevitability-section">
-  <p class="inevitability-text inevitability-line-1">Every fund will work this way.</p>
-  <p class="inevitability-text inevitability-line-2">The question is when <em>yours</em> starts.</p>
-</section>
-
-<!-- CTA -->
-<section class="cta-section" id="contact">
-  <div class="cta-label">Start a Pilot</div>
-  <h2 class="cta-headline">Run it for a quarter.<br>Then <em>decide</em>.</h2>
-
-  <div class="pilot-timeline">
-    <div class="pilot-step">
-      <div class="pilot-step-num">01</div>
-      <div class="pilot-step-duration">30 minutes</div>
-      <h3 class="pilot-step-title">Discovery</h3>
-      <div class="pilot-step-desc">We learn how your fund actually operates — what documents you produce, where the bottlenecks are. We scope the pilot to the use case that hurts most.</div>
-    </div>
-    <div class="pilot-step">
-      <div class="pilot-step-num">02</div>
-      <div class="pilot-step-duration">1–2 weeks</div>
-      <h3 class="pilot-step-title">Onboarding</h3>
-      <div class="pilot-step-desc">Your dedicated instance is configured around your fund's documents and reporting calendar.</div>
-    </div>
-    <div class="pilot-step">
-      <div class="pilot-step-num">03</div>
-      <div class="pilot-step-duration">4–6 months</div>
-      <h3 class="pilot-step-title">Live Pilot</h3>
-      <div class="pilot-step-desc">Most vendors give you a two-week trial. We give you two full quarters with real documents on real deadlines. We know what happens.</div>
-    </div>
-  </div>
-
-  <p class="pilot-confidence">No lock-in. No IT project. If it doesn't change how your fund operates, walk away.</p>
-
-  <div class="cta-actions">
-    <a href="mailto:info@medici.ai?subject=Discovery%20Call%20Request&body=Hi%20Medici%20Team%2C%0A%0AWe%20are%20interested%20in%20scheduling%20a%20discovery%20call%20to%20explore%20a%20pilot.%0A%0AThank%20you" class="btn-main">Request a Discovery Call</a>
-  </div>
-</section>
-
 </main>
-
+<dialog class="home-dialog" id="home-dialog" aria-labelledby="home-dialog-title"><div class="home-dialog-bar"><h2 id="home-dialog-title">Draft portfolio update</h2><button id="home-dialog-close" aria-label="Close document">×</button></div><div id="home-dialog-content"></div></dialog>
 <!-- FOOTER -->
 <footer>
   <div class="foot-left">© 2026 MEDICI & COMPANY</div>
@@ -474,11 +164,6 @@
 
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">&#9790;</button>
 
-<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/demo-data.js"></script>
-<script src="js/main.js"></script>
-
+<script src="js/home.js" defer></script>
 </body>
 </html>

@@ -1,24 +1,29 @@
 # Cosimo by Medici & Company
 
-> Fund operations infrastructure for private equity, venture, credit, and real estate funds. LP reports, K-1 packages, due diligence memos, and rent roll extractions — source-cited and audit-ready.
+> Fund operations software that helps fund teams prepare draft investor reports, portfolio updates, and replies from the records they already keep.
 
 ## Product
-- Cosimo processes fund documents and produces deliverables that used to take teams weeks.
-- Every number is traceable. Every deliverable is ready for audit.
-- Each client runs on a fully segregated instance.
 
-## Use Cases
-- Due Diligence: 1,200 documents processed in 2 hours vs. 2 weeks manual
-- K-1 Packages: Days reduced to hours, validated against source documents
-- LP Reporting: 30-second query response with source document citations
-- Portfolio Monitoring: Real-time covenant compliance across all entities
+Cosimo is the product. Medici & Company is the company. Workflows are configured and tested with the fund team around its sources, reporting format, and review process. The team checks the draft, resolves open questions, and approves the final version.
 
-## Pilot Program
-- 30-minute discovery call
-- 1–2 week onboarding on a dedicated instance
-- 4–6 month live pilot with real documents on real deadlines
-- No lock-in
+## Website pages
 
-## Contact
-- Email: info@medici.ai
-- Website: https://cosimo.work
+- [All funds](/): Reporting, portfolio updates, and investor requests; an interactive quarterly portfolio-update example.
+- [Real estate](/re/): LP reports, investor statements, capital call notices, and distribution notices.
+- [Venture capital](/vc/): Founder updates, portfolio metrics, cash and runway, and LP reporting.
+- [Private equity](/pe/): Company actuals and budgets, variance commentary, portfolio packs, and LP reporting.
+- [Private credit](/credit/): Borrower review packs, covenant worksheets, reporting follow-ups, and LP updates.
+- [Hedge funds](/hedge/): Investor letters, close exceptions, investor activity, and allocator response drafts.
+- [FAQ](/faq.html): What the product does, how the examples work, and how to start.
+- [About](/about.html): Product and company information.
+- [Extended description](/llms-full.txt): More detail on the proposed workflows and examples.
+
+## Examples and claim boundaries
+
+The website uses fictional fund records and prewritten outputs, not live product runs or customer results. Source links open sample records. The examples do not establish measured time savings, integration coverage, audit readiness, security certification, or guaranteed turnaround. Fund-specific configuration and testing are required. The team retains review and approval.
+
+## Start with one process
+
+Email info@medici.ai with what your team prepares, where the information comes from, and which part takes the most time. Medici & Company works through a first workflow to test with the team. Scope and commercial terms are agreed before starting; no fixed pilot duration or price is offered on these pages.
+
+Website: https://medici.ai

@@ -1,124 +1,83 @@
 # Cosimo by Medici & Company
 
-> Fund operations infrastructure for private equity, venture, credit, and real estate funds.
+> Grow your fund. Not your workload.
 
----
+Cosimo is fund operations software from Medici & Company. It helps fund teams prepare draft investor reports, portfolio updates, and replies from the records they already keep. The website speaks to lean fund operations, finance, and investor-relations teams, with examples for real estate, venture capital, private equity, private credit, and hedge funds.
 
-## Quarterly close. Before lunch.
+## How the proposed workflow fits a fund team
 
-LP reports, K-1 packages, rent roll extractions, and due diligence memos. Source-cited and audit-ready.
+Start with the records behind one recurring task and an example of the output the team needs. Medici & Company configures and tests the workflow with the team, using its source records, reporting format, and review requirements. Drafts bring the figures and commentary together, with missing information and open questions marked for review. The fund team checks the work, resolves questions, approves the final version, and sends it through its usual process.
 
-Live funds. Thousands of documents indexed.
+The website does not offer a universal integration list, fixed implementation time, quantified savings, security certification, or audit-readiness guarantee. Data handling, access, source systems, scope, and commercial terms need to be discussed for the fund's proposed setup.
 
----
+## All-funds homepage
 
-## Ask anything. Get the work delivered.
+Path: /
 
-Cosimo is an interactive platform where fund operations teams ask questions and receive finished deliverables — not summaries, not drafts.
+The homepage introduces three recurring jobs: investor reporting, portfolio updates, and investor requests. An interactive example follows management accounts, company commentary, and a prior report format into a quarterly portfolio update.
 
-### Demo: Due Diligence
-Upload 847 documents from a data room. Cosimo extracts financials, flags inconsistencies across CIMs and financial statements, and produces a structured due diligence memo with source citations.
+The example uses Renaissance Capital, a fictional fund manager. Three companies report $27.0 million in quarterly revenue against a $27.5 million budget. One company's accounts show $6.0 million while its management update says $6.4 million. The draft uses the accounts provisionally and leaves the $400,000 difference visible for review. The example has inspectable source records and a three-page draft. It is authored demonstration content, not a live application run.
 
-### Demo: LP Reporting
-Ask about a specific LP's side letter terms from eighteen months ago. Cosimo returns the exact clause, source document, and a draft response in thirty seconds.
+## Real estate
 
-### Demo: Rent Roll
-Upload property-level rent rolls across a portfolio. Cosimo extracts unit-level data, identifies lease expirations, and flags anomalies — structured and ready for review.
+Path: /re/
 
----
+The page focuses on quarterly LP reports, investor statements, capital call notices, and distribution notices. The reporting example uses property figures, manager updates, and investor capital records for fictional Renaissance Real Estate Fund I. Visitors can compare source records with the proposed draft and explore a six-page sample report.
 
-## You already know how this goes.
+The example preserves open property questions and shows a simplified capital-movement schedule. That schedule excludes income and valuation changes and is not a complete capital account statement. Investor notices use supplied, approved allocations; they do not execute payments.
 
-The manual process for quarterly reporting:
+## Venture capital
 
-1. Pull NAV data from the fund admin portal. Reconcile against internal tracking.
-2. Cross-reference capital account statements with waterfall calculations.
-3. Extract performance metrics from portfolio company PDFs — one by one.
-4. Draft the LP letter in Word. Manually insert figures. Format tables.
-5. Route through partner review. Incorporate edits. Re-check every number.
-6. Generate individual LP statements by commitment and share class.
+Path: /vc/
 
-**With Cosimo:** 1 person, 15 minutes, 0 review cycles. Every number traceable. Every deliverable ready for audit.
+The page focuses on preparing portfolio and LP updates from founder submissions, company spreadsheets, and fund records. Its fictional Renaissance Venture Fund I example contains six companies, five current submissions, one stale submission, and a company with six months of runway at its reported burn rate. An unsigned financing discussion is not treated as cash received.
 
----
+The six-page example includes portfolio metrics, cash and runway, founder commentary, capital movements, and open items. Company operating figures are not fund performance or valuation measures. The sample capital schedule is incomplete until the necessary approved allocations and adjustments are included.
 
-## Three things generic AI will never do for your fund.
+## Private equity
 
-### 1. Month twelve, your new analyst works like your best partner.
-Cosimo learns how you report, what you call things, how your waterfalls work. Institutional knowledge stops living in one person's head.
+Path: /pe/
 
-### 2. The actual K-1 package.
-Formatted to your specs, with every figure traced to its source. What used to take your team days gets reviewed and out the door in an afternoon.
+The page focuses on bringing portfolio-company financials, management commentary, and fund records into reporting drafts. Its fictional Renaissance Buyout Fund I example compares company actuals with budgets and explains an EBITDA shortfall from supplied management notes. Unexplained variances and unapproved operating plans remain visible.
 
-### 3. Your LPA terms don't train someone else's model.
-Every client runs on a fully segregated instance. Your data and your fund structures never leave your environment.
+The six-page sample includes portfolio metrics, budget comparisons, company updates, capital movements, and review questions. The company totals are management-reported operating figures, not ownership-weighted fund results. The sample does not implement an ILPA reporting template or constitute a complete quarterly financial reporting package.
 
----
+## Private credit
 
-## The work that runs your quarter.
+Path: /credit/
 
-### Due Diligence
-- **Before:** 1,200 documents. A team of associates. Two weeks of 14-hour days highlighting PDFs and building spreadsheets.
-- **With Cosimo:** Every CIM, financial statement, and legal agreement extracted and cross-referenced. Flags on your desk by Monday. 2 hours vs. 2 weeks manual.
+The page focuses on private credit and direct lending: borrower review packs, covenant worksheets, reporting follow-ups, and LP updates. Its fictional Renaissance Direct Lending Fund I example follows six loans through servicing data, supplied covenant calculations, and a reporting tracker.
 
-### K-1 Packages
-- **Before:** Three weeks. Two temps. A partner reviewing at midnight. Someone still finds an error in March.
-- **With Cosimo:** Pulled from fund admin data and validated against source documents. Formatted to your specs. Quarter-end becomes a single review step. Days reduced to hours.
+One worksheet shows leverage of 4.80 times using submitted EBITDA and 5.33 times if an unresolved add-back is excluded, compared with a supplied maximum of 5.00 times. This is a review question, not a determination of compliance or default. Another item identifies a missing borrower certificate. Cash interest received and PIK accrued are shown separately; neither is presented as the fund's net return.
 
-### LP Reporting
-- **Before:** An LP asks about a side letter from eighteen months ago. You spend the next hour in the archive room.
-- **With Cosimo:** Exact clause. Source document. Draft response. Thirty seconds.
+The six-page credit pack is an authored example. Agreement definitions, adjustments, testing dates, and exceptions require the credit team's review. Lending decisions remain with the team.
 
-### Portfolio Monitoring
-- **Before:** Covenant compliance in spreadsheets. Waterfall calcs done by hand. Anomalies found after they've compounded for a quarter.
-- **With Cosimo:** Tracked continuously across all portfolio companies. Anomalies flagged before they compound. Real-time across all entities.
+## Hedge funds
 
----
+Path: /hedge/
 
-## Every fund will work this way. The question is when yours starts.
+The page focuses on investor letters, close-file exceptions, subscription/redemption activity, and allocator response drafts. Its fictional Bellosguardo Equity Fund example uses administrator-approved figures and supplied policy records for a long/short equity fund.
 
----
+The six-page monthly pack separates investor-facing drafts from internal working papers. It includes class returns, an exposure snapshot, investor activity, a cash discrepancy, and a questionnaire response that needs current supporting evidence. The administrator retains responsibility for the official NAV; the fund team resolves exceptions and approves investor communications. The page does not claim to perform trading, investment decisions, complete risk management, or independent assurance.
 
-## Frequently Asked Questions
+## What the examples prove—and what they do not
 
-### What fund types does Cosimo support?
-Private equity, venture, credit, and real estate funds. Cosimo adapts to your fund's reporting conventions, waterfall structures, and document formats.
+All website records, commentary, and outputs are fictional and prewritten. Interactions let visitors inspect the proposed document workflow, source records, figures, and review questions. They are not recordings of Cosimo generating these outputs, successful production proof runs, or customer results.
 
-### How does Cosimo ensure audit readiness?
-Every figure in every deliverable traces back to its source document. Cosimo doesn't summarize — it cites. Reviewers can verify any number in the output against the original.
+The examples explain the intended work. They do not substantiate a guaranteed processing time, hours saved, universal accuracy, autonomous delivery, audit readiness, or integration coverage. These workflows need configuration and testing with the fund team before making fund-specific capability commitments.
 
-### What happens to my data?
-Every client runs on a fully segregated instance. Your documents, fund structures, and LPA terms never leave your environment and never train a shared model.
+## How to start
 
-### How is Cosimo different from general-purpose AI tools?
-Generic AI produces text. Cosimo produces deliverables — formatted K-1 packages, structured LP reports, rent roll extractions — built on your fund's actual data and conventions.
+Email info@medici.ai with a few sentences about the report or process your team prepares, where the information comes from, and which part takes the most time. Medici & Company will work through a first workflow to test with the team. Scope and commercial terms are agreed before starting. The website does not promise a free pilot, a fixed pilot duration, or a particular implementation schedule.
 
-### What does the pilot cost?
-Nothing upfront. We scope a pilot around your highest-pain use case and run it for two full quarters on real deadlines. If it doesn't change how your fund operates, walk away.
+## Supporting pages
 
----
+- FAQ: /faq.html
+- About Cosimo and Medici & Company: /about.html
+- Privacy Policy: /privacy.html
+- Terms of Service: /terms.html
 
-## Start a Pilot
-
-### Run it for a quarter. Then decide.
-
-**Step 1 — Discovery (30 minutes)**
-We learn how your fund actually operates — what documents you produce, where the bottlenecks are. We scope the pilot to the use case that hurts most.
-
-**Step 2 — Onboarding (1–2 weeks)**
-Your dedicated instance is configured around your fund's documents and reporting calendar.
-
-**Step 3 — Live Pilot (4–6 months)**
-Most vendors give you a two-week trial. We give you two full quarters with real documents on real deadlines. We know what happens.
-
-No lock-in. No IT project. If it doesn't change how your fund operates, walk away.
-
----
-
-## Contact
-
-- Email: info@medici.ai
-- General: hello@medici.ai
-- Website: https://cosimo.work
+Website: https://medici.ai
+Contact: info@medici.ai
 
 © 2026 Medici & Company
