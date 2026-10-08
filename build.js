@@ -16,13 +16,23 @@ const DIST = path.join(__dirname, 'dist');
 
 // Files to hash (source path relative to SRC → directory in dist)
 const HASHABLE = [
+  { src: 'js/theme.js', dir: 'js' },
+  { src: 'css/home.css', dir: 'css' },
+  { src: 'css/site-layout.css', dir: 'css' },
+  { src: 'js/home.js', dir: 'js' },
+  { src: 'js/page-chrome.js', dir: 'js' },
   { src: 'css/styles.css', dir: 'css' },
+  { src: 'css/re.css', dir: 'css' },
+  { src: 'js/re.js', dir: 'js' },
+  { src: 'js/re-report.js', dir: 'js' },
+  ...['vc', 'pe', 'credit', 'hedge'].map(sector => ({ src: `js/${sector}-report.js`, dir: 'js' })),
   { src: 'js/main.js',     dir: 'js' },
-  { src: 'js/demo-data.js', dir: 'js' },
+  // The retired chat demo is not used by any current page. Do not publish its
+  // historical sample records alongside the current, reconciled examples.
 ];
 
 // HTML files that reference the hashable assets
-const HTML_FILES = ['index.html', 'faq.html', 'about.html', 'privacy.html', 'terms.html'];
+const HTML_FILES = ['index.html', 'faq.html', 'about.html', 'privacy.html', 'terms.html', ...['re', 'vc', 'pe', 'credit', 'hedge'].map(sector => `${sector}/index.html`)];
 
 // Static assets to copy as-is (relative to SRC, stripped of public/ prefix in dist)
 const STATIC = [
@@ -102,12 +112,17 @@ for (const htmlFile of HTML_FILES) {
 
   let html = fs.readFileSync(srcPath, 'utf-8');
 
+  const nested = htmlFile.includes('/');
   for (const r of replacements) {
-    // Replace exact references like href="css/styles.css" or src="js/main.js"
-    html = html.split(r.original).join(r.hashed);
+    // Nested campaign routes resolve shared assets from the site root.
+    const sourcePath = nested ? `../${r.original}` : r.original;
+    const outputPath = nested ? `../${r.hashed}` : r.hashed;
+    html = html.split(sourcePath).join(outputPath);
   }
 
-  fs.writeFileSync(path.join(DIST, htmlFile), html);
+  const outputPath = path.join(DIST, htmlFile);
+  ensureDir(path.dirname(outputPath));
+  fs.writeFileSync(outputPath, html);
   console.log(`  ${htmlFile} — references updated`);
 }
 
@@ -119,5 +134,7 @@ for (const file of STATIC) {
   const destName = file.startsWith('public/') ? file.slice(7) : file;
   copyFile(srcPath, path.join(DIST, destName));
 }
+
+fs.cpSync(path.join(SRC, 'public/product-demo'), path.join(DIST, 'product-demo'), { recursive: true });
 
 console.log(`\nBuild complete → dist/`);
