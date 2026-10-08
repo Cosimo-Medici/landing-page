@@ -1,5 +1,9 @@
 # All-funds homepage — 7 October 2026
 
+## Product workspace walkthrough — 8 October 2026
+
+The homepage's reporting example now imports actual Cosimo components and the application's own stylesheet: company register, figure panel, workflow transcript, step rail, and output file. The first visual reconstruction was rejected and replaced. Operational views no longer use paper styling; the full three-page report remains the final deliverable. See [implementation, source references, and verification](product-ux-demo-direction.md#actual-component-implementation--8-october-2026). This supersedes the earlier walkthrough descriptions below. The hero remains unchanged.
+
 ## Deep-review revision — current implementation
 
 The hero now pairs the unchanged independent typewriter with a linked fictional source conflict and report preview, replacing the decorative C. Setup identifies fund operations software and the administrator/finance handoff. Fiesole’s delayed launches are no longer asserted to explain an unsupported dollar variance. The third source is labeled “Prior report outline.” All10 routes now have consistent medici.ai metadata/sitemap; live hosting is unchanged. See [deep review](website-audit.md) for evidence and limits.
@@ -23,7 +27,7 @@ The main navigation and footer retain their structural layout. Existing sector d
 
 ## Example records and arithmetic
 
-All records are authored, fictional examples, disclosed as such. Renaissance Capital's example is a company-portfolio report, not an assertion that every asset class uses revenue as its headline metric.
+All records are authored, fictional examples, disclosed as such. Signet Equity's example is a company-portfolio report, not an assertion that every asset class uses revenue as its headline metric.
 
 | Company | Q3 revenue ($m) | Budget ($m) | Variance ($m) |
 | --- | ---: | ---: | ---: |
@@ -85,3 +89,9 @@ Validation: production build and whitespace checks passed. Browser inspected des
 ## Walkthrough starts at step 1 — 7 October 2026
 
 User correction: the report walkthrough must start with gathering records, not jump ahead to the finished draft. Changed the initial HTML selection, visible panel, stage attribute, count, heading, description, and output label to step 1. The initial state is correct before JavaScript runs as well. Manual step selection and replay retain their existing behaviour. Built and checked in the browser, including clicking through steps 2 and 3 and reloading to confirm step 1.
+
+
+CTA wording update: use “Email us about your toughest process” across the homepage and all five fund pages. Hero links use “Tell us about your toughest process”; prefilled email subjects and prompts use matching, constructive language.
+
+
+Shared layout cleanup: see [layout-consistency-audit.md](layout-consistency-audit.md) for header, gutter, mobile navigation, footer, and CTA spacing standards and verification.

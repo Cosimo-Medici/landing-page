@@ -27,7 +27,7 @@ See [VC and PE research](vc-pe-research.md), [private credit research](credit-re
 
 The research validates pain points, not Cosimo implementation status. Examples are fictional, prewritten demonstrations of proposed document workflows. They do not establish a tested integration, turnaround SLA, investment decision engine, fund valuation engine or compliance certification. Actual workflow configuration and proof runs remain necessary before making implementation-specific promises to prospects. Public examples identify themselves as illustrative. Human review remains explicit; missing information stays unresolved.
 
-`/credit` is private credit/direct lending, not consumer credit. The hedge example uses a fictional name distinct from Renaissance Technologies. Names throughout follow the requested Florentine theme without reusing Medici or Cosimo as client names.
+`/credit` is private credit/direct lending, not consumer credit. The fictional managers are Loggia Property Group (RE), Telescope Ventures (VC), Signet Equity (PE and the homepage), Fiorino Debt Partners (private credit), and Anamorphic Capital (hedge). Portfolio companies, properties, and investors retain the Florentine theme; Medici and Cosimo remain the actual company/product names.
 
 ## Preview
 
@@ -54,3 +54,20 @@ All four pages completed and integrated. Final copy review simplified the PE var
 - Independent read-only agent review recomputed VC runway/date coverage, PE budget variance, investor ledger movements, hedge linked returns/exposure/NAV movement/cash difference. No substantive arithmetic or period mismatch found.
 
 Research documentation names source dates and separates findings from positioning inferences. The demos remain fictional authored examples, not proof runs of new live sector workflows. No commit, push or merge was performed in this pass.
+
+
+## Fund naming update — 8 October 2026
+
+| Example | Approved name |
+| --- | --- |
+| Real estate | Loggia Property Group |
+| Venture capital | Telescope Ventures |
+| Private equity and homepage product demo | Signet Equity |
+| Private credit | Fiorino Debt Partners |
+| Hedge funds | Anamorphic Capital |
+
+Applied to all hero documents, 30 sector report pages, letters and signoffs, source record filenames and citations, proof-card monograms, the homepage report and prior-report source, the actual-component app demo and its rebuilt bundle, legacy chat examples, and machine-readable site content. The app fixture is now `product-demo/signet-equity.json`. Research and design documentation use the updated fund identities. Florentine property, company, and LP names remain unchanged; Bellosguardo House is a property, not the retired hedge fund identity.
+
+Verification: rebuilt the product demo and website; scanned 68 source/build text assets with no retired fund identities; checked all website JavaScript syntax and `git diff --check`. Browser checks covered every page of each six-page sector report, all hero brands and proof-card initials, the homepage app and workflow identity, and its three-page report. All five sector pages and document headers fit at 390px with no horizontal overflow.
+
+Follow-up correction: the first rename pass missed the imported register component’s hardcoded “Private equity fund” identity label. The demo build now binds that label to the Signet Equity fixture, sharing the same name as the side panel. Verified the rendered register, expanded fund panel, workflow, and report on the All funds page. Future naming checks must inspect generic identity placeholders in imported components as well as search for retired proper names.

@@ -34,7 +34,7 @@ Critique applied: a renamed RE report would miss the point. Replaced the underly
 
 ## Fictional data and arithmetic
 
-Fund: Renaissance Direct Lending Fund I. Manager: Renaissance Credit Partners. Six senior secured USD positions.
+Fund: Fiorino Debt Partners. Manager: Fiorino Debt Partners. Six senior secured USD positions.
 
 | Borrower | Principal | Q3 cash interest received | Q3 PIK accrued | Net debt | LTM EBITDA | Max ratio |
 |---|---:|---:|---:|---:|---:|---:|

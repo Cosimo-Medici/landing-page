@@ -16,13 +16,13 @@ Path: /
 
 The homepage introduces three recurring jobs: investor reporting, portfolio updates, and investor requests. An interactive example follows management accounts, company commentary, and a prior report format into a quarterly portfolio update.
 
-The example uses Renaissance Capital, a fictional fund manager. Three companies report $27.0 million in quarterly revenue against a $27.5 million budget. One company's accounts show $6.0 million while its management update says $6.4 million. The draft uses the accounts provisionally and leaves the $400,000 difference visible for review. The example has inspectable source records and a three-page draft. It is authored demonstration content, not a live application run.
+The example uses Signet Equity, a fictional fund manager. Three companies report $27.0 million in quarterly revenue against a $27.5 million budget. One company's accounts show $6.0 million while its management update says $6.4 million. The draft uses the accounts provisionally and leaves the $400,000 difference visible for review. The example has inspectable source records and a three-page draft. It is authored demonstration content, not a live application run.
 
 ## Real estate
 
 Path: /re/
 
-The page focuses on quarterly LP reports, investor statements, capital call notices, and distribution notices. The reporting example uses property figures, manager updates, and investor capital records for fictional Renaissance Real Estate Fund I. Visitors can compare source records with the proposed draft and explore a six-page sample report.
+The page focuses on quarterly LP reports, investor statements, capital call notices, and distribution notices. The reporting example uses property figures, manager updates, and investor capital records for fictional Loggia Property Group. Visitors can compare source records with the proposed draft and explore a six-page sample report.
 
 The example preserves open property questions and shows a simplified capital-movement schedule. That schedule excludes income and valuation changes and is not a complete capital account statement. Investor notices use supplied, approved allocations; they do not execute payments.
 
@@ -30,7 +30,7 @@ The example preserves open property questions and shows a simplified capital-mov
 
 Path: /vc/
 
-The page focuses on preparing portfolio and LP updates from founder submissions, company spreadsheets, and fund records. Its fictional Renaissance Venture Fund I example contains six companies, five current submissions, one stale submission, and a company with six months of runway at its reported burn rate. An unsigned financing discussion is not treated as cash received.
+The page focuses on preparing portfolio and LP updates from founder submissions, company spreadsheets, and fund records. Its fictional Telescope Ventures example contains six companies, five current submissions, one stale submission, and a company with six months of runway at its reported burn rate. An unsigned financing discussion is not treated as cash received.
 
 The six-page example includes portfolio metrics, cash and runway, founder commentary, capital movements, and open items. Company operating figures are not fund performance or valuation measures. The sample capital schedule is incomplete until the necessary approved allocations and adjustments are included.
 
@@ -38,7 +38,7 @@ The six-page example includes portfolio metrics, cash and runway, founder commen
 
 Path: /pe/
 
-The page focuses on bringing portfolio-company financials, management commentary, and fund records into reporting drafts. Its fictional Renaissance Buyout Fund I example compares company actuals with budgets and explains an EBITDA shortfall from supplied management notes. Unexplained variances and unapproved operating plans remain visible.
+The page focuses on bringing portfolio-company financials, management commentary, and fund records into reporting drafts. Its fictional Signet Equity example compares company actuals with budgets and explains an EBITDA shortfall from supplied management notes. Unexplained variances and unapproved operating plans remain visible.
 
 The six-page sample includes portfolio metrics, budget comparisons, company updates, capital movements, and review questions. The company totals are management-reported operating figures, not ownership-weighted fund results. The sample does not implement an ILPA reporting template or constitute a complete quarterly financial reporting package.
 
@@ -46,7 +46,7 @@ The six-page sample includes portfolio metrics, budget comparisons, company upda
 
 Path: /credit/
 
-The page focuses on private credit and direct lending: borrower review packs, covenant worksheets, reporting follow-ups, and LP updates. Its fictional Renaissance Direct Lending Fund I example follows six loans through servicing data, supplied covenant calculations, and a reporting tracker.
+The page focuses on private credit and direct lending: borrower review packs, covenant worksheets, reporting follow-ups, and LP updates. Its fictional Fiorino Debt Partners example follows six loans through servicing data, supplied covenant calculations, and a reporting tracker.
 
 One worksheet shows leverage of 4.80 times using submitted EBITDA and 5.33 times if an unresolved add-back is excluded, compared with a supplied maximum of 5.00 times. This is a review question, not a determination of compliance or default. Another item identifies a missing borrower certificate. Cash interest received and PIK accrued are shown separately; neither is presented as the fund's net return.
 
@@ -56,7 +56,7 @@ The six-page credit pack is an authored example. Agreement definitions, adjustme
 
 Path: /hedge/
 
-The page focuses on investor letters, close-file exceptions, subscription/redemption activity, and allocator response drafts. Its fictional Bellosguardo Equity Fund example uses administrator-approved figures and supplied policy records for a long/short equity fund.
+The page focuses on investor letters, close-file exceptions, subscription/redemption activity, and allocator response drafts. Its fictional Anamorphic Capital example uses administrator-approved figures and supplied policy records for a long/short equity fund.
 
 The six-page monthly pack separates investor-facing drafts from internal working papers. It includes class returns, an exposure snapshot, investor activity, a cash discrepancy, and a questionnaire response that needs current supporting evidence. The administrator retains responsibility for the official NAV; the fund team resolves exceptions and approves investor communications. The page does not claim to perform trading, investment decisions, complete risk management, or independent assurance.
 

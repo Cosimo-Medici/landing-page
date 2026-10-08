@@ -18,6 +18,7 @@ const DIST = path.join(__dirname, 'dist');
 const HASHABLE = [
   { src: 'js/theme.js', dir: 'js' },
   { src: 'css/home.css', dir: 'css' },
+  { src: 'css/site-layout.css', dir: 'css' },
   { src: 'js/home.js', dir: 'js' },
   { src: 'js/page-chrome.js', dir: 'js' },
   { src: 'css/styles.css', dir: 'css' },
@@ -26,7 +27,8 @@ const HASHABLE = [
   { src: 'js/re-report.js', dir: 'js' },
   ...['vc', 'pe', 'credit', 'hedge'].map(sector => ({ src: `js/${sector}-report.js`, dir: 'js' })),
   { src: 'js/main.js',     dir: 'js' },
-  { src: 'js/demo-data.js', dir: 'js' },
+  // The retired chat demo is not used by any current page. Do not publish its
+  // historical sample records alongside the current, reconciled examples.
 ];
 
 // HTML files that reference the hashable assets
@@ -132,5 +134,7 @@ for (const file of STATIC) {
   const destName = file.startsWith('public/') ? file.slice(7) : file;
   copyFile(srcPath, path.join(DIST, destName));
 }
+
+fs.cpSync(path.join(SRC, 'public/product-demo'), path.join(DIST, 'product-demo'), { recursive: true });
 
 console.log(`\nBuild complete → dist/`);

@@ -155,7 +155,7 @@ The first reply can establish handling of sensitive documents; no need to reques
 
 The sector selector establishes VC, the headline establishes quarter-end reporting, and the sample CTA offers something tangible. Keep those. “Grow your fund. Not your workload.” is general-purpose framing rather than evidence; it need not carry the positioning because the lede can.
 
-The product identity appears as Cosimo in the nav and as Medici's agent in an 11px footnote. That is adequate for a first encounter if the surrounding page consistently uses Cosimo as the product. The title/metadata can remain company branded. Do not create another fictional client brand near the actual logo; Renaissance is correctly confined to the sample documents.
+The product identity appears as Cosimo in the nav and as Medici's agent in an 11px footnote. That is adequate for a first encounter if the surrounding page consistently uses Cosimo as the product. The title/metadata can remain company branded. Do not create another fictional client brand near the actual logo; Telescope Ventures is correctly confined to the sample documents.
 
 The initial headline begins deleting at approximately 4.8 seconds after initialization (2.8-second entrance gate plus a 2-second initial delay), with randomized character timing. That is a design fact, not automatically a defect. The fixed lede needs to retain the substantive message during that transition. Pause, explicit workflow selection and reduced-motion behavior are implemented; preserve them.
 

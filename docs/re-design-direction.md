@@ -84,10 +84,10 @@ The preceding independent-track change was incomplete: it retained whole-phrase 
 ## Fictional demo names — 2026-10-05
 Use subtle Florentine and Renaissance references for fictional entities, paired with recognizable business roles. Reserve Medici and Cosimo for the actual company and product; never use them as sample clients, investors, or properties. Preserve explicit fictional-data labels.
 
-- RE fund: Renaissance Real Estate Fund I; short document brand: Renaissance.
+- RE fund: Loggia Property Group; document brand: Loggia Property Group.
 - LP: Strozzi Family Trust, consistent across the capital call, distribution notice, statement, and report commentary.
 - Properties: Arno Court, Pitti Gardens, Oltrarno Place, Fiesole Terrace. Use these names in the future RE workflow demo too.
-- Homepage examples: Rucellai Capital Fund III, Tornabuoni Credit Fund II, Brunelleschi Acquisition; portfolio companies use similarly restrained names. Source filenames, citations, tables, and document text use matching names.
+- Homepage examples: Signet Equity and Fiorino Debt Partners; portfolio companies use similarly restrained names. Source filenames, citations, tables, and document text use matching names.
 - Keep functional labels such as “Capital account ledger” explicit. Names provide texture; they should not make the workflow harder to understand.
 
 

@@ -1,9 +1,9 @@
-// Shared theme and accessible mobile navigation for supporting pages.
+// Shared theme and accessible mobile navigation for every marketing page.
 (() => {
 'use strict';
 const menu = document.getElementById('nav-toggle');
 const nav = document.querySelector('.nav-right');
-const mobileMenu = matchMedia('(max-width: 640px)');
+const mobileMenu = matchMedia('(max-width: 760px)');
 const menuBackground = new Map();
 nav.id = nav.id || 'page-navigation';
 menu.setAttribute('aria-controls', nav.id);

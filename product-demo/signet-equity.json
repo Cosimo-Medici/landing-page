@@ -1,0 +1,2176 @@
+{
+  "stateTitle": "Portfolio",
+  "stateCaption": "Six companies \u00b7 quarter ended September 30, 2026",
+  "org": "Signet Equity",
+  "fundRead": "Six companies at September 30, 2026. Q3 revenue $70.0M; EBITDA $9.6M. The register shows LTM operating figures: $280.0M revenue and $38.4M EBITDA. Fund equity investments are valued at $210.48M; $12.90M fund cash less $2.10M accrued liabilities gives $221.28M NAV. Company cash is already included in equity values and is not added again. Three company follow-ups are open; Fiesole\u2019s revised production plan also awaits board review.",
+  "tiles": [],
+  "fund": {
+    "asOf": "Sep 30, 2026",
+    "nav": {
+      "v": "$221.28M",
+      "n": 221.28,
+      "chain": {
+        "f": "Company equity marks + fund cash \u2212 fund liabilities",
+        "inputs": [
+          [
+            "Six company equity marks: $210.48M",
+            "Signet_Equity_Valuation_Schedule_Q3_2026.xlsx"
+          ],
+          [
+            "Fund cash $12.90M; accrued liabilities $2.10M",
+            "Signet_Equity_Fund_Balance_Sheet_Q3_2026.xlsx"
+          ]
+        ],
+        "run": [
+          "wf-portfolio-monitoring",
+          "q3-2026"
+        ],
+        "date": "Sep 30, 2026"
+      }
+    },
+    "cash": {
+      "v": "$12.90M",
+      "n": 12.9,
+      "chain": {
+        "f": "Fund cash balance",
+        "inputs": [
+          [
+            "Cash $12.90M",
+            "Fund balance sheet"
+          ]
+        ],
+        "run": [
+          "wf-portfolio-monitoring",
+          "q3-2026"
+        ],
+        "date": "Sep 30, 2026"
+      }
+    },
+    "accrued": {
+      "v": "$2.10M",
+      "n": 2.1,
+      "chain": {
+        "f": "All fund-level accrued liabilities",
+        "inputs": [
+          [
+            "Accrued liabilities $2.10M",
+            "Fund balance sheet"
+          ]
+        ],
+        "run": [
+          "wf-portfolio-monitoring",
+          "q3-2026"
+        ],
+        "date": "Sep 30, 2026"
+      }
+    }
+  },
+  "companies": [
+    {
+      "name": "Arno Precision",
+      "hq": "Charlotte, NC",
+      "sector": "Precision manufacturing",
+      "state": "act",
+      "own": 0.8,
+      "entry": {
+        "date": "Mar 2023",
+        "ev": 100.9,
+        "equityM": 50,
+        "equity": {
+          "v": "$50.00M",
+          "n": 50,
+          "chain": {
+            "f": "Fund equity cost from the investment ledger",
+            "inputs": [
+              [
+                "Equity invested: $50.00M",
+                "Arno_Precision_Investment_Ledger.xlsx"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        }
+      },
+      "kpi": {
+        "revenue": {
+          "v": "72.0",
+          "n": 72,
+          "chain": {
+            "f": "LTM revenue = Q4 2025 + Q1\u2013Q3 2026",
+            "inputs": [
+              [
+                "Q4 2025 through Q2 2026: $54.0M",
+                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
+              ],
+              [
+                "Q3 2026: $18.0M",
+                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 revenue row"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "ebitda": {
+          "v": "12.8",
+          "n": 12.8,
+          "chain": {
+            "f": "Sum of the last four reported quarters",
+            "inputs": [
+              [
+                "Quarterly EBITDA: $3.00M + $3.20M + $3.40M + $3.20M",
+                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "margin": 0.17777777777777778,
+        "vsBud": {
+          "v": "-5.2%",
+          "n": -0.051851851851851816,
+          "chain": {
+            "f": "($12.80M actual \u2212 $13.50M budget) \u00f7 $13.50M budget",
+            "inputs": [
+              [
+                "LTM EBITDA actual: $12.80M",
+                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+              ],
+              [
+                "LTM EBITDA budget: $13.50M",
+                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 budget"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "hist": [
+          1.133,
+          1.133,
+          1.134,
+          1.067,
+          1.067,
+          1.066
+        ],
+        "band": [
+          1.1083,
+          1.225
+        ],
+        "arr": {
+          "v": "Not applicable",
+          "chain": {
+            "f": "This business does not report subscription ARR",
+            "inputs": [
+              [
+                "Precision manufacturing",
+                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 business model"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        }
+      },
+      "liquidity": {
+        "cash": {
+          "v": "$15.20M",
+          "n": 15.2,
+          "chain": {
+            "f": "Cash plus undrawn, committed revolver",
+            "inputs": [
+              [
+                "Cash: $9.20M",
+                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 cash"
+              ],
+              [
+                "Undrawn revolver: $6.00M",
+                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 facilities"
+              ],
+              [
+                "Q3 operating cash inflow: $1.92M",
+                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 cash flow"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "revolverAvail": 6,
+        "status": "Cash-generative"
+      },
+      "debt": {
+        "lender": "Peruzzi Bank",
+        "facility": "Senior secured term loan + revolver",
+        "balance": {
+          "v": "$38.40M",
+          "n": 38.4,
+          "chain": {
+            "f": "Net debt = drawn debt less cash",
+            "inputs": [
+              [
+                "Drawn debt: $47.60M",
+                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+              ],
+              [
+                "Cash: $9.20M",
+                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "rate": "SOFR + 4.25%",
+        "maturity": "2029-09-30",
+        "leverage": {
+          "v": "3.00\u00d7",
+          "n": 3,
+          "chain": {
+            "f": "$38.40M net debt \u00f7 $12.80M LTM EBITDA",
+            "inputs": [
+              [
+                "Net debt: $38.40M",
+                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+              ],
+              [
+                "LTM EBITDA: $12.80M",
+                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "covenant": {
+          "metric": "Net leverage",
+          "max": 4.25,
+          "test": "quarterly",
+          "nextTest": "2026-12-31",
+          "headroom": {
+            "v": "1.25\u00d7",
+            "n": 1.25,
+            "chain": {
+              "f": "4.25\u00d7 limit \u2212 3.00\u00d7 actual",
+              "inputs": [
+                [
+                  "Leverage limit: 4.25\u00d7",
+                  "Arno_Precision_Credit_Agreement.pdf \u00a76.1"
+                ]
+              ],
+              "run": [
+                "wf-portfolio-monitoring",
+                "q3-2026"
+              ],
+              "date": "Sep 30, 2026"
+            }
+          }
+        }
+      },
+      "val": {
+        "fairValue": {
+          "v": "71.68",
+          "n": 71.68,
+          "chain": {
+            "f": "($128.00M enterprise value \u2212 $38.40M net debt) \u00d7 80% ownership",
+            "inputs": [
+              [
+                "LTM EBITDA $12.80M \u00d7 10.0\u00d7 = $128.00M enterprise value",
+                "Signet_Equity_Valuation_Schedule_Q3_2026.xlsx"
+              ],
+              [
+                "Net debt $38.40M; ownership 80%",
+                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "method": "10.0\u00d7 LTM EBITDA less net debt \u00d7 80%",
+        "asOf": "Sep 30, 2026",
+        "basis": "fund\u2019s equity interest; no realized company proceeds",
+        "moic": {
+          "v": "1.43\u00d7",
+          "n": 1.4336000000000002,
+          "chain": {
+            "f": "$71.68M fair value \u00f7 $50.00M invested",
+            "inputs": [
+              [
+                "Fair value: $71.68M; cost: $50.00M",
+                "Signet_Equity_Investment_Ledger.xlsx"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "pctNav": 0.3239334779464932
+      },
+      "board": {
+        "next": "Oct 19, 2026",
+        "seat": "Lucia Alberti",
+        "lastPack": "Q3 pack \u00b7 received Oct 5, 2026"
+      },
+      "keyPeople": [
+        "Sofia Neri (CEO)",
+        "Giulia Rossi (CFO)"
+      ],
+      "addOns": [
+        {
+          "name": "Vasari Tooling",
+          "equityM": 5.0,
+          "includedInCost": true
+        }
+      ],
+      "exit": {
+        "stage": "Hold \u00b7 value creation plan",
+        "advisor": "No sale advisor appointed",
+        "dates": "Annual exit readiness review \u00b7 Mar 2027"
+      },
+      "pkg": "Q3 '26 \u00b7 Sep 30",
+      "read": "Shipment delays; the revised Q4 shipping schedule is outstanding.",
+      "checked": [
+        [
+          "Q3 revenue $18.00M and EBITDA $3.20M tied to accounts",
+          true
+        ],
+        [
+          "LTM EBITDA $12.80M agrees to four quarters",
+          true
+        ],
+        [
+          "Net leverage 3.00\u00d7 is below 4.25\u00d7 limit",
+          true
+        ],
+        [
+          "Sources retained for the fund\u2019s review",
+          true
+        ],
+        [
+          "Q3 operating cash inflow $1.92M; no burn-based runway applies",
+          true
+        ]
+      ],
+      "quarterly": {
+        "revenue": 18,
+        "revenueBudget": 19,
+        "ebitda": 3.2,
+        "ebitdaBudget": 3.5,
+        "operatingCashFlow": 1.92
+      },
+      "ltmEbitdaBudget": 13.5,
+      "enterpriseValue": 128.0,
+      "quarterlyEbitdaHistory": [
+        3,
+        3.2,
+        3.4,
+        3.2
+      ]
+    },
+    {
+      "name": "Pitti Services",
+      "hq": "Austin, TX",
+      "sector": "Business services",
+      "state": "ok",
+      "own": 0.7,
+      "entry": {
+        "date": "Oct 2022",
+        "ev": 60.9143,
+        "equityM": 25,
+        "equity": {
+          "v": "$25.00M",
+          "n": 25,
+          "chain": {
+            "f": "Fund equity cost from the investment ledger",
+            "inputs": [
+              [
+                "Equity invested: $25.00M",
+                "Pitti_Services_Investment_Ledger.xlsx"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        }
+      },
+      "kpi": {
+        "revenue": {
+          "v": "56.0",
+          "n": 56,
+          "chain": {
+            "f": "LTM revenue = Q4 2025 + Q1\u2013Q3 2026",
+            "inputs": [
+              [
+                "Q4 2025 through Q2 2026: $42.0M",
+                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
+              ],
+              [
+                "Q3 2026: $14.0M",
+                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 revenue row"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "ebitda": {
+          "v": "8.4",
+          "n": 8.4,
+          "chain": {
+            "f": "Sum of the last four reported quarters",
+            "inputs": [
+              [
+                "Quarterly EBITDA: $2.00M + $2.10M + $2.20M + $2.10M",
+                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "margin": 0.15,
+        "vsBud": {
+          "v": "+5.0%",
+          "n": 0.050000000000000044,
+          "chain": {
+            "f": "($8.40M actual \u2212 $8.00M budget) \u00f7 $8.00M budget",
+            "inputs": [
+              [
+                "LTM EBITDA actual: $8.40M",
+                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+              ],
+              [
+                "LTM EBITDA budget: $8.00M",
+                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 budget"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "hist": [
+          0.733,
+          0.733,
+          0.734,
+          0.7,
+          0.7,
+          0.7
+        ],
+        "band": [
+          0.6333,
+          0.7
+        ],
+        "arr": {
+          "v": "Not applicable",
+          "chain": {
+            "f": "This business does not report subscription ARR",
+            "inputs": [
+              [
+                "Business services",
+                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 business model"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        }
+      },
+      "liquidity": {
+        "cash": {
+          "v": "$9.40M",
+          "n": 9.4,
+          "chain": {
+            "f": "Cash plus undrawn, committed revolver",
+            "inputs": [
+              [
+                "Cash: $5.40M",
+                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 cash"
+              ],
+              [
+                "Undrawn revolver: $4.00M",
+                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 facilities"
+              ],
+              [
+                "Q3 operating cash inflow: $1.26M",
+                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 cash flow"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "revolverAvail": 4,
+        "status": "Cash-generative"
+      },
+      "debt": {
+        "lender": "Bardi Commercial Bank",
+        "facility": "Senior secured term loan + revolver",
+        "balance": {
+          "v": "$25.20M",
+          "n": 25.2,
+          "chain": {
+            "f": "Net debt = drawn debt less cash",
+            "inputs": [
+              [
+                "Drawn debt: $30.60M",
+                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+              ],
+              [
+                "Cash: $5.40M",
+                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "rate": "SOFR + 4.25%",
+        "maturity": "2030-09-30",
+        "leverage": {
+          "v": "3.00\u00d7",
+          "n": 3,
+          "chain": {
+            "f": "$25.20M net debt \u00f7 $8.40M LTM EBITDA",
+            "inputs": [
+              [
+                "Net debt: $25.20M",
+                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+              ],
+              [
+                "LTM EBITDA: $8.40M",
+                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "covenant": {
+          "metric": "Net leverage",
+          "max": 4.5,
+          "test": "quarterly",
+          "nextTest": "2026-12-31",
+          "headroom": {
+            "v": "1.50\u00d7",
+            "n": 1.5,
+            "chain": {
+              "f": "4.50\u00d7 limit \u2212 3.00\u00d7 actual",
+              "inputs": [
+                [
+                  "Leverage limit: 4.50\u00d7",
+                  "Pitti_Services_Credit_Agreement.pdf \u00a76.1"
+                ]
+              ],
+              "run": [
+                "wf-portfolio-monitoring",
+                "q3-2026"
+              ],
+              "date": "Sep 30, 2026"
+            }
+          }
+        }
+      },
+      "val": {
+        "fairValue": {
+          "v": "35.28",
+          "n": 35.28,
+          "chain": {
+            "f": "($75.60M enterprise value \u2212 $25.20M net debt) \u00d7 70% ownership",
+            "inputs": [
+              [
+                "LTM EBITDA $8.40M \u00d7 9.0\u00d7 = $75.60M enterprise value",
+                "Signet_Equity_Valuation_Schedule_Q3_2026.xlsx"
+              ],
+              [
+                "Net debt $25.20M; ownership 70%",
+                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "method": "9.0\u00d7 LTM EBITDA less net debt \u00d7 70%",
+        "asOf": "Sep 30, 2026",
+        "basis": "fund\u2019s equity interest; no realized company proceeds",
+        "moic": {
+          "v": "1.41\u00d7",
+          "n": 1.4112,
+          "chain": {
+            "f": "$35.28M fair value \u00f7 $25.00M invested",
+            "inputs": [
+              [
+                "Fair value: $35.28M; cost: $25.00M",
+                "Signet_Equity_Investment_Ledger.xlsx"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "pctNav": 0.1594360086767896
+      },
+      "board": {
+        "next": "Oct 20, 2026",
+        "seat": "Marco Rucellai",
+        "lastPack": "Q3 pack \u00b7 received Oct 5, 2026"
+      },
+      "keyPeople": [
+        "Luca Vieri (CEO)",
+        "Andrea Bassi (CFO)"
+      ],
+      "addOns": [
+        {
+          "name": "Bellini Services",
+          "equityM": 2.5,
+          "includedInCost": true
+        }
+      ],
+      "exit": {
+        "stage": "Hold \u00b7 value creation plan",
+        "advisor": "No sale advisor appointed",
+        "dates": "Annual exit readiness review \u00b7 Mar 2027"
+      },
+      "pkg": "Q3 '26 \u00b7 Sep 30",
+      "read": "Stronger contract renewals supported Q3 revenue $0.5M above budget.",
+      "checked": [
+        [
+          "Q3 revenue $14.00M and EBITDA $2.10M tied to accounts",
+          true
+        ],
+        [
+          "LTM EBITDA $8.40M agrees to four quarters",
+          true
+        ],
+        [
+          "Net leverage 3.00\u00d7 is below 4.50\u00d7 limit",
+          true
+        ],
+        [
+          "Sources retained for the fund\u2019s review",
+          true
+        ],
+        [
+          "Q3 operating cash inflow $1.26M; no burn-based runway applies",
+          true
+        ]
+      ],
+      "quarterly": {
+        "revenue": 14,
+        "revenueBudget": 13.5,
+        "ebitda": 2.1,
+        "ebitdaBudget": 2,
+        "operatingCashFlow": 1.26
+      },
+      "ltmEbitdaBudget": 8,
+      "enterpriseValue": 75.6,
+      "quarterlyEbitdaHistory": [
+        2,
+        2.1,
+        2.2,
+        2.1
+      ]
+    },
+    {
+      "name": "Fiesole Components",
+      "hq": "Toledo, OH",
+      "sector": "Industrial components",
+      "state": "act",
+      "own": 0.75,
+      "entry": {
+        "date": "Jul 2024",
+        "ev": 39.8667,
+        "equityM": 20,
+        "equity": {
+          "v": "$20.00M",
+          "n": 20,
+          "chain": {
+            "f": "Fund equity cost from the investment ledger",
+            "inputs": [
+              [
+                "Equity invested: $20.00M",
+                "Fiesole_Components_Investment_Ledger.xlsx"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        }
+      },
+      "kpi": {
+        "revenue": {
+          "v": "36.0",
+          "n": 36,
+          "chain": {
+            "f": "LTM revenue = Q4 2025 + Q1\u2013Q3 2026",
+            "inputs": [
+              [
+                "Q4 2025 through Q2 2026: $27.0M",
+                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
+              ],
+              [
+                "Q3 2026: $9.0M",
+                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 revenue row"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "ebitda": {
+          "v": "4.4",
+          "n": 4.4,
+          "chain": {
+            "f": "Sum of the last four reported quarters",
+            "inputs": [
+              [
+                "Quarterly EBITDA: $1.20M + $1.10M + $1.00M + $1.10M",
+                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "margin": 0.12222222222222223,
+        "vsBud": {
+          "v": "-15.4%",
+          "n": -0.15384615384615385,
+          "chain": {
+            "f": "($4.40M actual \u2212 $5.20M budget) \u00f7 $5.20M budget",
+            "inputs": [
+              [
+                "LTM EBITDA actual: $4.40M",
+                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+              ],
+              [
+                "LTM EBITDA budget: $5.20M",
+                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 budget"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "hist": [
+          0.333,
+          0.333,
+          0.334,
+          0.367,
+          0.367,
+          0.366
+        ],
+        "band": [
+          0.4433,
+          0.49
+        ],
+        "arr": {
+          "v": "Not applicable",
+          "chain": {
+            "f": "This business does not report subscription ARR",
+            "inputs": [
+              [
+                "Industrial components",
+                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 business model"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        }
+      },
+      "liquidity": {
+        "cash": {
+          "v": "$6.30M",
+          "n": 6.3,
+          "chain": {
+            "f": "Cash plus undrawn, committed revolver",
+            "inputs": [
+              [
+                "Cash: $4.30M",
+                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 cash"
+              ],
+              [
+                "Undrawn revolver: $2.00M",
+                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 facilities"
+              ],
+              [
+                "Q3 operating cash inflow: $0.66M",
+                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 cash flow"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "revolverAvail": 2,
+        "status": "Cash-generative"
+      },
+      "debt": {
+        "lender": "Strozzi Credit",
+        "facility": "Senior secured term loan + revolver",
+        "balance": {
+          "v": "$13.20M",
+          "n": 13.2,
+          "chain": {
+            "f": "Net debt = drawn debt less cash",
+            "inputs": [
+              [
+                "Drawn debt: $17.50M",
+                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+              ],
+              [
+                "Cash: $4.30M",
+                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "rate": "SOFR + 4.25%",
+        "maturity": "2029-09-30",
+        "leverage": {
+          "v": "3.00\u00d7",
+          "n": 3,
+          "chain": {
+            "f": "$13.20M net debt \u00f7 $4.40M LTM EBITDA",
+            "inputs": [
+              [
+                "Net debt: $13.20M",
+                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+              ],
+              [
+                "LTM EBITDA: $4.40M",
+                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "covenant": {
+          "metric": "Net leverage",
+          "max": 4,
+          "test": "quarterly",
+          "nextTest": "2026-12-31",
+          "headroom": {
+            "v": "1.00\u00d7",
+            "n": 1,
+            "chain": {
+              "f": "4.00\u00d7 limit \u2212 3.00\u00d7 actual",
+              "inputs": [
+                [
+                  "Leverage limit: 4.00\u00d7",
+                  "Fiesole_Components_Credit_Agreement.pdf \u00a76.1"
+                ]
+              ],
+              "run": [
+                "wf-portfolio-monitoring",
+                "q3-2026"
+              ],
+              "date": "Sep 30, 2026"
+            }
+          }
+        }
+      },
+      "val": {
+        "fairValue": {
+          "v": "26.40",
+          "n": 26.4,
+          "chain": {
+            "f": "($48.40M enterprise value \u2212 $13.20M net debt) \u00d7 75% ownership",
+            "inputs": [
+              [
+                "LTM EBITDA $4.40M \u00d7 11.0\u00d7 = $48.40M enterprise value",
+                "Signet_Equity_Valuation_Schedule_Q3_2026.xlsx"
+              ],
+              [
+                "Net debt $13.20M; ownership 75%",
+                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "method": "11.0\u00d7 LTM EBITDA less net debt \u00d7 75%",
+        "asOf": "Sep 30, 2026",
+        "basis": "fund\u2019s equity interest; no realized company proceeds",
+        "moic": {
+          "v": "1.32\u00d7",
+          "n": 1.3199999999999998,
+          "chain": {
+            "f": "$26.40M fair value \u00f7 $20.00M invested",
+            "inputs": [
+              [
+                "Fair value: $26.40M; cost: $20.00M",
+                "Signet_Equity_Investment_Ledger.xlsx"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "pctNav": 0.11930585683297179
+      },
+      "board": {
+        "next": "Oct 21, 2026",
+        "seat": "Elena Strozzi",
+        "lastPack": "Q3 pack \u00b7 received Oct 5, 2026"
+      },
+      "keyPeople": [
+        "Anna Conti (CEO)",
+        "Clara Rizzi (CFO)"
+      ],
+      "addOns": [
+        {
+          "name": "Alberti Components",
+          "equityM": 2.0,
+          "includedInCost": true
+        }
+      ],
+      "exit": {
+        "stage": "Hold \u00b7 value creation plan",
+        "advisor": "No sale advisor appointed",
+        "dates": "Annual exit readiness review \u00b7 Mar 2027"
+      },
+      "pkg": "Q3 '26 \u00b7 Sep 30",
+      "read": "Q3 revenue is $9.0M in the accounts and $9.4M in an earlier update. Finance confirmation is outstanding.",
+      "checked": [
+        [
+          "Q3 revenue $9.00M and EBITDA $1.10M tied to accounts",
+          true
+        ],
+        [
+          "LTM EBITDA $4.40M agrees to four quarters",
+          true
+        ],
+        [
+          "Net leverage 3.00\u00d7 is below 4.00\u00d7 limit",
+          true
+        ],
+        [
+          "Sources retained for the fund\u2019s review",
+          true
+        ],
+        [
+          "Q3 operating cash inflow $0.66M; no burn-based runway applies",
+          true
+        ]
+      ],
+      "quarterly": {
+        "revenue": 9,
+        "revenueBudget": 10,
+        "ebitda": 1.1,
+        "ebitdaBudget": 1.4,
+        "operatingCashFlow": 0.66
+      },
+      "ltmEbitdaBudget": 5.2,
+      "enterpriseValue": 48.4,
+      "quarterlyEbitdaHistory": [
+        1.2,
+        1.1,
+        1,
+        1.1
+      ]
+    },
+    {
+      "name": "Oltrarno Software",
+      "hq": "Raleigh, NC",
+      "sector": "Enterprise software",
+      "state": "ok",
+      "own": 0.65,
+      "entry": {
+        "date": "Feb 2023",
+        "ev": 58.9538,
+        "equityM": 30,
+        "equity": {
+          "v": "$30.00M",
+          "n": 30,
+          "chain": {
+            "f": "Fund equity cost from the investment ledger",
+            "inputs": [
+              [
+                "Equity invested: $30.00M",
+                "Oltrarno_Software_Investment_Ledger.xlsx"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        }
+      },
+      "kpi": {
+        "revenue": {
+          "v": "32.0",
+          "n": 32,
+          "chain": {
+            "f": "LTM revenue = Q4 2025 + Q1\u2013Q3 2026",
+            "inputs": [
+              [
+                "Q4 2025 through Q2 2026: $24.0M",
+                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
+              ],
+              [
+                "Q3 2026: $8.0M",
+                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 revenue row"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "ebitda": {
+          "v": "6.4",
+          "n": 6.4,
+          "chain": {
+            "f": "Sum of the last four reported quarters",
+            "inputs": [
+              [
+                "Quarterly EBITDA: $1.50M + $1.60M + $1.70M + $1.60M",
+                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "margin": 0.2,
+        "vsBud": {
+          "v": "+0.0%",
+          "n": 0.0,
+          "chain": {
+            "f": "($6.40M actual \u2212 $6.40M budget) \u00f7 $6.40M budget",
+            "inputs": [
+              [
+                "LTM EBITDA actual: $6.40M",
+                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+              ],
+              [
+                "LTM EBITDA budget: $6.40M",
+                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 budget"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "hist": [
+          0.567,
+          0.567,
+          0.566,
+          0.533,
+          0.533,
+          0.534
+        ],
+        "band": [
+          0.5067,
+          0.56
+        ],
+        "arr": {
+          "v": "$30.0M",
+          "n": 30,
+          "chain": {
+            "f": "Annual recurring subscription revenue at September 30",
+            "inputs": [
+              [
+                "2,500 active subscriptions \u00d7 $12,000 annual recurring fee",
+                "Oltrarno_Subscription_Ledger_Sep2026.xlsx"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        }
+      },
+      "liquidity": {
+        "cash": {
+          "v": "$11.20M",
+          "n": 11.2,
+          "chain": {
+            "f": "Cash plus undrawn, committed revolver",
+            "inputs": [
+              [
+                "Cash: $7.20M",
+                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 cash"
+              ],
+              [
+                "Undrawn revolver: $4.00M",
+                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 facilities"
+              ],
+              [
+                "Q3 operating cash inflow: $0.96M",
+                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 cash flow"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "revolverAvail": 4,
+        "status": "Cash-generative"
+      },
+      "debt": {
+        "lender": "Peruzzi Bank",
+        "facility": "Senior secured term loan + revolver",
+        "balance": {
+          "v": "$12.80M",
+          "n": 12.8,
+          "chain": {
+            "f": "Net debt = drawn debt less cash",
+            "inputs": [
+              [
+                "Drawn debt: $20.00M",
+                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+              ],
+              [
+                "Cash: $7.20M",
+                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "rate": "SOFR + 4.25%",
+        "maturity": "2030-09-30",
+        "leverage": {
+          "v": "2.00\u00d7",
+          "n": 2,
+          "chain": {
+            "f": "$12.80M net debt \u00f7 $6.40M LTM EBITDA",
+            "inputs": [
+              [
+                "Net debt: $12.80M",
+                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+              ],
+              [
+                "LTM EBITDA: $6.40M",
+                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "covenant": {
+          "metric": "Net leverage",
+          "max": 4,
+          "test": "quarterly",
+          "nextTest": "2026-12-31",
+          "headroom": {
+            "v": "2.00\u00d7",
+            "n": 2,
+            "chain": {
+              "f": "4.00\u00d7 limit \u2212 2.00\u00d7 actual",
+              "inputs": [
+                [
+                  "Leverage limit: 4.00\u00d7",
+                  "Oltrarno_Software_Credit_Agreement.pdf \u00a76.1"
+                ]
+              ],
+              "run": [
+                "wf-portfolio-monitoring",
+                "q3-2026"
+              ],
+              "date": "Sep 30, 2026"
+            }
+          }
+        }
+      },
+      "val": {
+        "fairValue": {
+          "v": "41.60",
+          "n": 41.6,
+          "chain": {
+            "f": "($76.80M enterprise value \u2212 $12.80M net debt) \u00d7 65% ownership",
+            "inputs": [
+              [
+                "LTM EBITDA $6.40M \u00d7 12.0\u00d7 = $76.80M enterprise value",
+                "Signet_Equity_Valuation_Schedule_Q3_2026.xlsx"
+              ],
+              [
+                "Net debt $12.80M; ownership 65%",
+                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "method": "12.0\u00d7 LTM EBITDA less net debt \u00d7 65%",
+        "asOf": "Sep 30, 2026",
+        "basis": "fund\u2019s equity interest; no realized company proceeds",
+        "moic": {
+          "v": "1.39\u00d7",
+          "n": 1.3866666666666667,
+          "chain": {
+            "f": "$41.60M fair value \u00f7 $30.00M invested",
+            "inputs": [
+              [
+                "Fair value: $41.60M; cost: $30.00M",
+                "Signet_Equity_Investment_Ledger.xlsx"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "pctNav": 0.18799710773680406
+      },
+      "board": {
+        "next": "Oct 22, 2026",
+        "seat": "Lucia Alberti",
+        "lastPack": "Q3 pack \u00b7 received Oct 5, 2026"
+      },
+      "keyPeople": [
+        "Paolo Morelli (CEO)",
+        "Nico Sarti (CFO)"
+      ],
+      "addOns": [
+        {
+          "name": "Lippi Analytics",
+          "equityM": 3.0,
+          "includedInCost": true
+        }
+      ],
+      "exit": {
+        "stage": "Hold \u00b7 value creation plan",
+        "advisor": "No sale advisor appointed",
+        "dates": "Annual exit readiness review \u00b7 Mar 2027"
+      },
+      "pkg": "Q3 '26 \u00b7 Sep 30",
+      "read": "Q3 revenue and EBITDA matched budget; subscription ARR is $30.0M.",
+      "checked": [
+        [
+          "Q3 revenue $8.00M and EBITDA $1.60M tied to accounts",
+          true
+        ],
+        [
+          "LTM EBITDA $6.40M agrees to four quarters",
+          true
+        ],
+        [
+          "Net leverage 2.00\u00d7 is below 4.00\u00d7 limit",
+          true
+        ],
+        [
+          "Sources retained for the fund\u2019s review",
+          true
+        ],
+        [
+          "Q3 operating cash inflow $0.96M; no burn-based runway applies",
+          true
+        ]
+      ],
+      "quarterly": {
+        "revenue": 8,
+        "revenueBudget": 8,
+        "ebitda": 1.6,
+        "ebitdaBudget": 1.6,
+        "operatingCashFlow": 0.96
+      },
+      "ltmEbitdaBudget": 6.4,
+      "enterpriseValue": 76.8,
+      "quarterlyEbitdaHistory": [
+        1.5,
+        1.6,
+        1.7,
+        1.6
+      ]
+    },
+    {
+      "name": "Cascine Packaging",
+      "hq": "Columbus, OH",
+      "sector": "Packaging",
+      "state": "watch",
+      "own": 0.85,
+      "entry": {
+        "date": "Apr 2024",
+        "ev": 30.8235,
+        "equityM": 16,
+        "equity": {
+          "v": "$16.00M",
+          "n": 16,
+          "chain": {
+            "f": "Fund equity cost from the investment ledger",
+            "inputs": [
+              [
+                "Equity invested: $16.00M",
+                "Cascine_Packaging_Investment_Ledger.xlsx"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        }
+      },
+      "kpi": {
+        "revenue": {
+          "v": "44.0",
+          "n": 44,
+          "chain": {
+            "f": "LTM revenue = Q4 2025 + Q1\u2013Q3 2026",
+            "inputs": [
+              [
+                "Q4 2025 through Q2 2026: $33.0M",
+                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
+              ],
+              [
+                "Q3 2026: $11.0M",
+                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 revenue row"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "ebitda": {
+          "v": "4.0",
+          "n": 4,
+          "chain": {
+            "f": "Sum of the last four reported quarters",
+            "inputs": [
+              [
+                "Quarterly EBITDA: $1.00M + $1.10M + $0.90M + $1.00M",
+                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "margin": 0.09090909090909091,
+        "vsBud": {
+          "v": "-13.0%",
+          "n": -0.13043478260869557,
+          "chain": {
+            "f": "($4.00M actual \u2212 $4.60M budget) \u00f7 $4.60M budget",
+            "inputs": [
+              [
+                "LTM EBITDA actual: $4.00M",
+                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+              ],
+              [
+                "LTM EBITDA budget: $4.60M",
+                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 budget"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "hist": [
+          0.3,
+          0.3,
+          0.3,
+          0.333,
+          0.333,
+          0.334
+        ],
+        "band": [
+          0.38,
+          0.42
+        ],
+        "arr": {
+          "v": "Not applicable",
+          "chain": {
+            "f": "This business does not report subscription ARR",
+            "inputs": [
+              [
+                "Packaging",
+                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 business model"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        }
+      },
+      "liquidity": {
+        "cash": {
+          "v": "$5.80M",
+          "n": 5.8,
+          "chain": {
+            "f": "Cash plus undrawn, committed revolver",
+            "inputs": [
+              [
+                "Cash: $3.80M",
+                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 cash"
+              ],
+              [
+                "Undrawn revolver: $2.00M",
+                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 facilities"
+              ],
+              [
+                "Q3 operating cash inflow: $0.60M",
+                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 cash flow"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "revolverAvail": 2,
+        "status": "Cash-generative"
+      },
+      "debt": {
+        "lender": "Bardi Commercial Bank",
+        "facility": "Senior secured term loan + revolver",
+        "balance": {
+          "v": "$12.00M",
+          "n": 12,
+          "chain": {
+            "f": "Net debt = drawn debt less cash",
+            "inputs": [
+              [
+                "Drawn debt: $15.80M",
+                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+              ],
+              [
+                "Cash: $3.80M",
+                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "rate": "SOFR + 4.25%",
+        "maturity": "2029-09-30",
+        "leverage": {
+          "v": "3.00\u00d7",
+          "n": 3,
+          "chain": {
+            "f": "$12.00M net debt \u00f7 $4.00M LTM EBITDA",
+            "inputs": [
+              [
+                "Net debt: $12.00M",
+                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+              ],
+              [
+                "LTM EBITDA: $4.00M",
+                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "covenant": {
+          "metric": "Net leverage",
+          "max": 4.25,
+          "test": "quarterly",
+          "nextTest": "2026-12-31",
+          "headroom": {
+            "v": "1.25\u00d7",
+            "n": 1.25,
+            "chain": {
+              "f": "4.25\u00d7 limit \u2212 3.00\u00d7 actual",
+              "inputs": [
+                [
+                  "Leverage limit: 4.25\u00d7",
+                  "Cascine_Packaging_Credit_Agreement.pdf \u00a76.1"
+                ]
+              ],
+              "run": [
+                "wf-portfolio-monitoring",
+                "q3-2026"
+              ],
+              "date": "Sep 30, 2026"
+            }
+          }
+        }
+      },
+      "val": {
+        "fairValue": {
+          "v": "20.40",
+          "n": 20.4,
+          "chain": {
+            "f": "($36.00M enterprise value \u2212 $12.00M net debt) \u00d7 85% ownership",
+            "inputs": [
+              [
+                "LTM EBITDA $4.00M \u00d7 9.0\u00d7 = $36.00M enterprise value",
+                "Signet_Equity_Valuation_Schedule_Q3_2026.xlsx"
+              ],
+              [
+                "Net debt $12.00M; ownership 85%",
+                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "method": "9.0\u00d7 LTM EBITDA less net debt \u00d7 85%",
+        "asOf": "Sep 30, 2026",
+        "basis": "fund\u2019s equity interest; no realized company proceeds",
+        "moic": {
+          "v": "1.27\u00d7",
+          "n": 1.275,
+          "chain": {
+            "f": "$20.40M fair value \u00f7 $16.00M invested",
+            "inputs": [
+              [
+                "Fair value: $20.40M; cost: $16.00M",
+                "Signet_Equity_Investment_Ledger.xlsx"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "pctNav": 0.09219088937093275
+      },
+      "board": {
+        "next": "Oct 23, 2026",
+        "seat": "Marco Rucellai",
+        "lastPack": "Q3 pack \u00b7 received Oct 5, 2026"
+      },
+      "keyPeople": [
+        "Elisa Galli (CEO)",
+        "Laura Mancini (CFO)"
+      ],
+      "addOns": [
+        {
+          "name": "Gozzoli Packaging",
+          "equityM": 1.6,
+          "includedInCost": true
+        }
+      ],
+      "exit": {
+        "stage": "Hold \u00b7 value creation plan",
+        "advisor": "No sale advisor appointed",
+        "dates": "Annual exit readiness review \u00b7 Mar 2027"
+      },
+      "pkg": "Q3 '26 \u00b7 Sep 30",
+      "read": "Higher material costs reduced Q3 EBITDA by $0.2M against budget.",
+      "checked": [
+        [
+          "Q3 revenue $11.00M and EBITDA $1.00M tied to accounts",
+          true
+        ],
+        [
+          "LTM EBITDA $4.00M agrees to four quarters",
+          true
+        ],
+        [
+          "Net leverage 3.00\u00d7 is below 4.25\u00d7 limit",
+          true
+        ],
+        [
+          "Sources retained for the fund\u2019s review",
+          true
+        ],
+        [
+          "Q3 operating cash inflow $0.60M; no burn-based runway applies",
+          true
+        ]
+      ],
+      "quarterly": {
+        "revenue": 11,
+        "revenueBudget": 11.5,
+        "ebitda": 1,
+        "ebitdaBudget": 1.2,
+        "operatingCashFlow": 0.6
+      },
+      "ltmEbitdaBudget": 4.6,
+      "enterpriseValue": 36,
+      "quarterlyEbitdaHistory": [
+        1,
+        1.1,
+        0.9,
+        1
+      ]
+    },
+    {
+      "name": "Porta Logistics",
+      "hq": "Savannah, GA",
+      "sector": "Logistics",
+      "state": "act",
+      "own": 0.9,
+      "entry": {
+        "date": "Nov 2023",
+        "ev": 20.5333,
+        "equityM": 12,
+        "equity": {
+          "v": "$12.00M",
+          "n": 12,
+          "chain": {
+            "f": "Fund equity cost from the investment ledger",
+            "inputs": [
+              [
+                "Equity invested: $12.00M",
+                "Porta_Logistics_Investment_Ledger.xlsx"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        }
+      },
+      "kpi": {
+        "revenue": {
+          "v": "40.0",
+          "n": 40,
+          "chain": {
+            "f": "LTM revenue = Q4 2025 + Q1\u2013Q3 2026",
+            "inputs": [
+              [
+                "Q4 2025 through Q2 2026: $30.0M",
+                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
+              ],
+              [
+                "Q3 2026: $10.0M",
+                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 revenue row"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "ebitda": {
+          "v": "2.4",
+          "n": 2.4,
+          "chain": {
+            "f": "Sum of the last four reported quarters",
+            "inputs": [
+              [
+                "Quarterly EBITDA: $0.70M + $0.60M + $0.50M + $0.60M",
+                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "margin": 0.06,
+        "vsBud": {
+          "v": "-14.3%",
+          "n": -0.1428571428571428,
+          "chain": {
+            "f": "($2.40M actual \u2212 $2.80M budget) \u00f7 $2.80M budget",
+            "inputs": [
+              [
+                "LTM EBITDA actual: $2.40M",
+                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+              ],
+              [
+                "LTM EBITDA budget: $2.80M",
+                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 budget"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "hist": [
+          0.167,
+          0.167,
+          0.166,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "band": [
+          0.2217,
+          0.245
+        ],
+        "arr": {
+          "v": "Not applicable",
+          "chain": {
+            "f": "This business does not report subscription ARR",
+            "inputs": [
+              [
+                "Logistics",
+                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 business model"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        }
+      },
+      "liquidity": {
+        "cash": {
+          "v": "$4.10M",
+          "n": 4.1,
+          "chain": {
+            "f": "Cash plus undrawn, committed revolver",
+            "inputs": [
+              [
+                "Cash: $2.60M",
+                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 cash"
+              ],
+              [
+                "Undrawn revolver: $1.50M",
+                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 facilities"
+              ],
+              [
+                "Q3 operating cash inflow: $0.36M",
+                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 cash flow"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "revolverAvail": 1.5,
+        "status": "Cash-generative"
+      },
+      "debt": {
+        "lender": "Strozzi Credit",
+        "facility": "Senior secured term loan + revolver",
+        "balance": {
+          "v": "$7.20M",
+          "n": 7.2,
+          "chain": {
+            "f": "Net debt = drawn debt less cash",
+            "inputs": [
+              [
+                "Drawn debt: $9.80M",
+                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+              ],
+              [
+                "Cash: $2.60M",
+                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "rate": "SOFR + 4.25%",
+        "maturity": "2030-09-30",
+        "leverage": {
+          "v": "3.00\u00d7",
+          "n": 3,
+          "chain": {
+            "f": "$7.20M net debt \u00f7 $2.40M LTM EBITDA",
+            "inputs": [
+              [
+                "Net debt: $7.20M",
+                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+              ],
+              [
+                "LTM EBITDA: $2.40M",
+                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "covenant": {
+          "metric": "Net leverage",
+          "max": 4.5,
+          "test": "quarterly",
+          "nextTest": "2026-12-31",
+          "headroom": {
+            "v": "1.50\u00d7",
+            "n": 1.5,
+            "chain": {
+              "f": "4.50\u00d7 limit \u2212 3.00\u00d7 actual",
+              "inputs": [
+                [
+                  "Leverage limit: 4.50\u00d7",
+                  "Porta_Logistics_Credit_Agreement.pdf \u00a76.1"
+                ]
+              ],
+              "run": [
+                "wf-portfolio-monitoring",
+                "q3-2026"
+              ],
+              "date": "Sep 30, 2026"
+            }
+          }
+        }
+      },
+      "val": {
+        "fairValue": {
+          "v": "15.12",
+          "n": 15.12,
+          "chain": {
+            "f": "($24.00M enterprise value \u2212 $7.20M net debt) \u00d7 90% ownership",
+            "inputs": [
+              [
+                "LTM EBITDA $2.40M \u00d7 10.0\u00d7 = $24.00M enterprise value",
+                "Signet_Equity_Valuation_Schedule_Q3_2026.xlsx"
+              ],
+              [
+                "Net debt $7.20M; ownership 90%",
+                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "method": "10.0\u00d7 LTM EBITDA less net debt \u00d7 90%",
+        "asOf": "Sep 30, 2026",
+        "basis": "fund\u2019s equity interest; no realized company proceeds",
+        "moic": {
+          "v": "1.26\u00d7",
+          "n": 1.26,
+          "chain": {
+            "f": "$15.12M fair value \u00f7 $12.00M invested",
+            "inputs": [
+              [
+                "Fair value: $15.12M; cost: $12.00M",
+                "Signet_Equity_Investment_Ledger.xlsx"
+              ]
+            ],
+            "run": [
+              "wf-portfolio-monitoring",
+              "q3-2026"
+            ],
+            "date": "Sep 30, 2026"
+          }
+        },
+        "pctNav": 0.06832971800433839
+      },
+      "board": {
+        "next": "Oct 24, 2026",
+        "seat": "Elena Strozzi",
+        "lastPack": "Q3 pack \u00b7 received Oct 5, 2026"
+      },
+      "keyPeople": [
+        "Matteo Ricci (CEO)",
+        "Carlo Fabbri (CFO)"
+      ],
+      "addOns": [
+        {
+          "name": "Sanzio Freight",
+          "equityM": 1.2,
+          "includedInCost": true
+        }
+      ],
+      "exit": {
+        "stage": "Hold \u00b7 value creation plan",
+        "advisor": "No sale advisor appointed",
+        "dates": "Annual exit readiness review \u00b7 Mar 2027"
+      },
+      "pkg": "Q3 '26 \u00b7 Sep 30",
+      "read": "Q3 EBITDA was $0.1M below budget; management\u2019s explanation is outstanding.",
+      "checked": [
+        [
+          "Q3 revenue $10.00M and EBITDA $0.60M tied to accounts",
+          true
+        ],
+        [
+          "LTM EBITDA $2.40M agrees to four quarters",
+          true
+        ],
+        [
+          "Net leverage 3.00\u00d7 is below 4.50\u00d7 limit",
+          true
+        ],
+        [
+          "Sources retained for the fund\u2019s review",
+          true
+        ],
+        [
+          "Q3 operating cash inflow $0.36M; no burn-based runway applies",
+          true
+        ]
+      ],
+      "quarterly": {
+        "revenue": 10,
+        "revenueBudget": 10,
+        "ebitda": 0.6,
+        "ebitdaBudget": 0.7,
+        "operatingCashFlow": 0.36
+      },
+      "ltmEbitdaBudget": 2.8,
+      "enterpriseValue": 24.0,
+      "quarterlyEbitdaHistory": [
+        0.7,
+        0.6,
+        0.5,
+        0.6
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "report-review-0",
+      "kind": "Shipping schedule",
+      "sev": "warn",
+      "owner": "Portfolio finance",
+      "date": "2026-10-05",
+      "due": "Oct 12, 2026",
+      "dueDate": "2026-10-12",
+      "pos": "Arno Precision",
+      "claim": "Arno\u2019s Q3 revenue is $1.0M below budget; EBITDA is $0.3M below. The revised Q4 shipping schedule is outstanding.",
+      "detail": "Management attributes the EBITDA shortfall to shipment delays. No recovery date has been supplied.",
+      "con": "Keep the investor report in draft until the open question is resolved.",
+      "facts": [
+        {
+          "key": "rev",
+          "label": "Q3 revenue",
+          "value": "$18.00M",
+          "from": [
+            "Signet_Equity_Management_Accounts_Q3.xlsx"
+          ]
+        },
+        {
+          "key": "ebitda",
+          "label": "Q3 EBITDA",
+          "value": "$3.20M",
+          "from": [
+            "Signet_Equity_Management_Accounts_Q3.xlsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "report-review-2",
+      "kind": "Revenue difference",
+      "sev": "warn",
+      "owner": "Portfolio finance",
+      "date": "2026-10-05",
+      "due": "Oct 12, 2026",
+      "dueDate": "2026-10-12",
+      "pos": "Fiesole Components",
+      "claim": "Fiesole\u2019s accounts show $9.0M revenue; an earlier update says $9.4M. Confirm the $0.4M difference before sending the report.",
+      "detail": "The draft uses accounts revenue of $9.0M. Q3 EBITDA is $1.1M versus $1.4M budget: $0.18M lower utilization + $0.12M expedited freight.",
+      "con": "Keep the investor report in draft until the open question is resolved.",
+      "facts": [
+        {
+          "key": "rev",
+          "label": "Q3 revenue",
+          "value": "$9.00M",
+          "from": [
+            "Signet_Equity_Management_Accounts_Q3.xlsx"
+          ]
+        },
+        {
+          "key": "ebitda",
+          "label": "Q3 EBITDA",
+          "value": "$1.10M",
+          "from": [
+            "Signet_Equity_Management_Accounts_Q3.xlsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "report-review-5",
+      "kind": "Missing explanation",
+      "sev": "warn",
+      "owner": "Portfolio finance",
+      "date": "2026-10-05",
+      "due": "Oct 12, 2026",
+      "dueDate": "2026-10-12",
+      "pos": "Porta Logistics",
+      "claim": "Porta\u2019s Q3 EBITDA is $0.6M against a $0.7M budget. Its $0.1M shortfall still needs management\u2019s explanation.",
+      "detail": "Revenue met the $10.0M budget. Do not infer a reason for the lower EBITDA without supporting commentary.",
+      "con": "Keep the investor report in draft until the open question is resolved.",
+      "facts": [
+        {
+          "key": "rev",
+          "label": "Q3 revenue",
+          "value": "$10.00M",
+          "from": [
+            "Signet_Equity_Management_Accounts_Q3.xlsx"
+          ]
+        },
+        {
+          "key": "ebitda",
+          "label": "Q3 EBITDA",
+          "value": "$0.60M",
+          "from": [
+            "Signet_Equity_Management_Accounts_Q3.xlsx"
+          ]
+        }
+      ]
+    }
+  ],
+  "today": "2026-10-08",
+  "registerTotals": {
+    "ltmEbitdaBudget": 40.5,
+    "ltmEbitda": 38.4,
+    "netDebt": 108.8
+  }
+}

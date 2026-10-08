@@ -130,59 +130,6 @@
 
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-const menu = document.getElementById('nav-toggle');
-const nav = document.querySelector('.nav-right');
-const mobileMenu = matchMedia('(max-width: 640px)');
-const menuBackground = new Map();
-nav.id = nav.id || 'home-navigation';
-menu.setAttribute('aria-controls', nav.id);
-function closeMenu(restoreFocus = false) {
-  const wasOpen = nav.classList.contains('open');
-  nav.classList.remove('open');
-  menu.classList.remove('open');
-  menu.setAttribute('aria-expanded', 'false');
-  menu.setAttribute('aria-label', 'Open menu');
-  document.body.classList.remove('menu-open');
-  nav.inert = mobileMenu.matches;
-  menuBackground.forEach((wasInert, element) => { element.inert = wasInert; });
-  menuBackground.clear();
-  if (restoreFocus && wasOpen) menu.focus();
-}
-function openMenu() {
-  nav.inert = false;
-  nav.classList.add('open');
-  menu.classList.add('open');
-  menu.setAttribute('aria-expanded', 'true');
-  menu.setAttribute('aria-label', 'Close menu');
-  document.body.classList.add('menu-open');
-  // The mobile drawer covers the page. Keep focus and assistive navigation in it.
-  [...document.body.children].forEach(element => {
-    if (element.contains(menu) || element.tagName === 'SCRIPT') return;
-    menuBackground.set(element, element.inert);
-    element.inert = true;
-  });
-  nav.querySelector('a').focus();
-}
-menu.addEventListener('click', () => {
-  if (nav.classList.contains('open')) closeMenu(true);
-  else openMenu();
-});
-nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeMenu()));
-document.addEventListener('keydown', event => {
-  if (!nav.classList.contains('open')) return;
-  if (event.key === 'Escape') { event.preventDefault(); closeMenu(true); return; }
-  if (event.key !== 'Tab') return;
-  const controls = [...nav.querySelectorAll('a[href]'), menu];
-  const first = controls[0], last = controls[controls.length - 1];
-  if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-  else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
-});
-mobileMenu.addEventListener('change', () => {
-  const focusedClosedLink = mobileMenu.matches && nav.contains(document.activeElement);
-  closeMenu();
-  if (focusedClosedLink) menu.focus();
-});
-closeMenu();
 const pause = document.querySelector('.home-pause');
 let paused = false, visible = true, writers = [];
 function sync() {
@@ -197,35 +144,67 @@ new IntersectionObserver(entries => { visible=entries[0].isIntersecting; sync();
 reduced.addEventListener('change',sync); document.addEventListener('visibilitychange',sync);
 
 const steps = [
- ['Gather the records.','The accounts provide the figures, the company updates explain what happened, and last quarter’s report provides the format.','Three records, one place'],
- ['Keep discrepancies in view.','The accounts and management update disagree on Fiesole’s revenue. The difference is flagged rather than silently resolved.','One figure needs confirmation'],
- ['The draft, with questions flagged.','Figures and commentary come together in your reporting format. The unresolved revenue figure stays visible for your reviewer.','Your investor update']
+ ['Your portfolio, in Cosimo.','Expand a company or click a figure to inspect its supporting records. Six companies, with LTM figures through September 30 in USD millions. The report uses their Q3 accounts.'],
+ ['Follow the reporting task.','See the actual run interface read the Q3 records, check the totals, and flag the $0.4m revenue difference.'],
+ ['Your investor report, drafted.','The portfolio update, company figures, and questions for your team — all here. Scroll to read the three-page draft.']
 ];
-let replayTimers=[];
-const replay = document.getElementById('home-replay');
-function stopReplay() { replayTimers.forEach(clearTimeout); replayTimers=[]; replay.textContent='Replay the walkthrough ↻'; replay.setAttribute('aria-pressed','false'); }
-function setStep(i) {
+const replay=document.getElementById('home-replay');
+const workspace=document.getElementById('home-output');
+const productFrame=document.getElementById('home-product-frame');
+const inlineReport=document.getElementById('home-inline-report');
+let demoState={step:0,phase:2,detail:false};
+function sendDemo() {productFrame.contentWindow?.postMessage({type:'cosimo-demo',...demoState,theme:document.documentElement.dataset.theme},location.origin);}
+productFrame.addEventListener('load',sendDemo);
+new MutationObserver(()=>productFrame.contentWindow?.postMessage({type:'cosimo-demo',theme:document.documentElement.dataset.theme},location.origin)).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+let tourTimer=null,tourRunning=false,tourBeat=0,tourStarted=false,tourDue=0,tourRemaining=0;
+function stopReplay(){
+ if(tourRunning&&tourTimer)tourRemaining=Math.max(0,tourDue-performance.now());
+ clearTimeout(tourTimer);tourTimer=null;tourRunning=false;
+ replay.textContent=tourBeat>0&&(tourBeat<tour.length||tourRemaining>0)?'Resume walkthrough ▷':tourStarted?'Replay walkthrough ↻':'Play walkthrough ▷';
+ replay.setAttribute('aria-pressed','false');
+}
+function setStep(i){
+ demoState={step:i,phase:2,detail:false};workspace.dataset.stage=i;
+ productFrame.hidden=i===2;inlineReport.hidden=i!==2;
+ workspace.scrollLeft=0;
+ workspace.setAttribute('aria-label',i===2?'Draft portfolio update':'Cosimo product example; scroll across on smaller screens');
+ document.querySelector('.home-product-hint').hidden=i===2;
+ if(i===2){inlineReport.scrollTop=0;updateTableHints();}
  document.querySelectorAll('[data-step]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.step)===i)));
- document.getElementById('home-output').dataset.stage=i;
- document.querySelectorAll('[data-stage-panel]').forEach(panel => { panel.hidden = Number(panel.dataset.stagePanel) !== i; });
  document.getElementById('home-step-count').textContent=`0${i+1} / 03`;
  document.getElementById('home-step-title').textContent=steps[i][0];
- document.getElementById('home-step-description').textContent=steps[i][1];
- document.getElementById('home-output-label').textContent=steps[i][2];
- updateTableHints();
+ document.getElementById('home-step-description').textContent=steps[i][1];sendDemo();
 }
-document.querySelectorAll('[data-step]').forEach(b=>b.addEventListener('click',()=>{stopReplay();setStep(Number(b.dataset.step));}));
-replay.addEventListener('click',()=>{
- if(replayTimers.length) {stopReplay();return;}
- if(reduced.matches) {setStep(0);return;}
- setStep(0); if (matchMedia('(max-width: 760px)').matches) document.querySelector('.home-demo-steps').scrollIntoView({behavior: reduced.matches ? 'instant' : 'smooth', block: 'start'}); replay.textContent='Pause walkthrough Ⅱ';replay.setAttribute('aria-pressed','true');
- replayTimers=[setTimeout(()=>setStep(1),3000),setTimeout(()=>{setStep(2);stopReplay();},6500)];
+function manualStep(i){stopReplay();tourBeat=0;tourRemaining=0;stopReplay();setStep(i);}
+document.querySelectorAll('[data-step]').forEach(b=>b.addEventListener('click',()=>manualStep(Number(b.dataset.step))));
+const tour=[()=>setStep(0),()=>{demoState.detail=true;sendDemo();},()=>{setStep(1);demoState.phase=0;sendDemo();},()=>{demoState.phase=1;sendDemo();},()=>{demoState.phase=2;sendDemo();},()=>setStep(2)];
+const tourHolds=[3500,6000,3500,4500,7500,5500];
+function scheduleTour(delay){tourDue=performance.now()+delay;tourTimer=setTimeout(()=>{tourTimer=null;tourRemaining=0;advanceTour();},delay);}
+function advanceTour(){if(!tourRunning)return;if(tourBeat>=tour.length){tourRemaining=0;stopReplay();return;}tour[tourBeat]();scheduleTour(tourHolds[tourBeat++]);}
+replay.addEventListener('click',()=>{if(tourRunning){stopReplay();return;}if(reduced.matches)return;if(tourBeat>=tour.length&&!tourRemaining)tourBeat=0;tourStarted=true;tourRunning=true;replay.textContent='Pause walkthrough Ⅱ';replay.setAttribute('aria-pressed','true');if(tourRemaining>0)scheduleTour(tourRemaining);else advanceTour();});
+function syncTourMotion(){if(reduced.matches){stopReplay();tourBeat=0;tourRemaining=0;stopReplay();demoState.phase=2;sendDemo();}replay.hidden=reduced.matches;}
+reduced.addEventListener('change',syncTourMotion);syncTourMotion();
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stopReplay();});
+new IntersectionObserver(entries=>{if(!entries[0].isIntersecting&&tourRunning)stopReplay();},{threshold:0}).observe(workspace);
+window.addEventListener('message',event=>{
+ if(event.origin!==location.origin||event.source!==productFrame.contentWindow)return;
+ if(event.data?.type==='cosimo-demo-ready')sendDemo();
+ if(event.data?.type==='cosimo-demo-open-report')openReport();
+ if(event.data?.type==='cosimo-demo-interaction')stopReplay();
 });
-const table = `<div class="home-table-scroll"><table><caption>Q3 2026 revenue · USD millions</caption><thead><tr><th>Company</th><th>Actual</th><th>Budget</th><th>Variance</th></tr></thead><tbody><tr><th>Arno Systems</th><td>12.4</td><td>12.0</td><td>+0.4</td></tr><tr><th>Pitti Packaging</th><td>8.6</td><td>9.0</td><td>−0.4</td></tr><tr><th>Fiesole Services</th><td>6.0</td><td>6.5</td><td>−0.5</td></tr><tr><th>Total</th><td>27.0</td><td>27.5</td><td>−0.5</td></tr></tbody></table></div>`;
+const companies = [{"name": "Arno Precision", "revenue": 18, "revenueBudget": 19, "ebitda": 3.2, "ebitdaBudget": 3.5}, {"name": "Pitti Services", "revenue": 14, "revenueBudget": 13.5, "ebitda": 2.1, "ebitdaBudget": 2}, {"name": "Fiesole Components", "revenue": 9, "revenueBudget": 10, "ebitda": 1.1, "ebitdaBudget": 1.4}, {"name": "Oltrarno Software", "revenue": 8, "revenueBudget": 8, "ebitda": 1.6, "ebitdaBudget": 1.6}, {"name": "Cascine Packaging", "revenue": 11, "revenueBudget": 11.5, "ebitda": 1, "ebitdaBudget": 1.2}, {"name": "Porta Logistics", "revenue": 10, "revenueBudget": 10, "ebitda": 0.6, "ebitdaBudget": 0.7}];
+const totals = companies.reduce((sum,c) => { for (const key of ['revenue','revenueBudget','ebitda','ebitdaBudget']) sum[key] += c[key]; return sum; }, {revenue:0,revenueBudget:0,ebitda:0,ebitdaBudget:0});
+const signed = n => `${n < 0 ? '−' : n > 0 ? '+' : ''}${Math.abs(n).toFixed(1)}`;
+function comparisonTable(metric, budget, label) {
+ const rows=[...companies,{name:'All six companies',...totals}];
+ return `<div class="home-table-scroll"><table><caption>Q3 2026 ${label} · USD millions · company results before ownership weighting</caption><thead><tr><th>Company</th><th>Actual</th><th>Budget</th><th>Variance</th><th>Variance %</th></tr></thead><tbody>${rows.map(c=>`<tr><th>${c.name}</th><td>${c[metric].toFixed(1)}</td><td>${c[budget].toFixed(1)}</td><td>${signed(c[metric]-c[budget])}</td><td>${signed((c[metric]/c[budget]-1)*100)}%</td></tr>`).join('')}</tbody></table></div>`;
+}
+const table = comparisonTable('revenue','revenueBudget','revenue');
+const ebitdaTable = comparisonTable('ebitda','ebitdaBudget','EBITDA');
 const sources=[
- ['Q3 management accounts', `<p>Prepared 3 October 2026. Figures supplied in the fund’s management accounts workbook.</p>${table}<p>Fiesole’s revenue is recorded at $6.0m. These are the figures used in the illustrative draft; the conflicting management update remains unresolved.</p>`],
- ['Company updates', `<p><strong>From:</strong> Portfolio operations<br><strong>Date:</strong> 4 October 2026<br><strong>Subject:</strong> Q3 company commentary</p><h3>Arno Systems</h3><p>Revenue finished $0.4m above budget following two contract renewals closing earlier than planned.</p><h3>Pitti Packaging</h3><p>Revenue finished $0.4m below budget. Management attributes the shortfall to lower September order volumes.</p><h3>Fiesole Services</h3><p>Q3 revenue was $6.4m. Two customer launches moved into October; revised launch dates are still being confirmed.</p><aside class="home-review-note"><p>The $6.4m figure above conflicts with the $6.0m in the accounts. Neither source establishes which is correct.</p></aside>`],
- ['Prior report outline', `<p>Renaissance Capital · Q2 2026 · Headings and editorial conventions</p><h3>Portfolio overview</h3><p>Open with combined revenue against budget. Explain the largest movements in plain language.</p><h3>Company performance</h3><p>Present company actuals and budget in USD millions. Follow with the management commentary behind each variance.</p><h3>Items for review</h3><p>Keep an internal list of unresolved questions and supporting records. Remove internal review notes only after the team resolves them.</p><p>This example supplies the layout and editorial conventions, not current-quarter figures.</p>`]
+ ['Q3 management accounts', `<p>Signet Equity · Six companies · Three months ended 30 September 2026. Prepared 3 October 2026. Actuals and budgets use USD millions and the same reporting period.</p>${table}${ebitdaTable}<p>Fiesole’s revenue is recorded at $9.0m. These are the figures used in the draft; the earlier management update’s $9.4m remains unresolved. The dashboard’s LTM figures cover 1 October 2025 through 30 September 2026. Quarterly results are not annualized or ownership-weighted.</p>`],
+ ['Company updates', `<p><strong>From:</strong> Portfolio operations<br><strong>Date:</strong> 5 October 2026<br><strong>Subject:</strong> Q3 company commentary</p><h3>Arno Precision</h3><p>Revenue $18.0m against $19.0m budget; EBITDA $3.2m against $3.5m. Shipments moved into Q4. The revised shipping schedule is outstanding.</p><h3>Pitti Services</h3><p>Revenue $14.0m against $13.5m budget; EBITDA $2.1m against $2.0m. Stronger contract renewals supported the result.</p><h3>Fiesole Components</h3><p>An earlier sales update states Q3 revenue of $9.4m. The accounts report $9.0m. EBITDA was $1.1m against $1.4m budget: lower utilization reduced EBITDA by $0.18m and expedited freight by $0.12m. The revised production plan awaits board review.</p><aside class="home-review-note"><p>The $0.4m revenue difference is unresolved. Use the accounts provisionally; do not present the earlier update as a confirmed correction.</p></aside><h3>Oltrarno Software</h3><p>Revenue $8.0m and EBITDA $1.6m, both on budget.</p><h3>Cascine Packaging</h3><p>Revenue $11.0m against $11.5m; EBITDA $1.0m against $1.2m. Management reports higher material costs. Proposed price changes are not approved.</p><h3>Porta Logistics</h3><p>Revenue $10.0m, on budget. EBITDA $0.6m against $0.7m. Management’s explanation is outstanding.</p>`],
+ ['Prior report outline', `<p>Signet Equity · Q2 2026 · Headings and editorial conventions</p><h3>Portfolio overview</h3><p>Open with combined revenue and EBITDA against budget. Explain the largest movements in plain language.</p><h3>Company performance</h3><p>Present all six companies’ actuals and budget in USD millions. Follow with the commentary behind each variance.</p><h3>Items for review</h3><p>Keep unresolved questions and supporting records in an internal review page. Remove review notes only after the team resolves them.</p><p>This reference supplies the report structure; current-quarter figures come from the Q3 accounts.</p>`]
 ];
 function updateTableHints() {
  document.querySelectorAll('.home-table-scroll').forEach(table => {
@@ -256,10 +235,14 @@ const dialog=document.getElementById('home-dialog');
 const content=document.getElementById('home-dialog-content');
 function openDoc(title,html) {stopReplay();document.getElementById('home-dialog-title').textContent=title;content.innerHTML=html;dialog.showModal();dialog.scrollTop=0;updateTableHints();}
 document.querySelectorAll('[data-source]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();const s=sources[Number(b.dataset.source)];openDoc(s[0],`<article class="home-modal-page"><p class="home-paper-date">Illustrative source record</p>${s[1]}</article>`);}));
-document.getElementById('home-open-report').addEventListener('click',()=>openDoc('Draft portfolio update · 3 pages',`
-<article class="home-modal-page"><p class="home-paper-date">Renaissance Capital · Q3 2026 · 1 / 3</p><h3>Portfolio overview</h3><p>Combined revenue across Arno Systems, Pitti Packaging, and Fiesole Services was $27.0m against a $27.5m budget, based on the management accounts.</p><p>Arno’s $0.4m outperformance partially offset shortfalls of $0.4m at Pitti and $0.5m at Fiesole. Management attributes Arno’s outperformance to earlier contract renewals and Pitti’s shortfall to lower order volumes. Fiesole reported two delayed launches, but their revenue impact remains unconfirmed.</p><p>Fiesole’s launch dates require confirmation. Its management update also reports a different revenue figure from the accounts; the draft total is provisional until that difference is resolved.</p><p class="home-review-note">Internal draft. Not approved for investor distribution.</p></article>
-<article class="home-modal-page"><p class="home-paper-date">Company performance · 2 / 3</p><h3>Revenue against budget</h3>${table}<h4>Management commentary</h4><p><strong>Arno Systems:</strong> Two contract renewals closed earlier than planned.</p><p><strong>Pitti Packaging:</strong> Lower September order volumes contributed to the shortfall.</p><p><strong>Fiesole Services:</strong> Two customer launches moved into October. Revised dates remain unconfirmed.</p><p>Sources: Q3 management accounts, 3 October; company updates, 4 October. Commentary reflects management’s explanations.</p></article>
-<article class="home-modal-page"><p class="home-paper-date">Internal review notes · 3 / 3</p><h3>Before this goes to investors</h3><h4>Confirm Fiesole’s revenue</h4><p>The workbook records $6.0m; the company update states $6.4m. This draft uses the workbook. Ask the finance lead to confirm the correct amount, then update the company line, combined total, and variance commentary if necessary.</p><h4>Confirm the launch dates</h4><p>Ask management for the revised customer launch dates. No recovery forecast has been assumed.</p><h4>Review and approve</h4><p>Check the figures and explanations against the final source records. The fund’s reviewer approves the investor version after resolving these questions.</p><p>Format reference: Q2 2026 report outline. All records and figures in this demonstration are fictional.</p></article>`));
+const reportMarkup=`
+<article class="home-modal-page"><p class="home-paper-date">Signet Equity · Q3 2026 · 1 / 3</p><h3>Portfolio overview</h3><p>The six portfolio companies reported $70.0m in Q3 revenue against a $72.0m budget, a $2.0m (2.8%) shortfall. Reported EBITDA was $9.6m against $10.4m, a $0.8m (7.7%) shortfall. EBITDA margin was 13.7% compared with a 14.4% budget.</p><p>Arno and Fiesole each missed EBITDA budget by $0.3m. Cascine was $0.2m below and Porta $0.1m below; Pitti’s $0.1m outperformance offset part of those misses. Oltrarno met budget.</p><h4>Revenue by company</h4>${table}<p>Figures are company operating results before ownership weighting. They are not fund earnings, NAV or investment returns. The accounts provide the provisional basis; Fiesole’s conflicting revenue update remains open.</p><p class="home-review-note">Internal draft. Not approved for investor distribution.</p></article>
+<article class="home-modal-page"><p class="home-paper-date">Company performance · 2 / 3</p><h3>EBITDA against budget</h3>${ebitdaTable}<h4>What drove the result</h4><p><strong>Arno Precision:</strong> Shipment delays contributed to its $0.3m EBITDA shortfall. The revised Q4 shipping schedule is outstanding.</p><p><strong>Pitti Services:</strong> Stronger contract renewals supported $0.5m additional revenue and $0.1m additional EBITDA against budget.</p><p><strong>Fiesole Components:</strong> $1.4m budget EBITDA − $0.18m lower utilization − $0.12m expedited freight = $1.1m actual. Its revised production plan awaits board review.</p><p><strong>Oltrarno Software:</strong> Revenue and EBITDA were on budget. <strong>Cascine Packaging:</strong> Higher material costs contributed to the $0.2m EBITDA miss. <strong>Porta Logistics:</strong> The $0.1m EBITDA shortfall still needs management’s explanation.</p><p>Sources: Q3 management accounts, 3 October; company updates, 5 October. Commentary reflects management’s explanations.</p></article>
+<article class="home-modal-page"><p class="home-paper-date">Internal review notes · 3 / 3</p><h3>Before this goes to investors</h3><h4>Confirm Fiesole’s revenue</h4><p>The accounts record $9.0m; an earlier sales update states $9.4m. This draft uses the accounts. If the finance lead confirms $9.4m, combined revenue would become $70.4m and the revenue shortfall would narrow to $1.6m (2.2%). No EBITDA change can be inferred from the revenue difference.</p><h4>Get the missing updates</h4><p>Obtain Arno’s revised shipping schedule, confirm board review of Fiesole’s production plan, and request Porta’s explanation for its $0.1m EBITDA shortfall. No recovery dates or forecast benefits have been assumed.</p><h4>Checks completed</h4><p>Six revenue lines total $70.0m; six EBITDA lines total $9.6m. Revenue variances total −$2.0m and EBITDA variances total −$0.8m. Fiesole’s $0.18m + $0.12m explanation accounts for its $0.30m EBITDA miss.</p><h4>Review and approve</h4><p>The finance lead confirms the source corrections and open commentary. The fund’s reviewer then approves the investor version. The internal review page stays with your team.</p><p>Format reference: Q2 2026 report outline. All records and figures in this demonstration are fictional.</p></article>`;
+inlineReport.innerHTML=reportMarkup;
+inlineReport.addEventListener('pointerdown',stopReplay);
+inlineReport.addEventListener('keydown',stopReplay);
+function openReport(){openDoc('Draft portfolio update · 3 pages',reportMarkup);}
 document.getElementById('home-dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',e=>{if(e.target===dialog) {const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
 })();

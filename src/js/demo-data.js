@@ -1,7 +1,7 @@
 // ========== CHAT DEMOS ==========
 const chatDemos = [
   {
-    context: 'Brunelleschi Acquisition · 1,247 data room documents · diligence in progress',
+    context: 'Signet Equity · Acquisition diligence · 1,247 data room documents · diligence in progress',
     messages: [
       { role: 'user', text: 'Summarize revenue quality — what\'s recurring vs. one-time?' },
       {
@@ -27,7 +27,7 @@ const chatDemos = [
     ]
   },
   {
-    context: 'Rucellai Capital III · Q3 2025 reporting cycle',
+    context: 'Signet Equity · Q3 2025 reporting cycle',
     messages: [
       { role: 'user', text: 'Generate the quarterly performance summary for all LPs' },
       {
@@ -52,7 +52,7 @@ const chatDemos = [
     ]
   },
   {
-    context: 'Tornabuoni Credit Fund II · 14 portfolio companies · Q3 covenant review',
+    context: 'Fiorino Debt Partners · 14 portfolio companies · Q3 covenant review',
     messages: [
       { role: 'user', text: 'Run covenant compliance across the entire portfolio' },
       {
@@ -78,7 +78,7 @@ const chatDemos = [
     ]
   },
   {
-    context: 'Renaissance Real Estate Fund I · 8 properties · 23 rent roll PDFs uploaded',
+    context: 'Loggia Property Group · 8 properties · 23 rent roll PDFs uploaded',
     messages: [
       { role: 'user', text: 'Extract and standardize all rent rolls into one view' },
       {
@@ -110,7 +110,7 @@ function getDiligenceMemoHTML() {
   return '<div class="doc-page">' +
     '<div class="doc-letterhead">' +
       '<div class="doc-letterhead-name">Investment Committee Memorandum</div>' +
-      '<div class="doc-letterhead-sub">Brunelleschi Acquisition &middot; Financial Due Diligence</div>' +
+      '<div class="doc-letterhead-sub">Signet Equity · Acquisition diligence &middot; Financial Due Diligence</div>' +
     '</div>' +
     '<div class="doc-date">CONFIDENTIAL &middot; Prepared January 2026</div>' +
     '<div class="doc-section-title">1. Revenue Quality Analysis</div>' +
@@ -175,12 +175,12 @@ function getDiligenceMemoHTML() {
 function getLPLetterHTML() {
   return '<div class="doc-page">' +
     '<div class="doc-letterhead">' +
-      '<div class="doc-letterhead-name">Rucellai Capital Fund III</div>' +
+      '<div class="doc-letterhead-name">Signet Equity</div>' +
       '<div class="doc-letterhead-sub">Quarterly Report &middot; Q3 2025</div>' +
     '</div>' +
     '<div class="doc-body-text">Dear Limited Partners,</div>' +
     '<div class="doc-body-text">' +
-      'We are pleased to present the quarterly performance update for Rucellai Capital Fund III for the period ending September 30, 2025. ' +
+      'We are pleased to present the quarterly performance update for Signet Equity for the period ending September 30, 2025. ' +
       'The portfolio continues to perform in line with our underwriting expectations, with several positions showing meaningful appreciation.' +
     '</div>' +
     '<div class="doc-section-title">Fund Performance Summary</div>' +
@@ -231,11 +231,11 @@ function getLPLetterHTML() {
       'We appreciate your continued partnership and welcome any questions at your convenience.' +
     '</div>' +
     '<div class="doc-signature-block">' +
-      '<div class="doc-signature-name">Rucellai Capital Management</div>' +
+      '<div class="doc-signature-name">Signet Equity</div>' +
       '<div class="doc-signature-title">General Partner</div>' +
     '</div>' +
     '<div class="doc-footer">' +
-      'This report is confidential and intended solely for the limited partners of Rucellai Capital Fund III. ' +
+      'This report is confidential and intended solely for the limited partners of Signet Equity. ' +
       'Past performance is not indicative of future results. All valuations reflect fair market value estimates as of the reporting date.' +
     '</div>' +
   '</div>';
@@ -244,7 +244,7 @@ function getLPLetterHTML() {
 function getCovenantReportHTML() {
   return '<div class="doc-page">' +
     '<div class="doc-letterhead">' +
-      '<div class="doc-letterhead-name">Tornabuoni Credit Fund II</div>' +
+      '<div class="doc-letterhead-name">Fiorino Debt Partners</div>' +
       '<div class="doc-letterhead-sub">Covenant Compliance Report &middot; Q3 2025</div>' +
     '</div>' +
     '<div class="doc-date">CONFIDENTIAL &middot; Prepared October 2025</div>' +

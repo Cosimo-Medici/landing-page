@@ -154,7 +154,7 @@ Keep the demonstration deterministic, fictional and inspectable. Better source s
 2. **`Pitti_Q3_2026_Compliance_Certificate.pdf`, page 2, received 13 Nov, borrower-submitted certificate.** Show submitted net debt **$48m**, base EBITDA **$9m**, restructuring adjustment **$1m**, adjusted EBITDA **$10m**, submitted ratio **4.80×**. A fictional signature/status may be labeled “Submitted”; do not invent a real signature or evidential claim about validation. Include the borrower’s reference to “supporting restructuring schedule” without asserting its eligibility is unresolved inside the source itself.
 3. **`Approved_Covenant_Terms.xlsx`, sheet `Pitti`, explicit row locator/version.** Show loan/facility identifier, test date **30 September 2026**, supplied metric “Net debt / LTM EBITDA,” maximum **5.00×**, rule owner “Credit team,” and **“Adjustment eligibility: review against executed agreement.”** Distinguish supplied terms from actual extracted agreement clauses. If no executed agreement is shown, say so. Do not invent a document parser, legal confirmation, or amendment completeness.
 4. **`Borrower_Reporting_Tracker.xlsx`, sheet `Q3`, Pitti row.** Separate source artifacts expected and received: financials received, certificate received, restructuring support not received. Owner “Credit analyst”; action “Obtain support; confirm treatment against agreement.” This missing-document status, plus the EBITDA bridge, produces the review question. The source no longer simply pre-writes the output conclusion.
-5. **`Renaissance_Loan_Ledger_Q3.xlsx`, sheet `Loan book`, six borrower rows.** Add sector, USD, senior-secured designation, held principal at 30 Sep, cash receipts covering 1 Jul–30 Sep, PIK accrual over the same period, version/date and supplied-record owner. Keep current numbers. Declare bank/admin reconciliation absent. If owner identity is fictional use a role, not a real institution name.
+5. **`Fiorino_Debt_Partners_Loan_Ledger_Q3.xlsx`, sheet `Loan book`, six borrower rows.** Add sector, USD, senior-secured designation, held principal at 30 Sep, cash receipts covering 1 Jul–30 Sep, PIK accrual over the same period, version/date and supplied-record owner. Keep current numbers. Declare bank/admin reconciliation absent. If owner identity is fictional use a role, not a real institution name.
 
 Make each citation specific: **“Certificate p. 2 · EBITDA bridge”**, **“Terms sheet · Pitti maximum”**, **“Reporting tracker · missing support”**. A click should expose the cited excerpt first and highlight its relevant values. A source dialog can support multiple excerpts with a small active section; this need not become a PDF viewer. Avoid showing `.xlsx` as though an actual downloadable workbook exists unless one is provided. “Sample excerpt” is sufficient.
 
@@ -170,7 +170,7 @@ Recommended six reader pages: **1 internal summary; 2 exposure schedule; 3 worke
 
 LP revision using existing facts:
 
-> Renaissance Direct Lending Fund I ended the third quarter with $100 million of principal outstanding across six senior secured loans. The two largest positions represented 44% of principal.
+> Fiorino Debt Partners ended the third quarter with $100 million of principal outstanding across six senior secured loans. The two largest positions represented 44% of principal.
 >
 > The servicing ledger records $2.75 million of cash interest received in the quarter and $150,000 of PIK interest accrued. PIK is non-cash. These figures do not represent net fund performance or cash available for distribution.
 >

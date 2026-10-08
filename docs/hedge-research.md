@@ -5,7 +5,7 @@
 Fourteen separate source records now expose the preliminary/approved returns, PM note, same-cutoff cash comparison, unverified settlement explanation, allocator request and supporting policies/evidence. DDQ result: two drafts (NAV authority incomplete), one hold. Internal quarterly compound and superseded-file comparison are on page4; investor pages1–3 use approved supplied figures. Pending October request is separate from September processed flows. See [deep review](website-audit.md); initial details below are historical where they differ.
 
 
-7 October 2026. Route: `/hedge`. Fictional manager: Bellosguardo Equity Fund. Audience: lean hedge fund COO/CFO, operations and IR teams; the same document workflows also apply to larger managers.
+7 October 2026. Route: `/hedge`. Fictional manager: Anamorphic Capital. Audience: lean hedge fund COO/CFO, operations and IR teams; the same document workflows also apply to larger managers.
 
 ## Evidence behind the message
 
