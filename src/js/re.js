@@ -2,6 +2,7 @@
 (() => {
   'use strict';
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const motionReduced = () => reducedMotion.matches || document.documentElement.dataset.a11yMotion === 'reduce';
   // Ported from the homepage typewriter engine: same shuffle, per-character
   // delays, erase/type gap, cycle lengths, cursor and shared reading pause.
   const hero = document.querySelector('.re-hero');
@@ -10,7 +11,7 @@
   const promiseText = document.querySelector('[data-promise]');
   const pageConfig = JSON.parse(document.getElementById('fund-page-config')?.textContent || '{}');
   const workflowLines = pageConfig.workflowLines || ['Quarter-end\nLP reporting.', 'Capital call\nnotices.', 'Distribution\nnotices.', 'Investor\nstatements.'];
-  const promiseLines = ['Before your\nmorning coffee.', 'In a\njiffy.', 'On your\ndesk today.', 'Off your\nto-do list.'];
+  const promiseLines = ['Ready for\nyour review.', 'Off your\nto-do list.', 'From your\nfund records.', 'In your\nreporting format.'];
   const heroDocuments = [...document.querySelectorAll('[data-hero-document]')];
   const heroChoices = [...document.querySelectorAll('[data-hero-select]')];
   const cycleToggle = document.querySelector('.re-cycle-toggle');
@@ -158,7 +159,7 @@
       documentCard.classList.remove('is-leaving');
       documentCard.dataset.position = positions[(i - index + positions.length) % positions.length];
     });
-    if (previous !== index && !reducedMotion.matches) {
+    if (previous !== index && !motionReduced()) {
       heroDocuments[previous].classList.add('is-leaving');
       departureTimer = setTimeout(() => heroDocuments[previous].classList.remove('is-leaving'), 450);
     }
@@ -171,7 +172,7 @@
     typewriters = [];
   }
   function syncTypewriters() {
-    if (userPaused || reducedMotion.matches || document.hidden || !heroVisible || !entranceComplete) {
+    if (userPaused || motionReduced() || document.hidden || !heroVisible || !entranceComplete) {
       stopTypewriters();
       return;
     }
@@ -186,7 +187,6 @@
     bottom.start(5500);
   }
   function updateCycleControl() {
-    cycleToggle.setAttribute('aria-label', userPaused ? 'Play headline rotation' : 'Pause headline rotation');
     cycleToggle.querySelector('[aria-hidden]').textContent = userPaused ? '▷' : 'Ⅱ';
     cycleToggle.querySelector('.re-cycle-label').textContent = userPaused ? 'Play' : 'Pause';
   }
@@ -209,6 +209,7 @@
   heroObserver.observe(hero);
   document.addEventListener('visibilitychange', syncTypewriters);
   reducedMotion.addEventListener('change', syncTypewriters);
+  document.addEventListener('cosimo-motion-change', syncTypewriters);
   // Homepage reveal timeline finishes at 2.8s, then starts these same holds.
   setTimeout(() => { entranceComplete = true; syncTypewriters(); }, 2800);
 

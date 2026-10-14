@@ -16,40 +16,41 @@
   <meta property="og:description" content="Cosimo turns property updates and investor records into draft LP reports, statements, capital call notices, and distribution notices.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://medici.ai/re">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/fonts.css">
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/re.css">
   <script src="../js/re.js" defer></script>
   <script src="../js/re-report.js" defer></script>
 <link rel="stylesheet" href="../css/site-layout.css">
+<link rel="stylesheet" href="../css/accessibility.css">
+<script src="../js/accessibility.js" defer></script>
 </head>
 <body class="re-page">
   <a class="re-skip" href="#main">Skip to content</a>
   <nav class="site-nav re-nav" aria-label="Main navigation">
-    <a class="nav-logo" href="../" aria-label="Cosimo home">COSIMO</a>
+    <a class="nav-logo" href="../" aria-label="Cosimo home"><svg class="brand-mark" data-brand-mark viewBox="0 0 100 100" width="48" height="48" aria-hidden="true" focusable="false"><ellipse cx="50" cy="50" rx="23.92" ry="9.57" transform="rotate(-14 50 50)" fill="none" stroke="var(--brand-sat)" stroke-width="1" vector-effect="non-scaling-stroke" opacity=".22"/><ellipse cx="50" cy="50" rx="33.28" ry="13.31" transform="rotate(-14 50 50)" fill="none" stroke="var(--brand-sat)" stroke-width="1" vector-effect="non-scaling-stroke" opacity=".22"/><ellipse cx="50" cy="50" rx="42.64" ry="17.06" transform="rotate(-14 50 50)" fill="none" stroke="var(--brand-sat)" stroke-width="1" vector-effect="non-scaling-stroke" opacity=".22"/><ellipse cx="50" cy="50" rx="52.00" ry="20.80" transform="rotate(-14 50 50)" fill="none" stroke="var(--brand-sat)" stroke-width="1" vector-effect="non-scaling-stroke" opacity=".22"/><path d="M 62.31 83.83 A 36 36 0 1 1 62.31 16.17" fill="none" stroke="var(--brand-sat)" stroke-width="1" vector-effect="non-scaling-stroke" opacity="0"/><circle data-sun cx="50" cy="50" r="10" fill="var(--brand-sun)"/><circle data-satellite cx="73.21" cy="46.17" r="2.82" opacity="0.760" fill="var(--brand-sat)"/><circle data-satellite cx="40.28" cy="60.94" r="2.64" opacity="0.959" fill="var(--brand-sat)"/><circle data-satellite cx="33.08" cy="46.76" r="2.61" opacity="0.473" fill="var(--brand-sat)"/><circle data-satellite cx="72.60" cy="55.11" r="2.84" opacity="0.935" fill="var(--brand-sat)"/><circle data-satellite cx="17.96" cy="54.48" r="2.15" opacity="0.623" fill="var(--brand-sat)"/><circle data-satellite cx="62.28" cy="34.82" r="2.46" opacity="0.435" fill="var(--brand-sat)"/><circle data-satellite cx="52.92" cy="66.84" r="2.81" opacity="1.000" fill="var(--brand-sat)"/><circle data-satellite cx="14.36" cy="66.40" r="2.81" opacity="0.828" fill="var(--brand-sat)"/><circle data-satellite cx="41.26" cy="34.71" r="1.99" opacity="0.402" fill="var(--brand-sat)"/><circle data-satellite cx="96.69" cy="48.64" r="3.15" opacity="0.844" fill="var(--brand-sat)"/><circle data-satellite cx="9.91" cy="45.25" r="2.28" opacity="0.494" fill="var(--brand-sat)"/><circle data-satellite cx="85.95" cy="27.50" r="2.03" opacity="0.511" fill="var(--brand-sat)"/></svg><span>COSIMO</span></a>
     <div class="nav-right">
       <a href="#sample-lp-report">Sample report</a>
       <a href="#workflows">What we prepare</a>
+      <a href="/founders.html">The founders</a>
       <a class="re-nav-contact" href="#contact">Contact us <span aria-hidden="true">↗</span></a>
     </div>
     <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="re-reading-progress" aria-hidden="true"></div>
   </nav>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <div class="fund-sectors" role="navigation" aria-label="Fund sectors">
       <a href="../">All funds</a><a href="../re/" aria-current="page">Real estate</a><a href="../vc/">Venture capital</a><a href="../pe/">Private equity</a><a href="../credit/">Private credit</a><a href="../hedge/">Hedge funds</a></div>
     <section class="re-hero" aria-labelledby="hero-title">
       <div class="re-hero-copy">
         <p class="re-kicker"><span class="re-signal" aria-hidden="true"></span> Grow your fund. Not your workload.</p>
-        <h1 id="hero-title"><span class="re-sr-only">Real-estate fund reporting, investor statements, capital calls, and distributions. Before your morning coffee.</span><span class="re-headline-workflow" aria-hidden="true"><span class="re-typewriter" data-headline>Quarter-end
-LP reporting.</span></span><span class="re-headline-promise" aria-hidden="true"><span class="re-typewriter" data-promise>Before your
-morning coffee.</span></span></h1>
+        <h1 id="hero-title"><span class="re-sr-only">Real-estate fund reporting, investor statements, capital calls, and distributions. Ready for your review.</span><span class="re-headline-workflow" aria-hidden="true"><span class="re-typewriter" data-headline>Quarter-end
+LP reporting.</span></span><span class="re-headline-promise" aria-hidden="true"><span class="re-typewriter" data-promise>Ready for
+your review.</span></span></h1>
         <p class="re-lede">Cosimo brings property reports, manager notes, and investor records into a draft LP update. Your team checks the figures and commentary without assembling the report from scratch.</p>
         <div class="re-actions"><a class="re-button" href="#sample-lp-report">See a sample LP update <span aria-hidden="true">↓</span></a><a class="re-text-link" href="#contact">Tell us about your toughest process <span aria-hidden="true">↗</span></a></div>
-        <div class="re-hero-controls" aria-label="Featured tasks"><span class="re-slide-count" aria-hidden="true">01 / 04</span><div class="re-workflow-dots" role="group" aria-label="Choose a featured task"><button type="button" data-hero-select="0" aria-label="Show LP reporting" aria-pressed="true"><span></span></button><button type="button" data-hero-select="1" aria-label="Show capital calls" aria-pressed="false"><span></span></button><button type="button" data-hero-select="2" aria-label="Show distributions" aria-pressed="false"><span></span></button><button type="button" data-hero-select="3" aria-label="Show investor statements" aria-pressed="false"><span></span></button></div><button type="button" class="re-cycle-toggle" aria-label="Pause headline rotation"><span aria-hidden="true">Ⅱ</span><span class="re-cycle-label">Pause</span></button></div><p class="re-hero-footnote">Fund operations software by Medici &amp; Company. Configured with your team.</p>
+        <div class="re-hero-controls" aria-label="Featured tasks"><span class="re-slide-count" aria-hidden="true">01 / 04</span><div class="re-workflow-dots" role="group" aria-label="Choose a featured task"><button type="button" data-hero-select="0" aria-label="Show LP reporting" aria-pressed="true"><span></span></button><button type="button" data-hero-select="1" aria-label="Show capital calls" aria-pressed="false"><span></span></button><button type="button" data-hero-select="2" aria-label="Show distributions" aria-pressed="false"><span></span></button><button type="button" data-hero-select="3" aria-label="Show investor statements" aria-pressed="false"><span></span></button></div><button type="button" class="re-cycle-toggle"><span aria-hidden="true">Ⅱ</span><span class="re-cycle-label">Pause</span><span class="a11y-sr-only"> headline rotation</span></button></div><p class="re-hero-footnote">Fund operations software by Medici &amp; Company. Configured with your team.</p>
       </div>
       <div class="re-hero-art" aria-label="Example reports and notices" data-active-workflow="0">
         <div class="re-orbit re-orbit-one" aria-hidden="true"></div><div class="re-orbit re-orbit-two" aria-hidden="true"></div>
@@ -129,7 +130,7 @@ morning coffee.</span></span></h1>
     <section class="re-workflows re-container" id="workflows" aria-labelledby="workflows-title">
       <div class="re-workflows-heading"><p class="re-kicker">More of the work off your desk</p><h2 id="workflows-title">LP reports, statements,<br>and investor notices.</h2><p>Put your fund records to work across the reports and notices you send to LPs.</p></div>
       <div class="re-workflow-layout"><div class="re-workflow-list">
-        <details open data-workflow="reporting"><summary><span>Quarterly LP reports</span><span class="re-expand" aria-hidden="true">+</span></summary><div><p>Pull together property results and manager updates without rebuilding the report each quarter. Cosimo drafts the LP letter and supporting schedules from your records.</p><span class="re-deliverables">LP letter + quarterly report</span></div></details>
+        <details open data-workflow="reporting"><summary><span>Quarterly LP reports</span><span class="re-expand" aria-hidden="true">+</span></summary><div><p>Pull together property results and manager updates without rebuilding the report each quarter. Cosimo drafts the LP letter and supporting schedules from your records.</p><span class="re-deliverables">LP letter + property update</span></div></details>
         <details data-workflow="capital"><summary><span>Investor statements</span><span class="re-expand" aria-hidden="true">+</span></summary><div><p>Prepare each LP’s statement from your capital account records and approved allocations. Cosimo brings the balances, contributions, and distributions together for you.</p><span class="re-deliverables">A statement for each LP</span></div></details>
         <details data-workflow="notices"><summary><span>Capital call notices</span><span class="re-expand" aria-hidden="true">+</span></summary><div><p>Give Cosimo the call details and each investor’s allocation. It drafts the individual notices with the amount due, what the call funds, and when to pay.</p><span class="re-deliverables">Individual capital call notices</span></div></details>
         <details data-workflow="distributions"><summary><span>Distribution notices</span><span class="re-expand" aria-hidden="true">+</span></summary><div><p>Use your approved allocations and payment details to prepare a notice for each LP, without editing the same document over and over.</p><span class="re-deliverables">Individual distribution notices</span></div></details>
@@ -149,9 +150,11 @@ morning coffee.</span></span></h1>
   </main>
   <footer class="site-footer">
   <div class="foot-left">© 2026 MEDICI &amp; COMPANY</div>
-  <div class="foot-right"><a href="mailto:info@medici.ai">info@medici.ai</a><a href="/faq.html">Setup &amp; FAQ</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div>
+  <div class="foot-right"><a href="mailto:info@medici.ai">info@medici.ai</a><a href="/founders.html">The founders</a><a href="/faq.html">Setup &amp; FAQ</a><a href="/accessibility.html">Accessibility</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div>
 </footer>
+<button class="motion-toggle" type="button" aria-pressed="false">Pause animations</button>
 <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark mode">&#9790;</button>
 <script src="../js/page-chrome.js" defer></script>
+<script src="../js/brand-mark.js" defer></script>
 </body>
 </html>

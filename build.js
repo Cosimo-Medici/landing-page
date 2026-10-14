@@ -16,9 +16,14 @@ const DIST = path.join(__dirname, 'dist');
 
 // Files to hash (source path relative to SRC → directory in dist)
 const HASHABLE = [
+  { src: 'css/fonts.css', dir: 'css' },
+  { src: 'css/accessibility.css', dir: 'css' },
+  { src: 'js/accessibility.js', dir: 'js' },
+  { src: 'js/brand-mark.js', dir: 'js' },
   { src: 'js/theme.js', dir: 'js' },
   { src: 'css/home.css', dir: 'css' },
   { src: 'css/site-layout.css', dir: 'css' },
+  { src: 'css/founders.css', dir: 'css' },
   { src: 'js/home.js', dir: 'js' },
   { src: 'js/page-chrome.js', dir: 'js' },
   { src: 'css/styles.css', dir: 'css' },
@@ -26,18 +31,16 @@ const HASHABLE = [
   { src: 'js/re.js', dir: 'js' },
   { src: 'js/re-report.js', dir: 'js' },
   ...['vc', 'pe', 'credit', 'hedge'].map(sector => ({ src: `js/${sector}-report.js`, dir: 'js' })),
-  { src: 'js/main.js',     dir: 'js' },
   // The retired chat demo is not used by any current page. Do not publish its
   // historical sample records alongside the current, reconciled examples.
 ];
 
 // HTML files that reference the hashable assets
-const HTML_FILES = ['index.html', 'faq.html', 'about.html', 'privacy.html', 'terms.html', ...['re', 'vc', 'pe', 'credit', 'hedge'].map(sector => `${sector}/index.html`)];
+const HTML_FILES = ['index.html', 'faq.html', 'about.html', 'founders.html', 'accessibility.html', 'privacy.html', 'terms.html', ...['re', 'vc', 'pe', 'credit', 'hedge'].map(sector => `${sector}/index.html`)];
 
 // Static assets to copy as-is (relative to SRC, stripped of public/ prefix in dist)
 const STATIC = [
   'public/ChicagoFLF.ttf',
-  'public/dream orphanage rg.otf',
   'public/apple-touch-icon.png',
   'public/favicon.ico',
   'public/favicon.svg',
@@ -134,6 +137,9 @@ for (const file of STATIC) {
   const destName = file.startsWith('public/') ? file.slice(7) : file;
   copyFile(srcPath, path.join(DIST, destName));
 }
+
+fs.cpSync(path.join(SRC, 'public/founders'), path.join(DIST, 'founders'), { recursive: true });
+fs.cpSync(path.join(SRC, 'public/fonts'), path.join(DIST, 'fonts'), { recursive: true });
 
 fs.cpSync(path.join(SRC, 'public/product-demo'), path.join(DIST, 'product-demo'), { recursive: true });
 

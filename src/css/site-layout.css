@@ -128,3 +128,9 @@ body main [id] { scroll-margin-top: calc(var(--site-header-height) + 16px); }
 @media(prefers-reduced-motion: reduce) {
   .site-nav .nav-right { transition: none; }
 }
+
+/* Application orbital mark, recolored for the marketing site's two themes. */
+.site-nav .nav-logo { gap: 12px; --brand-sun: #B88BD4; --brand-sat: #DED0EA; }
+[data-theme="light"] .site-nav .nav-logo { --brand-sun: #74418F; --brand-sat: #653C79; }
+.brand-mark { display: block; flex-shrink: 0; width: 48px; height: 48px; overflow: visible; letter-spacing: normal; }
+@media(max-width: 760px) { .brand-mark { width: 40px; height: 40px; } .site-nav .nav-logo { gap: 10px; } }

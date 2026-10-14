@@ -130,18 +130,19 @@
 
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+const motionReduced = () => reduced.matches || document.documentElement.dataset.a11yMotion === 'reduce';
 const pause = document.querySelector('.home-pause');
 let paused = false, visible = true, writers = [];
 function sync() {
   writers.forEach(w => w.stop()); writers=[];
-  if (paused || reduced.matches || document.hidden || !visible) return;
+  if (paused || motionReduced() || document.hidden || !visible) return;
   typewriterCoord.lastAnimEnd=0;
-  writers=[createTypewriter(document.getElementById('hero-top'), ['Investor reports.','Portfolio updates.','Investor requests.'],8000,typewriterCoord),createTypewriter(document.getElementById('hero-bottom'), ['Before your coffee cools.','In a jiffy.','On your desk today.','Off your to-do list.'],11000,typewriterCoord)];
+  writers=[createTypewriter(document.getElementById('hero-top'), ['Investor reports.','Portfolio updates.','Investor requests.'],8000,typewriterCoord),createTypewriter(document.getElementById('hero-bottom'), ['Ready for your review.','Off your to-do list.','From your fund records.','In your reporting format.'],11000,typewriterCoord)];
   writers[0].start(2000); writers[1].start(5500);
 }
-pause.addEventListener('click', () => { paused=!paused; pause.innerHTML=paused?'▷ <span>Play</span>':'Ⅱ <span>Pause</span>'; pause.setAttribute('aria-label',`${paused?'Play':'Pause'} headline rotation`); sync(); });
+pause.addEventListener('click', () => { paused=!paused; pause.innerHTML=paused?'<span aria-hidden="true">▷</span> <span>Play</span><span class="a11y-sr-only"> headline rotation</span>':'<span aria-hidden="true">Ⅱ</span> <span>Pause</span><span class="a11y-sr-only"> headline rotation</span>'; sync(); });
 new IntersectionObserver(entries => { visible=entries[0].isIntersecting; sync(); },{threshold:.15}).observe(document.querySelector('.home-hero'));
-reduced.addEventListener('change',sync); document.addEventListener('visibilitychange',sync);
+reduced.addEventListener('change',sync); document.addEventListener('cosimo-motion-change',sync); document.addEventListener('visibilitychange',sync);
 
 const steps = [
  ['Your portfolio, in Cosimo.','Expand a company or click a figure to inspect its supporting records. Six companies, with LTM figures through September 30 in USD millions. The report uses their Q3 accounts.'],
@@ -181,9 +182,9 @@ const tour=[()=>setStep(0),()=>{demoState.detail=true;sendDemo();},()=>{setStep(
 const tourHolds=[3500,6000,3500,4500,7500,5500];
 function scheduleTour(delay){tourDue=performance.now()+delay;tourTimer=setTimeout(()=>{tourTimer=null;tourRemaining=0;advanceTour();},delay);}
 function advanceTour(){if(!tourRunning)return;if(tourBeat>=tour.length){tourRemaining=0;stopReplay();return;}tour[tourBeat]();scheduleTour(tourHolds[tourBeat++]);}
-replay.addEventListener('click',()=>{if(tourRunning){stopReplay();return;}if(reduced.matches)return;if(tourBeat>=tour.length&&!tourRemaining)tourBeat=0;tourStarted=true;tourRunning=true;replay.textContent='Pause walkthrough Ⅱ';replay.setAttribute('aria-pressed','true');if(tourRemaining>0)scheduleTour(tourRemaining);else advanceTour();});
-function syncTourMotion(){if(reduced.matches){stopReplay();tourBeat=0;tourRemaining=0;stopReplay();demoState.phase=2;sendDemo();}replay.hidden=reduced.matches;}
-reduced.addEventListener('change',syncTourMotion);syncTourMotion();
+replay.addEventListener('click',()=>{if(tourRunning){stopReplay();return;}if(motionReduced())return;if(tourBeat>=tour.length&&!tourRemaining)tourBeat=0;tourStarted=true;tourRunning=true;replay.textContent='Pause walkthrough Ⅱ';replay.setAttribute('aria-pressed','true');if(tourRemaining>0)scheduleTour(tourRemaining);else advanceTour();});
+function syncTourMotion(){if(motionReduced()){stopReplay();tourBeat=0;tourRemaining=0;stopReplay();demoState.phase=2;sendDemo();}replay.hidden=motionReduced();}
+reduced.addEventListener('change',syncTourMotion);document.addEventListener('cosimo-motion-change',syncTourMotion);syncTourMotion();
 document.addEventListener('visibilitychange',()=>{if(document.hidden)stopReplay();});
 new IntersectionObserver(entries=>{if(!entries[0].isIntersecting&&tourRunning)stopReplay();},{threshold:0}).observe(workspace);
 window.addEventListener('message',event=>{
