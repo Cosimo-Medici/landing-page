@@ -16,7 +16,7 @@ Path: /
 
 The homepage introduces three recurring jobs: investor reporting, portfolio updates, and investor requests. An interactive example follows management accounts, company commentary, and a prior report format into a quarterly portfolio update.
 
-The example uses Signet Equity, a fictional fund manager. Six companies report $70.0 million in quarterly revenue against a $72.0 million budget. Fiesole's accounts show $9.0 million while its management update says $9.4 million. The draft uses the accounts provisionally and leaves the $400,000 difference visible for review. The example has inspectable source records and a three-page draft. It is authored demonstration content, not a live application run.
+The example uses Chianti Capital, the synthetic demo manager. Six companies report $70.0 million in quarterly revenue against a $72.0 million budget. Calderwood's accounts show $9.0 million while its management update says $9.4 million. The draft uses the accounts provisionally and leaves the $400,000 difference visible for review. The example has inspectable source records and a three-page draft. It is authored demonstration content, not a live application run.
 
 ## Real estate
 
@@ -38,7 +38,7 @@ The six-page example includes portfolio metrics, cash and runway, founder commen
 
 Path: /pe/
 
-The page focuses on bringing portfolio-company financials, management commentary, and fund records into reporting drafts. Its fictional Signet Equity example compares company actuals with budgets and explains an EBITDA shortfall from supplied management notes. Unexplained variances and unapproved operating plans remain visible.
+The page focuses on bringing portfolio-company financials, management commentary, and fund records into reporting drafts. Its fictional Chianti Capital example compares company actuals with budgets and explains an EBITDA shortfall from supplied management notes. Unexplained variances and unapproved operating plans remain visible.
 
 The six-page sample includes portfolio metrics, budget comparisons, company updates, capital movements, and review questions. The company totals are management-reported operating figures, not ownership-weighted fund results. The sample does not implement an ILPA reporting template or constitute a complete quarterly financial reporting package.
 

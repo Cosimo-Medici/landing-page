@@ -4,7 +4,7 @@ Status: homepage now imports actual product components and stylesheet. The initi
 
 ## Brief
 
-The user identified that the website presents operational interfaces as paperwork. Gathering fund figures, inspecting missing submissions, and monitoring a process should look like software; the resulting report should look like a document. Inspect the dashboard branch and workflow designs, use the existing fictional Signet Equity data, and discuss the direction before building. The user explicitly requested subagents to protect context and improve quality.
+The user identified that the website presents operational interfaces as paperwork. Gathering fund figures, inspecting missing submissions, and monitoring a process should look like software; the resulting report should look like a document. Inspect the dashboard branch and workflow designs, use the existing fictional Chianti Capital data, and discuss the direction before building. The user explicitly requested subagents to protect context and improve quality.
 
 Three read-only research lanes covered dashboard implementation, workflow implementation, and the current website examples. The parent reviewed saved application screenshots and synthesized the findings. Application source was inspected on `ecp/dashboard-feeds` at `ce730ac7`; marketing source was at `6272049`. This was not a new live-service or browser validation. The canonical memory index was unavailable on this machine.
 
@@ -21,7 +21,7 @@ Build one homepage walkthrough, then review it before propagating the pattern to
 
 | Beat | What the visitor sees | What it communicates |
 | --- | --- | --- |
-| Your fund, together | A focused view of the real Overview/Companies interface with Signet Equity figures and record status | This is a workspace where the team can see the fund |
+| Your fund, together | A focused view of the real Overview/Companies interface with Chianti Capital figures and record status | This is a workspace where the team can see the fund |
 | Inspect a figure | Select a figure; its real docked detail panel reveals inputs and source records | The numbers have an inspectable basis |
 | Follow the work | The actual run interface shows the reporting task and a specific unresolved question | Cosimo does work and brings decisions back to the team |
 | Open the result | A report output opens from the run into the existing full report | The work produces a usable deliverable |
@@ -117,7 +117,7 @@ Removed the invented app sidebar, cards, panel, transcript, and their CSS. The h
 
 Build sources and reproducibility details are in [product-demo/README.md](../product-demo/README.md). The generated bundle is stored in `src/public/product-demo` so ordinary marketing builds remain independent of the app checkout. App component source was not modified. No new dependencies installed; environment-file loading disabled. The build explicitly registers production files with Tailwind after visual QA caught missing utilities in the first export.
 
-Data: three Signet Equity companies; original typed LTM metrics remain labeled LTM, while the Q3 report retains 12.4/8.6/6.0m revenue and its unresolved discrepancy. The company descriptions and the attention queue connect to that Q3 story. Period differences are explained in the scene caption. The actual backend-dependent Ask and run links are guarded with a demo notice; no fabricated sends or live backend calls occur.
+Data: three Chianti Capital companies; original typed LTM metrics remain labeled LTM, while the Q3 report retains 12.4/8.6/6.0m revenue and its unresolved discrepancy. The company descriptions and the attention queue connect to that Q3 story. Period differences are explained in the scene caption. The actual backend-dependent Ask and run links are guarded with a demo notice; no fabricated sends or live backend calls occur.
 
 Browser verification covers production styling, native figure-panel opening, run-step expansion, transcript disclosures, output-card access to all three report pages, and the guarded Ask control. The parent theme is forwarded to the app's native dark-mode class without changing the selected view.
 

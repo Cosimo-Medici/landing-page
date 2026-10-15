@@ -87,7 +87,7 @@ Use subtle Florentine and Renaissance references for fictional entities, paired 
 - RE fund: Loggia Property Group; document brand: Loggia Property Group.
 - LP: Strozzi Family Trust, consistent across the capital call, distribution notice, statement, and report commentary.
 - Properties: Arno Court, Pitti Gardens, Oltrarno Place, Fiesole Terrace. Use these names in the future RE workflow demo too.
-- Homepage examples: Signet Equity and Fiorino Debt Partners; portfolio companies use similarly restrained names. Source filenames, citations, tables, and document text use matching names.
+- Homepage examples: Chianti Capital and Fiorino Debt Partners; portfolio companies use similarly restrained names. Source filenames, citations, tables, and document text use matching names.
 - Keep functional labels such as “Capital account ledger” explicit. Names provide texture; they should not make the workflow harder to understand.
 
 

@@ -43,7 +43,7 @@
       });
     });
     document.querySelectorAll('table').forEach(table => {
-      table.setAttribute('aria-label', 'Signet Equity fictional company records');
+      table.setAttribute('aria-label', 'Chianti Capital fictional company records');
       table.querySelectorAll('thead td').forEach(cell => cell.setAttribute('role', 'columnheader'));
       table.querySelectorAll('thead th').forEach(cell => {
         cell.setAttribute('scope', 'col');

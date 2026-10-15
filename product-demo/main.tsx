@@ -9,7 +9,7 @@ import { QueueStrip } from '~/components/portfolio/Queue';
 import PortfolioRegisterRoute from '~/routes/application/portfolio-register';
 import type { PeVertical } from '~/lib/vertical/model';
 import { chainFromModelChip } from '~/lib/vertical/richChain';
-import fixture from './signet-equity.json';
+import fixture from './chianti-capital.json';
 import { WorkflowDemo } from './WorkflowDemo';
 import './styles.css';
 

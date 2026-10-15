@@ -21,7 +21,7 @@ The default frontend path matches the local monorepo worktree arrangement. No pa
 
 - `main.tsx`: demo data/provider wiring; imports production `PortfolioRegisterRoute`, `QueueStrip`, `SidePanel`, `PortfolioPanelProvider`, and `VerticalProvider`.
 - `WorkflowDemo.tsx`: authored state sequence around production `Wf3TranscriptView`, `Wf3Rail`, `Wf3Crumbs`, and `Wf3Chip`; the run-header container uses the production header classes. The full authenticated run shell is outside this excerpt.
-- `signet-equity.json`: fictional company data adapted from the app's PE snapshot. LTM figures at September 30 are distinct from the Q3 reporting example; captions explicitly name both periods. No client data or credentials are included.
+- `chianti-capital.json`: fictional company data adapted from the app's PE snapshot. LTM figures at September 30 are distinct from the Q3 reporting example; captions explicitly name both periods. No client data or credentials are included.
 - `styles.css`: import entry only. The actual app stylesheet, DM Sans, IBM Plex Mono, Chicago font, and component classes are authoritative.
 - `src/public/product-demo`: generated deployment artifact, intentionally stored with the static website for independent hosting.
 
@@ -31,12 +31,12 @@ On narrow screens the product retains native readable dimensions inside a horizo
 
 Reference app revision when built: `ce730ac7` on `ecp/dashboard-feeds`. Refresh this bundle when the corresponding production UI changes.
 
-The register route’s hardcoded asset-class eyebrow is bound to `signet-equity.json` → `org` during the demo build. Its markup and styling remain the production component’s. This adapter fails if the upstream label changes; the application checkout is not edited. Both the register identity and side panel read the same fixture name.
+The register route’s hardcoded asset-class eyebrow is bound to `chianti-capital.json` → `org` during the demo build. Its markup and styling remain the production component’s. This adapter fails if the upstream label changes; the application checkout is not edited. Both the register identity and side panel read the same fixture name.
 
 
 ## Numeric dataset — October 2026 audit
 
-The register, workflow, source records and three-page report use the same six Signet Equity companies as `/pe/`, at September 30, 2026. Q3 revenue is $70.0M against $72.0M budget; EBITDA is $9.6M against $10.4M budget. The only deliberate disagreement is explicitly labeled: Fiesole accounts revenue $9.0M versus an earlier sales update’s $9.4M. The draft provisionally uses the accounts.
+The register, workflow, source records and three-page report use the same six Chianti Capital companies as `/pe/`, at September 30, 2026. Q3 revenue is $70.0M against $72.0M budget; EBITDA is $9.6M against $10.4M budget. The only deliberate disagreement is explicitly labeled: Calderwood accounts revenue $9.0M versus an earlier sales update’s $9.4M. The draft provisionally uses the accounts.
 
 The dashboard shows LTM revenue $280.0M and EBITDA $38.4M (budget $40.5M, variance −5.2%). Its six-month sparklines contain April–September monthly EBITDA; each last-three-point sum matches that company’s Q3 EBITDA. Each LTM EBITDA figure is supported by four quarterly inputs in its fact panel.
 
@@ -45,3 +45,13 @@ Company equity values total $210.48M against $153.00M invested (1.38× gross unr
 The adapter preserves production markup/styling while naming the debt cell **Net debt**, clarifying **LTM vs budget**, filling the portfolio’s EBITDA-budget variance and aggregate net leverage (2.83×), and using **Cash-generative** for companies where burn-based runway is inapplicable. Non-subscription businesses explicitly show **Not applicable** in ARR, with an inspectable explanation. An empty Open cell means no finding, not missing financial data. The generic production footer’s blank trend/package fields are non-additive metadata, not missing totals.
 
 All companies now have sourced numeric chains, valuation and covenant math, monthly history, entry value, liquidity breakdown, debt terms, board dates, named key people, an add-on already included in invested cost, and specific review findings. No real application checkout is modified. The fixture does not claim unsupported IRRs or carry calculations.
+
+## Chianti identity alignment
+
+The website uses Chianti Capital and selected company/LP identities from the synthetic demo dataset. Figures, dates, people, lenders and operating scenarios remain illustrative website inputs; this is not an export of either legal fund's accounts. The selected portfolio spans Funds III and IV, so the website labels it a portfolio example rather than Fund I.
+
+Identity sources (local demo records, no credentials or investor contact data copied):
+- `chianti-source/Chianti Capital, LP_ Sql-Structure Data.txt`: AeroComponent Solutions, VeriSafe Compliance, ConstructFlow, Golden Petal Apiaries, FreshFare Logistics; The Prescott Family Office, Aspen Grove Capital, Sterling Foundation, Belmont Family Office.
+- `fund-data-engine/out/chianti/chianti-capital-partners-iii-lp/2026-Q3/general_ledger.csv`: Calderwood Fasteners acquisition dated July 15, 2025.
+
+This content-only update applies the same identity substitutions to the source fixture and checked-in export, preserving the export's existing nested-button repair and accessibility bridge. The JavaScript asset filename is rehashed after substitution.
