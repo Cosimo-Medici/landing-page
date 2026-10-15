@@ -1,8 +1,8 @@
 {
   "stateTitle": "Portfolio",
   "stateCaption": "Six companies \u00b7 quarter ended September 30, 2026",
-  "org": "Signet Equity",
-  "fundRead": "Six companies at September 30, 2026. Q3 revenue $70.0M; EBITDA $9.6M. The register shows LTM operating figures: $280.0M revenue and $38.4M EBITDA. Fund equity investments are valued at $210.48M; $12.90M fund cash less $2.10M accrued liabilities gives $221.28M NAV. Company cash is already included in equity values and is not added again. Three company follow-ups are open; Fiesole\u2019s revised production plan also awaits board review.",
+  "org": "Chianti Capital",
+  "fundRead": "Six companies at September 30, 2026. Q3 revenue $70.0M; EBITDA $9.6M. The register shows LTM operating figures: $280.0M revenue and $38.4M EBITDA. Fund equity investments are valued at $210.48M; $12.90M fund cash less $2.10M accrued liabilities gives $221.28M NAV. Company cash is already included in equity values and is not added again. Three company follow-ups are open; Calderwood\u2019s revised production plan also awaits board review.",
   "tiles": [],
   "fund": {
     "asOf": "Sep 30, 2026",
@@ -14,11 +14,11 @@
         "inputs": [
           [
             "Six company equity marks: $210.48M",
-            "Signet_Equity_Valuation_Schedule_Q3_2026.xlsx"
+            "Chianti_Capital_Valuation_Schedule_Q3_2026.xlsx"
           ],
           [
             "Fund cash $12.90M; accrued liabilities $2.10M",
-            "Signet_Equity_Fund_Balance_Sheet_Q3_2026.xlsx"
+            "Chianti_Capital_Fund_Balance_Sheet_Q3_2026.xlsx"
           ]
         ],
         "run": [
@@ -67,9 +67,9 @@
   },
   "companies": [
     {
-      "name": "Arno Precision",
+      "name": "AeroComponent Solutions",
       "hq": "Charlotte, NC",
-      "sector": "Precision manufacturing",
+      "sector": "Light manufacturing",
       "state": "act",
       "own": 0.8,
       "entry": {
@@ -84,7 +84,7 @@
             "inputs": [
               [
                 "Equity invested: $50.00M",
-                "Arno_Precision_Investment_Ledger.xlsx"
+                "AeroComponent_Solutions_Investment_Ledger.xlsx"
               ]
             ],
             "run": [
@@ -104,11 +104,11 @@
             "inputs": [
               [
                 "Q4 2025 through Q2 2026: $54.0M",
-                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
+                "AeroComponent_Solutions_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
               ],
               [
                 "Q3 2026: $18.0M",
-                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 revenue row"
+                "AeroComponent_Solutions_Q3_2026_Accounts.xlsx \u00b7 revenue row"
               ]
             ],
             "run": [
@@ -126,7 +126,7 @@
             "inputs": [
               [
                 "Quarterly EBITDA: $3.00M + $3.20M + $3.40M + $3.20M",
-                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
+                "AeroComponent_Solutions_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
               ]
             ],
             "run": [
@@ -145,11 +145,11 @@
             "inputs": [
               [
                 "LTM EBITDA actual: $12.80M",
-                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+                "AeroComponent_Solutions_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
               ],
               [
                 "LTM EBITDA budget: $13.50M",
-                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 budget"
+                "AeroComponent_Solutions_Q3_2026_Accounts.xlsx \u00b7 budget"
               ]
             ],
             "run": [
@@ -177,8 +177,8 @@
             "f": "This business does not report subscription ARR",
             "inputs": [
               [
-                "Precision manufacturing",
-                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 business model"
+                "Light manufacturing",
+                "AeroComponent_Solutions_Q3_2026_Accounts.xlsx \u00b7 business model"
               ]
             ],
             "run": [
@@ -198,15 +198,15 @@
             "inputs": [
               [
                 "Cash: $9.20M",
-                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 cash"
+                "AeroComponent_Solutions_Q3_2026_Accounts.xlsx \u00b7 cash"
               ],
               [
                 "Undrawn revolver: $6.00M",
-                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 facilities"
+                "AeroComponent_Solutions_Q3_2026_Accounts.xlsx \u00b7 facilities"
               ],
               [
                 "Q3 operating cash inflow: $1.92M",
-                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 cash flow"
+                "AeroComponent_Solutions_Q3_2026_Accounts.xlsx \u00b7 cash flow"
               ]
             ],
             "run": [
@@ -230,11 +230,11 @@
             "inputs": [
               [
                 "Drawn debt: $47.60M",
-                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+                "AeroComponent_Solutions_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
               ],
               [
                 "Cash: $9.20M",
-                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
+                "AeroComponent_Solutions_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
               ]
             ],
             "run": [
@@ -254,11 +254,11 @@
             "inputs": [
               [
                 "Net debt: $38.40M",
-                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+                "AeroComponent_Solutions_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
               ],
               [
                 "LTM EBITDA: $12.80M",
-                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+                "AeroComponent_Solutions_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
               ]
             ],
             "run": [
@@ -281,7 +281,7 @@
               "inputs": [
                 [
                   "Leverage limit: 4.25\u00d7",
-                  "Arno_Precision_Credit_Agreement.pdf \u00a76.1"
+                  "AeroComponent_Solutions_Credit_Agreement.pdf \u00a76.1"
                 ]
               ],
               "run": [
@@ -302,11 +302,11 @@
             "inputs": [
               [
                 "LTM EBITDA $12.80M \u00d7 10.0\u00d7 = $128.00M enterprise value",
-                "Signet_Equity_Valuation_Schedule_Q3_2026.xlsx"
+                "Chianti_Capital_Valuation_Schedule_Q3_2026.xlsx"
               ],
               [
                 "Net debt $38.40M; ownership 80%",
-                "Arno_Precision_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
+                "AeroComponent_Solutions_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
               ]
             ],
             "run": [
@@ -327,7 +327,7 @@
             "inputs": [
               [
                 "Fair value: $71.68M; cost: $50.00M",
-                "Signet_Equity_Investment_Ledger.xlsx"
+                "Chianti_Capital_Investment_Ledger.xlsx"
               ]
             ],
             "run": [
@@ -401,7 +401,7 @@
       ]
     },
     {
-      "name": "Pitti Services",
+      "name": "VeriSafe Compliance",
       "hq": "Austin, TX",
       "sector": "Business services",
       "state": "ok",
@@ -418,7 +418,7 @@
             "inputs": [
               [
                 "Equity invested: $25.00M",
-                "Pitti_Services_Investment_Ledger.xlsx"
+                "VeriSafe_Compliance_Investment_Ledger.xlsx"
               ]
             ],
             "run": [
@@ -438,11 +438,11 @@
             "inputs": [
               [
                 "Q4 2025 through Q2 2026: $42.0M",
-                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
+                "VeriSafe_Compliance_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
               ],
               [
                 "Q3 2026: $14.0M",
-                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 revenue row"
+                "VeriSafe_Compliance_Q3_2026_Accounts.xlsx \u00b7 revenue row"
               ]
             ],
             "run": [
@@ -460,7 +460,7 @@
             "inputs": [
               [
                 "Quarterly EBITDA: $2.00M + $2.10M + $2.20M + $2.10M",
-                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
+                "VeriSafe_Compliance_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
               ]
             ],
             "run": [
@@ -479,11 +479,11 @@
             "inputs": [
               [
                 "LTM EBITDA actual: $8.40M",
-                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+                "VeriSafe_Compliance_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
               ],
               [
                 "LTM EBITDA budget: $8.00M",
-                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 budget"
+                "VeriSafe_Compliance_Q3_2026_Accounts.xlsx \u00b7 budget"
               ]
             ],
             "run": [
@@ -512,7 +512,7 @@
             "inputs": [
               [
                 "Business services",
-                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 business model"
+                "VeriSafe_Compliance_Q3_2026_Accounts.xlsx \u00b7 business model"
               ]
             ],
             "run": [
@@ -532,15 +532,15 @@
             "inputs": [
               [
                 "Cash: $5.40M",
-                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 cash"
+                "VeriSafe_Compliance_Q3_2026_Accounts.xlsx \u00b7 cash"
               ],
               [
                 "Undrawn revolver: $4.00M",
-                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 facilities"
+                "VeriSafe_Compliance_Q3_2026_Accounts.xlsx \u00b7 facilities"
               ],
               [
                 "Q3 operating cash inflow: $1.26M",
-                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 cash flow"
+                "VeriSafe_Compliance_Q3_2026_Accounts.xlsx \u00b7 cash flow"
               ]
             ],
             "run": [
@@ -564,11 +564,11 @@
             "inputs": [
               [
                 "Drawn debt: $30.60M",
-                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+                "VeriSafe_Compliance_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
               ],
               [
                 "Cash: $5.40M",
-                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
+                "VeriSafe_Compliance_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
               ]
             ],
             "run": [
@@ -588,11 +588,11 @@
             "inputs": [
               [
                 "Net debt: $25.20M",
-                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+                "VeriSafe_Compliance_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
               ],
               [
                 "LTM EBITDA: $8.40M",
-                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+                "VeriSafe_Compliance_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
               ]
             ],
             "run": [
@@ -615,7 +615,7 @@
               "inputs": [
                 [
                   "Leverage limit: 4.50\u00d7",
-                  "Pitti_Services_Credit_Agreement.pdf \u00a76.1"
+                  "VeriSafe_Compliance_Credit_Agreement.pdf \u00a76.1"
                 ]
               ],
               "run": [
@@ -636,11 +636,11 @@
             "inputs": [
               [
                 "LTM EBITDA $8.40M \u00d7 9.0\u00d7 = $75.60M enterprise value",
-                "Signet_Equity_Valuation_Schedule_Q3_2026.xlsx"
+                "Chianti_Capital_Valuation_Schedule_Q3_2026.xlsx"
               ],
               [
                 "Net debt $25.20M; ownership 70%",
-                "Pitti_Services_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
+                "VeriSafe_Compliance_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
               ]
             ],
             "run": [
@@ -661,7 +661,7 @@
             "inputs": [
               [
                 "Fair value: $35.28M; cost: $25.00M",
-                "Signet_Equity_Investment_Ledger.xlsx"
+                "Chianti_Capital_Investment_Ledger.xlsx"
               ]
             ],
             "run": [
@@ -735,7 +735,7 @@
       ]
     },
     {
-      "name": "Fiesole Components",
+      "name": "Calderwood Fasteners",
       "hq": "Toledo, OH",
       "sector": "Industrial components",
       "state": "act",
@@ -752,7 +752,7 @@
             "inputs": [
               [
                 "Equity invested: $20.00M",
-                "Fiesole_Components_Investment_Ledger.xlsx"
+                "Calderwood_Fasteners_Investment_Ledger.xlsx"
               ]
             ],
             "run": [
@@ -772,11 +772,11 @@
             "inputs": [
               [
                 "Q4 2025 through Q2 2026: $27.0M",
-                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
+                "Calderwood_Fasteners_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
               ],
               [
                 "Q3 2026: $9.0M",
-                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 revenue row"
+                "Calderwood_Fasteners_Q3_2026_Accounts.xlsx \u00b7 revenue row"
               ]
             ],
             "run": [
@@ -794,7 +794,7 @@
             "inputs": [
               [
                 "Quarterly EBITDA: $1.20M + $1.10M + $1.00M + $1.10M",
-                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
+                "Calderwood_Fasteners_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
               ]
             ],
             "run": [
@@ -813,11 +813,11 @@
             "inputs": [
               [
                 "LTM EBITDA actual: $4.40M",
-                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+                "Calderwood_Fasteners_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
               ],
               [
                 "LTM EBITDA budget: $5.20M",
-                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 budget"
+                "Calderwood_Fasteners_Q3_2026_Accounts.xlsx \u00b7 budget"
               ]
             ],
             "run": [
@@ -846,7 +846,7 @@
             "inputs": [
               [
                 "Industrial components",
-                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 business model"
+                "Calderwood_Fasteners_Q3_2026_Accounts.xlsx \u00b7 business model"
               ]
             ],
             "run": [
@@ -866,15 +866,15 @@
             "inputs": [
               [
                 "Cash: $4.30M",
-                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 cash"
+                "Calderwood_Fasteners_Q3_2026_Accounts.xlsx \u00b7 cash"
               ],
               [
                 "Undrawn revolver: $2.00M",
-                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 facilities"
+                "Calderwood_Fasteners_Q3_2026_Accounts.xlsx \u00b7 facilities"
               ],
               [
                 "Q3 operating cash inflow: $0.66M",
-                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 cash flow"
+                "Calderwood_Fasteners_Q3_2026_Accounts.xlsx \u00b7 cash flow"
               ]
             ],
             "run": [
@@ -888,7 +888,7 @@
         "status": "Cash-generative"
       },
       "debt": {
-        "lender": "Strozzi Credit",
+        "lender": "Belmont Credit",
         "facility": "Senior secured term loan + revolver",
         "balance": {
           "v": "$13.20M",
@@ -898,11 +898,11 @@
             "inputs": [
               [
                 "Drawn debt: $17.50M",
-                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+                "Calderwood_Fasteners_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
               ],
               [
                 "Cash: $4.30M",
-                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
+                "Calderwood_Fasteners_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
               ]
             ],
             "run": [
@@ -922,11 +922,11 @@
             "inputs": [
               [
                 "Net debt: $13.20M",
-                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+                "Calderwood_Fasteners_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
               ],
               [
                 "LTM EBITDA: $4.40M",
-                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+                "Calderwood_Fasteners_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
               ]
             ],
             "run": [
@@ -949,7 +949,7 @@
               "inputs": [
                 [
                   "Leverage limit: 4.00\u00d7",
-                  "Fiesole_Components_Credit_Agreement.pdf \u00a76.1"
+                  "Calderwood_Fasteners_Credit_Agreement.pdf \u00a76.1"
                 ]
               ],
               "run": [
@@ -970,11 +970,11 @@
             "inputs": [
               [
                 "LTM EBITDA $4.40M \u00d7 11.0\u00d7 = $48.40M enterprise value",
-                "Signet_Equity_Valuation_Schedule_Q3_2026.xlsx"
+                "Chianti_Capital_Valuation_Schedule_Q3_2026.xlsx"
               ],
               [
                 "Net debt $13.20M; ownership 75%",
-                "Fiesole_Components_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
+                "Calderwood_Fasteners_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
               ]
             ],
             "run": [
@@ -995,7 +995,7 @@
             "inputs": [
               [
                 "Fair value: $26.40M; cost: $20.00M",
-                "Signet_Equity_Investment_Ledger.xlsx"
+                "Chianti_Capital_Investment_Ledger.xlsx"
               ]
             ],
             "run": [
@@ -1009,7 +1009,7 @@
       },
       "board": {
         "next": "Oct 21, 2026",
-        "seat": "Elena Strozzi",
+        "seat": "Elena Belmont",
         "lastPack": "Q3 pack \u00b7 received Oct 5, 2026"
       },
       "keyPeople": [
@@ -1069,7 +1069,7 @@
       ]
     },
     {
-      "name": "Oltrarno Software",
+      "name": "ConstructFlow",
       "hq": "Raleigh, NC",
       "sector": "Enterprise software",
       "state": "ok",
@@ -1086,7 +1086,7 @@
             "inputs": [
               [
                 "Equity invested: $30.00M",
-                "Oltrarno_Software_Investment_Ledger.xlsx"
+                "ConstructFlow_Investment_Ledger.xlsx"
               ]
             ],
             "run": [
@@ -1106,11 +1106,11 @@
             "inputs": [
               [
                 "Q4 2025 through Q2 2026: $24.0M",
-                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
+                "ConstructFlow_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
               ],
               [
                 "Q3 2026: $8.0M",
-                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 revenue row"
+                "ConstructFlow_Q3_2026_Accounts.xlsx \u00b7 revenue row"
               ]
             ],
             "run": [
@@ -1128,7 +1128,7 @@
             "inputs": [
               [
                 "Quarterly EBITDA: $1.50M + $1.60M + $1.70M + $1.60M",
-                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
+                "ConstructFlow_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
               ]
             ],
             "run": [
@@ -1147,11 +1147,11 @@
             "inputs": [
               [
                 "LTM EBITDA actual: $6.40M",
-                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+                "ConstructFlow_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
               ],
               [
                 "LTM EBITDA budget: $6.40M",
-                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 budget"
+                "ConstructFlow_Q3_2026_Accounts.xlsx \u00b7 budget"
               ]
             ],
             "run": [
@@ -1181,7 +1181,7 @@
             "inputs": [
               [
                 "2,500 active subscriptions \u00d7 $12,000 annual recurring fee",
-                "Oltrarno_Subscription_Ledger_Sep2026.xlsx"
+                "ConstructFlow_Subscription_Ledger_Sep2026.xlsx"
               ]
             ],
             "run": [
@@ -1201,15 +1201,15 @@
             "inputs": [
               [
                 "Cash: $7.20M",
-                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 cash"
+                "ConstructFlow_Q3_2026_Accounts.xlsx \u00b7 cash"
               ],
               [
                 "Undrawn revolver: $4.00M",
-                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 facilities"
+                "ConstructFlow_Q3_2026_Accounts.xlsx \u00b7 facilities"
               ],
               [
                 "Q3 operating cash inflow: $0.96M",
-                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 cash flow"
+                "ConstructFlow_Q3_2026_Accounts.xlsx \u00b7 cash flow"
               ]
             ],
             "run": [
@@ -1233,11 +1233,11 @@
             "inputs": [
               [
                 "Drawn debt: $20.00M",
-                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+                "ConstructFlow_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
               ],
               [
                 "Cash: $7.20M",
-                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
+                "ConstructFlow_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
               ]
             ],
             "run": [
@@ -1257,11 +1257,11 @@
             "inputs": [
               [
                 "Net debt: $12.80M",
-                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+                "ConstructFlow_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
               ],
               [
                 "LTM EBITDA: $6.40M",
-                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+                "ConstructFlow_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
               ]
             ],
             "run": [
@@ -1284,7 +1284,7 @@
               "inputs": [
                 [
                   "Leverage limit: 4.00\u00d7",
-                  "Oltrarno_Software_Credit_Agreement.pdf \u00a76.1"
+                  "ConstructFlow_Credit_Agreement.pdf \u00a76.1"
                 ]
               ],
               "run": [
@@ -1305,11 +1305,11 @@
             "inputs": [
               [
                 "LTM EBITDA $6.40M \u00d7 12.0\u00d7 = $76.80M enterprise value",
-                "Signet_Equity_Valuation_Schedule_Q3_2026.xlsx"
+                "Chianti_Capital_Valuation_Schedule_Q3_2026.xlsx"
               ],
               [
                 "Net debt $12.80M; ownership 65%",
-                "Oltrarno_Software_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
+                "ConstructFlow_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
               ]
             ],
             "run": [
@@ -1330,7 +1330,7 @@
             "inputs": [
               [
                 "Fair value: $41.60M; cost: $30.00M",
-                "Signet_Equity_Investment_Ledger.xlsx"
+                "Chianti_Capital_Investment_Ledger.xlsx"
               ]
             ],
             "run": [
@@ -1404,9 +1404,9 @@
       ]
     },
     {
-      "name": "Cascine Packaging",
+      "name": "Golden Petal Apiaries",
       "hq": "Columbus, OH",
-      "sector": "Packaging",
+      "sector": "Consumer packaged goods",
       "state": "watch",
       "own": 0.85,
       "entry": {
@@ -1421,7 +1421,7 @@
             "inputs": [
               [
                 "Equity invested: $16.00M",
-                "Cascine_Packaging_Investment_Ledger.xlsx"
+                "Golden_Petal_Apiaries_Investment_Ledger.xlsx"
               ]
             ],
             "run": [
@@ -1441,11 +1441,11 @@
             "inputs": [
               [
                 "Q4 2025 through Q2 2026: $33.0M",
-                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
+                "Golden_Petal_Apiaries_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
               ],
               [
                 "Q3 2026: $11.0M",
-                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 revenue row"
+                "Golden_Petal_Apiaries_Q3_2026_Accounts.xlsx \u00b7 revenue row"
               ]
             ],
             "run": [
@@ -1463,7 +1463,7 @@
             "inputs": [
               [
                 "Quarterly EBITDA: $1.00M + $1.10M + $0.90M + $1.00M",
-                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
+                "Golden_Petal_Apiaries_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
               ]
             ],
             "run": [
@@ -1482,11 +1482,11 @@
             "inputs": [
               [
                 "LTM EBITDA actual: $4.00M",
-                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+                "Golden_Petal_Apiaries_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
               ],
               [
                 "LTM EBITDA budget: $4.60M",
-                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 budget"
+                "Golden_Petal_Apiaries_Q3_2026_Accounts.xlsx \u00b7 budget"
               ]
             ],
             "run": [
@@ -1514,8 +1514,8 @@
             "f": "This business does not report subscription ARR",
             "inputs": [
               [
-                "Packaging",
-                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 business model"
+                "Consumer packaged goods",
+                "Golden_Petal_Apiaries_Q3_2026_Accounts.xlsx \u00b7 business model"
               ]
             ],
             "run": [
@@ -1535,15 +1535,15 @@
             "inputs": [
               [
                 "Cash: $3.80M",
-                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 cash"
+                "Golden_Petal_Apiaries_Q3_2026_Accounts.xlsx \u00b7 cash"
               ],
               [
                 "Undrawn revolver: $2.00M",
-                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 facilities"
+                "Golden_Petal_Apiaries_Q3_2026_Accounts.xlsx \u00b7 facilities"
               ],
               [
                 "Q3 operating cash inflow: $0.60M",
-                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 cash flow"
+                "Golden_Petal_Apiaries_Q3_2026_Accounts.xlsx \u00b7 cash flow"
               ]
             ],
             "run": [
@@ -1567,11 +1567,11 @@
             "inputs": [
               [
                 "Drawn debt: $15.80M",
-                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+                "Golden_Petal_Apiaries_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
               ],
               [
                 "Cash: $3.80M",
-                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
+                "Golden_Petal_Apiaries_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
               ]
             ],
             "run": [
@@ -1591,11 +1591,11 @@
             "inputs": [
               [
                 "Net debt: $12.00M",
-                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+                "Golden_Petal_Apiaries_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
               ],
               [
                 "LTM EBITDA: $4.00M",
-                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+                "Golden_Petal_Apiaries_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
               ]
             ],
             "run": [
@@ -1618,7 +1618,7 @@
               "inputs": [
                 [
                   "Leverage limit: 4.25\u00d7",
-                  "Cascine_Packaging_Credit_Agreement.pdf \u00a76.1"
+                  "Golden_Petal_Apiaries_Credit_Agreement.pdf \u00a76.1"
                 ]
               ],
               "run": [
@@ -1639,11 +1639,11 @@
             "inputs": [
               [
                 "LTM EBITDA $4.00M \u00d7 9.0\u00d7 = $36.00M enterprise value",
-                "Signet_Equity_Valuation_Schedule_Q3_2026.xlsx"
+                "Chianti_Capital_Valuation_Schedule_Q3_2026.xlsx"
               ],
               [
                 "Net debt $12.00M; ownership 85%",
-                "Cascine_Packaging_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
+                "Golden_Petal_Apiaries_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
               ]
             ],
             "run": [
@@ -1664,7 +1664,7 @@
             "inputs": [
               [
                 "Fair value: $20.40M; cost: $16.00M",
-                "Signet_Equity_Investment_Ledger.xlsx"
+                "Chianti_Capital_Investment_Ledger.xlsx"
               ]
             ],
             "run": [
@@ -1738,7 +1738,7 @@
       ]
     },
     {
-      "name": "Porta Logistics",
+      "name": "FreshFare Logistics",
       "hq": "Savannah, GA",
       "sector": "Logistics",
       "state": "act",
@@ -1755,7 +1755,7 @@
             "inputs": [
               [
                 "Equity invested: $12.00M",
-                "Porta_Logistics_Investment_Ledger.xlsx"
+                "FreshFare_Logistics_Investment_Ledger.xlsx"
               ]
             ],
             "run": [
@@ -1775,11 +1775,11 @@
             "inputs": [
               [
                 "Q4 2025 through Q2 2026: $30.0M",
-                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
+                "FreshFare_Logistics_Q3_2026_Accounts.xlsx \u00b7 trailing-period tab"
               ],
               [
                 "Q3 2026: $10.0M",
-                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 revenue row"
+                "FreshFare_Logistics_Q3_2026_Accounts.xlsx \u00b7 revenue row"
               ]
             ],
             "run": [
@@ -1797,7 +1797,7 @@
             "inputs": [
               [
                 "Quarterly EBITDA: $0.70M + $0.60M + $0.50M + $0.60M",
-                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
+                "FreshFare_Logistics_Q3_2026_Accounts.xlsx \u00b7 EBITDA history"
               ]
             ],
             "run": [
@@ -1816,11 +1816,11 @@
             "inputs": [
               [
                 "LTM EBITDA actual: $2.40M",
-                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+                "FreshFare_Logistics_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
               ],
               [
                 "LTM EBITDA budget: $2.80M",
-                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 budget"
+                "FreshFare_Logistics_Q3_2026_Accounts.xlsx \u00b7 budget"
               ]
             ],
             "run": [
@@ -1849,7 +1849,7 @@
             "inputs": [
               [
                 "Logistics",
-                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 business model"
+                "FreshFare_Logistics_Q3_2026_Accounts.xlsx \u00b7 business model"
               ]
             ],
             "run": [
@@ -1869,15 +1869,15 @@
             "inputs": [
               [
                 "Cash: $2.60M",
-                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 cash"
+                "FreshFare_Logistics_Q3_2026_Accounts.xlsx \u00b7 cash"
               ],
               [
                 "Undrawn revolver: $1.50M",
-                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 facilities"
+                "FreshFare_Logistics_Q3_2026_Accounts.xlsx \u00b7 facilities"
               ],
               [
                 "Q3 operating cash inflow: $0.36M",
-                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 cash flow"
+                "FreshFare_Logistics_Q3_2026_Accounts.xlsx \u00b7 cash flow"
               ]
             ],
             "run": [
@@ -1891,7 +1891,7 @@
         "status": "Cash-generative"
       },
       "debt": {
-        "lender": "Strozzi Credit",
+        "lender": "Belmont Credit",
         "facility": "Senior secured term loan + revolver",
         "balance": {
           "v": "$7.20M",
@@ -1901,11 +1901,11 @@
             "inputs": [
               [
                 "Drawn debt: $9.80M",
-                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+                "FreshFare_Logistics_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
               ],
               [
                 "Cash: $2.60M",
-                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
+                "FreshFare_Logistics_Q3_2026_Accounts.xlsx \u00b7 balance sheet"
               ]
             ],
             "run": [
@@ -1925,11 +1925,11 @@
             "inputs": [
               [
                 "Net debt: $7.20M",
-                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
+                "FreshFare_Logistics_Q3_2026_Accounts.xlsx \u00b7 debt schedule"
               ],
               [
                 "LTM EBITDA: $2.40M",
-                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
+                "FreshFare_Logistics_Q3_2026_Accounts.xlsx \u00b7 EBITDA"
               ]
             ],
             "run": [
@@ -1952,7 +1952,7 @@
               "inputs": [
                 [
                   "Leverage limit: 4.50\u00d7",
-                  "Porta_Logistics_Credit_Agreement.pdf \u00a76.1"
+                  "FreshFare_Logistics_Credit_Agreement.pdf \u00a76.1"
                 ]
               ],
               "run": [
@@ -1973,11 +1973,11 @@
             "inputs": [
               [
                 "LTM EBITDA $2.40M \u00d7 10.0\u00d7 = $24.00M enterprise value",
-                "Signet_Equity_Valuation_Schedule_Q3_2026.xlsx"
+                "Chianti_Capital_Valuation_Schedule_Q3_2026.xlsx"
               ],
               [
                 "Net debt $7.20M; ownership 90%",
-                "Porta_Logistics_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
+                "FreshFare_Logistics_Q3_2026_Accounts.xlsx \u00b7 debt and cap table"
               ]
             ],
             "run": [
@@ -1998,7 +1998,7 @@
             "inputs": [
               [
                 "Fair value: $15.12M; cost: $12.00M",
-                "Signet_Equity_Investment_Ledger.xlsx"
+                "Chianti_Capital_Investment_Ledger.xlsx"
               ]
             ],
             "run": [
@@ -2012,7 +2012,7 @@
       },
       "board": {
         "next": "Oct 24, 2026",
-        "seat": "Elena Strozzi",
+        "seat": "Elena Belmont",
         "lastPack": "Q3 pack \u00b7 received Oct 5, 2026"
       },
       "keyPeople": [
@@ -2081,8 +2081,8 @@
       "date": "2026-10-05",
       "due": "Oct 12, 2026",
       "dueDate": "2026-10-12",
-      "pos": "Arno Precision",
-      "claim": "Arno\u2019s Q3 revenue is $1.0M below budget; EBITDA is $0.3M below. The revised Q4 shipping schedule is outstanding.",
+      "pos": "AeroComponent Solutions",
+      "claim": "AeroComponent\u2019s Q3 revenue is $1.0M below budget; EBITDA is $0.3M below. The revised Q4 shipping schedule is outstanding.",
       "detail": "Management attributes the EBITDA shortfall to shipment delays. No recovery date has been supplied.",
       "con": "Keep the investor report in draft until the open question is resolved.",
       "facts": [
@@ -2091,7 +2091,7 @@
           "label": "Q3 revenue",
           "value": "$18.00M",
           "from": [
-            "Signet_Equity_Management_Accounts_Q3.xlsx"
+            "Chianti_Capital_Management_Accounts_Q3.xlsx"
           ]
         },
         {
@@ -2099,7 +2099,7 @@
           "label": "Q3 EBITDA",
           "value": "$3.20M",
           "from": [
-            "Signet_Equity_Management_Accounts_Q3.xlsx"
+            "Chianti_Capital_Management_Accounts_Q3.xlsx"
           ]
         }
       ]
@@ -2112,8 +2112,8 @@
       "date": "2026-10-05",
       "due": "Oct 12, 2026",
       "dueDate": "2026-10-12",
-      "pos": "Fiesole Components",
-      "claim": "Fiesole\u2019s accounts show $9.0M revenue; an earlier update says $9.4M. Confirm the $0.4M difference before sending the report.",
+      "pos": "Calderwood Fasteners",
+      "claim": "Calderwood\u2019s accounts show $9.0M revenue; an earlier update says $9.4M. Confirm the $0.4M difference before sending the report.",
       "detail": "The draft uses accounts revenue of $9.0M. Q3 EBITDA is $1.1M versus $1.4M budget: $0.18M lower utilization + $0.12M expedited freight.",
       "con": "Keep the investor report in draft until the open question is resolved.",
       "facts": [
@@ -2122,7 +2122,7 @@
           "label": "Q3 revenue",
           "value": "$9.00M",
           "from": [
-            "Signet_Equity_Management_Accounts_Q3.xlsx"
+            "Chianti_Capital_Management_Accounts_Q3.xlsx"
           ]
         },
         {
@@ -2130,7 +2130,7 @@
           "label": "Q3 EBITDA",
           "value": "$1.10M",
           "from": [
-            "Signet_Equity_Management_Accounts_Q3.xlsx"
+            "Chianti_Capital_Management_Accounts_Q3.xlsx"
           ]
         }
       ]
@@ -2143,8 +2143,8 @@
       "date": "2026-10-05",
       "due": "Oct 12, 2026",
       "dueDate": "2026-10-12",
-      "pos": "Porta Logistics",
-      "claim": "Porta\u2019s Q3 EBITDA is $0.6M against a $0.7M budget. Its $0.1M shortfall still needs management\u2019s explanation.",
+      "pos": "FreshFare Logistics",
+      "claim": "FreshFare\u2019s Q3 EBITDA is $0.6M against a $0.7M budget. Its $0.1M shortfall still needs management\u2019s explanation.",
       "detail": "Revenue met the $10.0M budget. Do not infer a reason for the lower EBITDA without supporting commentary.",
       "con": "Keep the investor report in draft until the open question is resolved.",
       "facts": [
@@ -2153,7 +2153,7 @@
           "label": "Q3 revenue",
           "value": "$10.00M",
           "from": [
-            "Signet_Equity_Management_Accounts_Q3.xlsx"
+            "Chianti_Capital_Management_Accounts_Q3.xlsx"
           ]
         },
         {
@@ -2161,7 +2161,7 @@
           "label": "Q3 EBITDA",
           "value": "$0.60M",
           "from": [
-            "Signet_Equity_Management_Accounts_Q3.xlsx"
+            "Chianti_Capital_Management_Accounts_Q3.xlsx"
           ]
         }
       ]

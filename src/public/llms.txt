@@ -1,6 +1,6 @@
 # Cosimo by Medici & Company
 
-> Fund operations software that helps fund teams prepare draft investor reports, portfolio updates, and replies from the records they already keep.
+> Fund operations software that helps fund teams prepare recurring reports, investor communications, and internal review packs from the records they already keep.
 
 ## Product
 
@@ -16,6 +16,7 @@ Cosimo is the product. Medici & Company is the company. Workflows are configured
 - [Hedge funds](/hedge/): Investor letters, close exceptions, investor activity, and allocator response drafts.
 - [FAQ](/faq.html): What the product does, how the examples work, and how to start.
 - [About](/about.html): Product and company information.
+- [The founders](/founders.html): Eliot leads product, Shariq engineering, and Aamina clients.
 - [Extended description](/llms-full.txt): More detail on the proposed workflows and examples.
 
 ## Examples and claim boundaries
@@ -24,6 +25,10 @@ The website uses fictional fund records and prewritten outputs, not live product
 
 ## Start with one process
 
-Email info@medici.ai with what your team prepares, where the information comes from, and which part takes the most time. Medici & Company works through a first workflow to test with the team. Scope and commercial terms are agreed before starting; no fixed pilot duration or price is offered on these pages.
+Email info@medici.ai with what your team prepares, where the information comes from, and which part takes the most time. Medici & Company works through a first workflow to test with the team. Scope and commercial terms are agreed before starting; evaluation starts with one task and one period of source files under NDA, written feasibility confirmation, and a review of the run and its sources. Model usage is charged at cost without markup; platform terms are agreed in conversation.
 
 Website: https://medici.ai
+
+## Tested product work
+
+The October 2026 product deck documents daily production use by live clients, nine of ten RE processes tested figure by figure on synthetic demonstration funds, and 83 calculation scripts with 1,822 passing tests. A quarterly report run for five properties and eight investors matched figures to the cent against an 88-row source sheet and raised five exceptions. These are specific validation results, separate from the illustrative website walkthroughs, not universal accuracy or timing guarantees. Approval rules are configurable per process and user; the product can send authorized communications.

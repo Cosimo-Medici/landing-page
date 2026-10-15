@@ -7,7 +7,7 @@ Three implementation agents owned the homepage, RE/VC/PE, and Credit/Hedge respe
 ## Problems corrected
 
 - Homepage: missing EBITDA history, debt details, governance dates, valuation inputs and supporting calculations. A three-company register retained totals and references from an older seven-company fixture; June data was mixed with September commentary.
-- Homepage and PE: the same Signet Equity identity contained two different portfolios. Both now use the same six companies and Q3 actuals/budgets. The homepage retains a clearly identified example source discrepancy, rather than presenting contradictory values as reconciled facts.
+- Homepage and PE: the same Chianti Capital identity contained two different portfolios. Both now use the same six companies and Q3 actuals/budgets. The homepage retains a clearly identified example source discrepancy, rather than presenting contradictory values as reconciled facts.
 - Several hero charts were decorative and had no relationship to the schedules. New VC, PE, Credit and Hedge plots show labeled observations from the accompanying records.
 - Source and result panels sometimes displayed selected rows without enough context. Added complete schedules, totals, date coverage, calculation bridges and individual variances.
 - RE/VC/PE capital-call previews lacked clear chronology relative to received cash. Pre-payment notices are distinguished from the September receipt/distribution ledger.
@@ -24,11 +24,11 @@ Three implementation agents owned the homepage, RE/VC/PE, and Credit/Hedge respe
 | Telescope comparable ARR | Five September reporters: $14.4m versus their June $11.3m; +27.4%. August-only Oltrarno excluded from that cohort. |
 | Telescope liquidity | September reporters: $21.6m cash, $1.65m monthly burn. Separate companies’ cash is not treated as a pooled runway. |
 | Telescope individual runway | Arno 12, Pitti 15, Fiesole 6, Oltrarno 8 (August), Cascine 18, Porta 12 months |
-| Signet Q3 operations | $70m revenue versus $72m budget; $9.6m EBITDA versus $10.4m budget; −$800k / −7.7% EBITDA variance |
-| Signet margins | $9.6m / $70m = 13.7%; $10.4m / $72m = 14.4%; unrounded gap 0.73 percentage points |
-| Signet Fiesole explanation | $1.4m budget EBITDA − $180k utilization − $120k freight = $1.1m actual |
-| Signet dashboard | LTM EBITDA $38.4m against $40.5m budget; net debt $108.8m / $38.4m = 2.83× aggregate leverage |
-| Signet valuation | Six ownership-adjusted equity marks $210.48m + fund cash $12.90m − liabilities $2.10m = $221.28m NAV. Company cash stays within company net debt and is not added again to fund cash. |
+| Chianti Q3 operations | $70m revenue versus $72m budget; $9.6m EBITDA versus $10.4m budget; −$800k / −7.7% EBITDA variance |
+| Chianti margins | $9.6m / $70m = 13.7%; $10.4m / $72m = 14.4%; unrounded gap 0.73 percentage points |
+| Chianti Calderwood explanation | $1.4m budget EBITDA − $180k utilization − $120k freight = $1.1m actual |
+| Chianti dashboard | LTM EBITDA $38.4m against $40.5m budget; net debt $108.8m / $38.4m = 2.83× aggregate leverage |
+| Chianti valuation | Six ownership-adjusted equity marks $210.48m + fund cash $12.90m − liabilities $2.10m = $221.28m NAV. Company cash stays within company net debt and is not added again to fund cash. |
 | RE/VC/PE cash movements | Each illustrative ledger: $32m opening + $2m contributed − $850k distributed = $33.15m after movements. This excludes income/valuation allocations and is not NAV. |
 | Fiorino principal | $100m opening + $4m advances − $4m repayments = $100m closing; all six borrower rows reconcile individually |
 | Fiorino interest | Cash $660k + $550k + $495k + $440k + $330k + $275k = $2.75m; PIK $60k + $40k + $30k + $20k = $150k separately |

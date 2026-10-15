@@ -71,7 +71,7 @@ equal(sum(hedge.sectors,1),90,'Hedge: long exposure');
 equal(sum(hedge.sectors,2),40,'Hedge: short exposure');
 equal(hedge.openingNAV + sum(hedge.flows.filter(r=>r[1]==='Subscription'),2)-sum(hedge.flows.filter(r=>r[1]==='Redemption'),2)+sum(hedge.netResult,1),hedge.closingNAV,'Hedge: NAV bridge');
 equal(hedge.cash[1][2]-hedge.cash[1][1],125000,'Hedge: deliberately open cash difference');
-const home = JSON.parse(fs.readFileSync(path.join(root,'product-demo/signet-equity.json'),'utf8'));
+const home = JSON.parse(fs.readFileSync(path.join(root,'product-demo/chianti-capital.json'),'utf8'));
 const homeScript = fs.readFileSync(path.join(root,'src/js/home.js'),'utf8');
 const homeReportRows = JSON.parse(homeScript.match(/const companies = (\[[^\n]+\]);/)[1]);
 equal(home.companies.length,pe.companies.length,'Home/PE: same company coverage');

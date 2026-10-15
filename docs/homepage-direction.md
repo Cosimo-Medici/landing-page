@@ -27,7 +27,7 @@ The main navigation and footer retain their structural layout. Existing sector d
 
 ## Example records and arithmetic
 
-All records are authored, fictional examples, disclosed as such. Signet Equity's example is a company-portfolio report, not an assertion that every asset class uses revenue as its headline metric.
+All records are authored, fictional examples, disclosed as such. Chianti Capital's example is a company-portfolio report, not an assertion that every asset class uses revenue as its headline metric.
 
 | Company | Q3 revenue ($m) | Budget ($m) | Variance ($m) |
 | --- | ---: | ---: | ---: |
