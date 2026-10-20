@@ -1,0 +1,39 @@
+/* Shared keyboard access and contrast safeguards; loaded after page styles. */
+:root { --a11y-focus: #C6A6DB; --a11y-muted: #B6B0AA; }
+[data-theme="light"] { --a11y-focus: #74418F; --a11y-muted: #66615E; }
+html { scroll-padding-top: calc(var(--site-header-height, 90px) + 20px); scroll-padding-bottom: 80px; }
+body { --cream-dim: var(--a11y-muted); }
+body :focus-visible { outline: 2px solid var(--a11y-focus); outline-offset: 4px; }
+.legal-body a, .sub-page-label { color: var(--a11y-focus); }
+.legal-body a { text-decoration: underline; text-underline-offset: .2em; }
+.a11y-skip { position: fixed; top: -100px; left: 20px; z-index: 10002; padding: 15px; background: var(--bg-elevated); color: var(--cream); }
+.a11y-skip:focus { top: 12px; }
+main:focus { outline: none; }
+.a11y-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+.re-proof-source .re-proof-big-figures small { color: var(--re-night-muted); }
+.re-paper-bottom { color: var(--re-paper-ink); }
+.re-typewriter { white-space: pre-wrap; overflow-wrap: anywhere; }
+.re-proof-big-figures { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.re-proof-card-heading { flex-wrap: wrap; }
+.re-proof-card-heading > div { min-width: 0; }
+@media (max-width: 760px) {
+  .site-nav .nav-right { justify-content: flex-start; overflow-y: auto; overscroll-behavior: contain; }
+  .site-nav .nav-right a { flex-shrink: 0; }
+}
+@media (max-width: 480px) {
+  .re-proof-big-figures, .re-document-metrics { grid-template-columns: minmax(0, 1fr); }
+  .re-proof-reconciliation dd { white-space: normal; overflow-wrap: anywhere; }
+}
+button, summary { min-height: 24px; }
+button { min-width: 24px; }
+.site-footer a { display: inline-block; min-height: 24px; padding-block: 3px; }
+:is(a, button, summary, [tabindex]) { scroll-margin-top: calc(var(--site-header-height, 90px) + 20px); scroll-margin-bottom: 20px; }
+.motion-toggle { display: block; position: relative; margin: 20px auto 80px; max-width: calc(100% - 40px); padding: 8px 12px; border: 1px solid var(--border-strong); border-radius: 4px; background: var(--bg-elevated); color: var(--cream); font: 11px/1.5 'IBM Plex Mono', monospace; cursor: pointer; }
+html[data-a11y-motion="reduce"] *, html[data-a11y-motion="reduce"] *::before, html[data-a11y-motion="reduce"] *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+@media (forced-colors: active) {
+  body :focus-visible { outline: 2px solid Highlight; }
+  button, summary { border-color: ButtonText; }
+}

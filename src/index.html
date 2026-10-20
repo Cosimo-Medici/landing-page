@@ -23,24 +23,25 @@
 <meta property="og:site_name" content="Cosimo by Medici">
 
 <!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/fonts.css">
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Medici & Company","url":"https://medici.ai","email":"info@medici.ai","description":"Cosimo helps fund teams prepare investor reports, portfolio updates, and answers to investor questions."}</script>
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/site-layout.css">
+<link rel="stylesheet" href="css/accessibility.css">
+<script src="js/accessibility.js" defer></script>
 </head>
 <body class="home-page">
 <a class="home-skip" href="#main">Skip to content</a>
 <nav class="site-nav" aria-label="Main navigation">
-  <a href="/" class="nav-logo" aria-label="Cosimo home">COSIMO</a>
+  <a href="/" class="nav-logo" aria-label="Cosimo home"><svg class="brand-mark" data-brand-mark viewBox="0 0 100 100" width="48" height="48" aria-hidden="true" focusable="false"><ellipse cx="50" cy="50" rx="23.92" ry="9.57" transform="rotate(-14 50 50)" fill="none" stroke="var(--brand-sat)" stroke-width="1" vector-effect="non-scaling-stroke" opacity=".22"/><ellipse cx="50" cy="50" rx="33.28" ry="13.31" transform="rotate(-14 50 50)" fill="none" stroke="var(--brand-sat)" stroke-width="1" vector-effect="non-scaling-stroke" opacity=".22"/><ellipse cx="50" cy="50" rx="42.64" ry="17.06" transform="rotate(-14 50 50)" fill="none" stroke="var(--brand-sat)" stroke-width="1" vector-effect="non-scaling-stroke" opacity=".22"/><ellipse cx="50" cy="50" rx="52.00" ry="20.80" transform="rotate(-14 50 50)" fill="none" stroke="var(--brand-sat)" stroke-width="1" vector-effect="non-scaling-stroke" opacity=".22"/><path d="M 62.31 83.83 A 36 36 0 1 1 62.31 16.17" fill="none" stroke="var(--brand-sat)" stroke-width="1" vector-effect="non-scaling-stroke" opacity="0"/><circle data-sun cx="50" cy="50" r="10" fill="var(--brand-sun)"/><circle data-satellite cx="73.21" cy="46.17" r="2.82" opacity="0.760" fill="var(--brand-sat)"/><circle data-satellite cx="40.28" cy="60.94" r="2.64" opacity="0.959" fill="var(--brand-sat)"/><circle data-satellite cx="33.08" cy="46.76" r="2.61" opacity="0.473" fill="var(--brand-sat)"/><circle data-satellite cx="72.60" cy="55.11" r="2.84" opacity="0.935" fill="var(--brand-sat)"/><circle data-satellite cx="17.96" cy="54.48" r="2.15" opacity="0.623" fill="var(--brand-sat)"/><circle data-satellite cx="62.28" cy="34.82" r="2.46" opacity="0.435" fill="var(--brand-sat)"/><circle data-satellite cx="52.92" cy="66.84" r="2.81" opacity="1.000" fill="var(--brand-sat)"/><circle data-satellite cx="14.36" cy="66.40" r="2.81" opacity="0.828" fill="var(--brand-sat)"/><circle data-satellite cx="41.26" cy="34.71" r="1.99" opacity="0.402" fill="var(--brand-sat)"/><circle data-satellite cx="96.69" cy="48.64" r="3.15" opacity="0.844" fill="var(--brand-sat)"/><circle data-satellite cx="9.91" cy="45.25" r="2.28" opacity="0.494" fill="var(--brand-sat)"/><circle data-satellite cx="85.95" cy="27.50" r="2.03" opacity="0.511" fill="var(--brand-sat)"/></svg><span>COSIMO</span></a>
   <div class="nav-right">
     <a href="#product">How it works</a>
     <a href="#fit">Getting started</a>
     <a href="#work">What it does</a>
     <a href="faq.html">FAQ</a>
+    <a href="/founders.html">The founders</a>
     <a href="#contact">Talk to us</a>
   </div>
   <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
@@ -50,7 +51,7 @@
   </button>
 </nav>
 
-<main id="main">
+<main id="main" tabindex="-1">
 <div class="fund-sectors" role="navigation" aria-label="Fund sectors"><a href="/" aria-current="page">All funds</a><a href="/re/">Real estate</a><a href="/vc/">Venture capital</a><a href="/pe/">Private equity</a><a href="/credit/">Private credit</a><a href="/hedge/">Hedge funds</a></div>
 <section class="hero home-hero" aria-label="Cosimo for fund teams">
   <div class="hero-dots" aria-hidden="true"></div>
@@ -60,7 +61,7 @@
     <div class="hero-headline"><h1 aria-label="Investor reports. Off your to-do list."><span class="h-line" aria-hidden="true"><span class="h-large" id="hero-top">Investor reports.</span></span><span class="h-line" aria-hidden="true"><span class="h-italic" id="hero-bottom">Off your to-do list.</span></span></h1></div>
     <p class="h-sub">Cosimo is fund operations software that drafts investor reports, portfolio updates, and investor replies from your records. Less copying between files. More time for the work that needs you.</p>
   </div>
-  <div class="hero-bottom"><div class="hero-ctas"><a href="#product" class="btn-main">See how it works <span aria-hidden="true">↓</span></a><a href="#contact" class="btn-line">Tell us about your toughest process</a></div><button class="home-pause" aria-label="Pause headline rotation">Ⅱ <span>Pause</span></button></div>
+  <div class="hero-bottom"><div class="hero-ctas"><a href="#product" class="btn-main">See how it works <span aria-hidden="true">↓</span></a><a href="#contact" class="btn-line">Tell us about your toughest process</a></div><button class="home-pause"><span aria-hidden="true">Ⅱ</span> <span>Pause</span><span class="a11y-sr-only"> headline rotation</span></button></div>
   </div>
   <figure class="home-handoff" aria-label="An example of delegating an investor report to Cosimo">
     <div class="home-handoff-request">
@@ -71,7 +72,7 @@
     <div class="home-handoff-report">
       <div class="home-handoff-report-meta"><span>Quarterly reporting</span><span>Draft</span></div>
       <h2>Investor report</h2>
-      <p class="home-handoff-period">Signet Equity · Q3 2026</p>
+      <p class="home-handoff-period">Chianti Capital · Q3 2026</p>
       <ul class="home-handoff-contents"><li>6 companies · $70.0m Q3 revenue</li><li>$9.6m EBITDA · 7.7% below budget</li><li>Sources and questions for your team</li></ul>
       <a href="#product" class="home-handoff-open">Explore the report example <span aria-hidden="true">↗</span></a>
     </div>
@@ -83,13 +84,13 @@
 <section class="home-section home-demo" id="product" aria-labelledby="demo-title">
   <div class="home-section-heading"><h2 id="demo-title">From your fund’s numbers<br><em>to your next investor report.</em></h2><p>See the fund in one place. Check where a figure comes from. See the report Cosimo prepares from those records.</p></div>
   <div class="home-desk">
-    <div class="home-desk-bar"><span>Explore Cosimo with Signet Equity</span><span class="home-example">Interactive example · Fictional data</span></div>
+    <div class="home-desk-bar"><span>Explore Cosimo with Chianti Capital</span><span class="home-example">Chianti demo names · Illustrative figures</span></div>
     <div class="home-demo-steps" role="group" aria-label="Explore the reporting process">
       <button data-step="0" aria-pressed="true" aria-controls="home-output"><span>01</span> See your fund</button><button data-step="1" aria-pressed="false" aria-controls="home-output"><span>02</span> Follow the work</button><button data-step="2" aria-pressed="false" aria-controls="home-output"><span>03</span> See the report</button>
     </div>
     <div class="home-tour-caption"><div aria-live="polite"><span id="home-step-count">01 / 03</span><h3 id="home-step-title">Your portfolio, in Cosimo.</h3><p id="home-step-description">Expand a company or click a figure to inspect its supporting records. Six companies, with LTM figures through September 30 in USD millions. The report uses their Q3 accounts.</p></div><button class="home-replay" id="home-replay" aria-pressed="false">Play walkthrough ▷</button></div>
     <div class="home-product-viewport" id="home-output" data-stage="0" tabindex="0" role="region" aria-label="Cosimo product example; scroll across on smaller screens">
-      <iframe id="home-product-frame" src="/product-demo/index.html" title="Cosimo — actual product screens with Signet Equity demo data" loading="lazy"></iframe>
+      <iframe id="home-product-frame" src="/product-demo/index.html?v=chianti-1" title="Cosimo — actual product screens with Chianti Capital demo data" loading="lazy"></iframe>
       <div id="home-inline-report" class="home-inline-report" hidden></div>
     </div>
     <p class="home-product-hint">Explore the actual interface: expand a company, click a figure, or play the walkthrough. On a small screen, scroll across to see the full workspace.</p>
@@ -130,12 +131,14 @@
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="foot-left">© 2026 MEDICI &amp; COMPANY</div>
-  <div class="foot-right"><a href="mailto:info@medici.ai">info@medici.ai</a><a href="/faq.html">Setup &amp; FAQ</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div>
+  <div class="foot-right"><a href="mailto:info@medici.ai">info@medici.ai</a><a href="/founders.html">The founders</a><a href="/faq.html">Setup &amp; FAQ</a><a href="/accessibility.html">Accessibility</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div>
 </footer>
 
+<button class="motion-toggle" type="button" aria-pressed="false">Pause animations</button>
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">&#9790;</button>
 
 <script src="js/home.js" defer></script>
 <script src="js/page-chrome.js" defer></script>
+<script src="js/brand-mark.js" defer></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 import { useMemo, useRef } from 'react';
-import fixture from './signet-equity.json';
+import fixture from './chianti-capital.json';
 import { Wf3TranscriptView } from '~/components/wf3/transcript/TranscriptView';
 import { Wf3Rail } from '~/components/wf3/Rail';
 import { Wf3Crumbs } from '~/components/wf3/text';
@@ -28,12 +28,12 @@ const records: Wf3TranscriptPart[] = [
 ];
 const figures: Wf3TranscriptPart[] = [
   { type: 'text', key: 'calculation', step_index: 1, body: fixture.companies.map(c => `**${c.name}**: Q3 revenue **$${c.quarterly.revenue.toFixed(1)}m**; EBITDA **$${c.quarterly.ebitda.toFixed(1)}m**.`).join('\n\n') + '\n\nCombined revenue: **$70.0m** vs **$72.0m** budget (−$2.0m; −2.8%). EBITDA: **$9.6m** vs **$10.4m** budget (−$0.8m; −7.7%).' },
-  { type: 'report', key: 'figures-done', step_index: 1, name: 'Check the figures', summary: 'All six revenue and EBITDA lines reconcile to the portfolio totals. An earlier Fiesole update reports $9.4m revenue, versus $9.0m in the accounts. The $0.4m difference remains open. The draft uses the accounts provisionally; Arno’s shipping schedule, Fiesole’s production plan and Porta’s variance explanation also need follow-up.' },
+  { type: 'report', key: 'figures-done', step_index: 1, name: 'Check the figures', summary: 'All six revenue and EBITDA lines reconcile to the portfolio totals. An earlier Calderwood update reports $9.4m revenue, versus $9.0m in the accounts. The $0.4m difference remains open. The draft uses the accounts provisionally; AeroComponent’s shipping schedule, Calderwood’s production plan and FreshFare’s variance explanation also need follow-up.' },
 ];
 const output: Wf3TranscriptPart = {
   type: 'report', key: 'draft', step_index: 2, name: 'Prepare the draft',
-  summary: 'Prepared a three-page investor update with revenue and EBITDA tables for all six companies. Fiesole’s $0.4m revenue difference and three company follow-ups remain in the internal review notes. The draft is not approved for distribution.',
-  outputs: [{ name: 'Signet Equity — Q3 portfolio update.pdf', file_type: 'application/pdf', file_size: 32768, output_path_id: 'illustrative-report', status: 'ready' }],
+  summary: 'Prepared a three-page investor update with revenue and EBITDA tables for all six companies. Calderwood’s $0.4m revenue difference and three company follow-ups remain in the internal review notes. The draft is not approved for distribution.',
+  outputs: [{ name: 'Chianti Capital — Q3 portfolio update.pdf', file_type: 'application/pdf', file_size: 32768, output_path_id: 'illustrative-report', status: 'ready' }],
 };
 
 export function WorkflowDemo({ phase, onOpenReport }: { phase: number; onOpenReport: () => void }) {
@@ -46,7 +46,7 @@ export function WorkflowDemo({ phase, onOpenReport }: { phase: number; onOpenRep
       {/* Same header layout and components as RunView. The authenticated action
           menu and composer are outside this cropped demonstration. */}
       <div className="flex min-h-[40px] shrink-0 flex-wrap items-center gap-3 border-b border-border bg-card px-6 py-2">
-        <Wf3Crumbs segments={[{ label: 'Workflows' }, { label: 'Quarterly portfolio update', truncate: true }]} leaf="Signet Equity · Q3 2026" leafAs="h2" />
+        <Wf3Crumbs segments={[{ label: 'Workflows' }, { label: 'Quarterly portfolio update', truncate: true }]} leaf="Chianti Capital · Q3 2026" leafAs="h2" />
         {!completed && <Wf3Chip tone="accent" pulse>running</Wf3Chip>}
       </div>
       <div className="flex min-h-0 flex-1">

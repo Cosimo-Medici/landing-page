@@ -2,13 +2,13 @@
 
 > Grow your fund. Not your workload.
 
-Cosimo is fund operations software from Medici & Company. It helps fund teams prepare draft investor reports, portfolio updates, and replies from the records they already keep. The website speaks to lean fund operations, finance, and investor-relations teams, with examples for real estate, venture capital, private equity, private credit, and hedge funds.
+Cosimo is fund operations software from Medici & Company. It helps fund teams prepare recurring reports, investor communications, and internal review packs from the records they already keep. The website speaks to lean fund operations, finance, and investor-relations teams, with examples for real estate, venture capital, private equity, private credit, and hedge funds.
 
 ## How the proposed workflow fits a fund team
 
 Start with the records behind one recurring task and an example of the output the team needs. Medici & Company configures and tests the workflow with the team, using its source records, reporting format, and review requirements. Drafts bring the figures and commentary together, with missing information and open questions marked for review. The fund team checks the work, resolves questions, approves the final version, and sends it through its usual process.
 
-The website does not offer a universal integration list, fixed implementation time, quantified savings, security certification, or audit-readiness guarantee. Data handling, access, source systems, scope, and commercial terms need to be discussed for the fund's proposed setup.
+The FAQ identifies supported Google Drive, SharePoint, Gmail, Outlook, and Google Calendar connections; task-specific setup and testing are required. SOC 2 certification is on the roadmap, not a current certification. The website does not guarantee implementation time, quantified savings, or audit readiness. Data handling, access, source systems, scope, and commercial terms need to be discussed for the fund's proposed setup.
 
 ## All-funds homepage
 
@@ -16,7 +16,7 @@ Path: /
 
 The homepage introduces three recurring jobs: investor reporting, portfolio updates, and investor requests. An interactive example follows management accounts, company commentary, and a prior report format into a quarterly portfolio update.
 
-The example uses Signet Equity, a fictional fund manager. Three companies report $27.0 million in quarterly revenue against a $27.5 million budget. One company's accounts show $6.0 million while its management update says $6.4 million. The draft uses the accounts provisionally and leaves the $400,000 difference visible for review. The example has inspectable source records and a three-page draft. It is authored demonstration content, not a live application run.
+The example uses Chianti Capital, the synthetic demo manager. Six companies report $70.0 million in quarterly revenue against a $72.0 million budget. Calderwood's accounts show $9.0 million while its management update says $9.4 million. The draft uses the accounts provisionally and leaves the $400,000 difference visible for review. The example has inspectable source records and a three-page draft. It is authored demonstration content, not a live application run.
 
 ## Real estate
 
@@ -38,7 +38,7 @@ The six-page example includes portfolio metrics, cash and runway, founder commen
 
 Path: /pe/
 
-The page focuses on bringing portfolio-company financials, management commentary, and fund records into reporting drafts. Its fictional Signet Equity example compares company actuals with budgets and explains an EBITDA shortfall from supplied management notes. Unexplained variances and unapproved operating plans remain visible.
+The page focuses on bringing portfolio-company financials, management commentary, and fund records into reporting drafts. Its fictional Chianti Capital example compares company actuals with budgets and explains an EBITDA shortfall from supplied management notes. Unexplained variances and unapproved operating plans remain visible.
 
 The six-page sample includes portfolio metrics, budget comparisons, company updates, capital movements, and review questions. The company totals are management-reported operating figures, not ownership-weighted fund results. The sample does not implement an ILPA reporting template or constitute a complete quarterly financial reporting package.
 
@@ -58,7 +58,7 @@ Path: /hedge/
 
 The page focuses on investor letters, close-file exceptions, subscription/redemption activity, and allocator response drafts. Its fictional Anamorphic Capital example uses administrator-approved figures and supplied policy records for a long/short equity fund.
 
-The six-page monthly pack separates investor-facing drafts from internal working papers. It includes class returns, an exposure snapshot, investor activity, a cash discrepancy, and a questionnaire response that needs current supporting evidence. The administrator retains responsibility for the official NAV; the fund team resolves exceptions and approves investor communications. The page does not claim to perform trading, investment decisions, complete risk management, or independent assurance.
+The six-page monthly pack separates investor-facing drafts from internal working papers. It includes class returns, an exposure snapshot, investor activity, a cash discrepancy, and a questionnaire response that needs current supporting evidence. The example uses administrator-approved figures. The fund team resolves exceptions and approves investor communications, with valuation and sign-off responsibilities retained under its agreed arrangements. The page does not claim to perform trading, investment decisions, complete risk management, or independent assurance.
 
 ## What the examples prove—and what they do not
 
@@ -68,10 +68,15 @@ The examples explain the intended work. They do not substantiate a guaranteed pr
 
 ## How to start
 
-Email info@medici.ai with a few sentences about the report or process your team prepares, where the information comes from, and which part takes the most time. Medici & Company will work through a first workflow to test with the team. Scope and commercial terms are agreed before starting. The website does not promise a free pilot, a fixed pilot duration, or a particular implementation schedule.
+Email info@medici.ai with a few sentences about the report or process your team prepares, where the information comes from, and which part takes the most time. Medici & Company will work through a first workflow to test with the team. Scope and commercial terms are agreed before starting. An evaluation uses one period of read-only source files under NDA, written feasibility confirmation, and a review of the output and sources. Model usage is charged at cost without markup; platform terms are agreed in conversation.
+
+## Customer fit and responsibilities
+
+The current commercial focus is lean fund teams with approximately $100 million or more under management and recurring manual work. Entity, investor, and reporting complexity also determine fit. Cosimo handles internal fund operations alongside outside providers; it is not currently the administrator of record. Accounting, valuation, professional sign-off, and investment decisions remain with the responsible people. Client data is restricted to that client’s work and is not used to train shared models.
 
 ## Supporting pages
 
+- The founders: /founders.html
 - FAQ: /faq.html
 - About Cosimo and Medici & Company: /about.html
 - Privacy Policy: /privacy.html
@@ -81,3 +86,7 @@ Website: https://medici.ai
 Contact: info@medici.ai
 
 © 2026 Medici & Company
+
+## Tested product work
+
+The October 2026 product deck documents daily production use by live clients, nine of ten RE processes tested figure by figure on synthetic demonstration funds, and 83 calculation scripts with 1,822 passing tests. A quarterly report run for five properties and eight investors matched figures to the cent against an 88-row source sheet and raised five exceptions. These are specific validation results, separate from the illustrative website walkthroughs, not universal accuracy or timing guarantees. Approval rules are configurable per process and user; the product can send authorized communications.

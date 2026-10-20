@@ -99,8 +99,8 @@ test('blocked storage still allows automatic theme and a manual choice for this 
   assert.equal(page.theme(), 'dark');
 });
 
-test('all ten built routes load the shared controller before any stylesheet', () => {
-  for (const route of ['index.html', 'about.html', 'faq.html', 'privacy.html', 'terms.html', ...['re','vc','pe','credit','hedge'].map(s => `${s}/index.html`)]) {
+test('all twelve built routes load the shared controller before any stylesheet', () => {
+  for (const route of ['index.html', 'about.html', 'faq.html', 'founders.html', 'accessibility.html', 'privacy.html', 'terms.html', ...['re','vc','pe','credit','hedge'].map(s => `${s}/index.html`)]) {
     const file = path.join(__dirname, '../dist', route);
     const html = fs.readFileSync(file, 'utf8');
     const script = html.match(/<script src="([^"]*js\/theme\.[a-f0-9]+\.js)"><\/script>/);

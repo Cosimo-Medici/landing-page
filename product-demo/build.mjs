@@ -12,7 +12,7 @@ const { build } = await import(requireApp.resolve('vite'));
 const { default: react } = await import(requireApp.resolve('@vitejs/plugin-react'));
 const { default: tailwindcss } = await import(requireApp.resolve('@tailwindcss/vite'));
 const outDir = resolve(here, '../src/public/product-demo');
-const demoFund = JSON.parse(await readFile(join(here, 'signet-equity.json'), 'utf8'));
+const demoFund = JSON.parse(await readFile(join(here, 'chianti-capital.json'), 'utf8'));
 await build({
   configFile: false, root: here, base: './', envDir: false, publicDir: false,
   plugins: [{name:'production-style-sources', enforce:'pre', load(id) {
