@@ -142,5 +142,6 @@ fs.cpSync(path.join(SRC, 'public/founders'), path.join(DIST, 'founders'), { recu
 fs.cpSync(path.join(SRC, 'public/fonts'), path.join(DIST, 'fonts'), { recursive: true });
 
 fs.cpSync(path.join(SRC, 'public/product-demo'), path.join(DIST, 'product-demo'), { recursive: true });
+fs.cpSync(path.join(SRC, 'public/brand'), path.join(DIST, 'brand'), { recursive: true });
 
 console.log(`\nBuild complete → dist/`);
