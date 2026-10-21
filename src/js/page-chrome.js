@@ -3,7 +3,7 @@
 'use strict';
 const menu = document.getElementById('nav-toggle');
 const nav = document.querySelector('.nav-right');
-const mobileMenu = matchMedia('(max-width: 760px)');
+const mobileMenu = matchMedia('(max-width: 1050px)');
 const menuBackground = new Map();
 nav.id = nav.id || 'page-navigation';
 menu.setAttribute('aria-controls', nav.id);
