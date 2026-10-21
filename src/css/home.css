@@ -275,3 +275,6 @@
  .home-inline-report { padding:12px; }
  .home-inline-report .home-modal-page { padding:22px 18px; }
 }
+
+/* The shared homepage has a fixed headline; reserve space only for rotating fund headlines. */
+.home-page[data-audience="finance"] .home-hero .h-line .h-italic { min-height: 0; }

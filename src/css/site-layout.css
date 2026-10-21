@@ -1,10 +1,11 @@
-/* Shared marketing shell. Loaded after page-specific styles on all ten routes. */
+/* Shared marketing shell. Loaded after page-specific styles on every route. */
 :root {
   --site-content-width: min(1440px, 89%);
   --site-gutter: max(5.5%, calc((100% - 1440px) / 2));
   --site-header-height: 82px;
   --site-muted: #B6B0AA;
   --site-accent: #C6A6DB;
+  --site-button-ink: #FFFFFF;
 }
 [data-theme="light"] { --site-muted: #66615E; --site-accent: #74418F; }
 body > .site-nav {
@@ -81,9 +82,6 @@ body > .site-footer {
 .site-footer .foot-right a { display: inline-flex; align-items: center; min-height: 44px; }
 body main [id] { scroll-margin-top: calc(var(--site-header-height) + 16px); }
 @media(max-width: 1050px) {
-  .site-nav .nav-right { gap: 18px; }
-}
-@media(max-width: 1050px) {
   .site-nav .nav-toggle { display: flex; }
   .site-nav .nav-right {
     position: fixed;
@@ -107,7 +105,7 @@ body main [id] { scroll-margin-top: calc(var(--site-header-height) + 16px); }
     margin-top: 12px;
     padding: 16px 24px;
     background: var(--accent);
-    color: #fff;
+    color: var(--site-button-ink);
     font-size: 15px;
     letter-spacing: .03em;
   }

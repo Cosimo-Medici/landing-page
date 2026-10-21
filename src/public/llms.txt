@@ -1,6 +1,6 @@
 # Cosimo by Medici & Company
 
-> AI for recurring financial operations: reports, checks, follow-ups, and review packs for banks, funds, insurance teams, and financial service firms.
+> AI for recurring financial operations: reports, checks, follow-ups, and review packs for banks, funds, insurance teams, and financial services firms.
 
 ## Product
 
@@ -8,11 +8,11 @@ Cosimo is the product. Medici & Company is the company. Workflows are configured
 
 ## Website pages
 
-- [Overview](/): Shared product and routes for banks, funds, insurance teams, and service firms.
+- [Overview](/): Financial operations software for banks, funds, insurance teams, and financial services firms.
 - [Banks](/banks/): Loan activity reviews, borrower packs, account-file checks, and review preparation.
-- [Insurance](/insurance/): Explore renewal preparation, submission checks, claims-file summaries, and document follow-ups.
-- [Service firms](/services/): Client reporting, document collection, and review packs.
-- [All funds](/funds/): Reporting, portfolio updates, and investor requests; an interactive quarterly portfolio-update example.
+- [Funds](/funds/): Reporting, portfolio updates, and investor requests; an interactive quarterly portfolio-update example.
+- [Insurance](/insurance/): Renewal preparation, submission checks, claims-file summaries, and document follow-ups.
+- [Financial Services](/services/): Client reporting, document collection, and review packs for administration, accounting, and advisory firms.
 - [Real estate](/re/): LP reports, investor statements, capital call notices, and distribution notices.
 - [Venture capital](/vc/): Founder updates, portfolio metrics, cash and runway, and LP reporting.
 - [Private equity](/pe/): Company actuals and budgets, variance commentary, portfolio packs, and LP reporting.
@@ -25,7 +25,7 @@ Cosimo is the product. Medici & Company is the company. Workflows are configured
 
 ## Examples and claim boundaries
 
-The website uses fictional fund records and prewritten outputs, not live product runs or customer results. Source links open sample records. The examples do not establish measured time savings, integration coverage, audit readiness, security certification, or guaranteed turnaround. Workflow-specific configuration and testing are required. The team retains review and approval.
+The website examples use fictional records and prewritten outputs, not live product runs or customer results. Source links open sample records. The examples do not establish measured time savings, integration coverage, audit readiness, security certification, or guaranteed turnaround. Workflow-specific configuration and testing are required. The team retains review and approval.
 
 ## Start with one process
 
