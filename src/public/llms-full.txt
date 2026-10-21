@@ -10,6 +10,12 @@ Start with the records behind one recurring task and an example of the output th
 
 The FAQ identifies supported Google Drive, SharePoint, Gmail, Outlook, and Google Calendar connections; task-specific setup and testing are required. SOC 2 certification is on the roadmap, not a current certification. The website does not guarantee implementation time, quantified savings, or audit readiness. Data handling, access, source systems, scope, and commercial terms need to be discussed for the team's proposed setup.
 
+## Insurance workflows to explore
+
+Path: /insurance/
+
+Renewal preparation, submission completeness checks, claims-file summaries, and document follow-ups are starting points to configure and test with insurance teams. These are workflow illustrations, not insurance customer results. Underwriting, pricing, coverage and claims decisions remain with the responsible professionals.
+
 ## Fund overview
 
 Path: /funds/
@@ -72,7 +78,7 @@ Email info@medici.ai with a few sentences about the report or process your team 
 
 ## Customer fit and responsibilities
 
-Cosimo is for banks, funds, and financial service firms with recurring manual work. Fit depends on the specific process, records, and review requirements. Cosimo handles internal fund operations alongside outside providers; it is not currently the administrator of record. Accounting, valuation, professional sign-off, and investment decisions remain with the responsible people. Client data is restricted to that client’s work and is not used to train shared models.
+Cosimo is for banks, funds, insurance teams, and financial service firms with recurring manual work. Fit depends on the specific process, records, and review requirements. Cosimo handles internal fund operations alongside outside providers; it is not currently the administrator of record. Accounting, valuation, professional sign-off, and investment decisions remain with the responsible people. Client data is restricted to that client’s work and is not used to train shared models.
 
 ## Supporting pages
 

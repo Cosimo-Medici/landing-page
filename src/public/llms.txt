@@ -1,6 +1,6 @@
 # Cosimo by Medici & Company
 
-> AI for recurring financial operations: reports, checks, follow-ups, and review packs for banks, funds, and financial service firms.
+> AI for recurring financial operations: reports, checks, follow-ups, and review packs for banks, funds, insurance teams, and financial service firms.
 
 ## Product
 
@@ -8,8 +8,9 @@ Cosimo is the product. Medici & Company is the company. Workflows are configured
 
 ## Website pages
 
-- [Overview](/): Shared product and routes for banks, funds, and service firms.
+- [Overview](/): Shared product and routes for banks, funds, insurance teams, and service firms.
 - [Banks](/banks/): Loan activity reviews, borrower packs, account-file checks, and review preparation.
+- [Insurance](/insurance/): Explore renewal preparation, submission checks, claims-file summaries, and document follow-ups.
 - [Service firms](/services/): Client reporting, document collection, and review packs.
 - [All funds](/funds/): Reporting, portfolio updates, and investor requests; an interactive quarterly portfolio-update example.
 - [Real estate](/re/): LP reports, investor statements, capital call notices, and distribution notices.

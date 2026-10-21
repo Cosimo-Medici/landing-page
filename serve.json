@@ -132,6 +132,14 @@
     {
       "source": "/services/",
       "destination": "/services/index.html"
+    },
+    {
+      "source": "/insurance",
+      "destination": "/insurance/index.html"
+    },
+    {
+      "source": "/insurance/",
+      "destination": "/insurance/index.html"
     }
   ]
 }
