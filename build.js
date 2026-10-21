@@ -23,6 +23,8 @@ const HASHABLE = [
   { src: 'js/theme.js', dir: 'js' },
   { src: 'css/home.css', dir: 'css' },
   { src: 'css/audiences.css', dir: 'css' },
+  { src: 'css/operations.css', dir: 'css' },
+  { src: 'js/operations-report.js', dir: 'js' },
   { src: 'css/site-layout.css', dir: 'css' },
   { src: 'css/founders.css', dir: 'css' },
   { src: 'js/home.js', dir: 'js' },

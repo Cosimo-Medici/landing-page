@@ -29,6 +29,8 @@
 <link rel="stylesheet" href="../css/styles.css">
 <link rel="stylesheet" href="../css/home.css">
 <link rel="stylesheet" href="../css/audiences.css">
+<link rel="stylesheet" href="../css/re.css">
+<link rel="stylesheet" href="../css/operations.css">
 <link rel="stylesheet" href="../css/site-layout.css">
 <link rel="stylesheet" href="../css/accessibility.css">
 <script src="../js/accessibility.js" defer></script>
@@ -47,9 +49,20 @@
 
 <main id="main" tabindex="-1"><div class="fund-sectors" role="navigation" aria-label="Who Cosimo helps"><a href="/">Overview</a><a href="/banks/">Banks</a><a href="/insurance/" aria-current="page">Insurance</a><a href="/funds/">Funds</a><a href="/services/">Service firms</a></div>
 <section class="hero home-hero sector-hero" aria-labelledby="hero-title">
-  <div class="home-hero-left"><div class="hero-content"><p class="hero-status">Exploring workflows with insurers, brokers, and MGAs</p><div class="hero-headline"><h1 id="hero-title"><span class="h-line"><span class="h-large">The paperwork.</span></span><span class="h-line"><span class="h-italic">Ready for review.</span></span></h1></div><p class="h-sub">Renewals, submissions, and claims files bring together records from different people and systems. Start with one preparation task: assemble the documents, check what is missing, and put the open questions in front of your team.</p></div><div class="hero-bottom"><div class="hero-ctas"><a class="btn-main" href="#work">Explore a starting workflow ↓</a><a class="btn-line" href="#contact">Talk through your process</a></div></div></div>
-  <figure class="home-handoff" aria-label="Illustration of preparing a renewal review pack"><div class="home-handoff-request"><span>Your request</span><p>“Get the renewal file ready.<br>Show me what we're waiting on.”</p></div><div class="home-handoff-connection"><span aria-hidden="true">↓</span><p>Your records and agreed checklist.</p></div><div class="home-handoff-report"><div class="home-handoff-report-meta"><span>Renewal preparation</span><span>For review</span></div><h2>The renewal pack.</h2><ul class="home-handoff-contents"><li>Policy records and correspondence assembled</li><li>Missing documents and open questions listed</li><li>Follow-up messages drafted for review</li></ul><a class="home-handoff-open" href="#work">Explore the work <span aria-hidden="true">↘</span></a></div><figcaption>Workflow illustration · Configured and tested with your team.</figcaption></figure>
+  <div class="home-hero-left"><div class="hero-content"><p class="hero-status">For insurers, brokers, and MGAs</p><div class="hero-headline"><h1 id="hero-title"><span class="h-line"><span class="h-large">The paperwork.</span></span><span class="h-line"><span class="h-italic">Ready for review.</span></span></h1></div><p class="h-sub">Renewals, submissions, and claims files bring together records from different people and systems. Start with one preparation task: assemble the documents, check what is missing, and put the open questions in front of your team.</p></div><div class="hero-bottom"><div class="hero-ctas"><a class="btn-main" href="#example">See the insurance examples ↓</a><a class="btn-line" href="#contact">Talk through your process</a></div></div></div>
+  <figure class="home-handoff" aria-label="Sample review pack for Compagnia della Lanterna"><div class="home-handoff-request"><span>Your request</span><p>“Prepare the files for review.<br>Show me what is still missing.”</p></div><div class="home-handoff-connection"><span aria-hidden="true">↓</span><p>Your records. The questions worth reviewing.</p></div><div class="home-handoff-report"><p class="ops-hero-name">Compagnia della Lanterna</p><div class="home-handoff-report-meta"><span>Operations review</span><span>Review copy</span></div><h2>Renewal. Submission.<br>Claims file.</h2><div class="ops-hero-stats"><div><span>Sample files</span><strong>03</strong></div><div><span>Workflow views</span><strong>03</strong></div></div><a class="home-handoff-open" href="#example">Open the sample pack <span aria-hidden="true">↘</span></a></div><figcaption>Fictional records · Inspect the report and its sources below.</figcaption></figure>
 </section>
+<section class="home-section ops-demo" id="example" aria-labelledby="example-title">
+  <div class="ops-heading"><div><p class="audience-label">Inside an insurance operations desk</p><h2 id="example-title">The file is assembled.<br><em>The open questions are clear.</em></h2></div><p>Move between a property renewal, a cargo submission, and a claims file. Inspect what arrived, what disagrees, and what the next person needs.</p></div>
+  <div class="ops-identity"><strong>Compagnia della Lanterna</strong><span>Insurance operations · 21 Oct 2026<br>Fictional demonstration</span></div>
+  <div id="operations-reader" class="ops-layout">
+    <nav class="ops-chapters" id="operations-chapters" aria-label="Sample report contents"></nav>
+    <div class="ops-reader-body"><div class="ops-toolbar" id="operations-toolbar"><button type="button" id="operations-prev">← Previous</button><span id="operations-status" role="status"></span><button type="button" id="operations-next">Next →</button></div><div id="operations-content"><p>Enable JavaScript to inspect this sample report and its source records.</p></div></div>
+  </div>
+  <p class="ops-disclosure">Fictional insurer inspired by Genoa’s maritime trade and its Renaissance lighthouse. All records and outputs are authored examples. We configure and test the workflow with your team before it handles your records.</p>
+</section>
+<dialog class="ops-source" id="operations-source" aria-labelledby="operations-source-name"><div class="ops-source-bar"><h2 id="operations-source-name"></h2><button type="button" id="operations-source-close" autofocus>Close</button></div><div class="ops-source-content" id="operations-source-content"></div><p class="ops-source-footer">Fictional source record · Sample excerpt</p></dialog>
+
 <section class="home-section" id="work" aria-labelledby="work-title"><div class="home-section-heading"><h2 id="work-title">Start with the file.<br><em>Give the reviewer a head start.</em></h2><p>These are starting points to explore together. Choose a recurring task, agree the records and expected output, and test it against your team's review standards.</p></div><div class="home-work-grid bank-work-grid">
 <article><h3>Renewal preparation</h3><p>Bring policy records, client updates, and outstanding requests into a renewal pack. Show what has arrived and what still needs chasing.</p><div class="home-work-example">Renewal pack + outstanding-item list</div></article>
 <article><h3>Submission checks</h3><p>Compare the documents received with your submission checklist. List gaps and conflicting details for the person reviewing the file.</p><div class="home-work-example">Document checklist + review questions</div></article>
@@ -67,6 +80,7 @@
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">&#9790;</button>
 
 <script src="../js/page-chrome.js" defer></script>
+<script src="../js/operations-report.js" defer></script>
 <script src="../js/brand-mark.js" defer></script>
 </body>
 </html>
