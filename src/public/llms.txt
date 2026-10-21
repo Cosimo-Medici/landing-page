@@ -1,14 +1,17 @@
 # Cosimo by Medici & Company
 
-> Fund operations software that helps fund teams prepare recurring reports, investor communications, and internal review packs from the records they already keep.
+> AI for recurring financial operations: reports, checks, follow-ups, and review packs for banks, funds, and financial service firms.
 
 ## Product
 
-Cosimo is the product. Medici & Company is the company. Workflows are configured and tested with the fund team around its sources, reporting format, and review process. The team checks the draft, resolves open questions, and approves the final version.
+Cosimo is the product. Medici & Company is the company. Workflows are configured and tested with the team around its sources, reporting format, and review process. The team checks the draft, resolves open questions, and approves the final version.
 
 ## Website pages
 
-- [All funds](/): Reporting, portfolio updates, and investor requests; an interactive quarterly portfolio-update example.
+- [Overview](/): Shared product and routes for banks, funds, and service firms.
+- [Banks](/banks/): Loan activity reviews, borrower packs, account-file checks, and review preparation.
+- [Service firms](/services/): Client reporting, document collection, and review packs.
+- [All funds](/funds/): Reporting, portfolio updates, and investor requests; an interactive quarterly portfolio-update example.
 - [Real estate](/re/): LP reports, investor statements, capital call notices, and distribution notices.
 - [Venture capital](/vc/): Founder updates, portfolio metrics, cash and runway, and LP reporting.
 - [Private equity](/pe/): Company actuals and budgets, variance commentary, portfolio packs, and LP reporting.
@@ -21,13 +24,13 @@ Cosimo is the product. Medici & Company is the company. Workflows are configured
 
 ## Examples and claim boundaries
 
-The website uses fictional fund records and prewritten outputs, not live product runs or customer results. Source links open sample records. The examples do not establish measured time savings, integration coverage, audit readiness, security certification, or guaranteed turnaround. Fund-specific configuration and testing are required. The team retains review and approval.
+The website uses fictional fund records and prewritten outputs, not live product runs or customer results. Source links open sample records. The examples do not establish measured time savings, integration coverage, audit readiness, security certification, or guaranteed turnaround. Workflow-specific configuration and testing are required. The team retains review and approval.
 
 ## Start with one process
 
 Email info@medici.ai with what your team prepares, where the information comes from, and which part takes the most time. Medici & Company works through a first workflow to test with the team. Scope and commercial terms are agreed before starting; evaluation starts with one task and one period of source files under NDA, written feasibility confirmation, and a review of the run and its sources. Model usage is charged at cost without markup; platform terms are agreed in conversation.
 
-Website: https://medici.ai
+Website: https://cosimo.work
 
 ## Tested product work
 

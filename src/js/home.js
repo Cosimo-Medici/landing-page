@@ -137,7 +137,7 @@ function sync() {
   writers.forEach(w => w.stop()); writers=[];
   if (paused || motionReduced() || document.hidden || !visible) return;
   typewriterCoord.lastAnimEnd=0;
-  writers=[createTypewriter(document.getElementById('hero-top'), ['Investor reports.','Portfolio updates.','Investor requests.'],8000,typewriterCoord),createTypewriter(document.getElementById('hero-bottom'), ['Ready for your review.','Off your to-do list.','From your fund records.','In your reporting format.'],11000,typewriterCoord)];
+  writers=[createTypewriter(document.getElementById('hero-top'), (document.body.dataset.audience === 'finance' ? ['Financial operations.','Reports and reviews.','The daily follow-ups.'] : ['Investor reports.','Portfolio updates.','Investor requests.']),8000,typewriterCoord),createTypewriter(document.getElementById('hero-bottom'), ['Ready for your review.','Off your to-do list.','From your records.','In your reporting format.'],11000,typewriterCoord)];
   writers[0].start(2000); writers[1].start(5500);
 }
 pause.addEventListener('click', () => { paused=!paused; pause.innerHTML=paused?'<span aria-hidden="true">▷</span> <span>Play</span><span class="a11y-sr-only"> headline rotation</span>':'<span aria-hidden="true">Ⅱ</span> <span>Pause</span><span class="a11y-sr-only"> headline rotation</span>'; sync(); });

@@ -1,20 +1,20 @@
 # Cosimo by Medici & Company
 
-> Grow your fund. Not your workload.
+> Grow your business. Not your workload.
 
-Cosimo is fund operations software from Medici & Company. It helps fund teams prepare recurring reports, investor communications, and internal review packs from the records they already keep. The website speaks to lean fund operations, finance, and investor-relations teams, with examples for real estate, venture capital, private equity, private credit, and hedge funds.
+Cosimo is an AI agent for financial operations from Medici & Company. It prepares reports, checks, follow-ups, and review packs from existing records. The homepage routes visitors to banks (/banks/), funds (/funds/), and financial service firms (/services/). Bank workflows start with loan activity reviews, borrower review packs, account-file checks, and evidence preparation. Client reporting and document collection are starting points for service firms. Each process requires scoped configuration and testing; bank illustrations do not establish production use at a named bank.
 
 ## How the proposed workflow fits a fund team
 
 Start with the records behind one recurring task and an example of the output the team needs. Medici & Company configures and tests the workflow with the team, using its source records, reporting format, and review requirements. Drafts bring the figures and commentary together, with missing information and open questions marked for review. The fund team checks the work, resolves questions, approves the final version, and sends it through its usual process.
 
-The FAQ identifies supported Google Drive, SharePoint, Gmail, Outlook, and Google Calendar connections; task-specific setup and testing are required. SOC 2 certification is on the roadmap, not a current certification. The website does not guarantee implementation time, quantified savings, or audit readiness. Data handling, access, source systems, scope, and commercial terms need to be discussed for the fund's proposed setup.
+The FAQ identifies supported Google Drive, SharePoint, Gmail, Outlook, and Google Calendar connections; task-specific setup and testing are required. SOC 2 certification is on the roadmap, not a current certification. The website does not guarantee implementation time, quantified savings, or audit readiness. Data handling, access, source systems, scope, and commercial terms need to be discussed for the team's proposed setup.
 
-## All-funds homepage
+## Fund overview
 
-Path: /
+Path: /funds/
 
-The homepage introduces three recurring jobs: investor reporting, portfolio updates, and investor requests. An interactive example follows management accounts, company commentary, and a prior report format into a quarterly portfolio update.
+The fund overview introduces three recurring jobs: investor reporting, portfolio updates, and investor requests. An interactive example follows management accounts, company commentary, and a prior report format into a quarterly portfolio update.
 
 The example uses Chianti Capital, the synthetic demo manager. Six companies report $70.0 million in quarterly revenue against a $72.0 million budget. Calderwood's accounts show $9.0 million while its management update says $9.4 million. The draft uses the accounts provisionally and leaves the $400,000 difference visible for review. The example has inspectable source records and a three-page draft. It is authored demonstration content, not a live application run.
 
@@ -72,7 +72,7 @@ Email info@medici.ai with a few sentences about the report or process your team 
 
 ## Customer fit and responsibilities
 
-The current commercial focus is lean fund teams with approximately $100 million or more under management and recurring manual work. Entity, investor, and reporting complexity also determine fit. Cosimo handles internal fund operations alongside outside providers; it is not currently the administrator of record. Accounting, valuation, professional sign-off, and investment decisions remain with the responsible people. Client data is restricted to that client’s work and is not used to train shared models.
+Cosimo is for banks, funds, and financial service firms with recurring manual work. Fit depends on the specific process, records, and review requirements. Cosimo handles internal fund operations alongside outside providers; it is not currently the administrator of record. Accounting, valuation, professional sign-off, and investment decisions remain with the responsible people. Client data is restricted to that client’s work and is not used to train shared models.
 
 ## Supporting pages
 
@@ -82,7 +82,7 @@ The current commercial focus is lean fund teams with approximately $100 million 
 - Privacy Policy: /privacy.html
 - Terms of Service: /terms.html
 
-Website: https://medici.ai
+Website: https://cosimo.work
 Contact: info@medici.ai
 
 © 2026 Medici & Company

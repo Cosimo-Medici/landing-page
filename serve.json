@@ -108,6 +108,30 @@
     {
       "source": "/terms",
       "destination": "/terms.html"
+    },
+    {
+      "source": "/banks",
+      "destination": "/banks/index.html"
+    },
+    {
+      "source": "/banks/",
+      "destination": "/banks/index.html"
+    },
+    {
+      "source": "/funds",
+      "destination": "/funds/index.html"
+    },
+    {
+      "source": "/funds/",
+      "destination": "/funds/index.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/services/index.html"
+    },
+    {
+      "source": "/services/",
+      "destination": "/services/index.html"
     }
   ]
 }
