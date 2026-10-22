@@ -135,18 +135,18 @@ const pause = document.querySelector('.home-pause');
 let paused = false, visible = true, writers = [];
 function sync() {
   writers.forEach(w => w.stop()); writers=[];
-  if (paused || motionReduced() || document.hidden || !visible) return;
+  if (!pause || paused || motionReduced() || document.hidden || !visible) return;
   typewriterCoord.lastAnimEnd=0;
-  writers=[createTypewriter(document.getElementById('hero-top'), ['Investor reports.','Portfolio updates.','Investor requests.'],8000,typewriterCoord),createTypewriter(document.getElementById('hero-bottom'), ['Ready for your review.','Off your to-do list.','From your fund records.','In your reporting format.'],11000,typewriterCoord)];
+  writers=[createTypewriter(document.getElementById('hero-top'), (document.body.dataset.audience === 'finance' ? ['Financial operations.','Reports and reviews.','The daily follow-ups.'] : ['Investor reports.','Portfolio updates.','Investor requests.']),8000,typewriterCoord),createTypewriter(document.getElementById('hero-bottom'), ['Ready for your review.','With source references.','From your records.','In your reporting format.'],11000,typewriterCoord)];
   writers[0].start(2000); writers[1].start(5500);
 }
-pause.addEventListener('click', () => { paused=!paused; pause.innerHTML=paused?'<span aria-hidden="true">▷</span> <span>Play</span><span class="a11y-sr-only"> headline rotation</span>':'<span aria-hidden="true">Ⅱ</span> <span>Pause</span><span class="a11y-sr-only"> headline rotation</span>'; sync(); });
+pause?.addEventListener('click', () => { paused=!paused; pause.innerHTML=paused?'<span aria-hidden="true">▷</span> <span>Play</span><span class="a11y-sr-only"> headline rotation</span>':'<span aria-hidden="true">Ⅱ</span> <span>Pause</span><span class="a11y-sr-only"> headline rotation</span>'; sync(); });
 new IntersectionObserver(entries => { visible=entries[0].isIntersecting; sync(); },{threshold:.15}).observe(document.querySelector('.home-hero'));
 reduced.addEventListener('change',sync); document.addEventListener('cosimo-motion-change',sync); document.addEventListener('visibilitychange',sync);
 
 const steps = [
  ['Your portfolio, in Cosimo.','Expand a company or click a figure to inspect its supporting records. Six companies, with LTM figures through September 30 in USD millions. The report uses their Q3 accounts.'],
- ['Follow the reporting task.','See the actual run interface read the Q3 records, check the totals, and flag the $0.4m revenue difference.'],
+ ['Follow the reporting task.','Follow the example as Cosimo checks the Q3 records, compares the totals, and flags a $0.4m revenue difference for review.'],
  ['Your investor report, drafted.','The portfolio update, company figures, and questions for your team — all here. Scroll to read the three-page draft.']
 ];
 const replay=document.getElementById('home-replay');

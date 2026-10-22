@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://medici.ai/</loc></url>
-  <url><loc>https://medici.ai/re/</loc></url>
-  <url><loc>https://medici.ai/vc/</loc></url>
-  <url><loc>https://medici.ai/pe/</loc></url>
-  <url><loc>https://medici.ai/credit/</loc></url>
-  <url><loc>https://medici.ai/hedge/</loc></url>
-  <url><loc>https://medici.ai/faq.html</loc></url>
-  <url><loc>https://medici.ai/about.html</loc></url>
-  <url><loc>https://medici.ai/privacy.html</loc></url>
-  <url><loc>https://medici.ai/terms.html</loc></url>
-  <url><loc>https://medici.ai/founders.html</loc></url>
-  <url><loc>https://medici.ai/accessibility.html</loc></url>
+  <url><loc>https://cosimo.work/</loc></url>
+  <url><loc>https://cosimo.work/re/</loc></url>
+  <url><loc>https://cosimo.work/vc/</loc></url>
+  <url><loc>https://cosimo.work/pe/</loc></url>
+  <url><loc>https://cosimo.work/credit/</loc></url>
+  <url><loc>https://cosimo.work/hedge/</loc></url>
+  <url><loc>https://cosimo.work/faq.html</loc></url>
+  <url><loc>https://cosimo.work/about.html</loc></url>
+  <url><loc>https://cosimo.work/privacy.html</loc></url>
+  <url><loc>https://cosimo.work/terms.html</loc></url>
+  <url><loc>https://cosimo.work/founders.html</loc></url>
+  <url><loc>https://cosimo.work/accessibility.html</loc></url>
+  <url><loc>https://cosimo.work/banks/</loc></url>
+  <url><loc>https://cosimo.work/funds/</loc></url>
+  <url><loc>https://cosimo.work/services/</loc></url>
+  <url><loc>https://cosimo.work/insurance/</loc></url>
 </urlset>

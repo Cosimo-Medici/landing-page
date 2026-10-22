@@ -1,22 +1,40 @@
 # Cosimo by Medici & Company
 
-> Grow your fund. Not your workload.
+> Financial operations software for banks, funds, insurance teams, and financial services firms.
 
-Cosimo is fund operations software from Medici & Company. It helps fund teams prepare recurring reports, investor communications, and internal review packs from the records they already keep. The website speaks to lean fund operations, finance, and investor-relations teams, with examples for real estate, venture capital, private equity, private credit, and hedge funds.
+Cosimo is an AI agent for financial operations from Medici & Company. It prepares reports, checks, follow-ups, and review packs from existing records. The homepage routes visitors to banks (/banks/), funds (/funds/), insurance (/insurance/), and financial services (/services/). Each process is configured and tested with the team responsible for it.
 
-## How the proposed workflow fits a fund team
+## How a process is set up
 
-Start with the records behind one recurring task and an example of the output the team needs. Medici & Company configures and tests the workflow with the team, using its source records, reporting format, and review requirements. Drafts bring the figures and commentary together, with missing information and open questions marked for review. The fund team checks the work, resolves questions, approves the final version, and sends it through its usual process.
+Start with the records behind one recurring task and an example of the output the team needs. Medici & Company configures and tests the process with the team, using its source records, reporting format, and approval requirements. Drafts bring figures and commentary together, with missing information and open questions marked for review. The team checks the work, resolves questions, and approves the final version.
 
-The FAQ identifies supported Google Drive, SharePoint, Gmail, Outlook, and Google Calendar connections; task-specific setup and testing are required. SOC 2 certification is on the roadmap, not a current certification. The website does not guarantee implementation time, quantified savings, or audit readiness. Data handling, access, source systems, scope, and commercial terms need to be discussed for the fund's proposed setup.
+The FAQ identifies Google Drive, SharePoint, Gmail, Outlook, and Google Calendar connections. Task-specific setup and testing are required. An evaluation can begin with agreed file exports; connections to core banking, policy, claims, or accounting systems require a separate scope review. Cosimo does not currently have a SOC 2 report; a SOC 2 examination is on the roadmap. Data handling, access, retention, scope, and commercial terms are reviewed before starting.
 
-## All-funds homepage
+## Banks
 
-Path: /
+Path: /banks/
 
-The homepage introduces three recurring jobs: investor reporting, portfolio updates, and investor requests. An interactive example follows management accounts, company commentary, and a prior report format into a quarterly portfolio update.
+Loan activity reviews, borrower review packs, account-file checks, and review preparation are starting points for bank operations teams. The fictional Cabini Bank example contains a four-page morning review and inspectable source excerpts. It identifies a possible duplicate repayment, a difference from an independent closing balance, and an outstanding borrower certificate. The duplicate remains a question for the bank to resolve; the example does not post adjustments or make lending decisions.
+
+## Fund overview
+
+Path: /funds/
+
+The fund overview introduces three recurring jobs: investor reporting, portfolio updates, and investor requests. An interactive example follows management accounts, company commentary, and a prior report format into a quarterly portfolio update.
 
 The example uses Chianti Capital, the synthetic demo manager. Six companies report $70.0 million in quarterly revenue against a $72.0 million budget. Calderwood's accounts show $9.0 million while its management update says $9.4 million. The draft uses the accounts provisionally and leaves the $400,000 difference visible for review. The example has inspectable source records and a three-page draft. It is authored demonstration content, not a live application run.
+
+## Insurance
+
+Path: /insurance/
+
+Renewal preparation, submission checks, claims-file summaries, and document follow-ups are starting points for insurance teams. The fictional Lanterna Insurance example contains a four-page operations review and inspectable source excerpts. It follows missing renewal documents, conflicting declared cargo values, and an incomplete claims file. Underwriting, pricing, coverage, and claims decisions remain with the responsible professionals.
+
+## Financial Services
+
+Path: /services/
+
+Administration, accounting, and advisory firms can start with client reporting, document collection, and review packs. Each process is configured around the firm's source records, reporting format, and review requirements. The responsible professionals retain client advice and sign-off.
 
 ## Real estate
 
@@ -60,19 +78,19 @@ The page focuses on investor letters, close-file exceptions, subscription/redemp
 
 The six-page monthly pack separates investor-facing drafts from internal working papers. It includes class returns, an exposure snapshot, investor activity, a cash discrepancy, and a questionnaire response that needs current supporting evidence. The example uses administrator-approved figures. The fund team resolves exceptions and approves investor communications, with valuation and sign-off responsibilities retained under its agreed arrangements. The page does not claim to perform trading, investment decisions, complete risk management, or independent assurance.
 
-## What the examples prove—and what they do not
+## About the examples
 
-All website records, commentary, and outputs are fictional and prewritten. Interactions let visitors inspect the proposed document workflow, source records, figures, and review questions. They are not recordings of Cosimo generating these outputs, successful production proof runs, or customer results.
+All interactive demonstrations use fictional records and prepared outputs. Interactions let visitors inspect the proposed document workflow, source records, figures, and review questions. They are not recordings of Cosimo generating these outputs, successful production proof runs, or customer results.
 
-The examples explain the intended work. They do not substantiate a guaranteed processing time, hours saved, universal accuracy, autonomous delivery, audit readiness, or integration coverage. These workflows need configuration and testing with the fund team before making fund-specific capability commitments.
+The examples explain the intended work. They do not substantiate a guaranteed processing time, hours saved, universal accuracy, autonomous delivery, audit readiness, or integration coverage. Each process needs configuration and testing with the team responsible for it.
 
 ## How to start
 
-Email info@medici.ai with a few sentences about the report or process your team prepares, where the information comes from, and which part takes the most time. Medici & Company will work through a first workflow to test with the team. Scope and commercial terms are agreed before starting. An evaluation uses one period of read-only source files under NDA, written feasibility confirmation, and a review of the output and sources. Model usage is charged at cost without markup; platform terms are agreed in conversation.
+Email info@medici.ai with a few sentences about the report or process your team prepares, where the information comes from, and which part takes the most time. Medici & Company will work through a first workflow to test with the team. Scope, data requirements, an NDA, and commercial terms are agreed before source files are shared. An evaluation uses agreed source records, written feasibility confirmation, and a review of the output against its sources. Model usage is charged at cost without markup; platform terms are agreed in conversation.
 
 ## Customer fit and responsibilities
 
-The current commercial focus is lean fund teams with approximately $100 million or more under management and recurring manual work. Entity, investor, and reporting complexity also determine fit. Cosimo handles internal fund operations alongside outside providers; it is not currently the administrator of record. Accounting, valuation, professional sign-off, and investment decisions remain with the responsible people. Client data is restricted to that client’s work and is not used to train shared models.
+Cosimo is for banks, funds, insurance teams, and financial services firms with recurring manual work. Fit depends on the specific process, records, and review requirements. Cosimo supports operations teams alongside their systems and advisers. For funds, it is not the administrator of record. Accounting, valuation, lending, investment, underwriting, claims decisions, and professional sign-off remain with the responsible people. Client data is restricted to that client’s work and is not used to train shared models.
 
 ## Supporting pages
 
@@ -82,11 +100,11 @@ The current commercial focus is lean fund teams with approximately $100 million 
 - Privacy Policy: /privacy.html
 - Terms of Service: /terms.html
 
-Website: https://medici.ai
+Website: https://cosimo.work
 Contact: info@medici.ai
 
 © 2026 Medici & Company
 
 ## Tested product work
 
-The October 2026 product deck documents daily production use by live clients, nine of ten RE processes tested figure by figure on synthetic demonstration funds, and 83 calculation scripts with 1,822 passing tests. A quarterly report run for five properties and eight investors matched figures to the cent against an 88-row source sheet and raised five exceptions. These are specific validation results, separate from the illustrative website walkthroughs, not universal accuracy or timing guarantees. Approval rules are configurable per process and user; the product can send authorized communications.
+Clients use Cosimo daily. In an internal test on a synthetic real estate fund with five properties and eight investors, Cosimo matched every report figure to the cent against an 88-row source sheet and raised five exceptions for review. This work is separate from the illustrative website walkthroughs. Acceptance criteria are agreed for each client evaluation. Approval rules are configurable per process and user; the product can send authorized communications.

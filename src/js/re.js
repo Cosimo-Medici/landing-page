@@ -11,7 +11,7 @@
   const promiseText = document.querySelector('[data-promise]');
   const pageConfig = JSON.parse(document.getElementById('fund-page-config')?.textContent || '{}');
   const workflowLines = pageConfig.workflowLines || ['Quarter-end\nLP reporting.', 'Capital call\nnotices.', 'Distribution\nnotices.', 'Investor\nstatements.'];
-  const promiseLines = ['Ready for\nyour review.', 'Off your\nto-do list.', 'From your\nfund records.', 'In your\nreporting format.'];
+  const promiseLines = ['Ready for\nyour review.', 'With source\nreferences.', 'From your\nfund records.', 'In your\nreporting format.'];
   const heroDocuments = [...document.querySelectorAll('[data-hero-document]')];
   const heroChoices = [...document.querySelectorAll('[data-hero-select]')];
   const cycleToggle = document.querySelector('.re-cycle-toggle');

@@ -22,6 +22,9 @@ const HASHABLE = [
   { src: 'js/brand-mark.js', dir: 'js' },
   { src: 'js/theme.js', dir: 'js' },
   { src: 'css/home.css', dir: 'css' },
+  { src: 'css/audiences.css', dir: 'css' },
+  { src: 'css/operations.css', dir: 'css' },
+  { src: 'js/operations-report.js', dir: 'js' },
   { src: 'css/site-layout.css', dir: 'css' },
   { src: 'css/founders.css', dir: 'css' },
   { src: 'js/home.js', dir: 'js' },
@@ -36,7 +39,7 @@ const HASHABLE = [
 ];
 
 // HTML files that reference the hashable assets
-const HTML_FILES = ['index.html', 'faq.html', 'about.html', 'founders.html', 'accessibility.html', 'privacy.html', 'terms.html', ...['re', 'vc', 'pe', 'credit', 'hedge'].map(sector => `${sector}/index.html`)];
+const HTML_FILES = ['index.html', 'faq.html', 'about.html', 'founders.html', 'accessibility.html', 'privacy.html', 'terms.html', ...['re', 'vc', 'pe', 'credit', 'hedge', 'banks', 'funds', 'services', 'insurance'].map(sector => `${sector}/index.html`)];
 
 // Static assets to copy as-is (relative to SRC, stripped of public/ prefix in dist)
 const STATIC = [
@@ -46,6 +49,7 @@ const STATIC = [
   'public/favicon.svg',
   'public/favicon-96x96.png',
   'public/og-image.png',
+  'public/og-financial-operations.jpg',
   'public/og-image-dk.png',
   'public/robots.txt',
   'public/llms.txt',

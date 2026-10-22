@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://medici.ai/sitemap.xml
+Sitemap: https://cosimo.work/sitemap.xml
 
 # Block training crawlers — content shouldn't be absorbed without attribution
 User-agent: GPTBot
