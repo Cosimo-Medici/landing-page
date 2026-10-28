@@ -55,3 +55,5 @@ Identity sources (local demo records, no credentials or investor contact data co
 - `fund-data-engine/out/chianti/chianti-capital-partners-iii-lp/2026-Q3/general_ledger.csv`: Calderwood Fasteners acquisition dated July 15, 2025.
 
 This content-only update applies the same identity substitutions to the source fixture and checked-in export, preserving the export's existing nested-button repair and accessibility bridge. The JavaScript asset filename is rehashed after substitution.
+
+The demo describes inspection of calculations and supporting records rather than claiming every number is verified. The regeneration adapter preserves this wording; the checked-in bundle was updated and rehashed for the same copy correction.

@@ -94,7 +94,7 @@ Cosimo is for banks, funds, insurance teams, and financial services firms with r
 
 ## Supporting pages
 
-- The founders: /founders.html
+- Our team: /founders.html
 - FAQ: /faq.html
 - About Cosimo and Medici & Company: /about.html
 - Privacy Policy: /privacy.html

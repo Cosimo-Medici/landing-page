@@ -18,6 +18,9 @@ await build({
   plugins: [{name:'production-style-sources', enforce:'pre', load(id) {
     if(id === join(here,'styles.css')) return '@import "~/app.css";\n@source ' + JSON.stringify(join(frontend,'app')) + ';\n@source ' + JSON.stringify(here) + ';';
   }, transform(code, id) {
+    const originalCode = code;
+    // Source traceability is inspectable; it is not a guarantee of correctness.
+    code = code.replace(/Every number is a verified fact: click it\s+for the derivation and source\./g, 'Click a figure to inspect its calculation and supporting records.');
     if (id === join(frontend, 'app/components/portfolio/register/CompaniesTable.tsx')) {
       // Keep the real component; populate the two total cells that its generic
       // data contract cannot calculate, and describe non-applicable runway.
@@ -38,7 +41,7 @@ await build({
       }
       return { code: code.slice(0, totalsStart) + footer, map: null };
     }
-    if (id !== join(frontend, 'app/routes/application/portfolio-register.tsx')) return;
+    if (id !== join(frontend, 'app/routes/application/portfolio-register.tsx')) return code !== originalCode ? { code, map: null } : undefined;
     // The app route hardcodes the asset-class eyebrow for store-backed data.
     // Bind that identity to this demo's fixture without changing product markup,
     // styling, or the application checkout. Fail if the upstream labels change.
