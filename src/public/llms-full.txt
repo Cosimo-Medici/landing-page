@@ -1,12 +1,14 @@
 # Cosimo by Medici & Company
 
-> Financial operations software for banks, funds, insurance teams, and financial services firms.
+> Cosimo gives financial operations teams more capacity by taking on recurring work using their own records, procedures and reporting formats.
 
-Cosimo is an AI agent for financial operations from Medici & Company. It prepares reports, checks, follow-ups, and review packs from existing records. The homepage routes visitors to banks (/banks/), funds (/funds/), insurance (/insurance/), and financial services (/services/). Each process is configured and tested with the team responsible for it.
+Cosimo is an AI agent for financial operations from Medici & Company. It brings source records through agreed preparation, checks and calculations into reports, review packages and follow-ups. The method is saved for subsequent runs with new inputs. The team resolves exceptions, retains professional sign-off and updates the process when requirements change. Principal examples are daily loan reviews for banks and investor reporting for funds; insurance and administration, accounting and advisory firms use the same approach for their recurring work.
+
+The homepage routes visitors to banks (/banks/), funds (/funds/), insurance (/insurance/), and administrators and advisers (/services/).
 
 ## How a process is set up
 
-Start with the records behind one recurring task and an example of the output the team needs. Medici & Company configures and tests the process with the team, using its source records, reporting format, and approval requirements. Drafts bring figures and commentary together, with missing information and open questions marked for review. The team checks the work, resolves questions, and approves the final version.
+Start with one recurring job, its owner, representative records and the output the team needs. Medici & Company configures the sources, calculations, checks, reporting format and review requirements with the team. Evaluate the output against its sources and the total staff effort across preparation, correction, review and follow-up. Record elapsed turnaround separately. Retain the agreed process for the next run and update it when requirements change.
 
 The FAQ identifies Google Drive, SharePoint, Gmail, Outlook, and Google Calendar connections. Task-specific setup and testing are required. An evaluation can begin with agreed file exports; connections to core banking, policy, claims, or accounting systems require a separate scope review. Cosimo does not currently have a SOC 2 report; a SOC 2 examination is on the roadmap. Data handling, access, retention, scope, and commercial terms are reviewed before starting.
 
@@ -30,7 +32,7 @@ Path: /insurance/
 
 Renewal preparation, submission checks, claims-file summaries, and document follow-ups are starting points for insurance teams. The fictional Lanterna Insurance example contains a four-page operations review and inspectable source excerpts. It follows missing renewal documents, conflicting declared cargo values, and an incomplete claims file. Underwriting, pricing, coverage, and claims decisions remain with the responsible professionals.
 
-## Financial Services
+## Administrators and advisers
 
 Path: /services/
 
@@ -80,17 +82,17 @@ The six-page monthly pack separates investor-facing drafts from internal working
 
 ## About the examples
 
-All interactive demonstrations use fictional records and prepared outputs. Interactions let visitors inspect the proposed document workflow, source records, figures, and review questions. They are not recordings of Cosimo generating these outputs, successful production proof runs, or customer results.
+All interactive demonstrations use fictional records and prepared outputs. Interactions let visitors inspect the proposed document process, source records, figures, and review questions. They are not recordings of Cosimo generating these outputs, successful production proof runs, or customer results.
 
 The examples explain the intended work. They do not substantiate a guaranteed processing time, hours saved, universal accuracy, autonomous delivery, audit readiness, or integration coverage. Each process needs configuration and testing with the team responsible for it.
 
 ## How to start
 
-Email info@medici.ai with a few sentences about the report or process your team prepares, where the information comes from, and which part takes the most time. Medici & Company will work through a first workflow to test with the team. Scope, data requirements, an NDA, and commercial terms are agreed before source files are shared. An evaluation uses agreed source records, written feasibility confirmation, and a review of the output against its sources. Model usage is charged at cost without markup; platform terms are agreed in conversation.
+Email info@medici.ai with a few sentences about the report or process your team prepares, where the information comes from, and which part takes the most time. Medici & Company will work through a first process to test with the team. Scope, data requirements, an NDA, and commercial terms are agreed before source files are shared. An evaluation uses agreed source records, written feasibility confirmation, and a review of the output against its sources. Model usage is charged at cost without markup; platform terms are agreed in conversation.
 
 ## Customer fit and responsibilities
 
-Cosimo is for banks, funds, insurance teams, and financial services firms with recurring manual work. Fit depends on the specific process, records, and review requirements. Cosimo supports operations teams alongside their systems and advisers. For funds, it is not the administrator of record. Accounting, valuation, lending, investment, underwriting, claims decisions, and professional sign-off remain with the responsible people. Client data is restricted to that client’s work and is not used to train shared models.
+Cosimo is for banks, funds, insurance teams, and administration, accounting and advisory firms with recurring manual work. Fit depends on the specific process, records, and review requirements. Cosimo supports operations teams alongside their systems and advisers. For funds, it is not the administrator of record. Accounting, valuation, lending, investment, underwriting, claims decisions, and professional sign-off remain with the responsible people. Client data is restricted to that client’s work and is not used to train shared models.
 
 ## Supporting pages
 
@@ -105,6 +107,6 @@ Contact: info@medici.ai
 
 © 2026 Medici & Company
 
-## Tested product work
+## Actions and approvals
 
-Clients use Cosimo daily. In an internal test on a synthetic real estate fund with five properties and eight investors, Cosimo matched every report figure to the cent against an 88-row source sheet and raised five exceptions for review. This work is separate from the illustrative website walkthroughs. Acceptance criteria are agreed for each client evaluation. Approval rules are configurable per process and user; the product can send authorized communications.
+Cosimo can prepare work and perform supported actions through connected accounts. Sending to other people and editing or deleting existing material require individual approval. Some actions confined to the user’s own account can be allowed on an ongoing basis. The specific connection, operation and approval requirements are established during setup.

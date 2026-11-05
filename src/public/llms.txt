@@ -1,18 +1,18 @@
 # Cosimo by Medici & Company
 
-> AI for recurring financial operations: reports, checks, follow-ups, and review packs for banks, funds, insurance teams, and financial services firms.
+> Cosimo gives financial operations teams more capacity by taking on recurring work using their own records, procedures and reporting formats.
 
 ## Product
 
-Cosimo is the product. Medici & Company is the company. Workflows are configured and tested with the team around its sources, reporting format, and review process. The team checks the draft, resolves open questions, and approves the final version.
+Cosimo is an AI agent for financial operations from Medici & Company. It brings source records through agreed preparation, checks and calculations into reports, review packages and follow-ups. The method is saved for subsequent runs with new inputs. The team resolves exceptions, retains professional sign-off and updates the process when requirements change. Principal examples are daily loan reviews for banks and investor reporting for funds; insurance and administration, accounting and advisory firms use the same approach for their recurring work.
 
 ## Website pages
 
-- [Overview](/): Financial operations software for banks, funds, insurance teams, and financial services firms.
+- [Overview](/): AI agent for recurring financial operations, using each team’s records and procedures.
 - [Banks](/banks/): Loan activity reviews, borrower packs, account-file checks, and review preparation.
 - [Funds](/funds/): Reporting, portfolio updates, and investor requests; an interactive quarterly portfolio-update example.
 - [Insurance](/insurance/): Renewal preparation, submission checks, claims-file summaries, and document follow-ups.
-- [Financial Services](/services/): Client reporting, document collection, and review packs for administration, accounting, and advisory firms.
+- [Administrators & Advisers](/services/): Client reporting, document collection, and review packs for administration, accounting, and advisory firms.
 - [Real estate](/re/): LP reports, investor statements, capital call notices, and distribution notices.
 - [Venture capital](/vc/): Founder updates, portfolio metrics, cash and runway, and LP reporting.
 - [Private equity](/pe/): Company actuals and budgets, variance commentary, portfolio packs, and LP reporting.
@@ -21,18 +21,18 @@ Cosimo is the product. Medici & Company is the company. Workflows are configured
 - [FAQ](/faq.html): What the product does, how the examples work, and how to start.
 - [About](/about.html): Product and company information.
 - [Our team](/founders.html): Eliot leads product, Shariq engineering, and Aamina clients.
-- [Extended description](/llms-full.txt): More detail on the proposed workflows and examples.
+- [Extended description](/llms-full.txt): More detail on the recurring processes and examples.
 
 ## Examples and claim boundaries
 
-The website examples use fictional records and prewritten outputs, not live product runs or customer results. Source links open sample records. The examples do not establish measured time savings, integration coverage, audit readiness, security certification, or guaranteed turnaround. Workflow-specific configuration and testing are required. The team retains review and approval.
+The website examples use fictional records and prewritten outputs, not live product runs or customer results. Source links open sample records. The examples do not establish measured time savings, integration coverage, audit readiness, security certification, or guaranteed turnaround. Process-specific configuration and testing are required. The team retains review and approval.
 
 ## Start with one process
 
-Email info@medici.ai with what your team prepares, where the information comes from, and which part takes the most time. Medici & Company works through a first workflow to test with the team. Scope and commercial terms are agreed before starting; evaluation starts with one task and one period of source files under NDA, written feasibility confirmation, and a review of the run and its sources. Model usage is charged at cost without markup; platform terms are agreed in conversation.
+Email info@medici.ai with what your team prepares, where the information comes from, and which part takes the most time. Medici & Company works through a first process to test with the team. Scope and commercial terms are agreed before starting; evaluation starts with one task and one period of source files under NDA, written feasibility confirmation, and a review of the run and its sources. Model usage is charged at cost without markup; platform terms are agreed in conversation.
 
 Website: https://cosimo.work
 
-## Tested product work
+## Actions and approvals
 
-The October 2026 product deck documents daily production use by live clients, nine of ten RE processes tested figure by figure on synthetic demonstration funds, and 83 calculation scripts with 1,822 passing tests. A quarterly report run for five properties and eight investors matched figures to the cent against an 88-row source sheet and raised five exceptions. These are specific validation results, separate from the illustrative website walkthroughs, not universal accuracy or timing guarantees. Approval rules are configurable per process and user; the product can send authorized communications.
+Cosimo can prepare work and perform supported actions through connected accounts. Sending to other people and editing or deleting existing material require individual approval. Some actions confined to the user’s own account can be allowed on an ongoing basis. The specific connection, operation and approval requirements are established during setup.
