@@ -146,7 +146,7 @@ reduced.addEventListener('change',sync); document.addEventListener('cosimo-motio
 
 const steps = [
  ['Your portfolio, in Cosimo.','Expand a company or click a figure to inspect its supporting records. Six companies, with LTM figures through September 30 in USD millions. The report uses their Q3 accounts.'],
- ['Follow the reporting task.','Follow the example as Cosimo checks the Q3 records, compares the totals, and flags a $0.4m revenue difference for review.'],
+ ['Follow the reporting task.','Inspect the example’s Q3 checks, compared totals and $0.4m revenue difference flagged for review.'],
  ['Your investor report, drafted.','The portfolio update, company figures, and questions for your team — all here. Scroll to read the three-page draft.']
 ];
 const replay=document.getElementById('home-replay');

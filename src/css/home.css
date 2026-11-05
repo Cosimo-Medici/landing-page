@@ -28,6 +28,7 @@
 .home-section h2 em { color: var(--home-accent); font-style: normal; }
 .home-section-heading { display: grid; grid-template-columns: 1.5fr 1fr; align-items: end; gap: 70px; margin-bottom: 42px; }
 .home-section-heading > p { max-width: 410px; font-size: 16px; line-height: 1.7; color: var(--cream-dim); }
+.home-inline-link { display: block; width: fit-content; margin-top: 20px; font: 12px/1.6 'IBM Plex Mono', monospace; color: var(--home-accent); text-underline-offset: 4px; }
 .home-demo { padding-top: 65px; }
 .home-desk { border: 1px solid var(--border-strong); background: var(--bg-surface); }
 .home-desk-bar { display: flex; justify-content: space-between; gap: 20px; padding: 19px 26px; border-bottom: 1px solid var(--border-strong); font: 11px/1.5 'IBM Plex Mono',monospace; }
