@@ -140,6 +140,94 @@
     {
       "source": "/insurance/",
       "destination": "/insurance/index.html"
+    },
+    {
+      "source": "/guides/investor-reporting",
+      "destination": "/guides/investor-reporting/index.html"
+    },
+    {
+      "source": "/guides/investor-reporting/",
+      "destination": "/guides/investor-reporting/index.html"
+    },
+    {
+      "source": "/guides/daily-loan-review",
+      "destination": "/guides/daily-loan-review/index.html"
+    },
+    {
+      "source": "/guides/daily-loan-review/",
+      "destination": "/guides/daily-loan-review/index.html"
+    },
+    {
+      "source": "/guides/fund-reconciliation",
+      "destination": "/guides/fund-reconciliation/index.html"
+    },
+    {
+      "source": "/guides/fund-reconciliation/",
+      "destination": "/guides/fund-reconciliation/index.html"
+    },
+    {
+      "source": "/guides/borrower-review",
+      "destination": "/guides/borrower-review/index.html"
+    },
+    {
+      "source": "/guides/borrower-review/",
+      "destination": "/guides/borrower-review/index.html"
+    },
+    {
+      "source": "/guides/evaluate-financial-ai",
+      "destination": "/guides/evaluate-financial-ai/index.html"
+    },
+    {
+      "source": "/guides/evaluate-financial-ai/",
+      "destination": "/guides/evaluate-financial-ai/index.html"
+    },
+    {
+      "source": "/guides/chat-or-configured-workflow",
+      "destination": "/guides/chat-or-configured-workflow/index.html"
+    },
+    {
+      "source": "/guides/chat-or-configured-workflow/",
+      "destination": "/guides/chat-or-configured-workflow/index.html"
+    },
+    {
+      "source": "/guides",
+      "destination": "/guides/index.html"
+    },
+    {
+      "source": "/guides/",
+      "destination": "/guides/index.html"
+    },
+    {
+      "source": "/examples/fund-reporting",
+      "destination": "/examples/fund-reporting/index.html"
+    },
+    {
+      "source": "/examples/fund-reporting/",
+      "destination": "/examples/fund-reporting/index.html"
+    },
+    {
+      "source": "/examples/loan-reconciliation",
+      "destination": "/examples/loan-reconciliation/index.html"
+    },
+    {
+      "source": "/examples/loan-reconciliation/",
+      "destination": "/examples/loan-reconciliation/index.html"
+    },
+    {
+      "source": "/product-facts",
+      "destination": "/product-facts/index.html"
+    },
+    {
+      "source": "/product-facts/",
+      "destination": "/product-facts/index.html"
+    },
+    {
+      "source": "/tools/reporting-capacity",
+      "destination": "/tools/reporting-capacity/index.html"
+    },
+    {
+      "source": "/tools/reporting-capacity/",
+      "destination": "/tools/reporting-capacity/index.html"
     }
   ]
 }

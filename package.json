@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "build": "node build.js",
+    "discovery:audit": "node scripts/audit-discovery.cjs",
+    "discovery:measure": "node scripts/discovery-monitor.cjs",
+    "discovery:submit": "node scripts/submit-indexnow.cjs",
     "serve": "npx serve dist -l ${PORT:-3000} --config ../serve.json",
     "start": "npm run build && npm run serve"
   }
