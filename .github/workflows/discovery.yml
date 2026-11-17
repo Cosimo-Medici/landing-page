@@ -1,0 +1,82 @@
+name: Discovery health and visibility
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'content/**'
+      - 'scripts/**'
+      - 'build.js'
+      - 'serve.json'
+      - 'product-demo/**'
+      - '.github/workflows/discovery.yml'
+  workflow_dispatch:
+    inputs:
+      measure:
+        description: Run the 30-question retrieval baseline
+        type: boolean
+        default: true
+      submit:
+        description: Notify IndexNow of the deployed sitemap
+        type: boolean
+        default: false
+  schedule:
+    - cron: '23 11 * * *'
+    - cron: '41 12 * * 2'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: discovery-${{ github.event.schedule || github.event_name }}
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Wait for this exact production release
+        if: github.event_name == 'push'
+        run: |
+          node build.js
+          node scripts/wait-discovery-release.cjs
+      - name: Check live discovery pages and crawler access
+        env:
+          AUDIT_OUT: reports/discovery/audit.json
+        run: node scripts/audit-discovery.cjs
+      - name: Measure public web retrieval
+        if: github.event.schedule == '41 12 * * 2' || inputs.measure == true
+        env:
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          previous=$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?per_page=100" --jq '[.artifacts[] | select(.expired == false and (.name | startswith("retrieval-")))][0] | if . == null then "" else [.workflow_run.id, .name] | @tsv end')
+          if [ -n "$previous" ]; then
+            read -r run_id artifact_name <<< "$previous"
+            gh run download "$run_id" --name "$artifact_name" --dir reports/previous
+            node scripts/discovery-monitor.cjs --out reports/discovery --previous reports/previous/latest.json
+          else
+            node scripts/discovery-monitor.cjs --out reports/discovery
+          fi
+      - name: Notify search engines
+        if: github.event_name == 'push' || inputs.submit == true
+        run: node scripts/submit-indexnow.cjs
+      - name: Add report to run summary
+        if: always()
+        run: |
+          if [ -f reports/discovery/summary.md ]; then cat reports/discovery/summary.md >> "$GITHUB_STEP_SUMMARY"; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: discovery-${{ github.run_id }}
+          path: reports/discovery/
+          retention-days: 90
+      - uses: actions/upload-artifact@v4
+        if: always() && hashFiles('reports/discovery/latest.json') != ''
+        with:
+          name: retrieval-${{ github.run_id }}
+          path: reports/discovery/latest.json
+          retention-days: 90

@@ -16,6 +16,8 @@ const DIST = path.join(__dirname, 'dist');
 
 // Files to hash (source path relative to SRC → directory in dist)
 const HASHABLE = [
+  { src: 'css/guides.css', dir: 'css' },
+  { src: 'js/reporting-capacity.js', dir: 'js' },
   { src: 'css/fonts.css', dir: 'css' },
   { src: 'css/accessibility.css', dir: 'css' },
   { src: 'js/accessibility.js', dir: 'js' },
@@ -148,4 +150,5 @@ fs.cpSync(path.join(SRC, 'public/fonts'), path.join(DIST, 'fonts'), { recursive:
 fs.cpSync(path.join(SRC, 'public/product-demo'), path.join(DIST, 'product-demo'), { recursive: true });
 fs.cpSync(path.join(SRC, 'public/brand'), path.join(DIST, 'brand'), { recursive: true });
 
+require('./scripts/build-discovery.cjs')({src:SRC,dist:DIST,replacements});
 console.log(`\nBuild complete → dist/`);
