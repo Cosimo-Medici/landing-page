@@ -2,7 +2,7 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const origin = process.env.SITE_URL || 'http://localhost:3002';
-const pages = ['/', '/about.html', '/faq.html', '/founders.html', '/accessibility.html', '/privacy.html', '/terms.html', ...['banks','funds','insurance','services','re','vc','pe','credit','hedge'].map(s => `/${s}/`), '/product-demo/index.html'];
+const pages = ['/', '/about.html', '/faq.html', '/founders.html', '/accessibility.html', '/privacy.html', '/terms.html', ...['banks','funds','insurance','services','re','vc','pe','credit','hedge'].map(s => `/${s}/`), '/product-demo/index.html', '/platform/', '/platform', '/building-with-claude/', '/building-with-claude', '/guides/agent-harness-or-cosimo/', '/guides/agent-harness-or-cosimo', '/product-facts/', '/guides/'];
 
 test('every published page and its browser-loaded assets resolve under the production server rules', async () => {
   for (const route of pages) {
@@ -60,4 +60,17 @@ test('FAQ structured data repeats the visible answers and all FAQ rows share the
     assert.equal(plain(summary), schema.mainEntity[index].name);
     assert.equal(plain(answer), schema.mainEntity[index].acceptedAnswer.text);
   });
+});
+
+test('the retired comparison guide redirects permanently to its replacement', async () => {
+  for (const route of ['/guides/chat-or-configured-workflow', '/guides/chat-or-configured-workflow/']) {
+    const response = await fetch(new URL(route, origin), { redirect: 'manual' });
+    assert.ok([301, 308].includes(response.status), `${route}: ${response.status}`);
+    assert.equal(new URL(response.headers.get('location'), origin).pathname, '/guides/agent-harness-or-cosimo/', route);
+  }
+  const sitemap = await (await fetch(new URL('/sitemap.xml', origin))).text();
+  assert.doesNotMatch(sitemap, /chat-or-configured-workflow/);
+  for (const route of ['/platform/', '/building-with-claude/', '/guides/agent-harness-or-cosimo/']) {
+    assert.ok(sitemap.includes(`<loc>https://cosimo.work${route}</loc>`), `${route} absent from sitemap`);
+  }
 });

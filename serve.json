@@ -32,6 +32,18 @@
       ]
     }
   ],
+  "redirects": [
+    {
+      "source": "/guides/chat-or-configured-workflow",
+      "destination": "/guides/agent-harness-or-cosimo/",
+      "type": 301
+    },
+    {
+      "source": "/guides/chat-or-configured-workflow/",
+      "destination": "/guides/agent-harness-or-cosimo/",
+      "type": 301
+    }
+  ],
   "rewrites": [
     {
       "source": "/",
@@ -182,12 +194,12 @@
       "destination": "/guides/evaluate-financial-ai/index.html"
     },
     {
-      "source": "/guides/chat-or-configured-workflow",
-      "destination": "/guides/chat-or-configured-workflow/index.html"
+      "source": "/guides/agent-harness-or-cosimo",
+      "destination": "/guides/agent-harness-or-cosimo/index.html"
     },
     {
-      "source": "/guides/chat-or-configured-workflow/",
-      "destination": "/guides/chat-or-configured-workflow/index.html"
+      "source": "/guides/agent-harness-or-cosimo/",
+      "destination": "/guides/agent-harness-or-cosimo/index.html"
     },
     {
       "source": "/guides",
@@ -228,6 +240,22 @@
     {
       "source": "/tools/reporting-capacity/",
       "destination": "/tools/reporting-capacity/index.html"
+    },
+    {
+      "source": "/platform",
+      "destination": "/platform/index.html"
+    },
+    {
+      "source": "/platform/",
+      "destination": "/platform/index.html"
+    },
+    {
+      "source": "/building-with-claude",
+      "destination": "/building-with-claude/index.html"
+    },
+    {
+      "source": "/building-with-claude/",
+      "destination": "/building-with-claude/index.html"
     }
   ]
 }

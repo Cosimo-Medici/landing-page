@@ -52,6 +52,6 @@
 .capacity-results p { font-size:14px; line-height:1.6; margin-top:22px; }
 .guide-page :focus-visible { outline:2px solid var(--site-accent); outline-offset:4px; }
 @media(max-width:768px) { .guide-grid,.capacity-layout { grid-template-columns:1fr; } .capacity-results { position:static; } .guide-lead { font-size:18px; } .guide-header { padding-top:calc(var(--site-header-height) + 25px); } .guide-breadcrumb { margin-bottom:28px; } }
-@media(max-width:640px) { .guide-body { font-size:16px; } .guide-card,.guide-cta,.guide-note { padding:22px; } .guide-table th,.guide-table td { padding:12px; } .guide-header h1 { font-size:44px; } .guide-body blockquote { padding:20px; font-size:25px; } }
+@media(max-width:640px) { .guide-body { font-size:16px; } .guide-card,.guide-cta,.guide-note { padding:22px; } .guide-table th,.guide-table td { padding:12px; } .guide-table table:has(thead th:nth-child(3)) { min-width:560px; } .guide-header h1 { font-size:44px; } .guide-body blockquote { padding:20px; font-size:25px; } }
 @media(max-width:380px) { .guide-header h1 { font-size:38px; } .guide-card,.guide-cta { padding:18px; } }
 @media print { .site-nav,.site-footer,.theme-toggle,.motion-toggle,.guide-cta,.guide-contents,.guide-breadcrumb { display:none!important; } .guide-header { padding-top:0; } .guide-header,.guide-body { width:100%; } .guide-table { overflow:visible; } .capacity-results { position:static; } }
