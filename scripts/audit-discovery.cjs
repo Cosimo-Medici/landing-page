@@ -9,7 +9,7 @@ const get=async(route,headers={})=>{const response=await fetch(new URL(route,ori
 const text=async(route,headers)=>(await get(route,headers)).text();
 async function main(){
  const manifest=JSON.parse(await text('/discovery-manifest.json'));
- assert.equal(manifest.pages.length,11,'Expected discovery page count');
+ assert.equal(manifest.pages.length,13,'Expected discovery page count');
  const sitemap=await text('/sitemap.xml');
  const assets=new Set();let links=0;
  for(const page of manifest.pages){
