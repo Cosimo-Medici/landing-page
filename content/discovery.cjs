@@ -112,7 +112,7 @@ You can use our two fictional <a href="/examples/fund-reporting/">fund</a> and <
  lead:'Claude and similar models can prepare financial work, and Cosimo runs Claude models alongside others. The decision is about what your firm needs around the model: who runs the process, who checks it, and who maintains it.',
  faqHeading:'Questions about this comparison',
  sections:[
- ['The model can do the work',`Teams building with Claude Code, skills, and connectors prepare reports, reconciliations, and review packages today. An agent harness is the set of skills, scripts, connections, and scheduling a team assembles around a model. A capable builder can assemble one that works well. Cosimo runs Claude models alongside models from OpenAI, so this guide does not compare model capability.
+ ['The model can do the work',`Teams building with Claude Code, skills, and connectors prepare reports, reconciliations, and review packages today. An agent harness is the set of skills, scripts, connections, and scheduling a team assembles around a model. A capable builder can assemble one that works well. Cosimo runs Claude models alongside models from OpenAI and open-weight models, so this guide does not compare model capability.
 AI made preparing the work cheap and left checking it expensive. Hours saved equal preparation hours removed minus review hours added. The more a team uses AI, the more output a person has to check before signing. That arithmetic applies equally to your own build and to Cosimo.`],
  ['What a firm needs around the model',`A recurring financial process is finished when seven conditions hold. Write them down before you compare options.
 <ul><li>The output is correct.</li><li>The person who signs can confirm it in less time than it took to prepare.</li><li>It comes out the same way next period.</li><li>Someone other than the builder can run it.</li><li>It runs when the builder’s laptop is closed, and after the builder has left the firm.</li><li>Its access and data handling pass your vendor review.</li><li>It costs less than the time it frees.</li></ul>
@@ -121,10 +121,11 @@ Check your own build against each condition first. Then ask four more questions.
 Building is the right choice when a capable builder is the only user and no reviewer needs a record of the work. Keep the build in that case. An existing accounting or loan system can also be the better choice when it produces the report from complete, consistent fields.
 An administrator, accountant, or outside service provider takes a different role. That firm owns a service and its professional responsibilities. Cosimo works alongside your administrator and is not your administrator of record.`],
  ['Compare both on the same process',`Choose one recurring process and run it both ways: on your build and in Cosimo. Measure preparation hours, review hours, and correction hours across two cycles. Change a source format before the second cycle and record who repairs the process. Ask a teammate who did not build it to run each option. The <a href="/guides/evaluate-financial-ai/">evaluation checklist</a> lists the cases to include.
-A Cosimo lesson is a SKILL.md folder, the same format as a Claude skill, so the skills your team wrote move over. <a href="/platform/">Read how the platform works</a>, or see <a href="/building-with-claude/">what moves over when you bring your skills</a>. The <a href="/product-facts/">product facts</a> list the scope and setup.`]
+In Cosimo, every figure traces to its source document and its calculation, and a figure that Cosimo can’t verify goes to a person.
+A Cosimo lesson is a SKILL.md folder, the same format as a Claude skill, so the skills your team wrote move over. A lesson is private or shared. Your existing Model Context Protocol (MCP) servers connect by URL and authentication. <a href="/platform/">Read how the platform works</a>, or see <a href="/building-with-claude/">what moves over when you bring your skills</a>. The <a href="/product-facts/">product facts</a> list the scope and setup.`]
  ],faq:[
- ['Does Cosimo use Claude?','Yes. Cosimo runs models from Anthropic and OpenAI through Amazon Bedrock. Three effort levels each map to a model, and an administrator can change the mapping for your organization.'],
- ['We already built skills. Do we start again?','No. Cosimo lessons are SKILL.md folders, the same format as Claude skills. Most of a skill moves as written. Connections and file paths need setup.'],
+ ['Does Cosimo use Claude?','Yes. Cosimo runs models from Anthropic and OpenAI, and open-weight models, on Amazon Bedrock. Three effort levels map to different models, and an administrator can change the mapping for your organization.'],
+ ['We already built skills. Do we start again?','No. Cosimo lessons are SKILL.md folders, the same format as Claude skills. Most of a skill moves as written. Connections and file paths need setup. A lesson is private or shared, and Cosimo keeps every prior version.'],
  ['When is our own build enough?','Your own build is enough when a capable builder is the only user and no reviewer needs a record of the work. The comparison changes when a second person runs the process or checks the figures before signing.']
  ],related:['evaluate-financial-ai','investor-reporting'],cta:'Compare one process both ways',
  note:'Claude is a trademark of Anthropic, PBC. Medici & Company is not affiliated with, endorsed by, or sponsored by Anthropic.'
@@ -134,34 +135,38 @@ A Cosimo lesson is a SKILL.md folder, the same format as a Claude skill, so the 
 const standalone = [
 {
  route:'/platform/',crumb:'Platform',category:'Product',title:'How Cosimo works',
- description:'How Cosimo works: review evidence, lessons, workflows and watches, the cloud sandbox, model choice, connections, approvals, and setup.',
+ description:'How Cosimo works: verified figures, lessons and memory, workflows and watches, the cloud sandbox, model choice, connections, approvals, dashboards, and setup.',
  lead:'Cosimo is a hosted system built around AI models. Each component addresses a specific problem in recurring financial work. This page describes each component and the problem it addresses.',
  contentsLabel:'On this page',
  table:['Cosimo components',['Component','What it is','The problem it addresses'],[
-  ['Review evidence','Source citations, and a run history that keeps the code behind each calculation','A reviewer redoes the work to trust it'],
-  ['Lessons','Shared procedures stored as SKILL.md folders, with every prior version kept','A method lives in one person’s files'],
+  ['Verification','A source document and a calculation behind every figure, and a mark on each verified figure','A reviewer redoes the work to trust it'],
+  ['Lessons and memory','Procedures stored as SKILL.md folders, and memory; both private or shared, versioned, and reversible','A method lives in one person’s files'],
   ['Workflows and watches','Chained steps that start by hand, on a schedule, or from a watch','A process depends on one person starting it'],
   ['Cloud sandbox','A hosted environment that runs code and builds files','A process stops when a laptop is closed'],
-  ['Model choice','Anthropic and OpenAI models through Amazon Bedrock, mapped to three effort levels','A process depends on one model provider'],
-  ['Connections','Google and Microsoft accounts, and a hosted browser for systems with no API','People copy records between systems by hand'],
+  ['Model choice','Frontier and open-weight models on Amazon Bedrock, mapped to three effort levels','A process depends on one model provider'],
+  ['Connections','Google and Microsoft accounts, custom Model Context Protocol endpoints, and a browser for systems with no API','People copy records between systems by hand'],
   ['Approvals','A person approves anything that reaches someone else','A message or a change goes out unreviewed'],
-  ['Dashboards (in development)','Views built from workflow outputs; not available yet','A team rebuilds the same summary each period']
+  ['Dashboards','Views built from workflow outputs and edited by conversation','A team rebuilds the same summary each period']
  ]],
  sections:[
  ['How checking works',`AI made preparing the work cheap and left checking it expensive. Hours saved equal preparation hours removed minus review hours added. Cosimo is built so the person who signs can check the work in less time than preparing it takes.
-Answers drawn from your documents cite the source record. Calculations run as code, and the run history keeps that code with the output, so a reviewer can read how a number was produced. The history also keeps each step, its transcript, and the output files.
-Cosimo flags missing records and conflicting figures for review. A run can pause and ask a person for input.`],
- ['Lessons',`Lessons are reusable procedures stored as SKILL.md folders, the same format as Claude skills. Every lesson is shared across your organization. Cosimo keeps each prior version, and you can restore any of them.`],
+Every figure traces to its source document and its calculation. Calculations live in a shared calculation library, so the same formula runs every time. A verified figure carries a mark, and a figure that Cosimo can’t verify goes to a person.
+The run history keeps the full output and the calculation trail for each run, so a reviewer can read how a number was produced. The history also keeps each step and its transcript.
+Missing records go into a gap ledger, and Cosimo follows up on each gap before the next run. Conflicting versions of a record go to the workflow owner. A run can pause and ask a person for input.`],
+ ['Lessons and memory',`Lessons are reusable procedures stored as SKILL.md folders, the same format as Claude skills. A lesson is private to one person or shared across your organization. Each lesson is versioned and reversible: Cosimo keeps each prior version, and you can restore any of them.
+Memory works the same way: private or shared, versioned, and reversible. Your team shares lessons and memory without syncing files.`],
  ['Workflows and watches',`A workflow chains steps into one run. Start it by hand, on a schedule, or from a watch. A watch detects a change in email, a calendar, Google Drive or SharePoint files, or a web page. It checks at a set interval, and the shortest interval is five minutes.
 Any teammate can run a shared workflow from the web app: open it, fill in the inputs, and press Run. Cosimo emails you when a run finishes or needs a person.`],
  ['The cloud sandbox',`Cosimo works in its own cloud sandbox. It runs Python, installs the packages a task needs, and builds spreadsheets, documents, presentations, PDFs, and HTML files. Nothing runs on a team member’s computer.`],
- ['Model choice',`Cosimo runs models from Anthropic and OpenAI through Amazon Bedrock. Three effort levels (Low, Medium, and High) each map to a model, and an administrator can change the mapping for your organization. Each workflow step can use its own level. Cosimo meters token usage and cost for your organization.
+ ['Model choice',`Cosimo runs frontier and open-weight models on Amazon Bedrock, hosted in the United States. They include models from Anthropic and OpenAI, and open-weight models such as Kimi K2. Three effort levels (Low, Medium, and High) map to different models, and an administrator can change the mapping for your organization. Each workflow step can use its own level, and small tasks go to cheaper models.
+Cosimo meters token usage for your organization. Token usage passes through at cost, or you bring your own API keys.
 Model choice is an operating control. When a model provider has an outage or changes its prices, an administrator maps an effort level to another model.`],
- ['Connections',`Cosimo connects to Google Drive, SharePoint, Gmail, Outlook, and Google and Outlook calendars. Outlook access covers reading and drafts. Microsoft access uses a registered Microsoft Entra application that your tenant administrator consents to.
-For systems with no API, Cosimo operates the site in a hosted cloud browser. You sign in yourself, and Cosimo does not receive your password.
-Your source documents stay in your Drive or SharePoint. Cosimo keeps an indexed copy in storage dedicated to your organization.`],
+ ['Connections',`Cosimo connects to Google Drive, SharePoint, Gmail, Outlook, and Google Calendar. Cosimo is registered as a Microsoft application, and your tenant administrator grants admin consent. You add a custom Model Context Protocol (MCP) endpoint by entering its URL and authentication.
+For systems that have no API, such as bank portals and state records, Cosimo operates the site in a hosted cloud browser. You sign in yourself, and Cosimo does not receive your password.
+Your data stays in your SharePoint or Drive and syncs in 30 to 90 seconds.`],
  ['Approvals',`Anything that reaches another person, such as sending an email or sharing a file, requires approval every time. Edits and deletes of existing material require approval too, unless a person saved a time-limited permission for them. Cosimo records each approval request and its outcome.`],
- ['Dashboards (in development)',`Dashboards are in development and are not available yet. The design builds a dashboard from workflow outputs, and a person changes it by conversation.`],
+ ['Dashboards',`Cosimo builds a dashboard from workflow outputs, and a person edits it by conversation.
+Auditor and investor views with restricted panels arrive in early 2027. A controller sets what each outside viewer can open.`],
  ['Configured with you',`We configure the first process with the people who do the work today. Your team agrees the sources, calculations, output format, and review requirements, then tests the result. Cosimo keeps the agreed method for the next run, and we update it with your team when requirements change.
 Cosimo works alongside your administrator, accountant, and advisers. It is not your administrator of record. Accounting, valuation, and professional sign-off remain with the people responsible for them.
 Read the <a href="/product-facts/">product facts</a> for scope and commercial setup, and the <a href="/faq.html">setup FAQ</a> for common questions. If your team builds with Claude, read <a href="/building-with-claude/">how to bring your skills</a>.`]
@@ -174,24 +179,27 @@ Read the <a href="/product-facts/">product facts</a> for scope and commercial se
  contentsLabel:'On this page',
  faqHeading:'Questions from builders',
  sections:[
- ['Your skills move over',`A Cosimo lesson is a SKILL.md folder, the same format as a Claude skill. Most of a skill moves as written. Connections and file paths need setup, and we do that work with you.
-Every lesson is shared across your organization. Cosimo keeps each prior version, and you can restore any of them. A saved change applies to the whole organization.`],
+ ['Your skills move over',`A Cosimo lesson is a SKILL.md folder, the same format as a Claude skill. Most of a skill moves as written. Connections and file paths need setup, and we do that work with you. Your existing Model Context Protocol (MCP) servers connect by URL and authentication.
+A lesson is private to you or shared across your organization. Each lesson is versioned and reversible: Cosimo keeps each prior version, and you can restore any of them. A saved change to a shared lesson applies to the whole organization.
+Memory works the same way: private or shared, versioned, and reversible. Your team shares lessons and memory without syncing files.`],
  ['They run without your laptop',`Cosimo works in its own cloud sandbox. It runs Python, installs the packages a task needs, and builds spreadsheets, documents, presentations, PDFs, and HTML files. Nothing runs on a team member’s computer.
 A workflow chains steps into one run. Start it by hand, on a schedule, or from a watch. A watch detects a change in email, a calendar, Google Drive or SharePoint files, or a web page. It checks at a set interval, and the shortest interval is five minutes. Cosimo emails you when a run finishes or needs a person.`],
  ['Your teammates run them from a screen',`Any teammate can run a shared workflow from the web app: open it, fill in the inputs, and press Run. Input steps collect text or files through a form. The teammate needs no terminal and no local setup.`],
  ['A reviewer can follow the numbers',`AI made preparing the work cheap and left checking it expensive. Hours saved equal preparation hours removed minus review hours added. The more your team uses AI, the more output someone has to check. That applies to your own build and to Cosimo.
-Cosimo is built so the person who signs can check the work in less time than preparing it takes. Answers drawn from your documents cite the source record. Calculations run as code, and the run history keeps that code with the output, so a reviewer can read how a number was produced.
-Cosimo flags missing records and conflicting figures for review. A run can pause and ask a person for input.`],
- ['A choice of models',`Cosimo runs models from Anthropic and OpenAI through Amazon Bedrock. Three effort levels (Low, Medium, and High) each map to a model. An administrator can change the mapping for your organization, and each workflow step can use its own level.
+Cosimo is built so the person who signs can check the work in less time than preparing it takes. Every figure traces to its source document and its calculation. Calculations live in a shared calculation library, so the same formula runs every time. A verified figure carries a mark, and a figure that Cosimo can’t verify goes to a person.
+The run history keeps the full output and the calculation trail for each run, so a reviewer can read how a number was produced.
+Missing records go into a gap ledger, and Cosimo follows up on each gap before the next run. Conflicting versions of a record go to the workflow owner. A run can pause and ask a person for input.`],
+ ['A choice of models',`Cosimo runs frontier and open-weight models on Amazon Bedrock, hosted in the United States. They include models from Anthropic and OpenAI, and open-weight models such as Kimi K2. Three effort levels (Low, Medium, and High) map to different models, and small tasks go to cheaper models. An administrator can change the mapping for your organization, and each workflow step can use its own level.
+Token usage passes through at cost, or you bring your own API keys.
 Model choice is an operating control. When a model provider has an outage or changes its prices, an administrator maps an effort level to another model. It is not a judgment about any model.`],
  ['For the person who signs off on the tooling',`This section is for finance and compliance leads. Ask two questions about the processes your people built on an approved model. Where is each process written down? Who other than its builder has read it?
-In Cosimo, each process is on record. Lessons are shared and versioned. The run history keeps each step, its transcript, the code it ran, and the output files. Sending to another person requires approval every time. Edits and deletes require approval unless a person saved a time-limited permission.
-Your source documents stay in your Drive or SharePoint. Cosimo keeps an indexed copy in storage dedicated to your organization. Cosimo works alongside your administrator and is not your administrator of record.`],
+In Cosimo, each process is on record. Lessons are versioned. The run history keeps each step, its transcript, the full output, and the calculation trail. Sending to another person requires approval every time. Edits and deletes require approval unless a person saved a time-limited permission.
+Your data stays in your SharePoint or Drive and syncs in 30 to 90 seconds. Cosimo works alongside your administrator and is not your administrator of record.`],
  ['A first project',`Pick one skill you already run. Run it in Cosimo with the same inputs. Compare the output, then compare the time a reviewer needs to check each version. Ask a teammate to run it without your help.
 Keep your own build if it wins that comparison. The guide <a href="/guides/agent-harness-or-cosimo/">Build your own agent harness, or run Cosimo?</a> sets out the full comparison, and <a href="/platform/">How Cosimo works</a> describes each component.`]
  ],faq:[
  ['Is moving a skill to Cosimo zero work?','No. Most of a skill moves as written because the format is the same. Connections, file paths, and any script that depends on your own computer need setup.'],
- ['Does Cosimo replace Claude?','No. Cosimo runs Claude models, alongside models from OpenAI, through Amazon Bedrock. Cosimo is a system around the model: shared lessons, hosted runs, approvals, and run history.'],
+ ['Does Cosimo replace Claude?','No. Cosimo runs Claude models, alongside models from OpenAI and open-weight models, on Amazon Bedrock. Cosimo is a system around the model: shared lessons, hosted runs, approvals, and run history.'],
  ['Can we keep using Claude Code for our own work?','Yes. Keep your own setup for individual work. Move a process to Cosimo when other people need to run it or check it.']
  ],
  note:'Claude is a trademark of Anthropic, PBC. Medici & Company is not affiliated with, endorsed by, or sponsored by Anthropic.',
