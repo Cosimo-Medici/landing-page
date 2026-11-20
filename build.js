@@ -12,10 +12,22 @@ const path = require('path');
 const crypto = require('crypto');
 
 const SRC = path.join(__dirname, 'src');
-const DIST = path.join(__dirname, 'dist');
+// Validate all explicit preview inputs before touching either output directory.
+const args = process.argv.slice(2), previewFiles = [];
+for (let i = 0; i < args.length; i += 2) {
+  if (args[i] !== '--article-preview' || !args[i + 1] || args[i + 1].startsWith('--')) {
+    throw new Error('Usage: node build.js [--article-preview /absolute/path/article.json]');
+  }
+  previewFiles.push(args[i + 1]);
+}
+const articles = previewFiles.length ? require('./lib/articles.cjs') : null;
+const previews = articles ? articles.loadPreviews(previewFiles) : [];
+const outputName = previews.length ? 'dist-preview' : 'dist';
+const DIST = path.join(__dirname, outputName);
 
 // Files to hash (source path relative to SRC → directory in dist)
 const HASHABLE = [
+  ...(previews.length ? [{ src: 'css/articles.css', dir: 'css' }] : []),
   { src: 'css/fonts.css', dir: 'css' },
   { src: 'css/accessibility.css', dir: 'css' },
   { src: 'js/accessibility.js', dir: 'js' },
@@ -149,4 +161,27 @@ fs.cpSync(path.join(SRC, 'public/fonts'), path.join(DIST, 'fonts'), { recursive:
 fs.cpSync(path.join(SRC, 'public/product-demo'), path.join(DIST, 'product-demo'), { recursive: true });
 fs.cpSync(path.join(SRC, 'public/brand'), path.join(DIST, 'brand'), { recursive: true });
 
-console.log(`\nBuild complete → dist/`);
+if (previews.length) {
+  const shell = fs.readFileSync(path.join(SRC, 'about.html'), 'utf8');
+  const config = JSON.parse(fs.readFileSync(path.join(__dirname, 'serve.json'), 'utf8'));
+  config.headers.push({ source: '**', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' }] });
+  for (const article of previews) {
+    let html = articles.renderPreview(article, shell);
+    for (const r of replacements) html = html.split(`/${r.original}`).join(`/${r.hashed}`);
+    const destination = `${article.route}index.html`;
+    const file = path.join(DIST, destination);
+    ensureDir(path.dirname(file));
+    fs.writeFileSync(file, html);
+    config.rewrites.unshift(...[article.route, article.route.slice(0, -1)].map(source => ({ source, destination })));
+    console.log(`  ${destination} — unpublished local preview`);
+  }
+  fs.writeFileSync(path.join(DIST, 'serve.json'), JSON.stringify(config, null, 2) + '\n');
+  fs.writeFileSync(path.join(DIST, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
+  // Only public identifiers/hashes are copied; private evidence paths stay private.
+  fs.writeFileSync(path.join(DIST, 'article-preview-manifest.json'), JSON.stringify({ schemaVersion: 1, status: 'local_preview_only',
+    articles: previews.map(({ metadata: m, route }) => ({ articleId: m.articleId, sourceId: m.sourceId,
+      originatingContentId: m.titleMetadata.originatingContentId, bodySha256: m.hashes.body, route,
+      canonicalStatus: m.canonicalStatus, publishedAt: null })) }, null, 2) + '\n');
+}
+
+console.log(`\nBuild complete → ${outputName}/`);

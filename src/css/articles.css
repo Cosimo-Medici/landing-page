@@ -1,0 +1,19 @@
+/* Article previews inherit the existing sub-page typography and site chrome. */
+.article-preview-note {
+  border-left: 2px solid var(--border-strong);
+  padding-left: 1rem;
+  margin-bottom: 2.5rem;
+  overflow-wrap: anywhere;
+}
+.article-preview-note p {
+  font-size: .75rem;
+}
+.article-references {
+  overflow-wrap: anywhere;
+}
+.article-cta {
+  padding-top: 2rem;
+}
+.article-preview .article-cta a {
+  color: var(--cream);
+}

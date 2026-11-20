@@ -1,0 +1,13 @@
+.case-library { max-width: 1120px; }
+.case-library a { color: var(--cream); }
+.case-library .case-intro { max-width: 65ch; margin-bottom: 3rem; line-height: 1.7; }
+.case-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); border: 1px solid var(--border-strong); }
+.case-grid article { padding: 2rem; min-width: 0; }
+.case-grid article + article { border-left: 1px solid var(--border-strong); }
+.case-grid h2 { font-family: 'EB Garamond',serif; font-size: 2rem; font-weight: 400; margin: 1rem 0; }
+.case-grid p { line-height: 1.6; margin: 1rem 0; }
+.case-library video { display: block; width: 100%; height: auto; aspect-ratio: 16/9; margin: 2rem 0; background: var(--bg-surface); }
+.case-disclosure { border-left: 3px solid var(--accent); padding: 1rem 1.5rem; line-height: 1.6; background: var(--bg-elevated); }
+.case-library .legal-body { overflow-wrap: anywhere; }
+@media(max-width:768px){ .case-grid { grid-template-columns: 1fr; } .case-grid article + article { border-left: 0; border-top: 1px solid var(--border-strong); } }
+@media(max-width:640px){ .case-grid article { padding: 1.25rem; } .case-disclosure { padding: .75rem 1rem; } }
