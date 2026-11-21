@@ -140,6 +140,30 @@
     {
       "source": "/insurance/",
       "destination": "/insurance/index.html"
+    },
+    {
+      "source": "/reverse-demo",
+      "destination": "/reverse-demo/index.html"
+    },
+    {
+      "source": "/reverse-demo/",
+      "destination": "/reverse-demo/index.html"
+    },
+    {
+      "source": "/spot-the-error",
+      "destination": "/spot-the-error/index.html"
+    },
+    {
+      "source": "/spot-the-error/",
+      "destination": "/spot-the-error/index.html"
+    },
+    {
+      "source": "/insights/sequoia-permanent-capital",
+      "destination": "/insights/sequoia-permanent-capital/index.html"
+    },
+    {
+      "source": "/insights/sequoia-permanent-capital/",
+      "destination": "/insights/sequoia-permanent-capital/index.html"
     }
   ]
 }

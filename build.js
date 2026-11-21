@@ -14,20 +14,30 @@ const crypto = require('crypto');
 const SRC = path.join(__dirname, 'src');
 // Validate all explicit preview inputs before touching either output directory.
 const args = process.argv.slice(2), previewFiles = [];
-for (let i = 0; i < args.length; i += 2) {
+// --release-candidate builds every page in release/manifest.json into dist-release/
+// (noindex, loopback review). An ordinary build ships only pages marked ship: true.
+const releaseCandidate = args[0] === '--release-candidate' && args.length === 1;
+for (let i = 0; !releaseCandidate && i < args.length; i += 2) {
   if (args[i] !== '--article-preview' || !args[i + 1] || args[i + 1].startsWith('--')) {
-    throw new Error('Usage: node build.js [--article-preview /absolute/path/article.json]');
+    throw new Error('Usage: node build.js [--article-preview /absolute/path/article.json | --release-candidate]');
   }
   previewFiles.push(args[i + 1]);
 }
 const articles = previewFiles.length ? require('./lib/articles.cjs') : null;
 const previews = articles ? articles.loadPreviews(previewFiles) : [];
-const outputName = previews.length ? 'dist-preview' : 'dist';
+const outputName = releaseCandidate ? 'dist-release' : previews.length ? 'dist-preview' : 'dist';
 const DIST = path.join(__dirname, outputName);
+const RELEASE_MANIFEST = path.join(__dirname, 'release/manifest.json');
+const releasePages = (fs.existsSync(RELEASE_MANIFEST) && !previews.length)
+  ? JSON.parse(fs.readFileSync(RELEASE_MANIFEST, 'utf8')).pages.filter(p => releaseCandidate || p.ship === true)
+  : [];
+if (releaseCandidate && !releasePages.length) throw new Error('release/manifest.json has no pages. Run scripts/build-release.cjs first.');
+const releaseAssets = [...new Set(releasePages.flatMap(p => p.assets))];
 
 // Files to hash (source path relative to SRC → directory in dist)
 const HASHABLE = [
   ...(previews.length ? [{ src: 'css/articles.css', dir: 'css' }] : []),
+  ...releaseAssets.filter(a => !(previews.length && a === 'css/articles.css')).map(a => ({ src: a, dir: path.dirname(a) })),
   { src: 'css/fonts.css', dir: 'css' },
   { src: 'css/accessibility.css', dir: 'css' },
   { src: 'js/accessibility.js', dir: 'js' },
@@ -182,6 +192,31 @@ if (previews.length) {
     articles: previews.map(({ metadata: m, route }) => ({ articleId: m.articleId, sourceId: m.sourceId,
       originatingContentId: m.titleMetadata.originatingContentId, bodySha256: m.hashes.body, route,
       canonicalStatus: m.canonicalStatus, publishedAt: null })) }, null, 2) + '\n');
+}
+
+if (releasePages.length) {
+  const crypto2 = require('crypto');
+  const urls = [];
+  for (const page of releasePages) {
+    let html = fs.readFileSync(path.join(__dirname, 'release', page.file), 'utf8');
+    if (crypto2.createHash('sha256').update(html).digest('hex') !== page.htmlSha256) throw new Error(`release/${page.file} differs from its manifest hash. Regenerate with scripts/build-release.cjs.`);
+    for (const r of replacements) html = html.split(`/${r.original}`).join(`/${r.hashed}`);
+    if (releaseCandidate) html = html.replace('<meta name="robots" content="index, follow">', '<meta name="robots" content="noindex, nofollow, noarchive">');
+    const file = path.join(DIST, page.file);
+    ensureDir(path.dirname(file));
+    fs.writeFileSync(file, html);
+    urls.push(page.canonical);
+    console.log(`  ${page.file} — release page${releaseCandidate ? ' (local candidate)' : ''}`);
+  }
+  const sitemapFile = path.join(DIST, 'sitemap.xml');
+  const sitemap = fs.readFileSync(sitemapFile, 'utf8');
+  fs.writeFileSync(sitemapFile, sitemap.replace('</urlset>', urls.filter(u => !sitemap.includes(`<loc>${u}</loc>`)).map(u => `  <url><loc>${u}</loc></url>\n`).join('') + '</urlset>'));
+  if (releaseCandidate) {
+    const config = JSON.parse(fs.readFileSync(path.join(__dirname, 'serve.json'), 'utf8'));
+    config.headers.push({ source: '**', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' }] });
+    fs.writeFileSync(path.join(DIST, 'serve.json'), JSON.stringify(config, null, 2) + '\n');
+    fs.writeFileSync(path.join(DIST, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
+  }
 }
 
 console.log(`\nBuild complete → ${outputName}/`);

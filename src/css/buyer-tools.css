@@ -13,3 +13,5 @@
 /* Keep the inherited floating control from covering a statement amount on mobile. */
 .theme-toggle { position: static; display: block; margin: 1rem auto 2rem; }
 @media (max-width: 640px) { .buyer-tools form { grid-template-columns: 1fr; } }
+#request-actions p:last-child { display: flex; flex-wrap: wrap; gap: .75rem; }
+#request-actions .btn-line { display: inline-block; }
