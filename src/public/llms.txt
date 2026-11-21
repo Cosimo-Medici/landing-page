@@ -1,38 +1,53 @@
 # Cosimo by Medici & Company
 
-> AI for recurring financial operations: reports, checks, follow-ups, and review packs for banks, funds, insurance teams, and financial services firms.
+> Cosimo gives financial operations teams more capacity by taking on recurring work using their own records, procedures and reporting formats.
 
 ## Product
 
-Cosimo is the product. Medici & Company is the company. Workflows are configured and tested with the team around its sources, reporting format, and review process. The team checks the draft, resolves open questions, and approves the final version.
+Cosimo is an AI agent for financial operations from Medici & Company. It brings source records through agreed preparation, checks and calculations into reports, review packages and follow-ups. The method is saved for subsequent runs with new inputs. The team resolves exceptions, retains professional sign-off and updates the process when requirements change. Principal examples are daily loan reviews for banks and investor reporting for funds; insurance and administration, accounting and advisory firms use the same approach for their recurring work.
+
+## Platform
+
+Cosimo is a hosted system built around AI models. Lessons are reusable procedures stored as SKILL.md folders, the same format as Claude skills. A lesson is private or shared, and every prior version is kept and can be restored. Memory works the same way: private or shared, versioned, and reversible. A team shares lessons and memory without syncing files. A workflow chains steps into one run and starts by hand, on a schedule, or from a watch. A watch detects a change in email, a calendar, Google Drive or SharePoint files, or a web page. Watches check at intervals; the shortest is five minutes. Cosimo works in a cloud sandbox that runs Python, installs packages, and builds spreadsheets, documents, presentations, PDFs, and HTML files. Nothing runs on a team member’s computer. A teammate runs a shared workflow from the web app with no terminal.
+
+Cosimo runs frontier and open-weight models on Amazon Bedrock, hosted in the United States. They include models from Anthropic and OpenAI, and open-weight models such as Kimi K2. Low, Medium, and High effort levels map to different models, and small tasks go to cheaper models. An administrator can change the mapping, and each workflow step can use its own level. Token usage passes through at cost, or the client brings its own API keys. Connections cover Google Drive, SharePoint, Gmail, Outlook, and Google Calendar. A custom Model Context Protocol (MCP) endpoint is added by URL and authentication. Cosimo is registered as a Microsoft application, and a tenant administrator grants admin consent. A hosted browser operates systems that have no API, such as bank portals and state records, after the person signs in themselves. Client data stays in the client’s SharePoint or Drive and syncs in 30 to 90 seconds.
+
+Verification: every figure traces to its source document and its calculation. Calculations live in a shared calculation library, so the same formula runs every time. A verified figure carries a mark, and a figure that Cosimo can’t verify goes to a person. The run history keeps each step, its transcript, the full output, and the calculation trail. Missing records go into a gap ledger, and Cosimo follows up on each gap before the next run. Conflicting versions go to the workflow owner. AI made preparing the work cheap and left checking it expensive: hours saved equal preparation hours removed minus review hours added. Cosimo is built so the person who signs can check the work in less time than preparing it takes. Dashboards are built from workflow outputs and edited by conversation. Auditor and investor views with restricted panels arrive in early 2027, so a controller sets what each outside viewer can open.
+
+## Teams already building with Claude
+
+Claude and similar models can prepare financial work, and Cosimo runs Claude models alongside others. Teams building with Claude Code, skills, and connectors can bring their skills: a Cosimo lesson uses the same SKILL.md format. Most of a skill moves as written; connections and file paths need setup. A lesson is private or shared, and a builder’s existing MCP servers connect by URL and authentication. The comparison rests on questions the firm asks of its own build. Can someone other than the builder run it? Does it run when the builder’s laptop is closed? Can the person signing trace a figure to its supporting record without redoing the work? Who maintains it when a source format changes? Claude is a trademark of Anthropic, PBC. Medici & Company is not affiliated with, endorsed by, or sponsored by Anthropic.
 
 ## Website pages
 
-- [Overview](/): Financial operations software for banks, funds, insurance teams, and financial services firms.
+- [Overview](/): AI agent for recurring financial operations, using each team’s records and procedures.
 - [Banks](/banks/): Loan activity reviews, borrower packs, account-file checks, and review preparation.
 - [Funds](/funds/): Reporting, portfolio updates, and investor requests; an interactive quarterly portfolio-update example.
 - [Insurance](/insurance/): Renewal preparation, submission checks, claims-file summaries, and document follow-ups.
-- [Financial Services](/services/): Client reporting, document collection, and review packs for administration, accounting, and advisory firms.
+- [Administrators & Advisers](/services/): Client reporting, document collection, and review packs for administration, accounting, and advisory firms.
 - [Real estate](/re/): LP reports, investor statements, capital call notices, and distribution notices.
 - [Venture capital](/vc/): Founder updates, portfolio metrics, cash and runway, and LP reporting.
 - [Private equity](/pe/): Company actuals and budgets, variance commentary, portfolio packs, and LP reporting.
 - [Private credit](/credit/): Borrower review packs, covenant worksheets, reporting follow-ups, and LP updates.
 - [Hedge funds](/hedge/): Investor letters, close exceptions, investor activity, and allocator response drafts.
+- [Platform](/platform/): How Cosimo works: verified figures, lessons and memory, workflows and watches, the cloud sandbox, model choice, connections, approvals, dashboards, and setup.
+- [Building with Claude](/building-with-claude/): For teams building with Claude Code, skills, and connectors: bring SKILL.md skills and run them for the firm.
+- [Build or run](/guides/agent-harness-or-cosimo/): Compare a team’s own agent setup with Cosimo on the same process.
 - [FAQ](/faq.html): What the product does, how the examples work, and how to start.
 - [About](/about.html): Product and company information.
 - [Our team](/founders.html): Eliot leads product, Shariq engineering, and Aamina clients.
-- [Extended description](/llms-full.txt): More detail on the proposed workflows and examples.
+- [Extended description](/llms-full.txt): More detail on the recurring processes and examples.
 
 ## Examples and claim boundaries
 
-The website examples use fictional records and prewritten outputs, not live product runs or customer results. Source links open sample records. The examples do not establish measured time savings, integration coverage, audit readiness, security certification, or guaranteed turnaround. Workflow-specific configuration and testing are required. The team retains review and approval.
+The website examples use fictional records and prewritten outputs, not live product runs or customer results. Source links open sample records. The examples do not establish measured time savings, integration coverage, audit readiness, security certification, or guaranteed turnaround. Process-specific configuration and testing are required. The team retains review and approval.
 
 ## Start with one process
 
-Email info@medici.ai with what your team prepares, where the information comes from, and which part takes the most time. Medici & Company works through a first workflow to test with the team. Scope and commercial terms are agreed before starting; evaluation starts with one task and one period of source files under NDA, written feasibility confirmation, and a review of the run and its sources. Model usage is charged at cost without markup; platform terms are agreed in conversation.
+Email info@medici.ai with what your team prepares, where the information comes from, and which part takes the most time. Medici & Company works through a first process to test with the team. Scope and commercial terms are agreed before starting; evaluation starts with one task and one period of source files under NDA, written feasibility confirmation, and a review of the run and its sources. Model usage is charged at cost without markup; platform terms are agreed in conversation.
 
 Website: https://cosimo.work
 
-## Tested product work
+## Actions and approvals
 
-The October 2026 product deck documents daily production use by live clients, nine of ten RE processes tested figure by figure on synthetic demonstration funds, and 83 calculation scripts with 1,822 passing tests. A quarterly report run for five properties and eight investors matched figures to the cent against an 88-row source sheet and raised five exceptions. These are specific validation results, separate from the illustrative website walkthroughs, not universal accuracy or timing guarantees. Approval rules are configurable per process and user; the product can send authorized communications.
+Cosimo can prepare work and perform supported actions through connected accounts. Sending to other people requires approval every time. Editing or deleting existing material requires approval too, unless a person saved a time-limited permission. Some actions confined to the user’s own account can be allowed on an ongoing basis. The specific connection, operation and approval requirements are established during setup.

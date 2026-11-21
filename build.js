@@ -38,6 +38,8 @@ const releaseAssets = [...new Set(releasePages.flatMap(p => p.assets))];
 const HASHABLE = [
   ...(previews.length ? [{ src: 'css/articles.css', dir: 'css' }] : []),
   ...releaseAssets.filter(a => !(previews.length && a === 'css/articles.css')).map(a => ({ src: a, dir: path.dirname(a) })),
+  { src: 'css/guides.css', dir: 'css' },
+  { src: 'js/reporting-capacity.js', dir: 'js' },
   { src: 'css/fonts.css', dir: 'css' },
   { src: 'css/accessibility.css', dir: 'css' },
   { src: 'js/accessibility.js', dir: 'js' },
@@ -170,6 +172,9 @@ fs.cpSync(path.join(SRC, 'public/fonts'), path.join(DIST, 'fonts'), { recursive:
 
 fs.cpSync(path.join(SRC, 'public/product-demo'), path.join(DIST, 'product-demo'), { recursive: true });
 fs.cpSync(path.join(SRC, 'public/brand'), path.join(DIST, 'brand'), { recursive: true });
+
+// Discovery pages run first so release pages append to the finished sitemap.
+require('./scripts/build-discovery.cjs')({src:SRC,dist:DIST,replacements});
 
 if (previews.length) {
   const shell = fs.readFileSync(path.join(SRC, 'about.html'), 'utf8');

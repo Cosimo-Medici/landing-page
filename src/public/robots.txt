@@ -2,17 +2,20 @@ User-agent: *
 Allow: /
 Sitemap: https://cosimo.work/sitemap.xml
 
-# Block training crawlers — content shouldn't be absorbed without attribution
+# Dedicated training crawlers remain blocked. Public marketing pages are
+# available to search and user-directed retrieval. No private app data is here.
 User-agent: GPTBot
 Disallow: /
 
+# Google couples Gemini grounding and training under this token. Allow public
+# marketing content for discovery in Gemini. Ordinary Google Search is unaffected.
 User-agent: Google-Extended
-Disallow: /
+Allow: /
 
 User-agent: CCBot
 Disallow: /
 
-# Allow citation/search crawlers — these generate citations and recommendations
+# Search access makes pages eligible; it does not guarantee recommendations.
 User-agent: OAI-SearchBot
 Allow: /
 
@@ -23,4 +26,13 @@ User-agent: ChatGPT-User
 Allow: /
 
 User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Perplexity-User
 Allow: /
