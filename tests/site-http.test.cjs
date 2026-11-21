@@ -2,7 +2,7 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const origin = process.env.SITE_URL || 'http://localhost:3002';
-const pages = ['/', '/about.html', '/faq.html', '/founders.html', '/accessibility.html', '/privacy.html', '/terms.html', ...['banks','funds','insurance','services','re','vc','pe','credit','hedge'].map(s => `/${s}/`), '/product-demo/index.html', '/platform/', '/platform', '/building-with-claude/', '/building-with-claude', '/guides/agent-harness-or-cosimo/', '/guides/agent-harness-or-cosimo', '/product-facts/', '/guides/'];
+const pages = ['/', '/about.html', '/faq.html', '/founders.html', '/accessibility.html', '/privacy.html', '/terms.html', ...['banks','funds','insurance','services','re','vc','pe','credit','hedge'].map(s => `/${s}/`), '/product-demo/index.html', '/platform/', '/platform', '/building-with-claude/', '/building-with-claude', '/guides/agent-harness-or-cosimo/', '/guides/agent-harness-or-cosimo', '/product-facts/', '/guides/', '/reverse-demo/', '/reverse-demo', '/spot-the-error/', '/spot-the-error'];
 
 test('every published page and its browser-loaded assets resolve under the production server rules', async () => {
   for (const route of pages) {
@@ -21,6 +21,7 @@ test('every published page and its browser-loaded assets resolve under the produ
       }
       if (/\.css$/.test(url.pathname)) {
         const css = await asset.text();
+        assert.doesNotMatch(css, /@import\s*(?:url\()?["']?https?:\/\//, `External @import in ${url}`);
         for (const font of css.matchAll(/url\(['"]?([^)'" ]+\.(?:ttf|otf|woff2?))['"]?\)/g)) {
           const fontURL = new URL(font[1], url);
           assert.equal(fontURL.origin, origin, `External font: ${fontURL}`);
@@ -60,6 +61,19 @@ test('FAQ structured data repeats the visible answers and all FAQ rows share the
     assert.equal(plain(summary), schema.mainEntity[index].name);
     assert.equal(plain(answer), schema.mainEntity[index].acceptedAnswer.text);
   });
+});
+
+test('security.txt is published as plain text', async () => {
+  const response = await fetch(new URL('/.well-known/security.txt', origin));
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get('content-type'), /text\/plain/);
+  assert.match(await response.text(), /Contact: mailto:info@medici\.ai/);
+});
+
+test('unknown paths return the custom 404 page', async () => {
+  const response = await fetch(new URL('/this-page-does-not-exist', origin));
+  assert.equal(response.status, 404);
+  assert.match(await response.text(), /Page not found/);
 });
 
 test('the retired comparison guide redirects permanently to its replacement', async () => {

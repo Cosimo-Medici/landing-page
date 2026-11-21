@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "note": "build.js copies a page into dist/ and the sitemap only when ship is true. Set ship only after the release decision.",
+  "generatedAt": "2026-11-21T02:59:37.906Z",
+  "shellSha256": "c561326e0d4ff1e1d83f6cf20f49122d7c70a6cddf3fbefa7ec8df688b35f7e2",
+  "pages": [
+    {
+      "id": "reverse-demo",
+      "route": "/reverse-demo/",
+      "file": "reverse-demo/index.html",
+      "title": "Describe your workflow — Cosimo",
+      "description": "Describe a reporting or review process, the output you need and who checks it. Cosimo’s team replies to scope a review.",
+      "tool": "reverse-demo",
+      "assets": [
+        "css/buyer-tools.css",
+        "js/buyer-intake.js",
+        "js/buyer-intake-page.js"
+      ],
+      "claims": [
+        {
+          "text": "your email app opens a message to info@medici.ai",
+          "source": "src/js/buyer-intake.js SALES.destination; same address as every existing site contact link"
+        },
+        {
+          "text": "This page accepts no files",
+          "source": "src/js/buyer-intake.js prepare() rejects any field outside FIELDS; no file input exists"
+        },
+        {
+          "text": "Before a real data run, we agree the permitted files, access and retention, technical scope, time and cost",
+          "source": "docs/buyer-tools-preview.md handoff requirements (EXE-68, EXE-86); existing preview copy"
+        }
+      ],
+      "canonical": "https://cosimo.work/reverse-demo/",
+      "htmlSha256": "f43d3b5920e1288b16ddf445ee794f50c2c1628e96df21ebf8976ef835d37951",
+      "ship": true
+    },
+    {
+      "id": "spot-the-error",
+      "route": "/spot-the-error/",
+      "file": "spot-the-error/index.html",
+      "title": "Spot the error — Cosimo",
+      "description": "A fictional capital account statement with one incorrect figure. Find the line and enter the corrected amount.",
+      "tool": "spot-the-error",
+      "assets": [
+        "css/buyer-tools.css",
+        "js/spot-error.js"
+      ],
+      "source": {
+        "challengeId": "capital-rollforward-fixture-v1",
+        "vectorSha256": "4d1f7a07cb7f5190712cd9641db6750a1014ac303d5a7c1df58fb00e0c3c9169",
+        "caseName": "recallable distribution + mgmt fee + carry + P&L mix"
+      },
+      "claims": [
+        {
+          "text": "one incorrect figure",
+          "source": "committed vector recallable distribution + mgmt fee + carry + P&L mix; scripts/prepare-spot-error.py changes exactly one ending-balance figure"
+        },
+        {
+          "text": "Your answer is checked in your browser and is not recorded",
+          "source": "src/js/spot-error.js compares locally; page makes no network write"
+        }
+      ],
+      "canonical": "https://cosimo.work/spot-the-error/",
+      "htmlSha256": "83831469cb1dcc84ab1a87984564ce5dd91d09a3b2587824a2615663a5ded31d",
+      "ship": true
+    }
+  ]
+}

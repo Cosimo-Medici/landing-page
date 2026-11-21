@@ -4,6 +4,10 @@
   "private": true,
   "scripts": {
     "build": "node build.js",
+    "build:article-preview": "node build.js --article-preview",
+    "serve:article-preview": "npx --no-install serve dist-preview -l tcp://127.0.0.1:3010 --config serve.json --no-clipboard --no-port-switching",
+    "build:case-preview": "node scripts/build-case-library.cjs",
+    "serve:case-preview": "npx --no-install serve dist-case-preview -l tcp://127.0.0.1:3011 --config serve.json --no-clipboard --no-port-switching",
     "discovery:audit": "node scripts/audit-discovery.cjs",
     "discovery:measure": "node scripts/discovery-monitor.cjs",
     "discovery:submit": "node scripts/submit-indexnow.cjs",

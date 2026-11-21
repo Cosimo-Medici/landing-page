@@ -1,0 +1,17 @@
+.buyer-tools { max-width: 960px; }
+.buyer-tools form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 2rem 0; }
+.buyer-tools label { display: grid; gap: .5rem; color: var(--cream); }
+.buyer-tools .wide { grid-column: 1 / -1; }
+.buyer-tools input, .buyer-tools textarea, .buyer-tools select { width: 100%; padding: .8rem; border: 1px solid var(--border-strong); background: var(--bg-elevated); color: var(--cream); font: inherit; }
+.buyer-tools textarea { min-height: 100px; resize: vertical; }
+.buyer-tools pre { overflow-wrap: anywhere; white-space: pre-wrap; font: .8rem/1.5 'IBM Plex Mono', monospace; padding: 1rem; background: var(--bg-surface); }
+.buyer-tools button { cursor: pointer; }
+.spot-statement { width: 100%; border-collapse: collapse; }
+.spot-statement th, .spot-statement td { padding: .6rem; border-bottom: 1px solid var(--border-strong); text-align: left; font-weight: normal; }
+.spot-statement td { text-align: right; font-variant-numeric: tabular-nums; }
+.spot-statement caption { text-align: left; margin-bottom: 1rem; }
+/* Keep the inherited floating control from covering a statement amount on mobile. */
+.theme-toggle { position: static; display: block; margin: 1rem auto 2rem; }
+@media (max-width: 640px) { .buyer-tools form { grid-template-columns: 1fr; } }
+#request-actions p:last-child { display: flex; flex-wrap: wrap; gap: .75rem; }
+#request-actions .btn-line { display: inline-block; }

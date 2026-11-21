@@ -65,5 +65,7 @@ for (const file of await readdir(join(outDir, 'assets'))) {
   if (!file.endsWith('.css')) continue;
   const target = join(outDir, 'assets', file);
   const css = await readFile(target, 'utf8');
-  await writeFile(target, css.replaceAll('/fonts/', '../fonts/'));
+  // The site CSP forbids external stylesheets, so strip any Google Fonts @import.
+  const stripped = css.replace(/@import\s*(?:url\()?["']https:\/\/fonts\.googleapis\.com[^"']*["']\)?\s*;/g, '');
+  await writeFile(target, stripped.replaceAll('/fonts/', '../fonts/'));
 }
