@@ -2,7 +2,7 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const origin = process.env.SITE_URL || 'http://localhost:3002';
-const pages = ['/', '/about.html', '/faq.html', '/founders.html', '/accessibility.html', '/privacy.html', '/terms.html', ...['banks','funds','insurance','services','re','vc','pe','credit','hedge'].map(s => `/${s}/`), '/product-demo/index.html', '/platform/', '/platform', '/building-with-claude/', '/building-with-claude', '/guides/agent-harness-or-cosimo/', '/guides/agent-harness-or-cosimo', '/product-facts/', '/guides/'];
+const pages = ['/', '/about.html', '/faq.html', '/founders.html', '/accessibility.html', '/privacy.html', '/terms.html', ...['banks','funds','insurance','services','re','vc','pe','credit','hedge'].map(s => `/${s}/`), '/product-demo/index.html', '/platform/', '/platform', '/building-with-claude/', '/building-with-claude', '/guides/agent-harness-or-cosimo/', '/guides/agent-harness-or-cosimo', '/product-facts/', '/guides/', '/reverse-demo/', '/reverse-demo', '/spot-the-error/', '/spot-the-error'];
 
 test('every published page and its browser-loaded assets resolve under the production server rules', async () => {
   for (const route of pages) {

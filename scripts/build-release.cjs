@@ -92,10 +92,9 @@ if (spotFile) {
   const route = '/spot-the-error/';
   const money = v => { const [w, f] = v.split('.'); return w.replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '.' + f; };
   const rows = challenge.rows.map(r => `<tr><th scope="row">${esc(r.label)}</th><td>${esc(money(r.amount))}</td></tr>`).join('');
-  // Existing four-field convention (content-engine/scripts/link.cjs). It has no "tool" medium; the
-  // earlier preview used "article", and the tool itself is recorded separately in the enquiry.
+  // Existing four-field convention (content-engine/scripts/link.cjs, medium "tool" for buyer tools).
   const {trackedLink} = require('../../cosimo-content-engine/content-engine/scripts/link.cjs');
-  const tracked = new URL(trackedLink(ORIGIN + '/reverse-demo/', {source: 'website', medium: 'article', topic: 'quarter-close', piece: challenge.challengeId}));
+  const tracked = new URL(trackedLink(ORIGIN + '/reverse-demo/', {source: 'website', medium: 'tool', topic: 'quarter-close', piece: challenge.challengeId}));
   const cta = tracked.pathname + tracked.search;
   const title = 'Spot the error — Cosimo';
   const description = 'A fictional capital account statement with one incorrect figure. Find the line and enter the corrected amount.';

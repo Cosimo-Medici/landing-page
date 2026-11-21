@@ -1,3 +1,7 @@
+> Superseded on 20 November 2026: the form sends an email to info@medici.ai with an
+> attribution block instead of a JSON download. See `docs/release-runbook.md`. The
+> `scripts/verify-buyer-tools.cjs` command below takes a second argument (output directory).
+
 # Buyer tools: private implementation preview
 
 ENG-855 uses the existing site shell and a shared browser/Node contract in

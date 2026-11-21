@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "note": "build.js copies a page into dist/ and the sitemap only when ship is true. Set ship only after the release decision.",
-  "generatedAt": "2026-11-21T02:57:08.263Z",
-  "shellSha256": "7747c142065095a24183bec2899b1b7ee81f137b04ee300e0929ef60068df4f6",
+  "generatedAt": "2026-11-21T02:59:37.906Z",
+  "shellSha256": "c561326e0d4ff1e1d83f6cf20f49122d7c70a6cddf3fbefa7ec8df688b35f7e2",
   "pages": [
     {
       "id": "reverse-demo",
@@ -31,8 +31,8 @@
         }
       ],
       "canonical": "https://cosimo.work/reverse-demo/",
-      "htmlSha256": "f4fb1248d7de3ec1b41e0f911a660f20153195f3f1dbd0c78fd9476352a96aba",
-      "ship": false
+      "htmlSha256": "f43d3b5920e1288b16ddf445ee794f50c2c1628e96df21ebf8976ef835d37951",
+      "ship": true
     },
     {
       "id": "spot-the-error",
@@ -61,8 +61,8 @@
         }
       ],
       "canonical": "https://cosimo.work/spot-the-error/",
-      "htmlSha256": "57d040e99ca6074eb08f857945ab395024741454c99fe34323b0b44462fc41f7",
-      "ship": false
+      "htmlSha256": "83831469cb1dcc84ab1a87984564ce5dd91d09a3b2587824a2615663a5ded31d",
+      "ship": true
     }
   ]
 }
